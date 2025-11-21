@@ -1,0 +1,97 @@
+version: 2
+updates:
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+    reviewers:
+      - "your-org/devops-team"
+    assignees:
+      - "your-org/devops-team"
+    open-pull-requests-limit: 5
+
+  # Maintain dependencies for pip (Python)
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    labels:
+      - "dependencies"
+      - "python"
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+    reviewers:
+      - "your-org/backend-team"
+    assignees:
+      - "your-org/backend-team"
+    open-pull-requests-limit: 10
+    # Group all patch updates together
+    groups:
+      patch-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "patch"
+    # Allow updates for specific packages
+    allow:
+      - dependency-name: "requests"
+      - dependency-name: "pydantic"
+      - dependency-name: "fastapi"
+      - dependency-name: "pytest"
+      - dependency-name: "httpx"
+      # Add more as needed
+    # Ignore specific packages (if needed)
+    ignore:
+      # Ignore major version updates for stable dependencies
+      - dependency-name: "python"
+        update-types: ["version-update:semver-major"]
+
+  # Maintain dependencies for Docker
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "tuesday"
+      time: "09:00"
+    labels:
+      - "dependencies"
+      - "docker"
+    commit-message:
+      prefix: "docker"
+      include: "scope"
+    reviewers:
+      - "your-org/devops-team"
+    assignees:
+      - "your-org/devops-team"
+    open-pull-requests-limit: 5
+
+  # Maintain dependencies for Docker test files
+  - package-ecosystem: "docker"
+    directory: "/docker"
+    schedule:
+      interval: "weekly"
+      day: "tuesday"
+      time: "09:00"
+    labels:
+      - "dependencies"
+      - "docker"
+    commit-message:
+      prefix: "docker"
+      include: "scope"
+    reviewers:
+      - "your-org/devops-team"
+    assignees:
+      - "your-org/devops-team"
+    open-pull-requests-limit: 5
