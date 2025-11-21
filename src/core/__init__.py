@@ -1,7 +1,8 @@
 """Core Package - Shared Utilities and Configuration.
 
 Module: src.core
-Author: Builder Layer Development Team
+Author: Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 
 Description:
     Core utilities, configuration management, and shared components

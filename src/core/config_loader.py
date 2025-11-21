@@ -12,8 +12,8 @@ Core Features:
 - Validation of required fields and data types
 
 Module: src.core.config_loader
-Author: Builder Layer Platform Team
-Created: 2024-09-01
+Author: Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
 License: MIT
 

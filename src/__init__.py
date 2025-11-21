@@ -1,8 +1,8 @@
 """Builder Layer - Multi-Agent Traffic Management System.
 
 Module: src
-Author: Builder Layer Development Team
-Created: 2024-09-01
+Author: Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 2.3.0
 License: MIT
 
