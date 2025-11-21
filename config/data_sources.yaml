@@ -1,0 +1,105 @@
+#Author: Nguyen Dinh Anh Tuan
+#Created: 2025-11-20
+# Domain-Agnostic Data Sources Configuration
+# This configuration supports ANY LOD domain (healthcare, geography, commerce, etc.)
+# Add new domains by adding new sections without code changes
+
+cameras:
+  source_file: "data/cameras_raw.json"
+  output_file: "data/cameras_updated.json"
+  refresh_interval: 30  # seconds
+  batch_size: 50
+  request_timeout: 30  # seconds - increased for slow network
+  max_retries: 2  # reduced retries to fail faster
+  retry_backoff_base: 1.5  # gentler backoff
+  url_template: "https://giaothong.hochiminhcity.gov.vn/render/ImageHandler.ashx"
+  params:
+    - id
+    - zoom
+    - t  # timestamp to refresh
+
+# External APIs Configuration (Domain-Agnostic)
+# Supports ANY LOD domain with geo-coordinates
+external_apis:
+  openweathermap:
+    base_url: "https://api.openweathermap.org/data/2.5/weather"
+    api_key: "5d43c8c74f6a4b9f3cfdc3aaf1e5a015"
+    rate_limit: 10  # ✅ FIXED: Giảm từ 60 → 10 requests per minute
+    timeout: 10  # ✅ FIXED: Tăng từ 5s → 10s
+    cache_ttl: 600  # seconds (10 minutes)
+    enabled: true
+  
+  # Air Quality API Configuration
+  # Using OpenWeatherMap Air Pollution API for complete pollutant coverage
+  air_quality:
+    source: "openweathermap"  # Primary: OpenWeatherMap Air Pollution API
+    base_url: "https://api.openweathermap.org/data/2.5/air_pollution"
+    api_key: "5d43c8c74f6a4b9f3cfdc3aaf1e5a015"
+    rate_limit: 10  # requests per minute
+    timeout: 10  # seconds
+    cache_ttl: 600  # seconds (10 minutes)
+    enabled: true
+    # Provides: PM2.5, PM10, NO2, O3, CO, SO2 (all 6 required pollutants)
+  
+  openaq:
+    # Fallback: OpenAQ v3 (but limited sensor coverage in Vietnam)
+    base_url: "https://api.openaq.org/v3/"
+    api_key: "1268dbec69a5c8dd637f4a0616a7338d1f320ae966721abdc18e94a2b20b0675"
+    rate_limit: 10  # requests per minute
+    timeout: 10  # seconds
+    cache_ttl: 600  # seconds (10 minutes)
+    enabled: false  # Disabled: US Consulate station only has PM2.5
+    # Note: US Diplomatic Post in HCMC only monitors PM2.5 (1/6 pollutants)
+  
+  # Geo-matching configuration
+  geo_match_radius: 25000  # meters - UPDATED to maximum 25km for better coverage in Vietnam
+  
+  # Output configuration (MANDATORY: cameras_enriched.json)
+  output_file: "data/cameras_enriched.json"
+  source_file: "data/cameras_updated.json"  # Input: cameras with coordinates
+  
+  # Batch processing - ✅ CRITICAL FIX for Rate Limiting
+  batch_size: 5  # ✅ FIXED: Giảm từ 50 → 5 để xử lý từng nhóm nhỏ
+  max_concurrent_requests: 2  # ✅ FIXED: Giảm từ 10 → 2 để tránh overwhelm API
+  request_delay: 3.0  # ✅ NEW: Thêm 3 giây delay giữa mỗi request
+  batch_delay: 10.0  # ✅ NEW: Thêm 10 giây delay giữa mỗi batch
+
+  
+  # Schedule
+  collection_interval: 600  # seconds (10 minutes)
+  
+  # Retry Configuration (MANDATORY: exponential backoff with 3 attempts)
+  retry:
+    max_attempts: 3  # Maximum retry attempts for failed API calls
+    base_delay: 1.0  # Base delay for exponential backoff (seconds)
+    max_delay: 60.0  # Maximum delay between retries (seconds)
+  
+# Example: Healthcare domain (commented out - add when needed)
+# medical_devices:
+#   source_file: "data/devices_raw.json"
+#   output_file: "data/devices_updated.json"
+#   refresh_interval: 60
+#   batch_size: 100
+#   request_timeout: 15
+#   max_retries: 3
+#   retry_backoff_base: 2
+#   url_template: "https://health.example.com/api/devices"
+#   params:
+#     - device_id
+#     - location
+#     - timestamp
+
+# Example: Commerce domain (commented out - add when needed)
+# inventory_images:
+#   source_file: "data/inventory_raw.json"
+#   output_file: "data/inventory_updated.json"
+#   refresh_interval: 120
+#   batch_size: 200
+#   request_timeout: 20
+#   max_retries: 3
+#   retry_backoff_base: 2
+#   url_template: "https://commerce.example.com/images"
+#   params:
+#     - sku
+#     - quality
+#     - timestamp
