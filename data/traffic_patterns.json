@@ -1,0 +1,155 @@
+[
+  {
+    "id": "urn:ngsi-ld:TrafficFlowPattern:mock-0-20251118030419",
+    "type": "TrafficFlowPattern",
+    "name": {
+      "type": "Property",
+      "value": "Mock Pattern 0: Rush Hour"
+    },
+    "patternType": {
+      "type": "Property",
+      "value": "temporal"
+    },
+    "detectedAt": {
+      "type": "Property",
+      "value": "2025-11-17T20:04:19.221606Z"
+    },
+    "confidence": {
+      "type": "Property",
+      "value": 0.7
+    },
+    "averageSpeed": {
+      "type": "Property",
+      "value": 45.0,
+      "unitCode": "KMH"
+    },
+    "averageIntensity": {
+      "type": "Property",
+      "value": 0.3
+    },
+    "peakTime": {
+      "type": "Property",
+      "value": "7:00-9:00"
+    },
+    "affectedRoads": {
+      "type": "Property",
+      "value": [
+        "Road-0",
+        "Road-1"
+      ]
+    },
+    "description": {
+      "type": "Property",
+      "value": "Mock traffic pattern #0 for testing purposes"
+    },
+    "observationCount": {
+      "type": "Property",
+      "value": 100
+    },
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
+  },
+  {
+    "id": "urn:ngsi-ld:TrafficFlowPattern:mock-1-20251118030419",
+    "type": "TrafficFlowPattern",
+    "name": {
+      "type": "Property",
+      "value": "Mock Pattern 1: Off-Peak"
+    },
+    "patternType": {
+      "type": "Property",
+      "value": "spatial"
+    },
+    "detectedAt": {
+      "type": "Property",
+      "value": "2025-11-17T20:04:19.221606Z"
+    },
+    "confidence": {
+      "type": "Property",
+      "value": 0.75
+    },
+    "averageSpeed": {
+      "type": "Property",
+      "value": 50.0,
+      "unitCode": "KMH"
+    },
+    "averageIntensity": {
+      "type": "Property",
+      "value": 0.4
+    },
+    "peakTime": {
+      "type": "Property",
+      "value": "8:00-10:00"
+    },
+    "affectedRoads": {
+      "type": "Property",
+      "value": [
+        "Road-1",
+        "Road-2"
+      ]
+    },
+    "description": {
+      "type": "Property",
+      "value": "Mock traffic pattern #1 for testing purposes"
+    },
+    "observationCount": {
+      "type": "Property",
+      "value": 150
+    },
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
+  },
+  {
+    "id": "urn:ngsi-ld:TrafficFlowPattern:mock-2-20251118030419",
+    "type": "TrafficFlowPattern",
+    "name": {
+      "type": "Property",
+      "value": "Mock Pattern 2: Rush Hour"
+    },
+    "patternType": {
+      "type": "Property",
+      "value": "congestion"
+    },
+    "detectedAt": {
+      "type": "Property",
+      "value": "2025-11-17T20:04:19.221606Z"
+    },
+    "confidence": {
+      "type": "Property",
+      "value": 0.7999999999999999
+    },
+    "averageSpeed": {
+      "type": "Property",
+      "value": 55.0,
+      "unitCode": "KMH"
+    },
+    "averageIntensity": {
+      "type": "Property",
+      "value": 0.5
+    },
+    "peakTime": {
+      "type": "Property",
+      "value": "9:00-11:00"
+    },
+    "affectedRoads": {
+      "type": "Property",
+      "value": [
+        "Road-2",
+        "Road-3"
+      ]
+    },
+    "description": {
+      "type": "Property",
+      "value": "Mock traffic pattern #2 for testing purposes"
+    },
+    "observationCount": {
+      "type": "Property",
+      "value": 200
+    },
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
+  }
+]
