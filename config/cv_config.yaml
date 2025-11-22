@@ -1,0 +1,199 @@
+# CV Analysis Agent Configuration
+# Domain-agnostic computer vision configuration for object detection and traffic analysis
+#Author: nguyễn Nhật Quang
+#Created: 2025-11-21
+cv_analysis:
+  # Model configuration
+  model:
+    type: "yolov8"
+    weights: "yolov8x.pt"  # YOLOv8 XLarge for maximum accuracy in dense traffic (n/s/m/l/x available)
+    confidence: 0.1       # Very low threshold for dense traffic with many small vehicles (0.0-1.0)
+    iou_threshold: 0.45    # IoU threshold for NMS
+    device: "cpu"          # Device: "cpu" or "cuda" for GPU acceleration
+    max_det: 300           # Maximum detections per image
+  
+  # Accident Detection Configuration (YOLO-based)
+  accident_detection:
+    enabled: true                    # Enable CV-based accident detection
+    model:
+      weights: "assets/models/yolov8_accident.pt"  # Trained accident detection model (3200+ images, 25 epochs)
+      confidence: 0.4                # Confidence threshold for accident detection (0.0-1.0)
+      iou_threshold: 0.45            # IoU threshold for NMS
+      device: "cpu"                  # Device: "cpu" or "cuda"
+      max_det: 10                    # Maximum accident detections per image
+    # Accident severity estimation based on detection confidence
+    severity_thresholds:
+      minor: 0.4                     # 0.4-0.6: Minor incident
+      moderate: 0.6                  # 0.6-0.8: Moderate accident
+      severe: 0.8                    # 0.8+: Severe accident
+    # Alert configuration
+    alert:
+      enabled: true                  # Enable accident alerts
+      min_confidence: 0.5            # Minimum confidence to trigger alert
+  
+  # Vehicle classification (COCO dataset classes)
+  vehicle_classes:
+    - car          # Class ID: 2
+    - motorcycle   # Class ID: 3
+    - motorbike    # Class ID: 3 (alias)
+    - bus          # Class ID: 5
+    - train        # Class ID: 6
+    - truck        # Class ID: 7
+    - boat         # Class ID: 8
+    - bicycle      # Class ID: 1
+  
+  # Person detection (for pedestrian analysis)
+  person_classes:
+    - person       # Class ID: 0
+  
+  # Traffic metrics configuration
+  metrics:
+    intensity_threshold: 0.7        # >70% occupancy = congested
+    low_intensity_threshold: 0.3    # <30% occupancy = free flow
+    speed_estimation: "optical_flow"  # Method: "optical_flow", "distance_based", "none"
+    default_speed_kmh: 20.0         # Default speed when estimation unavailable
+    min_speed_kmh: 5.0              # Minimum speed (traffic jam)
+    max_speed_kmh: 80.0             # Maximum speed (highway)
+    max_vehicles_per_image: 15      # Max vehicles for 100% occupancy (test script compatibility)
+    occupancy_max_vehicles: 15      # Max vehicles for 100% occupancy (agent compatibility)
+    congestion_thresholds:
+      free: 0.30                    # <30% = free flow
+      moderate: 0.60                # 30-60% = moderate congestion
+      congested: 0.60               # >60% = heavy congestion
+    
+  # Processing configuration
+  batch_size: 1                     # Number of images to process in parallel (sequential for stability)
+  timeout: 180                      # HTTP request timeout (seconds) - 3 minutes for slow server
+  max_retries: 5                    # Max retry attempts for failed downloads
+  retry_delay: 10                   # Delay between retries (seconds)
+  
+  # Connection optimization
+  connection:
+    # TCP connection pooling
+    pool_size: 10                   # Maximum number of connections in pool
+    pool_ttl: 300                   # Pool TTL in seconds (5 minutes)
+    keepalive_timeout: 60           # Keep connection alive for reuse (seconds)
+    
+    # DNS caching
+    dns_cache_ttl: 600              # DNS cache TTL (10 minutes)
+    
+    # Retry strategy
+    exponential_backoff: true       # Use exponential backoff for retries
+    backoff_factor: 2.0             # Multiply delay by this factor each retry
+    max_retry_delay: 60             # Maximum retry delay (seconds)
+    
+    # Browser-like headers
+    use_browser_headers: true       # Mimic browser requests
+    user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    
+    # SSL/TLS settings
+    verify_ssl: true                # Verify SSL certificates
+    ssl_timeout: 30                 # SSL handshake timeout
+    
+    # Request optimization
+    follow_redirects: true          # Follow HTTP redirects
+    max_redirects: 3                # Maximum number of redirects
+    compress: true                  # Enable compression (gzip, deflate)
+    
+  # Local caching (to avoid re-downloading same images)
+  cache:
+    enabled: true                   # Enable local image caching
+    directory: "data/cache/images"  # Cache directory
+    ttl_minutes: 30                 # Cache TTL (30 minutes)
+    max_size_mb: 500                # Maximum cache size
+    cleanup_on_start: false         # Clean old cache on agent start
+  
+  # Image processing
+  image:
+    resize_width: 640               # Resize width for inference (YOLOv8 default)
+    resize_height: 640              # Resize height for inference
+    max_file_size_mb: 10            # Maximum image file size
+    supported_formats:
+      - jpg
+      - jpeg
+      - png
+      - bmp
+  
+  # Output configuration
+  output:
+    file: "data/observations.json"
+    format: "ngsi-ld"               # Output format: "ngsi-ld" or "json"
+    include_detections: true        # Include detailed detection results
+    include_confidence: true        # Include confidence scores
+    timestamp_format: "iso8601"     # Timestamp format
+  
+  # Logging configuration
+  logging:
+    level: "INFO"                   # DEBUG, INFO, WARNING, ERROR, CRITICAL
+    file: "logs/cv_analysis.log"
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    
+  # Performance monitoring
+  monitoring:
+    enabled: true
+    metrics_file: "data/cv_metrics.json"
+    track_processing_time: true
+    track_detection_counts: true
+
+# Domain-specific examples (demonstration of domain-agnostic design)
+domains:
+  # Traffic cameras domain
+  traffic:
+    input_file: "data/traffic/cameras_updated.json"
+    entity_type: "ItemFlowObserved"
+    vehicle_classes:
+      - car
+      - motorbike
+      - bus
+      - truck
+    metrics:
+      intensity_threshold: 0.7
+      occupancy_max_vehicles: 50
+      
+  # Parking lot domain
+  parking:
+    input_file: "data/parking/parking_cameras.json"
+    entity_type: "ParkingSpotObserved"
+    vehicle_classes:
+      - car
+      - motorbike
+    metrics:
+      intensity_threshold: 0.9
+      occupancy_max_vehicles: 30
+      
+  # Warehouse domain
+  warehouse:
+    input_file: "data/warehouse/warehouse_cameras.json"
+    entity_type: "ItemFlowObserved"
+    vehicle_classes:
+      - truck
+    person_classes:
+      - person
+    metrics:
+      intensity_threshold: 0.5
+      occupancy_max_vehicles: 20
+      
+  # Retail domain
+  retail:
+    input_file: "data/retail/store_cameras.json"
+    entity_type: "PeopleFlowObserved"
+    person_classes:
+      - person
+    metrics:
+      intensity_threshold: 0.6
+      occupancy_max_vehicles: 100  # Max people
+
+# COCO class mapping (YOLOv8 reference)
+# This is for documentation - actual detection uses class IDs
+coco_classes:
+  0: person
+  1: bicycle
+  2: car
+  3: motorcycle
+  4: airplane
+  5: bus
+  6: train
+  7: truck
+  8: boat
+  9: traffic light
+  # ... (80 classes total in COCO dataset)
