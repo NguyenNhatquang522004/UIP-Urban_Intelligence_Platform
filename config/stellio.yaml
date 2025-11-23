@@ -1,0 +1,146 @@
+# Stellio Context Broker Configuration
+# 100% Domain-Agnostic Configuration for NGSI-LD Entity Publishing
+#
+# This configuration supports ANY LOD domain (healthcare, geography, commerce, IoT, etc.)
+# without requiring code changes. All endpoint URLs, authentication, batching, and retry
+# logic are defined here.
+
+stellio:
+  # Base URL of Stellio Context Broker instance
+  # Can be overridden with environment variable: STELLIO_BASE_URL
+  base_url: "http://localhost:8080"
+  
+  # NGSI-LD API version
+  api_version: "ngsi-ld/v1"
+  
+  # Entity creation endpoint (for analytics agents)
+  create_endpoint: "/ngsi-ld/v1/entities"
+  
+  # Stellio API Endpoints
+  endpoints:
+    # Single entity creation/update
+    entities: "/entities"
+    
+    # Entity creation endpoint (for analytics agents)
+    create: "/entities"
+    
+    # Batch entity operations (upsert)
+    batch: "/entityOperations/upsert"
+    
+    # Entity query endpoint
+    query: "/entities"
+    
+    # Entity delete endpoint (for future use)
+    delete: "/entities/{entityId}"
+  
+  # Authentication Configuration
+  auth:
+    # Enable/disable authentication
+    enabled: false
+    
+    # Authentication token (can use environment variable: ${STELLIO_AUTH_TOKEN})
+    token: null
+    
+    # Token type (Bearer, ApiKey, etc.)
+    token_type: "Bearer"
+    
+    # Header name for auth token
+    header_name: "Authorization"
+  
+  # Batch Processing Configuration
+  batch_size: 50
+  
+  # HTTP Request Timeout (seconds)
+  timeout: 30
+  
+  # Retry Configuration
+  retry:
+    # Maximum number of retry attempts
+    max_attempts: 3
+    
+    # Backoff factor for exponential backoff
+    # Delays: 1s, 2s, 4s (backoff_factor^attempt)
+    backoff_factor: 2
+    
+    # Initial delay before first retry (seconds)
+    initial_delay: 1
+    
+    # Maximum delay between retries (seconds)
+    max_delay: 10
+    
+    # HTTP status codes that trigger retry
+    retry_status_codes:
+      - 500  # Internal Server Error
+      - 502  # Bad Gateway
+      - 503  # Service Unavailable
+      - 504  # Gateway Timeout
+  
+  # HTTP Headers
+  headers:
+    # Content type for NGSI-LD entities
+    content_type: "application/ld+json"
+    
+    # Accept header
+    accept: "application/ld+json"
+    
+    # User agent
+    user_agent: "EntityPublisherAgent/1.0"
+  
+  # Conflict Resolution Strategy
+  conflict_resolution:
+    # Strategy for handling 409 Conflict responses
+    # Options: "patch" (update existing), "skip" (ignore), "error" (fail)
+    strategy: "patch"
+    
+    # Use PATCH endpoint for updates
+    use_patch: true
+    
+    # PATCH endpoint path
+    patch_endpoint: "/entities/{entityId}/attrs"
+  
+  # Logging Configuration
+  logging:
+    # Enable detailed HTTP logging
+    enable_http_logging: true
+    
+    # Log request/response bodies
+    log_bodies: false
+    
+    # Log level for Stellio operations
+    level: "INFO"
+  
+  # Performance Configuration
+  performance:
+    # Enable parallel batch requests
+    parallel_batches: false
+    
+    # Maximum concurrent batch requests (if parallel enabled)
+    max_concurrent_batches: 5
+    
+    # Connection pool size
+    connection_pool_size: 10
+  
+  # Output Configuration
+  output:
+    # Directory for publish reports
+    report_dir: "data"
+    
+    # Report filename template
+    report_filename: "publish_report.json"
+    
+    # Include detailed error information in report
+    detailed_errors: true
+    
+    # Save failed entities to separate file
+    save_failed_entities: true
+    
+    # Failed entities filename
+    failed_entities_filename: "failed_entities.json"
+
+# Environment Variable Mapping
+# These can be overridden by environment variables:
+# - STELLIO_BASE_URL
+# - STELLIO_AUTH_TOKEN
+# - STELLIO_BATCH_SIZE
+# - STELLIO_TIMEOUT
+# - STELLIO_MAX_RETRIES
