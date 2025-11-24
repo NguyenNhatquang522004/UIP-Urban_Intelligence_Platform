@@ -1,0 +1,431 @@
+# Integration Test Configuration
+# Defines test scenarios, expected outcomes, and verification rules
+#Author Nguyen Viet Hoang 
+#Created: 2025-11-24
+
+integration_tests:
+  # Test timeout settings
+  timeouts:
+    service_startup: 120  # seconds
+    pipeline_execution: 300  # 5 minutes
+    api_request: 30
+    query_execution: 60
+  
+  # Expected data counts
+  expected_counts:
+    cameras_total: 722
+    property_graph_nodes: 722
+    property_graph_relationships: 2166  # 3x nodes (location, camera, observation)
+    rdf_triples_minimum: 8000
+    rdf_triples_per_camera: 12
+  
+  # Test scenarios
+  scenarios:
+    # Scenario 1: Full 722-camera pipeline
+    - name: "full_pipeline_722_cameras"
+      description: "Complete data ingestion and transformation pipeline"
+      enabled: true
+      timeout: 300
+      steps:
+        - action: "load_raw_data"
+          source: "test_data/cameras_raw.json"
+          expected_records: 722
+        
+        - action: "run_agent"
+          agent: "image_refresh_agent"
+          config: "config/image_refresh_config.yaml"
+          verify:
+            - type: "file_exists"
+              path: "test_output/cameras_with_images.json"
+            - type: "record_count"
+              expected: 722
+        
+        - action: "run_agent"
+          agent: "ngsi_ld_transformer_agent"
+          config: "config/ngsi_ld_config.yaml"
+          verify:
+            - type: "valid_ngsi_ld"
+              schema: "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+            - type: "required_properties"
+              properties: ["id", "type", "@context"]
+        
+        - action: "run_agent"
+          agent: "sosa_ssn_mapper_agent"
+          config: "config/sosa_ssn_config.yaml"
+          verify:
+            - type: "ontology_compliance"
+              ontology: "http://www.w3.org/ns/sosa/"
+            - type: "mapping_completeness"
+              expected_mappings: 722
+        
+        - action: "run_agent"
+          agent: "smart_data_models_validation_agent"
+          config: "config/smart_data_models_config.yaml"
+          verify:
+            - type: "schema_validation"
+              schema_url: "https://smart-data-models.github.io/dataModel.Device/Camera/schema.json"
+            - type: "validation_report"
+              min_score: 8.0
+        
+        - action: "run_agent"
+          agent: "entity_publisher_agent"
+          config: "config/entity_publisher_config.yaml"
+          verify:
+            - type: "stellio_entities_created"
+              url: "http://stellio-api-gateway:8080/ngsi-ld/v1/entities"
+              expected_count: 722
+              entity_type: "Camera"
+        
+        - action: "run_agent"
+          agent: "ngsi_ld_to_rdf_agent"
+          config: "config/ngsi_ld_to_rdf_config.yaml"
+          verify:
+            - type: "rdf_triples_generated"
+              min_triples: 8000
+            - type: "valid_turtle"
+              syntax_check: true
+        
+        - action: "run_agent"
+          agent: "triplestore_loader_agent"
+          config: "config/triplestore_loader_config.yaml"
+          verify:
+            - type: "fuseki_triples_loaded"
+              url: "http://fuseki:3030/traffic-cameras/query"
+              min_count: 8000
+              graph: "http://example.org/traffic-cameras"
+        
+        - action: "run_agent"
+          agent: "lod_rating_agent"
+          config: "config/lod_rating_config.yaml"
+          verify:
+            - type: "lod_score"
+              min_score: 4.5
+              max_score: 5.0
+        
+        - action: "verify_neo4j"
+          checks:
+            - query: "MATCH (c:Camera) RETURN count(c) as count"
+              expected: 722
+            - query: "MATCH (:Camera)-[r]->() RETURN count(r) as count"
+              expected_min: 2166
+        
+        - action: "verify_fuseki"
+          checks:
+            - query: "SELECT (COUNT(*) as ?count) WHERE { ?s ?p ?o }"
+              expected_min: 8000
+            - query: "SELECT (COUNT(DISTINCT ?s) as ?count) WHERE { ?s a <http://www.w3.org/ns/sosa/Sensor> }"
+              expected: 722
+    
+    # Scenario 2: Real-time updates
+    - name: "realtime_updates"
+      description: "Test real-time image refresh and update propagation"
+      enabled: true
+      timeout: 60
+      steps:
+        - action: "simulate_image_refresh"
+          camera_id: "urn:ngsi-ld:Camera:TTH406"
+          new_image_url: "http://example.org/camera/TTH406/refresh.jpg"
+        
+        - action: "wait_for_update"
+          service: "stellio"
+          entity_id: "urn:ngsi-ld:Camera:TTH406"
+          property: "imageURL"
+          timeout: 30
+        
+        - action: "verify_subscription_notification"
+          subscription_id: "urn:ngsi-ld:Subscription:imageRefresh"
+          entity_id: "urn:ngsi-ld:Camera:TTH406"
+        
+        - action: "verify_cache_invalidation"
+          cache_key: "camera:TTH406"
+          expected_state: "invalidated"
+    
+    # Scenario 3: Accident detection workflow
+    - name: "accident_detection_workflow"
+      description: "Complete accident detection and alert pipeline"
+      enabled: true
+      timeout: 90
+      steps:
+        - action: "inject_anomaly_observation"
+          camera_id: "urn:ngsi-ld:Camera:TTH406"
+          observation:
+            type: "traffic_anomaly"
+            severity: "high"
+            confidence: 0.95
+            timestamp: "2024-11-02T10:30:00Z"
+        
+        - action: "run_agent"
+          agent: "cv_analysis_agent"
+          config: "config/cv_analysis_config.yaml"
+          input_observation: "anomaly_observation.json"
+          verify:
+            - type: "detection_created"
+              detection_type: "incident"
+        
+        - action: "run_agent"
+          agent: "accident_detection_agent"
+          config: "config/accident_detection_config.yaml"
+          verify:
+            - type: "road_accident_entity_created"
+              entity_type: "RoadAccident"
+            - type: "severity_classified"
+              min_severity: "medium"
+        
+        - action: "run_agent"
+          agent: "incident_report_generator_agent"
+          config: "config/incident_report_config.yaml"
+          verify:
+            - type: "report_generated"
+              format: "pdf"
+            - type: "report_contains_sections"
+              sections: ["summary", "timeline", "affected_area", "recommendations"]
+        
+        - action: "run_agent"
+          agent: "alert_dispatcher_agent"
+          config: "config/alert_dispatcher_config.yaml"
+          verify:
+            - type: "alert_sent"
+              channels: ["email", "sms", "webhook"]
+            - type: "alert_recipients"
+              min_recipients: 3
+    
+    # Scenario 4: API gateway end-to-end
+    - name: "api_gateway_e2e"
+      description: "Test all API endpoints and integrations"
+      enabled: true
+      timeout: 60
+      steps:
+        - action: "http_request"
+          method: "GET"
+          url: "http://stellio-api-gateway:8080/ngsi-ld/v1/entities?type=Camera"
+          headers:
+            Accept: "application/ld+json"
+          expect:
+            status: 200
+            body_contains: "urn:ngsi-ld:Camera"
+            count_min: 722
+        
+        - action: "http_request"
+          method: "GET"
+          url: "http://stellio-api-gateway:8080/ngsi-ld/v1/entities/urn:ngsi-ld:Camera:TTH406"
+          headers:
+            Accept: "application/ld+json"
+          expect:
+            status: 200
+            properties: ["cameraName", "location", "cameraType"]
+        
+        - action: "sparql_query"
+          endpoint: "http://fuseki:3030/traffic-cameras/sparql"
+          query: |
+            PREFIX sosa: <http://www.w3.org/ns/sosa/>
+            PREFIX schema: <https://schema.org/>
+            SELECT ?sensor ?name WHERE {
+              ?sensor a sosa:Sensor .
+              ?sensor schema:name ?name .
+            } LIMIT 10
+          expect:
+            status: 200
+            results_count: 10
+        
+        - action: "cypher_query"
+          endpoint: "bolt://neo4j:7687"
+          auth: ["neo4j", "test12345"]
+          query: "MATCH (c:Camera) RETURN c.cameraName LIMIT 10"
+          expect:
+            status: 200
+            results_count: 10
+        
+        - action: "redis_check"
+          host: "redis"
+          port: 6379
+          password: "test_redis_pass"
+          checks:
+            - command: "PING"
+              expected: "PONG"
+            - command: "DBSIZE"
+              expected_min: 0
+    
+    # Scenario 5: Content negotiation
+    - name: "content_negotiation_e2e"
+      description: "Test content negotiation for multiple formats"
+      enabled: true
+      timeout: 60
+      steps:
+        - action: "http_request"
+          method: "GET"
+          url: "http://localhost:8082/id/Camera/TTH406/data"
+          headers:
+            Accept: "application/ld+json"
+          expect:
+            status: 200
+            content_type: "application/ld+json"
+        
+        - action: "http_request"
+          method: "GET"
+          url: "http://localhost:8082/id/Camera/TTH406/data"
+          headers:
+            Accept: "text/turtle"
+          expect:
+            status: 200
+            content_type: "text/turtle"
+            body_contains: "@prefix"
+        
+        - action: "http_request"
+          method: "GET"
+          url: "http://localhost:8082/id/Camera/TTH406/data"
+          headers:
+            Accept: "text/html"
+          expect:
+            status: 200
+            content_type: "text/html"
+            body_contains: "<!DOCTYPE html>"
+        
+        - action: "http_request"
+          method: "GET"
+          url: "http://localhost:8082/id/Camera/TTH406"
+          headers:
+            Accept: "application/ld+json"
+          expect:
+            status: 303
+            header: "Location"
+            follow_redirect: true
+    
+    # Scenario 6: Performance benchmark
+    - name: "performance_benchmark"
+      description: "Measure system performance under load"
+      enabled: true
+      timeout: 180
+      metrics:
+        - name: "pipeline_duration"
+          description: "Full 722-camera pipeline execution time"
+          target: "< 180s"
+          measure: "duration"
+        
+        - name: "api_response_p50"
+          description: "API response time 50th percentile"
+          target: "< 200ms"
+          requests: 100
+          endpoint: "/ngsi-ld/v1/entities?type=Camera&limit=10"
+        
+        - name: "api_response_p95"
+          description: "API response time 95th percentile"
+          target: "< 500ms"
+          requests: 100
+          endpoint: "/ngsi-ld/v1/entities?type=Camera&limit=10"
+        
+        - name: "api_response_p99"
+          description: "API response time 99th percentile"
+          target: "< 1000ms"
+          requests: 100
+          endpoint: "/ngsi-ld/v1/entities?type=Camera&limit=10"
+        
+        - name: "sparql_query_p95"
+          description: "SPARQL query response time 95th percentile"
+          target: "< 1000ms"
+          requests: 50
+          query: "SELECT ?s ?p ?o WHERE { ?s ?p ?o } LIMIT 100"
+        
+        - name: "concurrent_requests"
+          description: "Handle concurrent API requests"
+          target: "> 50 req/s"
+          duration: 30
+          threads: 10
+        
+        - name: "memory_usage"
+          description: "Peak memory usage during pipeline"
+          target: "< 4GB"
+          measure: "max_memory"
+        
+        - name: "cpu_usage"
+          description: "Average CPU usage during pipeline"
+          target: "< 80%"
+          measure: "avg_cpu"
+    
+    # Scenario 7: Error handling and recovery
+    - name: "error_handling_recovery"
+      description: "Test system resilience and error recovery"
+      enabled: true
+      timeout: 120
+      steps:
+        - action: "simulate_backend_failure"
+          service: "stellio-api-gateway"
+          duration: 10
+          verify:
+            - type: "retry_mechanism"
+              expected_retries: 3
+            - type: "circuit_breaker_opened"
+              service: "stellio"
+        
+        - action: "restore_backend"
+          service: "stellio-api-gateway"
+          verify:
+            - type: "circuit_breaker_closed"
+              service: "stellio"
+            - type: "requests_resumed"
+              expected: true
+        
+        - action: "inject_invalid_data"
+          file: "test_data/invalid_camera.json"
+          verify:
+            - type: "validation_failed"
+              error_type: "schema_validation_error"
+            - type: "error_logged"
+              log_level: "ERROR"
+            - type: "pipeline_continued"
+              expected: true
+
+# Test data generation
+test_data_generation:
+  cameras:
+    count: 722
+    template:
+      id_pattern: "urn:ngsi-ld:Camera:TTH{id}"
+      cameraName: "Traffic Camera TTH{id}"
+      location:
+        type: "Point"
+        coordinates: [-0.3762, 39.4702]  # Valencia, Spain
+      cameraType: "dome"
+      status: "active"
+      imageURL: "http://example.org/camera/TTH{id}/image.jpg"
+
+# Verification rules
+verification:
+  data_quality:
+    completeness_threshold: 0.95  # 95% of records complete
+    validity_threshold: 0.98  # 98% of records valid
+    consistency_threshold: 1.0  # 100% consistent
+  
+  performance:
+    max_response_time_ms: 1000
+    min_throughput_rps: 50
+    max_error_rate: 0.01  # 1%
+  
+  availability:
+    min_uptime: 0.999  # 99.9%
+    max_downtime_seconds: 60
+
+# Cleanup configuration
+cleanup:
+  after_each_scenario: true
+  after_all_scenarios: true
+  actions:
+    - delete_neo4j_data: true
+    - delete_fuseki_graphs: true
+    - delete_stellio_entities: true
+    - clear_redis_cache: true
+    - remove_test_files: true
+
+# Reporting
+reporting:
+  output_dir: "test_output/reports"
+  formats:
+    - html
+    - json
+    - xml
+    - markdown
+  include:
+    - summary
+    - detailed_results
+    - performance_metrics
+    - coverage_report
+    - error_analysis

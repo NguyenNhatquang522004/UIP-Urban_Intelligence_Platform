@@ -1,0 +1,1362 @@
+[
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 406",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Trần Quang Khải - Trần Khắc Chân"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 406"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "PTZ"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.691054105759,
+          10.7918902432446
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 21.84",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Tô Ngọc Vân - TX25"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 21.84"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.677986383438,
+          10.8797100979598
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 300",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Quốc Lộ 13 - cầu Ông Dầu"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 300"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "PTZ"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.713809967041,
+          10.8361932799182
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 374",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Cách Mạng Tháng Tám - Bùi Thị Xuân"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 374"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "PTZ"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.691064834595,
+          10.7726452614037
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 22.7",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Nguyễn Thị Định - Đường D"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 22.7"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.781423091888,
+          10.7646823693643
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:IDICO-QL1 29",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "QL1 - Tỉnh lộ 10 B (2)"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "IDICO-QL1 29"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.593974232674,
+          10.7492355507977
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 273",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Phan Đăng Lưu - Thích Quảng Đức"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 273"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "PTZ"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.684530973434,
+          10.8032933150268
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 18.2",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Võ Văn Kiệt - An Dương Vương 2"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 18.2"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "PTZ"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.620351076126,
+          10.7265671915496
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 419",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Điện Biên Phủ - Nguyễn Gia Trí"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 419"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "PTZ"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.715161800385,
+          10.8010801833774
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 21.59",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Quốc lộ 1 - Rạch Láng Le 1"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 21.59"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.686397790909,
+          10.8610818827294
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 292",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Lũy Bán Bích - Thoại Ngọc Hầu"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 292"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.636122465134,
+          10.7821519725547
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 1.8",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Cao tốc LTDG - Võ Chí Công"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 1.8"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.790762543678,
+          10.796827763223
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 299.1",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Võ Nguyên Giáp - Đỗ Xuân Hợp (1)"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 299.1"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "PTZ"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.765716075897,
+          10.8349709243101
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 308",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Kinh Dương Vương - Tên Lửa"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 308"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "PTZ"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.61497592926,
+          10.7380517925754
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 423",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Mai Bá Hương - Kênh 4"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 423"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.509790420532,
+          10.7736992353084
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 335",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Nguyễn Chí Thanh - Thuận Kiều"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 335"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "PTZ"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.658009290695,
+          10.7576784340111
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:ITS 8.2",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Lý Tự Trọng - Chu Mạnh Trinh"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "ITS 8.2"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "PTZ"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.704602,
+          10.781944
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 29.4",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Trường Sơn - Ga Quốc Nội 2"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 29.4"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.664902567863,
+          10.8129465937096
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 442",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Trần Đại Nghĩa - Võ Trần Chí"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 442"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.577017307281,
+          10.7304200365785
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 440",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Trần Văn Giàu - cầu Tân Tạo"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 440"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.571368575096,
+          10.7590644777735
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 197",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Ba Tháng Hai – Sư Vạn Hạnh"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 197"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "PTZ"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.670830249786,
+          10.7697784337206
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 44.4",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Phan Đăng Lưu - Lê Văn Duyệt"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 44.4"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.696482896805,
+          10.8019970541825
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 11.1",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Võ Văn Kiệt - Huỳnh Mẫn Đạt"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 11.1"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.677197813988,
+          10.751960277381
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 22.4",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Nút giao Mỹ Thủy 2"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 22.4"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.7755866,
+          10.7701157
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 34.11",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Nguyễn Văn Trỗi - Trần Huy Liệu"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 34.11"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH_AXIS"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.677948832512,
+          10.794472307568
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 245",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Huỳnh Tấn Phát - Phạm Hữu Lầu"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 245"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "PTZ"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.737660169601,
+          10.7052043577961
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 26.4",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Phổ Quang - Hoàng Minh Giám"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 26.4"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.672879457474,
+          10.8079619154301
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 21.3",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Quốc lộ 1 - KCX Linh Trung 1"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 21.3"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.768741607666,
+          10.872081942303
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 21.69",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Quốc lộ 1 - Đường Lê Thị Riêng 2"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 21.69"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.654415130615,
+          10.8619248135124
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 145",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Lê Văn Sỹ - Huỳnh Văn Bánh"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 145"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.671452522278,
+          10.7918902432446
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 385",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Đinh Tiên Hoàng - Trần Quang Khải"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 385"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "PTZ"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.696075201035,
+          10.7927439077816
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 22.6.1",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Nguyễn Thị Định - Đường C (20-1)"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 22.6.1"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.77956700325,
+          10.7659102810674
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 417",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Vòng xoay Mũi Tàu Phú Lâm"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 417"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "PTZ"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.624095439911,
+          10.7459416028391
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 124.1",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Nguyễn Văn Quỳ - Cầu Phú Mỹ"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 124.1"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.7367374897,
+          10.7409610852775
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 13.2",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Võ Văn Kiệt - Nguyễn Tri Phương 2"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 13.2"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.670079231262,
+          10.7503686605855
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 10.1",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Võ Văn Kiệt - Cầu Chữ Y 1"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 10.1"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.68367266655,
+          10.7519444666594
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 259",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Nguyễn Thị Minh Khai - Bà Huyện Thanh Quan"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 259"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "PTZ"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.690624952316,
+          10.7748059039379
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 102.1",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Đinh Tiên Hoàng - Võ Thị Sáu 1"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 102.1"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.695774793625,
+          10.7917743133057
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:TTH 247",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "Tôn Đức Thắng - Hàm Nghi"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "TTH 247"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "PTZ"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.70635342598,
+          10.7710748334425
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:Camera:IDICO-QL1 36",
+    "type": "Camera",
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"
+    ],
+    "cameraName": {
+      "type": "Property",
+      "value": "QL1 - Nút giao An Lạc 2"
+    },
+    "cameraNum": {
+      "type": "Property",
+      "value": "IDICO-QL1 36"
+    },
+    "cameraType": {
+      "type": "Property",
+      "value": "Fixed"
+    },
+    "cameraUsage": {
+      "type": "Property",
+      "value": "TTH"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          106.601693630219,
+          10.7235049089888
+        ]
+      }
+    }
+  }
+]
