@@ -3,7 +3,7 @@
 #Author: nguyễn Nhật Quang
 #Created: 2025-11-24
 # Stage 1: Builder - Install dependencies
-FROM python:3.10-slim AS builder
+FROM python:3.14-slim AS builder
 
 WORKDIR /build
 
@@ -32,7 +32,7 @@ RUN pip install --no-cache-dir --upgrade pip setuptools wheel && \
     rdflib==7.0.0
 
 # Stage 2: Runtime - Minimal image
-FROM python:3.10-slim
+FROM python:3.14-slim
 
 WORKDIR /app
 
