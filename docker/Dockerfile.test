@@ -1,0 +1,51 @@
+# Test Dockerfile for Integration Testing
+# Optimized for minimal size and faster builds
+#Author: nguyễn Nhật Quang
+#Created: 2025-11-24
+FROM python:3.10-slim
+
+WORKDIR /app
+
+# Install only essential system dependencies in single layer
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get clean
+
+# Create virtual environment for better isolation
+RUN python -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Copy and install dependencies in optimized order
+# Install test dependencies only (no code quality tools needed in container)
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel && \
+    pip install --no-cache-dir \
+    pytest==7.4.3 \
+    pytest-asyncio==0.21.1 \
+    pytest-cov==4.1.0 \
+    pytest-mock==3.12.0 \
+    pytest-timeout==2.2.0 \
+    httpx==0.26.0 \
+    aiohttp==3.9.1 \
+    PyYAML==6.0.1 \
+    neo4j==5.14.0 \
+    redis==5.0.1 \
+    rdflib==7.0.0
+
+# Copy only necessary files (use .dockerignore to exclude unnecessary files)
+COPY agents/ agents/
+COPY config/ config/
+COPY tests/ tests/
+
+# Create directories
+RUN mkdir -p test_data test_output htmlcov logs
+
+# Set Python path and optimize Python
+ENV PYTHONPATH=/app \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1
+
+# Default command
+CMD ["pytest", "tests/integration/", "-v", "--tb=short"]
