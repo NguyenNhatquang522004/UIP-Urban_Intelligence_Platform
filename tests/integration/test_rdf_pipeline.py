@@ -1,4 +1,6 @@
 """Integration Tests for RDF Pipeline - PRODUCTION READY"""
+#Authors: Nguyen Viet Hoang 
+#Created: 2025-11-25
 
 import pytest
 from rdflib import Graph, Namespace, Literal, URIRef
