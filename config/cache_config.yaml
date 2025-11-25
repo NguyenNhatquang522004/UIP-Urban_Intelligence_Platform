@@ -1,0 +1,373 @@
+# Cache Manager Agent Configuration
+# Domain-agnostic caching layer with Redis backend
+# All cache policies, warming strategies, and invalidation rules defined here
+#author: Nguyen Viet Hoang
+#created: 2025-11-25
+cache_manager:
+  # Redis connection settings
+  redis:
+    host: "${REDIS_HOST:-redis}"
+    port: ${REDIS_PORT:-6379}
+    db: ${REDIS_DB:-0}
+    password: "${REDIS_PASSWORD:-}"
+    max_connections: 50
+    socket_timeout: 5
+    socket_connect_timeout: 5
+    decode_responses: true
+    health_check_interval: 30
+    retry_on_timeout: true
+    max_retries: 3
+    
+  # Cache policies define TTL and invalidation rules per pattern
+  policies:
+    # NGSI-LD entity by ID - moderate TTL, invalidate on updates
+    - name: "ngsi_ld_entity_by_id"
+      pattern: "/ngsi-ld/v1/entities/{id}"
+      pattern_type: "path_template"
+      ttl: 300  # 5 minutes
+      max_size: "5MB"
+      compression:
+        enabled: true
+        algorithm: "gzip"
+        min_size: 1024  # compress if > 1KB
+      invalidate_on:
+        - "entity_update"
+        - "entity_delete"
+        - "entity_patch"
+      tags:
+        - "ngsi-ld"
+        - "entity"
+    
+    # NGSI-LD entities list - short TTL, frequently changing
+    - name: "ngsi_ld_entities_list"
+      pattern: "/ngsi-ld/v1/entities?*"
+      pattern_type: "glob"
+      ttl: 60  # 1 minute
+      max_size: "10MB"
+      compression:
+        enabled: true
+        algorithm: "gzip"
+        min_size: 1024
+      invalidate_on:
+        - "entity_create"
+        - "entity_delete"
+        - "batch_update"
+      vary_by:
+        - "type"
+        - "q"
+        - "limit"
+        - "offset"
+      tags:
+        - "ngsi-ld"
+        - "list"
+    
+    # SPARQL queries - longer TTL, knowledge graph queries
+    - name: "sparql_query"
+      pattern: "/sparql?query=*"
+      pattern_type: "glob"
+      ttl: 600  # 10 minutes
+      max_size: "10MB"
+      compression:
+        enabled: true
+        algorithm: "gzip"
+        min_size: 2048
+      invalidate_on:
+        - "triple_insert"
+        - "triple_delete"
+        - "graph_update"
+      vary_by:
+        - "query"
+        - "format"
+      tags:
+        - "sparql"
+        - "query"
+    
+    # Camera entities - short TTL with warming
+    - name: "camera_entities"
+      pattern: "/ngsi-ld/v1/entities?type=Camera*"
+      pattern_type: "glob"
+      ttl: 60  # 1 minute
+      max_size: "5MB"
+      compression:
+        enabled: true
+        algorithm: "gzip"
+        min_size: 1024
+      warming:
+        enabled: true
+        schedule: "*/5 * * * *"  # every 5 minutes
+        priority: "high"
+      invalidate_on:
+        - "camera_update"
+        - "camera_create"
+        - "camera_delete"
+      tags:
+        - "camera"
+        - "sensor"
+    
+    # Sensor data - very short TTL, real-time data
+    - name: "sensor_data"
+      pattern: "/ngsi-ld/v1/entities?type=Sensor*"
+      pattern_type: "glob"
+      ttl: 30  # 30 seconds
+      max_size: "3MB"
+      compression:
+        enabled: true
+        algorithm: "gzip"
+        min_size: 512
+      warming:
+        enabled: true
+        schedule: "*/2 * * * *"  # every 2 minutes
+        priority: "high"
+      invalidate_on:
+        - "sensor_update"
+        - "observation_create"
+      tags:
+        - "sensor"
+        - "realtime"
+    
+    # Health check - short TTL, enable compression for efficiency
+    - name: "health_check"
+      pattern: "/health"
+      pattern_type: "exact"
+      ttl: 10  # 10 seconds
+      max_size: "100KB"
+      compression:
+        enabled: true  # ✅ ENABLED - Health check compression active
+      tags:
+        - "monitoring"
+    
+    # Metrics endpoint - short TTL, enable compression
+    - name: "metrics"
+      pattern: "/metrics"
+      pattern_type: "exact"
+      ttl: 30  # 30 seconds
+      max_size: "1MB"
+      compression:
+        enabled: true  # ✅ ENABLED - Metrics compression active
+      tags:
+        - "monitoring"
+    
+    # SPARQL construct queries - longer TTL
+    - name: "sparql_construct"
+      pattern: "/sparql?query=*CONSTRUCT*"
+      pattern_type: "glob"
+      ttl: 900  # 15 minutes
+      max_size: "20MB"
+      compression:
+        enabled: true
+        algorithm: "gzip"
+        min_size: 2048
+      invalidate_on:
+        - "triple_insert"
+        - "triple_delete"
+      tags:
+        - "sparql"
+        - "construct"
+    
+    # Admin API - minimal caching for safety
+    - name: "admin_api"
+      pattern: "/admin/*"
+      pattern_type: "glob"
+      ttl: 10  # 10 seconds minimal cache
+      enabled: true  # ✅ ENABLED - Admin API cache now active
+    
+    # Default fallback policy
+    - name: "default"
+      pattern: "/*"
+      pattern_type: "glob"
+      ttl: 120  # 2 minutes
+      max_size: "5MB"
+      compression:
+        enabled: true
+        algorithm: "gzip"
+        min_size: 1024
+      tags:
+        - "default"
+  
+  # Cache warming configuration - preload hot data
+  warming:
+    enabled: true
+    on_startup: true
+    interval: 300  # seconds (5 minutes)
+    max_concurrent: 5
+    timeout: 10  # seconds per request
+    retry:
+      enabled: true
+      max_attempts: 3
+      backoff_factor: 2
+    
+    # URLs to preload
+    urls:
+      - url: "/ngsi-ld/v1/entities?type=Camera&limit=100"
+        priority: "high"
+        schedule: "*/5 * * * *"  # every 5 minutes
+        headers:
+          Accept: "application/ld+json"
+      
+      - url: "/ngsi-ld/v1/entities?type=Sensor&limit=100"
+        priority: "high"
+        schedule: "*/2 * * * *"  # every 2 minutes
+        headers:
+          Accept: "application/ld+json"
+      
+      - url: "/sparql?query=SELECT+*+WHERE+{+?s+a+sosa:Sensor+}+LIMIT+100"
+        priority: "medium"
+        schedule: "*/10 * * * *"  # every 10 minutes
+        headers:
+          Accept: "application/sparql-results+json"
+      
+      - url: "/sparql?query=SELECT+*+WHERE+{+?s+a+geo:Feature+}+LIMIT+100"
+        priority: "medium"
+        schedule: "*/10 * * * *"  # every 10 minutes
+        headers:
+          Accept: "application/sparql-results+json"
+      
+      - url: "/ngsi-ld/v1/entities?type=Building&limit=50"
+        priority: "low"
+        schedule: "*/15 * * * *"  # every 15 minutes
+        headers:
+          Accept: "application/ld+json"
+  
+  # Cache invalidation strategies
+  invalidation:
+    enabled: true
+    
+    strategies:
+      # Webhook-based invalidation (external triggers)
+      - type: "webhook"
+        name: "stellio_webhook"
+        enabled: true
+        endpoint: "/cache/invalidate"
+        authentication:
+          type: "api_key"
+          header: "X-Webhook-Secret"
+          secret: "${WEBHOOK_SECRET:-change-this-secret}"
+        events:
+          - event: "entity_update"
+            invalidate_patterns:
+              - "/ngsi-ld/v1/entities/{entity_id}"
+              - "/ngsi-ld/v1/entities?type={entity_type}*"
+          
+          - event: "entity_delete"
+            invalidate_patterns:
+              - "/ngsi-ld/v1/entities/{entity_id}"
+              - "/ngsi-ld/v1/entities?type={entity_type}*"
+          
+          - event: "entity_create"
+            invalidate_patterns:
+              - "/ngsi-ld/v1/entities?type={entity_type}*"
+          
+          - event: "batch_update"
+            invalidate_patterns:
+              - "/ngsi-ld/v1/entities?*"
+      
+      # Time-based invalidation (check TTL)
+      - type: "time_based"
+        name: "ttl_check"
+        enabled: true
+        check_interval: 60  # seconds
+        batch_size: 1000
+      
+      # Tag-based invalidation (invalidate by tags)
+      - type: "tag_based"
+        name: "tag_invalidation"
+        enabled: true
+        endpoint: "/cache/invalidate/tag"
+        authentication:
+          type: "api_key"
+          header: "X-Webhook-Secret"
+          secret: "${WEBHOOK_SECRET:-change-this-secret}"
+      
+      # Pattern-based invalidation (invalidate by pattern)
+      - type: "pattern_based"
+        name: "pattern_invalidation"
+        enabled: true
+        endpoint: "/cache/invalidate/pattern"
+        authentication:
+          type: "api_key"
+          header: "X-Webhook-Secret"
+          secret: "${WEBHOOK_SECRET:-change-this-secret}"
+  
+  # Memory management and eviction
+  memory:
+    max_memory: "512MB"
+    eviction_policy: "allkeys-lru"  # LRU eviction when memory full
+    max_keys: 10000
+    warning_threshold: 0.8  # warn at 80% memory
+    cleanup_interval: 300  # seconds (5 minutes)
+    
+  # Monitoring and statistics
+  monitoring:
+    enabled: true
+    interval: 60  # seconds
+    
+    metrics:
+      - name: "hit_rate"
+        enabled: true
+      
+      - name: "miss_rate"
+        enabled: true
+      
+      - name: "memory_usage"
+        enabled: true
+      
+      - name: "eviction_count"
+        enabled: true
+      
+      - name: "keys_count"
+        enabled: true
+      
+      - name: "request_count"
+        enabled: true
+      
+      - name: "avg_latency"
+        enabled: true
+      
+      - name: "compression_ratio"
+        enabled: true
+    
+    # Export metrics endpoint
+    export:
+      enabled: true
+      format: "json"
+      endpoint: "/cache/metrics"
+      authentication:
+        type: "api_key"
+        header: "X-API-Key"
+    
+    # Alerting thresholds
+    alerts:
+      - metric: "hit_rate"
+        condition: "below"
+        threshold: 0.5
+        severity: "warning"
+      
+      - metric: "memory_usage"
+        condition: "above"
+        threshold: 0.9
+        severity: "critical"
+      
+      - metric: "eviction_count"
+        condition: "above"
+        threshold: 1000
+        window: 300  # seconds
+        severity: "warning"
+  
+  # Logging configuration
+  logging:
+    level: "${LOG_LEVEL:-INFO}"
+    format: "json"
+    include_keys: true
+    include_ttl: true
+    include_hit_status: true
+    file: "logs/cache_manager.log"
+    max_bytes: 10485760  # 10MB
+    backup_count: 5
+  
+  # Server configuration for cache manager API
+  server:
+    host: "0.0.0.0"
+    port: 9092
+    workers: 2
+    debug: false
+    reload: false
