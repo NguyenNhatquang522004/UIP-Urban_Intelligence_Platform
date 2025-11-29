@@ -1,0 +1,13 @@
+{
+    "origin": {
+        "lat": 10.772222,
+        "lng": 106.698889
+    },
+    "destination": {
+        "lat": 10.823889,
+        "lng": 106.629722
+    },
+    "preferences": {
+        "fastest": true
+    }
+}
