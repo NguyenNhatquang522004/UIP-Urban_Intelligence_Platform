@@ -3,7 +3,7 @@
 Module: src.agents.analytics
 Author: nguyễn Nhật Quang
 Created: 2025-11-21
-License: AGPL-3.0
+License: MIT (AGPL-3.0 for CV module)
 Description:
     Analytical processing agents for traffic monitoring including
     computer vision analysis, accident detection, congestion detection,

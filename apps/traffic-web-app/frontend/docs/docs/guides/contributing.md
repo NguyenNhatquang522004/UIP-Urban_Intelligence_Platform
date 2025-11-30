@@ -443,7 +443,7 @@ Follow Semantic Versioning (SemVer):
 Update CHANGELOG.md with:
 
 ```markdown
-## [1.2.0] - 2024-01-15
+## [1.2.0] - 2025-11-20
 
 ### Added
 - New weather-traffic correlation agent
