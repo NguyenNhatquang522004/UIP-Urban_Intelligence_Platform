@@ -1,5 +1,7 @@
 #Author: nguyễn Nhật Quang
 #Created: 2025-11-21
+#Version: 1.0.0
+# Description: Configuration file for congestion detection agent
 congestion_detection:
   thresholds:
     occupancy: 0.7
@@ -24,6 +26,9 @@ congestion_detection:
     user: "stellio"
     password: "stellio_test"
   
+  # Camera enriched file for index->code mapping
+  camera_enriched_file: "data/cameras_enriched.json"
+  
   alert:
     enabled: true
     notify_on_change: true  # only when false→true
@@ -42,3 +47,4 @@ congestion_detection:
     format: "json"
     pretty_print: true
     include_timestamp: true
+
