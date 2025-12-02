@@ -6,7 +6,6 @@ on:
 
 permissions:
   contents: read
-  pull-requests: write
 
 jobs:
   dependency-review:
@@ -15,20 +14,37 @@ jobs:
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Dependency Review
-        uses: actions/dependency-review-action@v3
+        uses: actions/dependency-review-action@v4
         with:
-          # Fail the build if there are vulnerabilities
+          # Fail on moderate+ vulnerabilities
           fail-on-severity: moderate
-          # Comment on PR with results
-          comment-summary-in-pr: true
-          # Allow licenses
-          allow-licenses: MIT, Apache-2.0, BSD-2-Clause, BSD-3-Clause, ISC, GPL-3.0
-          # Deny licenses
-          deny-licenses: AGPL-3.0, LGPL-2.0, LGPL-2.1
-          # Vulnerability check
-          vulnerability-check: true
-          # License check
-          license-check: true
+          
+          # Comment results on PR
+          comment-summary-in-pr: always
+          
+          # CRITICAL: Only check runtime dependencies
+          # Dev/test tools (webpack, jest, etc.) are excluded
+          fail-on-scopes: runtime
+          
+          # BLACKLIST: Block all copyleft/viral licenses
+          # This project is MIT-licensed and must remain MIT-compatible
+          deny-licenses: >-
+            AGPL-1.0-only, AGPL-1.0-or-later,
+            AGPL-3.0-only, AGPL-3.0-or-later,
+            GPL-1.0-only, GPL-1.0-or-later,
+            GPL-2.0-only, GPL-2.0-or-later,
+            GPL-3.0-only, GPL-3.0-or-later,
+            LGPL-2.0-only, LGPL-2.0-or-later,
+            LGPL-2.1-only, LGPL-2.1-or-later,
+            LGPL-3.0-only, LGPL-3.0-or-later,
+            MPL-1.0, MPL-1.1, MPL-2.0,
+            CC-BY-SA-4.0, CC-BY-NC-4.0, CC-BY-NC-SA-4.0,
+            SSPL-1.0, BUSL-1.1,
+            OSL-3.0, EUPL-1.2
+          
+          # Note: Using deny-licenses (blacklist) instead of allow-licenses
+          # This allows permissive licenses like MIT, Apache-2.0, BSD, ISC,
+          # Unlicense, WTFPL, 0BSD, CC0-1.0, etc. while blocking copyleft
