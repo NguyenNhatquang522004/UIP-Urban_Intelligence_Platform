@@ -270,7 +270,7 @@ GET /accidents/{accident_id}
   "injuries": 0,
   "description": "Two-vehicle collision at intersection",
   "detection": {
-    "model": "YOLOv8x",
+    "model": "YOLOX-X",
     "confidence": 0.92,
     "bounding_boxes": [...]
   },

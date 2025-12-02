@@ -36,8 +36,8 @@ const config: Config = {
                 docs: {
                     sidebarPath: './sidebars.ts',
                     editUrl: 'https://github.com/your-org/builder-layer-end/tree/main/',
-                    showLastUpdateTime: true,
-                    showLastUpdateAuthor: true,
+                    showLastUpdateTime: false,
+                    showLastUpdateAuthor: false,
                 },
                 blog: {
                     showReadingTime: true,
@@ -113,16 +113,16 @@ const config: Config = {
                     title: 'Components',
                     items: [
                         {
-                            label: 'Python Orchestrator',
-                            to: '/docs/backend/orchestrator',
+                            label: 'Agent System',
+                            to: '/docs/agents/overview',
                         },
                         {
                             label: 'Frontend React App',
                             to: '/docs/frontend/overview',
                         },
                         {
-                            label: 'Agent System',
-                            to: '/docs/agents/overview',
+                            label: 'API Reference',
+                            to: '/docs/api/complete-api-reference',
                         },
                     ],
                 },
@@ -147,25 +147,27 @@ const config: Config = {
             darkTheme: prismThemes.dracula,
             additionalLanguages: ['python', 'typescript', 'yaml', 'bash', 'docker', 'nginx'],
         },
-        algolia: {
-            appId: 'YOUR_APP_ID',
-            apiKey: 'YOUR_SEARCH_API_KEY',
-            indexName: 'your_index_name',
-            contextualSearch: true,
-        },
+        // Disable Algolia search for now (comment out if not configured)
+        // algolia: {
+        //     appId: 'YOUR_APP_ID',
+        //     apiKey: 'YOUR_SEARCH_API_KEY',
+        //     indexName: 'your_index_name',
+        //     contextualSearch: true,
+        // },
     } satisfies Preset.ThemeConfig,
 
-    plugins: [
-        [
-            '@docusaurus/plugin-content-docs',
-            {
-                id: 'api',
-                path: 'api',
-                routeBasePath: 'api',
-                sidebarPath: require.resolve('./sidebarsApi.ts'),
-            },
-        ],
-    ],
+    // Remove duplicate plugin - api docs are in main docs folder
+    // plugins: [
+    //     [
+    //         '@docusaurus/plugin-content-docs',
+    //         {
+    //             id: 'api',
+    //             path: 'api',
+    //             routeBasePath: 'api',
+    //             sidebarPath: require.resolve('./sidebarsApi.ts'),
+    //         },
+    //     ],
+    // ],
 };
 
 export default config;

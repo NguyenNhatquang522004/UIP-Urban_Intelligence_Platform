@@ -1,0 +1,97 @@
+Builder-Layer-End - Traffic LOD Pipeline
+Copyright (c) 2024-2025 Traffic LOD Pipeline Project Contributors
+
+SPDX-License-Identifier: MIT
+
+This project is licensed under the MIT License.
+
+For the full license text, see:
+- LICENSE (MIT License full text)
+
+================================================================================
+                           LICENSING INFORMATION
+================================================================================
+
+This entire project is licensed under MIT License.
+
+The MIT License was chosen to maximize compatibility and allow free commercial
+and non-commercial use. All core dependencies use permissive licenses 
+(MIT, Apache-2.0, BSD) that are compatible with MIT.
+
+Key Computer Vision Dependencies:
+  - YOLOX (Apache-2.0) - Object detection (vehicle, pedestrian)
+  - DETR (Apache-2.0) - Accident detection via HuggingFace Transformers
+  - PyTorch (BSD-style) - Deep learning framework
+
+================================================================================
+                        THIRD-PARTY LICENSES
+================================================================================
+
+This project uses the following third-party libraries:
+
+YOLOX by Megvii
+  License: Apache-2.0
+  Website: https://github.com/Megvii-BaseDetection/YOLOX
+  Note: Used for vehicle and pedestrian detection
+
+DETR Traffic Accident Detection
+  License: Apache-2.0
+  Model: hilmantm/detr-traffic-accident-detection
+  Website: https://huggingface.co/hilmantm/detr-traffic-accident-detection
+  Note: Used for accident detection
+
+HuggingFace Transformers
+  License: Apache-2.0
+  Website: https://github.com/huggingface/transformers
+  Note: Used to load and run DETR model
+
+PyTorch / TorchVision
+  License: BSD-3-Clause
+  Website: https://pytorch.org
+
+OpenCV
+  License: Apache-2.0 / BSD
+  Website: https://opencv.org
+
+Neo4j Python Driver
+  License: Apache-2.0
+  Website: https://neo4j.com
+
+Apache Jena Fuseki
+  License: Apache-2.0
+  Website: https://jena.apache.org
+
+Stellio Context Broker
+  License: Apache-2.0
+  Website: https://stellio.io
+
+FastAPI
+  License: MIT
+  Website: https://fastapi.tiangolo.com
+
+RDFLib
+  License: BSD-3-Clause
+  Website: https://rdflib.readthedocs.io
+
+Other Python Dependencies
+  See requirements/*.txt for individual package licenses
+  All dependencies are compatible with MIT.
+
+================================================================================
+                           COMMERCIAL USE
+================================================================================
+
+This software is licensed under MIT License, which allows:
+
+1. Commercial use: You may use this software for commercial purposes.
+
+2. Modification: You may modify the source code as needed.
+
+3. Distribution: You may distribute the software, including modified versions.
+
+4. Private use: You may use the software for private purposes.
+
+MIT License only requires that the copyright notice and permission notice
+be included in all copies or substantial portions of the software.
+
+For questions about licensing, please contact the project maintainers.

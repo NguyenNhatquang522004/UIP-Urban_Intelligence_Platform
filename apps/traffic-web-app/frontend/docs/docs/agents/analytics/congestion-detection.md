@@ -281,11 +281,11 @@ class CongestionPrediction:
 
 | Level | Speed (km/h) | Density (veh/km) | Flow (veh/h) | Description |
 |-------|--------------|------------------|--------------|-------------|
-| Free-Flow | 35-40 | <15 | 400-500 | Smooth traffic flow |
+| Free-Flow | 35-40 | \<15 | 400-500 | Smooth traffic flow |
 | Light | 25-35 | 15-30 | 300-400 | Minor delays |
 | Moderate | 15-25 | 30-50 | 200-300 | Noticeable congestion |
 | Heavy | 5-15 | 50-80 | 100-200 | Significant delays |
-| Gridlock | 0-5 | >80 | <100 | Severe congestion |
+| Gridlock | 0-5 | \>80 | \<100 | Severe congestion |
 
 ### Congestion Index Calculation
 
@@ -545,4 +545,4 @@ agent.retrain_prediction_model(
 
 ## License
 
-MIT License - See [LICENSE](../../../LICENSE) for details.
+MIT License - See [LICENSE](../LICENSE) for details.

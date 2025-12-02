@@ -81,10 +81,10 @@ graph TB
 
 | Technology | Version | Purpose |
 |------------|---------|----------|
-| **YOLOv8x** | 8.0 | Object detection |
+| **YOLOX-X** | 0.3+ | Object detection |
 | **OpenCV** | 4.8 | Image processing |
 | **PyTorch** | 2.1 | Deep learning |
-| **Ultralytics** | 8.0 | YOLO framework |
+| **YOLOX** | 0.3+ | Vehicle detection framework |
 
 ### Data Infrastructure
 
@@ -178,7 +178,7 @@ sequenceDiagram
     participant Camera as Camera APIs
     participant Collector as CameraImageFetchAgent
     participant Redis as Redis Cache
-    participant CV as YOLOv8 Model
+    participant CV as YOLOX Model
     participant Analyzer as AccidentDetectionAgent
     participant Neo4j as Neo4j DB
     

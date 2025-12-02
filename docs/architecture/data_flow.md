@@ -27,7 +27,7 @@ cameras = load_cameras("data/cameras_raw.json")  # 100 cameras
 
 ### Phase 2: Analytics (120s, 50KB)
 ```python
-# AccidentDetectionAgent (YOLOv8, 2s/image)
+# AccidentDetectionAgent (YOLOX, 2s/image)
 detections = detect_accidents(images)
 # Output: [{"camera_id": "CAM001", "type": "accident", "confidence": 0.92}]
 ```

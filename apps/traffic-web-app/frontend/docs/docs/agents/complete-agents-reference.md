@@ -74,14 +74,14 @@ Comprehensive documentation for all 30+ agents in the HCMC Traffic Management Sy
 ## Camera Image Fetch Agent
 
 ### Overview
-Fetches images from 150+ traffic cameras across HCMC, processes with YOLOv8x for vehicle detection, and implements multi-tier caching for performance optimization.
+Fetches images from 150+ traffic cameras across HCMC, processes with YOLOX-X for vehicle detection, and implements multi-tier caching for performance optimization.
 
 ### Features
 - **Multi-Camera Support**: Parallel processing of 150+ cameras
 - **Caching Strategy**: 3-tier (Memory → Redis → MongoDB)
 - **Image Processing**: Automatic resizing, normalization, quality checks
 - **Error Handling**: Retry logic, fallback mechanisms, circuit breaker
-- **CV Integration**: YOLOv8x vehicle detection preprocessing
+- **CV Integration**: YOLOX-X vehicle detection preprocessing
 - **Scheduling**: Configurable fetch intervals (1s - 60s)
 
 ### Architecture
@@ -93,7 +93,7 @@ graph TB
     C -->|Hit| D[Return Cached]
     C -->|Miss| E[Fetch Image]
     E --> F[Process Image]
-    F --> G[YOLOv8 Detection]
+    F --> G[YOLOX Detection]
     G --> H[Update Caches]
     H --> I[Memory Cache]
     H --> J[Redis Cache]
@@ -126,8 +126,8 @@ camera_image_fetch:
     mongo_ttl: 86400
     max_memory_items: 1000
     
-  yolov8:
-    model_path: "yolov8x.pt"
+  yolox:
+    model_path: "yolox_x.pt"
     confidence: 0.5
     iou: 0.45
     device: "cuda"
@@ -309,10 +309,10 @@ health = agent.get_health_recommendations(aqi_data.aqi)
 ## Accident Detection Agent
 
 ### Overview
-Real-time accident detection using YOLOv8x computer vision model with 4-level severity classification and automatic emergency response triggers.
+Real-time accident detection using YOLOX-X computer vision model with 4-level severity classification and automatic emergency response triggers.
 
 ### Features
-- **YOLOv8x Detection**: 95%+ accuracy accident detection
+- **YOLOX-X Detection**: 95%+ accuracy accident detection
 - **Severity Classification**: Minor, Moderate, Severe, Critical
 - **Real-time Alerts**: Sub-second emergency notifications
 - **Multi-Camera Fusion**: Cross-camera validation
@@ -323,7 +323,7 @@ Real-time accident detection using YOLOv8x computer vision model with 4-level se
 
 ```mermaid
 graph TB
-    A[Camera Feed] --> B[YOLOv8x Model]
+    A[Camera Feed] --> B[YOLOX-X Model]
     B --> C[Accident Classifier]
     C --> D{Severity}
     D -->|Minor| E[Log Event]
@@ -341,8 +341,8 @@ graph TB
 accident_detection:
   enabled: true
   
-  yolov8:
-    model_path: "yolov8x.pt"
+  yolox:
+    model_path: "yolox_x.pt"
     confidence_threshold: 0.75
     iou_threshold: 0.45
     classes: [2, 3, 5, 7]  # car, motorcycle, bus, truck
@@ -546,7 +546,7 @@ zones = agent.get_all_zones_status()
 ## Computer Vision Analysis Agent
 
 ### Overview
-Advanced computer vision for vehicle detection, classification, speed estimation, and lane monitoring using YOLOv8x and tracking algorithms.
+Advanced computer vision for vehicle detection, classification, speed estimation, and lane monitoring using YOLOX-X and tracking algorithms.
 
 ### Features
 - **Vehicle Detection**: Cars, motorcycles, trucks, buses
@@ -563,8 +563,8 @@ Advanced computer vision for vehicle detection, classification, speed estimation
 cv_analysis:
   enabled: true
   
-  yolov8:
-    model: "yolov8x.pt"
+  yolox:
+    model: "yolox_x.pt"
     confidence: 0.6
     iou: 0.45
     
@@ -1957,7 +1957,7 @@ agent.batch_publish(entities, topic="traffic.flow")
 
 ## License
 
-MIT License - See [LICENSE](../../LICENSE) for details.
+MIT License - See [LICENSE](../LICENSE) for details.
 
 ---
 

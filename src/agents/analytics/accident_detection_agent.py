@@ -64,6 +64,8 @@ from typing import Any, Dict, List, Optional, Tuple
 import requests
 import yaml
 
+from src.core.config_loader import expand_env_var
+
 # MongoDB integration (optional)
 try:
     from src.utils.mongodb_helper import get_mongodb_helper
@@ -99,6 +101,9 @@ class AccidentConfig:
         
         with open(self.config_path, 'r', encoding='utf-8') as f:
             self.config = yaml.safe_load(f)
+        
+        # Expand environment variables like ${STELLIO_URL:-default}
+        self.config = expand_env_var(self.config)
         
         if 'accident_detection' not in self.config:
             raise ValueError("Config must have 'accident_detection' section")

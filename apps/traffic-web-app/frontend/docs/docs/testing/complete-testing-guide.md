@@ -192,16 +192,18 @@ from agents.accident_detection import AccidentDetectionAgent
 
 @pytest.fixture
 def yolo_model_mock():
-    """Mock YOLOv8 model."""
+    """Mock YOLOX model."""
     model = Mock()
     model.predict = Mock(return_value=[Mock(boxes=Mock(xyxy=np.array([[100, 100, 200, 200]])))])
     return model
 
 @pytest.fixture
 def detection_agent(yolo_model_mock):
-    """Create accident detection agent."""
-    with patch('ultralytics.YOLO', return_value=yolo_model_mock):
-        agent = AccidentDetectionAgent(model_path="yolov8x.pt")
+    """Create accident detection agent with YOLOX."""
+    # Using YOLOX model - mock the exp.get_model() call
+    with patch('yolox.exp.get_exp') as mock_get_exp:
+        mock_get_exp.return_value.get_model.return_value = yolo_model_mock
+        agent = AccidentDetectionAgent()
     return agent
 
 class TestAccidentDetectionAgent:
@@ -889,4 +891,4 @@ repos:
 
 ## License
 
-MIT License - See [LICENSE](../../LICENSE) for details.
+MIT License - See [LICENSE](../LICENSE) for details.

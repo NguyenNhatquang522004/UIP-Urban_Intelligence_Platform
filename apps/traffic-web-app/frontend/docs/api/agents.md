@@ -42,7 +42,7 @@ from src.agents.analytics.accident_detection_agent import AccidentDetectionAgent
 
 agent = AccidentDetectionAgent(config={
     "enabled": True,
-    "model_path": "yolov8x.pt",
+    "model_path": "yolox_x.pt",
     "confidence_threshold": 0.6
 })
 

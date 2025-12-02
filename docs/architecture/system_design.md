@@ -32,7 +32,7 @@ Multi-agent traffic monitoring system using NGSI-LD, Semantic Web, and microserv
 
 ### 1. Agent Layer (8 Categories)
 - **Data Collection**: ImageRefreshAgent (cameras), ExternalDataCollectorAgent
-- **Analytics**: AccidentDetectionAgent (YOLOv8), CongestionDetectionAgent, PatternRecognitionAgent
+- **Analytics**: AccidentDetectionAgent (YOLOX), CongestionDetectionAgent, PatternRecognitionAgent
 - **Context**: EntityPublisherAgent, StateUpdaterAgent, StellioStateQueryAgent
 - **Transformation**: NGSILDTransformerAgent, SOSAMapperAgent
 - **RDF**: TriplestoreLoaderAgent, SmartDataModelsValidationAgent
@@ -83,7 +83,7 @@ WebhookNotificationHandler stops after 5 failures.
 | Component | Throughput | Latency | Bottleneck |
 |-----------|------------|---------|------------|
 | ImageRefreshAgent | 100 cam/min | 600ms | Network I/O |
-| AccidentDetectionAgent | 30 img/min | 2s | YOLOv8 |
+| AccidentDetectionAgent | 30 img/min | 2s | YOLOX |
 | Stellio Publish | 500 ent/min | 120ms | PostgreSQL |
 | Neo4j Query | 1000 q/min | 60ms | Index lookup |
 | Redis Cache | 10000 ops/s | 1ms | Network |

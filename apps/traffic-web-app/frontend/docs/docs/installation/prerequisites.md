@@ -22,7 +22,7 @@ Before installing the HCMC Traffic Monitoring System, ensure your system meets t
 - **RAM**: 32 GB+
 - **Storage**: 500 GB SSD (or distributed storage)
 - **Network**: 1 Gbps+ dedicated connection
-- **GPU** (Optional): NVIDIA GPU with CUDA 11.7+ for YOLOv8 acceleration
+- **GPU** (Optional): NVIDIA GPU with CUDA 11.7+ for YOLOX acceleration
   - Recommended: NVIDIA Tesla T4, V100, or A100
   - VRAM: 8GB+ for real-time processing
   - Driver: NVIDIA Driver 515+

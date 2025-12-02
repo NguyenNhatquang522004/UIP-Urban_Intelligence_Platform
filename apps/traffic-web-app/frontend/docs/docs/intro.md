@@ -9,7 +9,7 @@ sidebar_position: 1
 <div align="center">
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/python-3.9+-blue.svg)
 ![React](https://img.shields.io/badge/react-18.2-blue.svg)
 ![Docker](https://img.shields.io/badge/docker-24.0+-blue.svg)
@@ -28,7 +28,7 @@ sidebar_position: 1
 The HCMC Traffic Monitoring System is a **production-ready, multi-agent orchestration platform** that:
 
 - 🚦 **Monitors real-time traffic** from 1,000+ camera locations
-- 🤖 **Detects accidents** using YOLOv8 computer vision
+- 🤖 **Detects accidents** using YOLOX computer vision
 - 📊 **Analyzes patterns** with advanced analytics agents
 - 🌐 **Publishes Linked Open Data** following NGSI-LD and SOSA/SSN standards
 - 🗺️ **Visualizes data** on an interactive React + Leaflet map
@@ -107,7 +107,7 @@ npm run dev
 
 ### 🎥 Real-time Camera Monitoring
 - Fetch images from 1,000+ camera locations
-- Process with YOLOv8 for vehicle detection
+- Process with YOLOX for vehicle detection
 - Detect accidents and congestion automatically
 
 ### 🧠 Intelligent Agent System
@@ -130,7 +130,7 @@ npm run dev
 
 ### 📱 Citizen Report System
 - Submit traffic reports with photos
-- Verify reports using YOLOv8
+- Verify reports using YOLOX
 - Track report status
 - Integration with main system
 
@@ -157,7 +157,7 @@ npm run dev
 - **Python 3.9+** - Main orchestrator
 - **FastAPI** - REST API server
 - **AsyncIO** - Asynchronous processing
-- **YOLOv8** - Computer vision
+- **YOLOX** - Computer vision
 
 ### Frontend
 - **React 18.2** - UI framework
@@ -195,7 +195,15 @@ Contributions are welcome! See our [contribution guide](guides/adding-new-agent)
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under **MIT License**.
+
+All components including computer vision modules are MIT licensed.
+
+Computer Vision Stack:
+- **YOLOX** (Apache-2.0) - Vehicle and pedestrian detection
+- **DETR** (Apache-2.0) - Accident detection via HuggingFace Transformers
+
+For more details, see the LICENSE file in the project root.
 
 ---
 

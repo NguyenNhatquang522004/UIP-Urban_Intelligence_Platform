@@ -1,3 +1,9 @@
+---
+sidebar_position: 1
+sidebar_label: 'Overview'
+title: 'Agent System Overview'
+---
+
 # Agent System Overview
 
 The HCMC Traffic Monitoring System is powered by **30+ specialized agents** that work together to collect, process, analyze, and publish traffic data.
@@ -57,7 +63,7 @@ Process and analyze data for insights.
 
 | Agent | Purpose | Frequency | Technology |
 |-------|---------|-----------|------------|
-| **AccidentDetectionAgent** | Detect accidents using YOLOv8x | Real-time | Computer Vision (YOLOv8x) |
+| **AccidentDetectionAgent** | Detect accidents using YOLOX-X | Real-time | Computer Vision (YOLOX-X) |
 | **CongestionAnalysisAgent** | Analyze traffic congestion patterns | Every 2min | Statistical analysis |
 | **PatternRecognitionAgent** | Identify recurring traffic patterns | Hourly | Machine Learning |
 | **CVAnalysisAgent** | Advanced computer vision analysis | Real-time | OpenCV + PyTorch |
@@ -101,11 +107,11 @@ Handle alerts and notifications.
 
 | Agent | Channel | Priority | Latency |
 |-------|---------|----------|----------|
-| **AlertDispatcherAgent** | Email, SMS, Webhook | High | <1s |
-| **EmailNotificationAgent** | SMTP | Medium | <5s |
-| **SMSNotificationAgent** | Twilio API | High | <2s |
-| **WebhookNotificationAgent** | HTTP POST | Medium | <3s |
-| **PushNotificationAgent** | Firebase | High | <1s |
+| **AlertDispatcherAgent** | Email, SMS, Webhook | High | \<1s |
+| **EmailNotificationAgent** | SMTP | Medium | \<5s |
+| **SMSNotificationAgent** | Twilio API | High | \<2s |
+| **WebhookNotificationAgent** | HTTP POST | Medium | \<3s |
+| **PushNotificationAgent** | Firebase | High | \<1s |
 
 ### 7. Graph Database Agents (2 agents)
 
@@ -195,7 +201,7 @@ async def submit_report(report: CitizenReport):
     # Store in MongoDB
     result = await db.citizen_reports.insert_one(report.dict())
     
-    # Verify with YOLOv8 if image provided
+    # Verify with YOLOX if image provided
     if report.image:
         verification = await verify_with_yolo(report.image)
         await db.citizen_reports.update_one(
@@ -217,13 +223,15 @@ Analyze data for insights.
 | **CongestionAnalysisAgent** | Analyze traffic congestion | Vehicle counts | Congestion level (0-100) |
 | **PredictiveAnalyticsAgent** | Forecast future traffic | Time-series data | Predictions with confidence |
 
-**Example: AccidentDetectionAgent (YOLOv8)**
+**Example: AccidentDetectionAgent (YOLOX)**
 ```python
-from ultralytics import YOLO
+from yolox.exp import get_exp
+from yolox.utils import get_model_info
 
 class AccidentDetectionAgent(BaseAgent):
     def __init__(self):
-        self.model = YOLO('yolov8x.pt')
+        self.exp = get_exp(None, "yolox-x")
+        self.model = self.exp.get_model()
     
     async def execute(self, context):
         images = context.get('images', [])
@@ -310,7 +318,7 @@ Manage NGSI-LD context information.
 | **EntityPublisherAgent** | Publish entities to Stellio | Stellio | POST /ngsi-ld/v1/entities |
 | **StellioStateQueryAgent** | Query current state | Stellio | GET /ngsi-ld/v1/entities |
 | **TemporalDataManagerAgent** | Manage temporal attributes | TimescaleDB | INSERT INTO temporal_data |
-| **StateUpdaterAgent** | Update entity states | Stellio | PATCH /ngsi-ld/v1/entities/{id} |
+| **StateUpdaterAgent** | Update entity states | Stellio | PATCH /ngsi-ld/v1/entities/\{id\} |
 
 ### 6. RDF & Linked Data Agents (5 agents)
 

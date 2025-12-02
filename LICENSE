@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2025 Builder Layer - Linked Open Data Agent System
+Copyright (c) 2024 Traffic LOD Pipeline Project Contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,26 +19,44 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
 ================================================================================
-                        DUAL LICENSE NOTICE
+                            THIRD-PARTY LICENSES
 ================================================================================
 
-This project is dual-licensed under MIT and AGPL-3.0:
+This project incorporates or depends on the following third-party software:
 
-1. MIT License (this file) - Applies to most of the codebase
+1. YOLOX (Apache License 2.0)
+   - Copyright (c) 2021 Megvii Inc.
+   - https://github.com/Megvii-BaseDetection/YOLOX
+   - Used for: Object detection (vehicle, pedestrian detection)
 
-2. AGPL-3.0 License (LICENSE-AGPL-3.0) - Applies to computer vision modules
-   that use ultralytics (YOLOv8)
+2. DETR - hilmantm/detr-traffic-accident-detection (Apache License 2.0)
+   - https://huggingface.co/hilmantm/detr-traffic-accident-detection
+   - Used for: Traffic accident detection
 
-Files/modules under AGPL-3.0:
-- src/agents/analytics/cv_analysis_agent.py
-- scripts/start_cv_verification_service.py
-- scripts/run_citizen_verification.py
-- scripts/test_accident_detection.py
-- Any file that imports from the above modules
+3. HuggingFace Transformers (Apache License 2.0)
+   - Copyright (c) 2018 Hugging Face
+   - https://github.com/huggingface/transformers
+   - Used for: Loading and running DETR model
 
-If you use the computer vision features (YOLOv8), your derivative work must
-comply with AGPL-3.0 requirements (source code disclosure, etc.).
+4. PyTorch (BSD-style License)
+   - Copyright (c) Facebook, Inc. and its affiliates
+   - https://github.com/pytorch/pytorch
+   - Used for: Deep learning framework
 
-For commercial use without AGPL-3.0 obligations, obtain an Ultralytics 
-Enterprise License: https://ultralytics.com/license
+5. FastAPI (MIT License)
+   - Copyright (c) Sebastián Ramírez
+   - https://github.com/tiangolo/fastapi
+   - Used for: Web framework
+
+6. RDFLib (BSD 3-Clause License)
+   - https://github.com/RDFLib/rdflib
+   - Used for: RDF/Linked Data processing
+
+For full license texts of third-party dependencies, please refer to:
+- YOLOX: https://github.com/Megvii-BaseDetection/YOLOX/blob/main/LICENSE
+- Transformers: https://github.com/huggingface/transformers/blob/main/LICENSE
+- PyTorch: https://github.com/pytorch/pytorch/blob/main/LICENSE
+- FastAPI: https://github.com/tiangolo/fastapi/blob/master/LICENSE
+- RDFLib: https://github.com/RDFLib/rdflib/blob/main/LICENSE
