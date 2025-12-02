@@ -1,0 +1,125 @@
+#Module: API Gateway Agent
+#Author: nguyễn Nhật Quang
+#Created: 2025-11-29
+#Version: 1.0.0
+# Description: Configuration file for API gateway agent
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          login-client:
+            provider: keycloak
+            client-id: api-gateway
+            client-secret: client-secret
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            scope: openid,profile,email,resource.read
+        provider:
+          keycloak:
+            authorization-uri: http://127.0.0.1:8081/auth/realms/stellio/protocol/openid-connect/auth
+            token-uri: http://127.0.0.1:8081/auth/realms/stellio/protocol/openid-connect/token
+            user-info-uri: http://127.0.0.1:8081/auth/realms/stellio/protocol/openid-connect/userinfo
+            user-name-attribute: sub
+            jwk-set-uri: http://127.0.0.1:8081/auth/realms/stellio/protocol/openid-connect/certs
+  cloud:
+    gateway:
+      routes:
+        # NGSI-LD Entity Operations (search-service)
+        - id: entity_operations
+          uri: http://search-service:8083
+          predicates:
+            - Path=/ngsi-ld/v1/entities/**
+            - Method=GET,POST,PATCH,DELETE
+          filters:
+            - TokenRelay=
+        
+        # NGSI-LD Temporal Operations (search-service)
+        - id: temporal_operations
+          uri: http://search-service:8083
+          predicates:
+            - Path=/ngsi-ld/v1/temporal/**
+            - Method=GET,POST
+          filters:
+            - TokenRelay=
+        
+        # NGSI-LD Types Operations (search-service)
+        - id: types_operations
+          uri: http://search-service:8083
+          predicates:
+            - Path=/ngsi-ld/v1/types/**
+            - Method=GET
+          filters:
+            - TokenRelay=
+        
+        # NGSI-LD Attributes Operations (search-service)
+        - id: attributes_operations
+          uri: http://search-service:8083
+          predicates:
+            - Path=/ngsi-ld/v1/attributes/**
+            - Method=GET
+          filters:
+            - TokenRelay=
+        
+        # NGSI-LD Subscriptions (subscription-service)
+        - id: subscription_operations
+          uri: http://subscription-service:8084
+          predicates:
+            - Path=/ngsi-ld/v1/subscriptions/**
+            - Method=GET,POST,PATCH,DELETE
+          filters:
+            - TokenRelay=
+        
+        # NGSI-LD Context Operations (search-service)
+        - id: context_operations
+          uri: http://search-service:8083
+          predicates:
+            - Path=/ngsi-ld/v1/jsonldContexts/**
+            - Method=GET,POST,DELETE
+          filters:
+            - TokenRelay=
+        
+        # Actuator endpoints
+        - id: entity_service_actuator
+          uri: http://search-service:8083
+          predicates:
+            - Path=/entity-service/actuator/**
+          filters:
+            - TokenRelay=
+            - RewritePath=/entity-service/actuator, /actuator
+        - id: search_service_actuator
+          uri: http://search-service:8083
+          predicates:
+            - Path=/search-service/actuator/**
+          filters:
+            - TokenRelay=
+            - RewritePath=/search-service/actuator, /actuator
+        - id: subscription_service_actuator
+          uri: http://subscription-service:8084
+          predicates:
+            - Path=/subscription-service/actuator/**
+          filters:
+            - TokenRelay=
+            - RewritePath=/subscription-service/actuator, /actuator
+      globalcors:
+        corsConfigurations:
+          '[/ngsi-ld/v1/**]':
+            allowedOrigins: ${APPLICATION_CORS_ALLOWED_ORIGINS:http://localhost:3000}
+            allowedMethods:
+              - GET
+              - POST
+              - PATCH
+              - DELETE
+            allowedHeaders: "*"
+
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    info:
+      enabled: false
+    health:
+      enabled: true
