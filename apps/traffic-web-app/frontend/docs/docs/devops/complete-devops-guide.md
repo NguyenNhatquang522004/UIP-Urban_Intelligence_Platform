@@ -177,7 +177,7 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-### YOLOv8 Detection Service Dockerfile
+### YOLOX Detection Service Dockerfile
 
 ```dockerfile
 FROM pytorch/pytorch:2.0.1-cuda11.7-cudnn8-runtime
@@ -191,11 +191,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
-COPY requirements/yolo.txt requirements.txt
+COPY requirements/base.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Download YOLOv8 model
-RUN python -c "from ultralytics import YOLO; YOLO('yolov8x.pt')"
+# Download YOLOX model and DETR from HuggingFace
+RUN python -c "from transformers import AutoModelForObjectDetection; AutoModelForObjectDetection.from_pretrained('hilmantm/detr-traffic-accident-detection')"
 
 # Copy application code
 COPY agents/accident_detection.py .
@@ -397,12 +397,12 @@ services:
       - ./logs:/app/logs
     restart: unless-stopped
 
-  # YOLOv8 Detection Service
-  yolo-detector:
+  # YOLOX Detection Service
+  yolox-detector:
     build:
       context: .
-      dockerfile: Dockerfile.yolo
-    container_name: traffic-yolo
+      dockerfile: Dockerfile.yolox
+    container_name: traffic-yolox
     runtime: nvidia
     environment:
       CUDA_VISIBLE_DEVICES: 0
@@ -1374,4 +1374,4 @@ spec:
 
 ## License
 
-MIT License - See [LICENSE](../../LICENSE) for details.
+MIT License - See [LICENSE](../LICENSE) for details.

@@ -450,4 +450,4 @@ See [Contributing Guide](../../guides/contributing.md) for information on how to
 
 ## License
 
-MIT License - See [LICENSE](../../../LICENSE) for details.
+MIT License - See [LICENSE](../LICENSE) for details.

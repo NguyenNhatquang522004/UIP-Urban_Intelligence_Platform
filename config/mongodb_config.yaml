@@ -1,0 +1,158 @@
+# MongoDB Configuration for NGSI-LD Entity Storage
+# Module: config.mongodb_config
+#Author: nguyễn Nhật Quang
+#Created: 2025-11-29
+#Version: 1.0.0
+# Purpose:
+#   Configure MongoDB connection and collection settings for storing NGSI-LD entities
+#   Optimize for performance, scalability, and data integrity 
+mongodb:
+  # Connection Settings
+  # Values are read from environment variables first, fallback to defaults
+  connection:
+    host: "${MONGODB_HOST:-mongodb}"  # Docker service name (use 'localhost' for local dev)
+    port: ${MONGODB_PORT:-27017}
+    username: "${MONGODB_USER:-admin}"
+    password: "${MONGODB_PASSWORD:-mongodb_test_pass}"
+    auth_source: "admin"
+    
+    # Connection Pool Settings
+    max_pool_size: 50
+    min_pool_size: 10
+    max_idle_time_ms: 30000  # 30 seconds
+    
+    # Timeout Settings
+    connect_timeout_ms: 5000
+    server_selection_timeout_ms: 5000
+    socket_timeout_ms: 10000
+    
+    # Retry Settings
+    retry_writes: true
+    retry_reads: true
+    
+  # Database Configuration
+  database:
+    name: "ngsi_ld_entities"
+    
+  # Collection Mappings (Entity Type → MongoDB Collection)
+  collections:
+    Camera: "cameras"
+    WeatherObserved: "weather_observations"
+    AirQualityObserved: "air_quality_observations"
+    ItemFlowObserved: "traffic_flow_observations"
+    CitizenObservation: "citizen_observations"
+    RoadAccident: "road_accidents"
+    Alert: "alerts"
+    RoadSegment: "road_segments"
+    
+  # Indexing Configuration
+  indexes:
+    # Common indexes for all collections
+    common:
+      - field: "id"
+        unique: true
+        name: "idx_entity_id"
+      - field: "type"
+        name: "idx_entity_type"
+      - field: "dateObserved.value"
+        name: "idx_date_observed"
+        
+    # Geospatial indexes for location-based queries
+    geospatial:
+      - field: "location.value"
+        type: "2dsphere"
+        name: "idx_geo_location"
+        
+    # Entity-specific indexes
+    cameras:
+      - field: "cameraName.value"
+        name: "idx_camera_name"
+      - field: "status.value"
+        name: "idx_camera_status"
+        
+    traffic_flow_observations:
+      - field: "refCamera.object"
+        name: "idx_ref_camera"
+      - field: "congestionLevel.value"
+        name: "idx_congestion_level"
+      - field: "intensity.value"
+        name: "idx_intensity"
+        
+    citizen_observations:
+      - field: "reportType.value"
+        name: "idx_report_type"
+      - field: "verificationStatus.value"
+        name: "idx_verification_status"
+      - field: "severity.value"
+        name: "idx_severity"
+        
+    road_accidents:
+      - field: "severity.value"
+        name: "idx_accident_severity"
+      - field: "status.value"
+        name: "idx_accident_status"
+      - field: "refCamera.object"
+        name: "idx_accident_ref_camera"
+  
+  # TTL (Time To Live) Settings for automatic data expiration
+  ttl:
+    enabled: true
+    
+    # TTL per collection (in days, 0 = never expire)
+    collections:
+      cameras: 0  # Never expire base camera entities
+      weather_observations: 30  # Keep 30 days
+      air_quality_observations: 30
+      traffic_flow_observations: 7  # Keep 1 week (high volume)
+      citizen_observations: 90  # Keep 3 months
+      road_accidents: 365  # Keep 1 year
+      alerts: 30
+      
+  # Write Concern Settings
+  write_concern:
+    w: 1  # Acknowledged writes (1 = primary only, "majority" = majority of replica set)
+    j: false  # Journal acknowledgement (false for performance, true for durability)
+    wtimeout: 5000  # Write timeout in milliseconds
+    
+  # Read Preference
+  read_preference:
+    mode: "primaryPreferred"  # Read from primary if available, otherwise secondary
+    
+  # Publishing Options
+  publishing:
+    enabled: true  # Global enable/disable switch
+    batch_size: 100  # Batch insert size for performance
+    parallel_collections: true  # Insert to multiple collections in parallel
+    
+    # Retry policy for failed writes
+    retry_policy:
+      max_retries: 3
+      retry_delay_ms: 1000
+      exponential_backoff: true
+      
+    # Error handling
+    on_error: "log_and_continue"  # Options: "log_and_continue", "raise", "ignore"
+    
+  # Monitoring & Logging
+  monitoring:
+    log_operations: true
+    log_slow_queries: true
+    slow_query_threshold_ms: 100
+    
+    # Metrics collection
+    collect_metrics: true
+    metrics_interval_seconds: 60
+    
+  # Advanced Options
+  advanced:
+    # Allow disk use for large aggregation queries
+    allow_disk_use: true
+    
+    # Compression
+    compression: "snappy"  # Options: "snappy", "zlib", "zstd", "none"
+    
+    # SSL/TLS (for production)
+    tls_enabled: false
+    tls_ca_file: null
+    tls_cert_file: null
+    tls_key_file: null

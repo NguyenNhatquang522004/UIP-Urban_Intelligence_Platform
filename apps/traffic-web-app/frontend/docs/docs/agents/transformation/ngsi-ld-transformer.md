@@ -637,4 +637,4 @@ agent.configure_context_loading(
 
 ## License
 
-MIT License - See [LICENSE](../../../LICENSE) for details.
+MIT License - See [LICENSE](../LICENSE) for details.

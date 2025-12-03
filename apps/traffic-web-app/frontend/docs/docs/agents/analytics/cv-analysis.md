@@ -18,7 +18,7 @@ The Computer Vision Analysis Agent provides comprehensive video analytics capabi
 ```mermaid
 graph TB
     A[Video Stream] --> B[Frame Extractor]
-    B --> C[YOLOv8 Detector]
+    B --> C[YOLOX Detector]
     C --> D[Vehicle Tracker]
     D --> E[Classification]
     D --> F[Speed Estimator]
@@ -40,8 +40,8 @@ graph TB
 ```yaml
 cv_analysis:
   detection:
-    model: "yolov8x"
-    weights: "yolov8x.pt"
+    model: "yolox_x"
+    weights: "yolox_x.pth"
     confidence_threshold: 0.5
     iou_threshold: 0.45
     device: "cuda"
@@ -354,7 +354,7 @@ class FlowMetrics:
 | 4 | Bicycle | Small | ~3% |
 | 5 | Pedestrian | N/A | ~2% |
 | 6 | Van | Medium | ~5% |
-| 7 | Emergency | Special | <1% |
+| 7 | Emergency | Special | \<1% |
 
 ## Speed Estimation Methods
 
@@ -559,7 +559,7 @@ Use multiple models for better accuracy:
 
 ```python
 agent.enable_model_ensemble(
-    models=["yolov8x", "yolov8l"],
+    models=["yolox_x", "yolox_l"],
     voting_method="confidence"
 )
 ```
@@ -600,4 +600,4 @@ agent.configure_device(batch_size=1, precision="fp16")
 
 ## License
 
-MIT License - See [LICENSE](../../../LICENSE) for details.
+MIT License - See [LICENSE](../LICENSE) for details.

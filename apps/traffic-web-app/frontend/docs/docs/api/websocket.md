@@ -2,14 +2,14 @@
 
 ## Overview
 
-Real-time WebSocket API for streaming traffic updates, accidents, weather changes, and system alerts with **low latency (<500ms)** and high throughput.
+Real-time WebSocket API for streaming traffic updates, accidents, weather changes, and system alerts with **low latency (\<500ms)** and high throughput.
 
 **Key Features:**
 - 🔄 Real-time streaming updates
 - 🔐 JWT-based authentication
 - 📡 Multi-channel subscriptions
 - 💓 Automatic heartbeat & reconnection
-- ⚡ Latency: <500ms
+- ⚡ Latency: \<500ms
 - 📊 Up to 10 concurrent channels
 
 ## Connection

@@ -630,4 +630,4 @@ agent.enable_deduplication(
 
 ## License
 
-MIT License - See [LICENSE](../../../LICENSE) for details.
+MIT License - See [LICENSE](../LICENSE) for details.

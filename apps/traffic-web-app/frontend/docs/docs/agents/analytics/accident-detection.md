@@ -2,11 +2,11 @@
 
 ## Overview
 
-The Accident Detection Agent uses YOLOv8x computer vision model to analyze camera feeds in real-time, detecting traffic accidents, classifying severity levels, and triggering immediate response workflows.
+The Accident Detection Agent uses YOLOX-X computer vision model to analyze camera feeds in real-time, detecting traffic accidents, classifying severity levels, and triggering immediate response workflows.
 
 ## Features
 
-- **Real-time Detection**: YOLOv8x-based accident detection from camera streams
+- **Real-time Detection**: YOLOX-X-based accident detection from camera streams
 - **Severity Classification**: 4-level severity system (minor, moderate, severe, critical)
 - **Multi-Camera Processing**: Parallel processing of 50+ camera feeds
 - **Incident Verification**: False positive reduction through temporal analysis
@@ -18,7 +18,7 @@ The Accident Detection Agent uses YOLOv8x computer vision model to analyze camer
 ```mermaid
 graph TB
     A[Camera Feeds] --> B[Image Preprocessor]
-    B --> C[YOLOv8x Model]
+    B --> C[YOLOX-X Model]
     C --> D[Accident Detector]
     D --> E{Detected?}
     E -->|Yes| F[Severity Classifier]
@@ -40,8 +40,8 @@ graph TB
 ```yaml
 accident_detection:
   model:
-    type: "yolov8x"
-    weights: "yolov8x.pt"
+    type: "yolox_x"
+    weights: "yolox_x.pt"
     confidence_threshold: 0.65
     device: "cuda"  # cuda, mps, cpu
     
@@ -304,7 +304,7 @@ agent.configure_preprocessing(
 )
 ```
 
-### 2. YOLOv8 Inference
+### 2. YOLOX Inference
 
 ```python
 # Model inference settings
@@ -585,4 +585,4 @@ agent.enable_image_quality_check(min_quality=0.6)
 
 ## License
 
-MIT License - See [LICENSE](../../../LICENSE) for details.
+MIT License - See [LICENSE](../LICENSE) for details.

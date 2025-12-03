@@ -620,4 +620,4 @@ agent.configure_anomaly_detector(contamination=0.05)
 
 ## License
 
-MIT License - See [LICENSE](../../../LICENSE) for details.
+MIT License - See [LICENSE](../LICENSE) for details.

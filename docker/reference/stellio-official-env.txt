@@ -1,0 +1,33 @@
+﻿POSTGRES_PASS=stellio_password
+POSTGRES_USER=stellio
+STELLIO_SEARCH_DB_DATABASE=stellio_search
+STELLIO_SUBSCRIPTION_DB_DATABASE=stellio_subscription
+POSTGRES_DBNAME=${STELLIO_SEARCH_DB_DATABASE},${STELLIO_SUBSCRIPTION_DB_DATABASE}
+
+STELLIO_DOCKER_TAG=latest-dev
+
+STELLIO_AUTHENTICATION_ENABLED=false
+STELLIO_AUTHENTICATION_ALLOW_PUBLIC_PERMISSION=false
+
+ENVIRONMENT=docker
+
+# Used by subscription service when searching entities for recurring subscriptions
+# (those defined with a timeInterval parameter)
+SUBSCRIPTION_ENTITY_SERVICE_URL=http://search-service:8083
+
+# Used as a base URL by subscription service when serving contexts for notifications
+SUBSCRIPTION_STELLIO_URL=http://localhost:8080
+
+# Sample default configuration for the default tenant
+# Please note that issuer parameter is only used when authentication is enabled
+APPLICATION_TENANTS_0_ISSUER=https://sso.eglobalmark.com/auth/realms/stellio
+APPLICATION_TENANTS_0_NAME=urn:ngsi-ld:tenant:default
+APPLICATION_TENANTS_0_DBSCHEMA=public
+
+# Pagination config for query resources endpoints
+APPLICATION_PAGINATION_LIMIT_DEFAULT=30
+APPLICATION_PAGINATION_LIMIT_MAX=100
+APPLICATION_PAGINATION_TEMPORAL_LIMIT=10000
+
+CONTAINER_NAME_PREFIX=
+

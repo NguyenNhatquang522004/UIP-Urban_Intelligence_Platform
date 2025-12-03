@@ -1,6 +1,6 @@
 /**
- * @module docs/README.md
- * @author Nguyễn Nhật Quang
+ * @module docs/README
+ * @author AI Assistant
  * @created 2025-11-27
  * @modified 2025-11-27
  * @version 1.0.0

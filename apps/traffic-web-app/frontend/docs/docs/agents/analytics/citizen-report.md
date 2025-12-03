@@ -21,7 +21,7 @@ graph TB
     B --> C[Citizen Report Agent]
     C --> D[Image Validator]
     C --> E[NLP Analyzer]
-    D --> F[YOLOv8 CV Model]
+    D --> F[YOLOX CV Model]
     E --> G[Sentiment Analysis]
     F --> H{Valid Report?}
     G --> H
@@ -173,7 +173,7 @@ Submit a new citizen report.
 **Parameters:**
 - `user_id` (str): User identifier
 - `description` (str): Text description of traffic condition
-- `location` (dict): Geographic coordinates {lat, lon}
+- `location` (dict): Geographic coordinates `{lat, lon}`
 - `image_path` (str, optional): Path to image file
 - `category` (str, optional): Report category
 
@@ -568,4 +568,4 @@ agent.configure_moderation(
 
 ## License
 
-MIT License - See [LICENSE](../../../LICENSE) for details.
+MIT License - See [LICENSE](../LICENSE) for details.

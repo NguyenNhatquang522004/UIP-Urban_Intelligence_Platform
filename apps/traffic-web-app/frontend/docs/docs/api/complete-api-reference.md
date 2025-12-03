@@ -295,7 +295,7 @@ curl -X GET "https://api.traffic.hcmc.gov.vn/v1/cameras/CAM_001/latest-image" \
       "fatalities": 0,
       "status": "resolved",
       "camera_id": "CAM_001",
-      "detection_method": "yolov8x",
+      "detection_method": "yolox_x",
       "confidence": 0.95,
       "images": [
         "https://storage.traffic.hcmc.gov.vn/accidents/ACC_20240115_001_1.jpg"
@@ -346,7 +346,7 @@ def get_accidents_today(severity=None):
   "fatalities": 0,
   "status": "resolved",
   "camera_id": "CAM_001",
-  "detection_method": "yolov8x",
+  "detection_method": "yolox_x",
   "confidence": 0.95,
   "images": [
     "https://storage.traffic.hcmc.gov.vn/accidents/ACC_20240115_001_1.jpg"
@@ -1560,4 +1560,4 @@ const accidents = await client.accidents.list({
 
 ## License
 
-MIT License - See [LICENSE](../../LICENSE) for details.
+MIT License - See [LICENSE](../LICENSE) for details.

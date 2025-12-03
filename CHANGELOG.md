@@ -34,7 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial release of Builder Layer End LOD pipeline system
 - NGSI-LD entity management and publishing
-- YOLOv8 computer vision integration for traffic analysis
+- YOLOX computer vision integration for traffic analysis
 - RDF triple store publishing with Apache Jena Fuseki
 - Neo4j graph database synchronization
 - Stellio Context Broker integration
@@ -151,7 +151,7 @@ pytest tests/
 
 ### Known Issues
 
-- YOLOv8 model download may take time on first run
+- YOLOX model download may take time on first run
 - Large RDF datasets may require Fuseki memory tuning
 - Neo4j sync agent may experience delays with high entity volume
 

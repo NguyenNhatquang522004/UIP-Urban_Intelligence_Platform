@@ -1,3 +1,9 @@
+---
+sidebar_position: 1
+sidebar_label: 'Overview'
+title: 'Frontend Overview'
+---
+
 # Frontend Overview
 
 The HCMC Traffic Monitoring System frontend is a modern **React 18** application built with **TypeScript** and **Vite**. It provides an interactive, real-time traffic visualization interface.

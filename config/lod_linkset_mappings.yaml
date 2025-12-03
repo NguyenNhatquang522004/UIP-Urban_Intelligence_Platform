@@ -1,0 +1,303 @@
+# LOD Linkset Mapping Configuration
+# Configuration for linking NGSI-LD entities to external LOD Cloud datasets
+# Compliant with OLP 2025 requirements for LOD Cloud integration
+#Module: LOD Linkset Enrichment Agent
+#Author: nguyễn Nhật Quang
+#Created: 2025-11-29
+#Version: 1.0.0
+# Purpose:
+#   Enable automatic enrichment of entities with owl:sameAs relationships
+#   to DBpedia, Wikidata, and GeoNames for LOD Cloud compliance
+
+# Entity Type Configuration
+# Define which LOD sources to use for each NGSI-LD entity type
+entity_types:
+  
+  # Camera entities - Traffic monitoring cameras
+  Camera:
+    enable_geonames: true     # Link to nearest city/place in GeoNames
+    enable_dbpedia: true      # Link to location in DBpedia (if available)
+    enable_wikidata: false    # Disable Wikidata (less relevant for cameras)
+    
+    # Field mappings for entity matching
+    name_field: "cameraName.value"      # Field containing camera name
+    address_field: "address.value"      # Field containing address
+    location_field: "location"          # GeoProperty with coordinates
+    
+    # Matching configuration
+    match_strategy: "geographic"        # Use geographic proximity
+    fallback_strategy: "name"           # Fallback to name matching
+  
+  # CitizenObservation entities - Citizen-reported incidents
+  CitizenObservation:
+    enable_geonames: true     # Link to incident location
+    enable_dbpedia: false     # Not applicable for observations
+    enable_wikidata: false    # Not applicable for observations
+    
+    name_field: "observationType.value"
+    address_field: "location.address.addressLocality.value"
+    location_field: "location"
+    
+    match_strategy: "geographic"
+  
+  # RoadAccident entities - Detected traffic accidents
+  RoadAccident:
+    enable_geonames: true     # Link to accident location
+    enable_dbpedia: true      # Link to location in DBpedia
+    enable_wikidata: false    # Not applicable
+    
+    name_field: "accidentType.value"
+    address_field: "address.value"
+    location_field: "location"
+    
+    match_strategy: "geographic"
+  
+  # ItemFlowObserved entities - Traffic observations
+  ItemFlowObserved:
+    enable_geonames: true     # Link to observation location
+    enable_dbpedia: false     # Not applicable
+    enable_wikidata: false    # Not applicable
+    
+    location_field: "location"
+    match_strategy: "geographic"
+  
+  # Default configuration for unknown types
+  _default:
+    enable_geonames: true
+    enable_dbpedia: false
+    enable_wikidata: false
+    match_strategy: "geographic"
+
+# GeoNames Configuration
+# Default city: Ho Chi Minh City (GeoNames ID: 1566083)
+# Coordinates: 106.6297°E, 10.8231°N
+geonames:
+  # API endpoint and authentication
+  api_base: "http://api.geonames.org"
+  sparql_endpoint: "http://factforge.net/repositories/ff-news"
+  
+  # GeoNames username (replace with your own for production)
+  # Register at: https://www.geonames.org/login
+  username: "demo"  # CHANGE THIS for production use
+  
+  # Search parameters
+  radius_km: 10              # Search radius for nearest place
+  prefer_city: true          # Prefer city/town over smaller places
+  max_results: 1             # Number of results to consider
+  
+  # Feature classes to prioritize (GeoNames classification)
+  # A: Administrative divisions (countries, states, cities)
+  # P: Populated places (cities, towns, villages)
+  # H: Hydrographic features (rivers, lakes)
+  # L: Parks, areas
+  # S: Spots, buildings
+  # T: Mountains, hills
+  # U: Undersea features
+  # V: Vegetation
+  priority_feature_classes:
+    - "P"  # Populated places (highest priority)
+    - "A"  # Administrative divisions
+    - "L"  # Areas/parks
+  
+  # Cache settings
+  cache_enabled: true
+  cache_ttl_hours: 24
+
+# DBpedia Configuration
+dbpedia:
+  # Endpoints
+  sparql_endpoint: "https://dbpedia.org/sparql"
+  lookup_endpoint: "https://lookup.dbpedia.org/api/search"
+  
+  # Language preference (for Vietnamese context)
+  language: "vi"
+  fallback_language: "en"
+  
+  # Type hints for better matching
+  # Maps NGSI-LD entity types to DBpedia ontology classes
+  type_hints:
+    Camera: "Place"           # dbo:Place
+    RoadAccident: "Place"     # dbo:Place or dbo:Event
+    CitizenObservation: "Place"
+  
+  # Matching configuration
+  min_score: 0.7             # Minimum confidence score (0.0-1.0)
+  max_results: 1             # Number of candidate resources
+  
+  # Query timeout
+  timeout_seconds: 5
+  
+  # Cache settings
+  cache_enabled: true
+  cache_ttl_hours: 72        # DBpedia data is more stable
+
+# Wikidata Configuration
+wikidata:
+  # Endpoints
+  sparql_endpoint: "https://query.wikidata.org/sparql"
+  api_endpoint: "https://www.wikidata.org/w/api.php"
+  
+  # Language preference
+  language: "vi"             # Vietnamese
+  fallback_languages:
+    - "en"                   # English
+    - "fr"                   # French (for Vietnamese context)
+  
+  # Entity type mappings to Wikidata classes
+  # Maps NGSI-LD types to Wikidata Q-numbers
+  type_mappings:
+    Camera: "Q2537"          # Q2537 = surveillance camera
+    City: "Q515"             # Q515 = city
+    Place: "Q17334923"       # Q17334923 = location
+  
+  # Search configuration
+  search_limit: 1
+  min_score: 0.8             # Higher threshold for Wikidata
+  
+  # Query timeout
+  timeout_seconds: 5
+  
+  # Cache settings
+  cache_enabled: true
+  cache_ttl_hours: 72
+
+# Output Configuration
+output:
+  # How to add linksets to entities
+  property_name: "sameAs"    # NGSI-LD property name for owl:sameAs
+  
+  # Include metadata about linkset
+  include_metadata: true
+  metadata_fields:
+    - "datasetId"            # Source dataset identifier
+    - "matchScore"           # Confidence score (if available)
+    - "matchedAt"            # Timestamp of matching
+  
+  # Add OWL vocabulary to @context
+  add_owl_context: true
+  owl_context_url: "http://www.w3.org/2002/07/owl#"
+  
+  # Preserve original entity structure
+  preserve_original: true    # Don't modify existing properties
+
+# Performance Configuration
+performance:
+  # Parallel processing
+  enable_parallel: true
+  max_workers: 5             # Number of concurrent API requests
+  
+  # Batch processing
+  batch_size: 50             # Process entities in batches
+  
+  # Rate limiting (to respect API limits)
+  rate_limit:
+    geonames: 1000           # Requests per hour
+    dbpedia: 3000            # Requests per hour
+    wikidata: 5000           # Requests per hour
+  
+  # Retry configuration
+  max_retries: 3
+  retry_delay_seconds: 1
+  
+  # Timeout
+  global_timeout_seconds: 30
+
+# Validation Configuration
+validation:
+  # Validate URIs before adding
+  validate_uris: true
+  
+  # Check if URIs are resolvable
+  check_uri_accessibility: false  # Disable for performance
+  
+  # Validate against NGSI-LD schema
+  validate_ngsi_ld: true
+
+# Logging Configuration
+logging:
+  level: "INFO"              # DEBUG, INFO, WARNING, ERROR
+  log_file: "logs/lod_linkset_enrichment.log"
+  
+  # Log statistics
+  log_stats_interval: 100    # Log progress every N entities
+  
+  # Log successful links
+  log_successful_links: true
+  
+  # Log failed lookups
+  log_failures: true
+
+# LOD Cloud Compliance
+lod_cloud:
+  # Dataset information for LOD Cloud registration
+  dataset_name: "Smart City Vietnam - Traffic Management"
+  dataset_description: "NGSI-LD entities for smart city traffic monitoring in Vietnam"
+  dataset_url: "https://github.com/your-repo/smart-city-vietnam"
+  
+  # License information
+  license: "CC BY 4.0"       # Creative Commons Attribution
+  license_url: "https://creativecommons.org/licenses/by/4.0/"
+  
+  # Dataset statistics (auto-updated)
+  total_entities: 0
+  total_triples: 0
+  
+  # Cross-dataset links (linksets)
+  linksets:
+    - target: "http://sws.geonames.org/"
+      type: "geographic"
+      link_predicate: "owl:sameAs"
+    
+    - target: "http://dbpedia.org/"
+      type: "semantic"
+      link_predicate: "owl:sameAs"
+    
+    - target: "http://www.wikidata.org/"
+      type: "semantic"
+      link_predicate: "owl:sameAs"
+
+# Vietnam-specific Configuration
+vietnam_context:
+  # Major cities and their DBpedia/Wikidata URIs
+  # Pre-configured for better matching accuracy
+  major_cities:
+    "Hà Nội":
+      dbpedia: "http://dbpedia.org/resource/Hanoi"
+      wikidata: "http://www.wikidata.org/entity/Q1858"
+      geonames: "http://sws.geonames.org/1581130/"
+    
+    "Hồ Chí Minh":
+      dbpedia: "http://dbpedia.org/resource/Ho_Chi_Minh_City"
+      wikidata: "http://www.wikidata.org/entity/Q1854"
+      geonames: "http://sws.geonames.org/1580578/"
+    
+    "Đà Nẵng":
+      dbpedia: "http://dbpedia.org/resource/Da_Nang"
+      wikidata: "http://www.wikidata.org/entity/Q7033"
+      geonames: "http://sws.geonames.org/1583992/"
+    
+    "Hải Phòng":
+      dbpedia: "http://dbpedia.org/resource/Haiphong"
+      wikidata: "http://www.wikidata.org/entity/Q37647"
+      geonames: "http://sws.geonames.org/1581349/"
+  
+  # Use city cache for faster lookups
+  use_city_cache: true
+  
+  # Fallback to English names if Vietnamese lookup fails
+  fallback_to_english: true
+
+# Testing and Development
+development:
+  # Enable dry-run mode (don't modify entities)
+  dry_run: false
+  
+  # Limit number of entities for testing
+  max_entities: null         # null = no limit
+  
+  # Mock API responses (for testing without API calls)
+  mock_apis: false
+  
+  # Save intermediate results
+  save_intermediate: false
+  intermediate_dir: "data/linkset_intermediate"

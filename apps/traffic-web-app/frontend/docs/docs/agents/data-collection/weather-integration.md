@@ -248,12 +248,12 @@ class CorrelationAnalysis:
 
 | Weather Condition | Traffic Impact | Speed Reduction | Accident Risk |
 |------------------|----------------|-----------------|---------------|
-| Heavy Rain (>50mm) | High | 30-40% | +150% |
+| Heavy Rain (\>50mm) | High | 30-40% | +150% |
 | Moderate Rain (20-50mm) | Medium | 15-25% | +75% |
-| Light Rain (<20mm) | Low | 5-10% | +25% |
-| Strong Wind (>40km/h) | Medium | 10-20% | +50% |
-| High Temp (>35°C) | Low | 5-10% | +15% |
-| Low Visibility (<1000m) | High | 25-35% | +100% |
+| Light Rain (\<20mm) | Low | 5-10% | +25% |
+| Strong Wind (\>40km/h) | Medium | 10-20% | +50% |
+| High Temp (\>35°C) | Low | 5-10% | +15% |
+| Low Visibility (\<1000m) | High | 25-35% | +100% |
 | Thunderstorm | Very High | 40-50% | +200% |
 
 ### Traffic Recommendations
@@ -480,4 +480,4 @@ agent.enable_multi_source_validation(min_sources=2)
 
 ## License
 
-MIT License - See [LICENSE](../../../LICENSE) for details.
+MIT License - See [LICENSE](../LICENSE) for details.

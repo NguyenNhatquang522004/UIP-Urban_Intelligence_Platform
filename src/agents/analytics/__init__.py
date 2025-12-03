@@ -1,25 +1,26 @@
-<<<<<<< HEAD
 """Analytics Agents Package.
 
 Module: src.agents.analytics
 Author: nguyễn Nhật Quang
 Created: 2025-11-21
-License: MIT (AGPL-3.0 for CV module)
+License: MIT
+
+SPDX-License-Identifier: MIT
+
 Description:
     Analytical processing agents for traffic monitoring including
     computer vision analysis, accident detection, congestion detection,
     and pattern recognition.
 
-License Notice:
-    The cv_analysis_agent module uses ultralytics (YOLOv8) which is licensed
-    under AGPL-3.0. If you use CV features, the AGPL-3.0 license applies.
-    See LICENSE-AGPL-3.0 for full license text.
+Computer Vision Stack:
+    - YOLOX (Apache-2.0) - Vehicle and pedestrian detection
+    - DETR (Apache-2.0) - Accident detection via HuggingFace Transformers
 """
 
 from .cv_analysis_agent import (
     CVAnalysisAgent,
     CVConfig,
-    YOLOv8Detector,
+    YOLOXDetector,
     ImageDownloader,
     MetricsCalculator,
     NGSILDEntityGenerator,
@@ -32,7 +33,7 @@ from .cv_analysis_agent import (
 __all__ = [
     'CVAnalysisAgent',
     'CVConfig',
-    'YOLOv8Detector',
+    'YOLOXDetector',
     'ImageDownloader',
     'MetricsCalculator',
     'NGSILDEntityGenerator',
@@ -41,47 +42,3 @@ __all__ = [
     'TrafficMetrics',
     'DetectionStatus'
 ]
-=======
-"""Analytics Agents Package.
-
-Module: src.agents.analytics
-Author: nguyễn Nhật Quang
-Created: 2025-11-21
-License: AGPL-3.0
-Description:
-    Analytical processing agents for traffic monitoring including
-    computer vision analysis, accident detection, congestion detection,
-    and pattern recognition.
-
-License Notice:
-    The cv_analysis_agent module uses ultralytics (YOLOv8) which is licensed
-    under AGPL-3.0. If you use CV features, the AGPL-3.0 license applies.
-    See LICENSE-AGPL-3.0 for full license text.
-"""
-
-from .cv_analysis_agent import (
-    CVAnalysisAgent,
-    CVConfig,
-    YOLOv8Detector,
-    ImageDownloader,
-    MetricsCalculator,
-    NGSILDEntityGenerator,
-    Detection,
-    ImageAnalysisResult,
-    TrafficMetrics,
-    DetectionStatus
-)
-
-__all__ = [
-    'CVAnalysisAgent',
-    'CVConfig',
-    'YOLOv8Detector',
-    'ImageDownloader',
-    'MetricsCalculator',
-    'NGSILDEntityGenerator',
-    'Detection',
-    'ImageAnalysisResult',
-    'TrafficMetrics',
-    'DetectionStatus'
-]
->>>>>>> main

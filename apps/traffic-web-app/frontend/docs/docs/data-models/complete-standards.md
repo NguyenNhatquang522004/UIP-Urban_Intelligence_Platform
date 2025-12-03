@@ -114,7 +114,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
   },
   "detectionModel": {
     "type": "Property",
-    "value": "YOLOv8x"
+    "value": "YOLOX-X"
   },
   "lastUpdate": {
     "type": "Property",
@@ -218,9 +218,9 @@ Comprehensive documentation for all data models, schemas, and standards used in 
     "type": "Property",
     "value": 0
   },
-  "detectionMethod": {
+  "detectionModel": {
     "type": "Property",
-    "value": "yolov8x"
+    "value": "yolox_x"
   },
   "confidence": {
     "type": "Property",
@@ -743,7 +743,7 @@ traffic:CAM_001
     sosa:isHostedBy traffic:CameraSystem_001 ;
     geo:lat "10.7769"^^xsd:float ;
     geo:long "106.7009"^^xsd:float ;
-    traffic:hasDetectionModel "YOLOv8x" ;
+    traffic:hasDetectionModel "YOLOX-X" ;
     traffic:status "active" .
 
 traffic:CameraSystem_001
@@ -755,7 +755,7 @@ traffic:AccidentDetectionProcedure
     a sosa:Procedure ;
     ssn:hasInput traffic:VideoStream ;
     ssn:hasOutput traffic:AccidentObservation ;
-    traffic:usesAlgorithm "YOLOv8x" ;
+    traffic:usesAlgorithm "YOLOX-X" ;
     traffic:confidence "0.95"^^xsd:float .
 ```
 
@@ -1014,7 +1014,7 @@ class Camera:
     last_update: datetime
     stream_url: Optional[str] = None
     capabilities: List[str] = field(default_factory=list)
-    detection_model: str = "YOLOv8x"
+    detection_model: str = "YOLOX-X"
     statistics: Optional[CameraStatistics] = None
     ref_road: Optional[str] = None
     
@@ -1100,7 +1100,7 @@ class Accident:
     vehicles_involved: int
     injuries: int = 0
     fatalities: int = 0
-    detection_method: str = "yolov8x"
+    detection_method: str = "yolox_x"
     confidence: float = 0.0
     images: List[str] = field(default_factory=list)
     description: Optional[str] = None
@@ -1513,4 +1513,4 @@ export interface AccidentQueryParams {
 
 ## License
 
-MIT License - See [LICENSE](../../LICENSE) for details.
+MIT License - See [LICENSE](../LICENSE) for details.
