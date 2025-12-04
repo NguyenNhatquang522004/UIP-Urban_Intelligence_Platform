@@ -1101,7 +1101,7 @@ class DataQualityValidatorAgent:
         logger.info(f"Validating entity {entity_id} (type: {entity_type})")
 
         # Apply data cleaning if enabled
-        original_entity = entity
+        _original_entity = entity  # noqa: F841 - kept for potential future use
         if auto_clean and self.integration_config.get("auto_fix", True):
             entity = self.data_cleaner.clean(entity)
 
@@ -1309,7 +1309,7 @@ class DataQualityValidatorAgent:
         status = report["status"]
         score = report["quality_score"]
 
-        log_level = self.reporting_config.get("log_level", "INFO")
+        _log_level = self.reporting_config.get("log_level", "INFO")  # noqa: F841
 
         message = f"Entity {entity_id}: {status} " f"(quality_score={score:.3f})"
 

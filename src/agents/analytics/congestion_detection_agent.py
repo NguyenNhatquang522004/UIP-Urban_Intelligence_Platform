@@ -55,7 +55,7 @@ import json
 import logging
 import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from dataclasses import asdict, dataclass, field
+from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
@@ -285,7 +285,7 @@ class CongestionDetector:
         # Determine new congested state considering min_duration and previous state
         prev_state = self.state_store.get(camera_ref)
         prev_congested = bool(prev_state.get("congested", False))
-        first_breach_ts = prev_state.get("first_breach_ts")
+        _first_breach_ts = prev_state.get("first_breach_ts")  # noqa: F841
 
         reason = (
             f"occ={occupancy}, speed={avg_speed}, int={intensity}, logic={self.logic}"
@@ -650,7 +650,7 @@ class CongestionDetectionAgent:
                 logger.error(f"Skipping entity due to evaluation error: {e}")
                 continue
             camera_ref = self.detector._get_camera_ref(entity)
-            prev_state = self.state_store.get(camera_ref)
+            _prev_state = self.state_store.get(camera_ref)  # noqa: F841
 
             # If a first_breach_ts should be initialized or reset based on reasons
             if "started_timer" in (reason or ""):
