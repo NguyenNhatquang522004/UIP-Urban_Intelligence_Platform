@@ -1,25 +1,32 @@
 #!/usr/bin/env python3
-"""
-Computer Vision Analysis Agent
+# -*- coding: utf-8 -*-
+"""Computer Vision Analysis Agent.
 
-Performs object detection and traffic metrics calculation using YOLOX deep learning model.
-Detects vehicles from camera images and generates ItemFlowObserved NGSI-LD entities.
+UIP - Urban Intelligence Platform
+Copyright (C) 2024-2025 UIP Team
 
-Core Features:
-- Asynchronous batch image downloading with connection pooling
-- YOLOX object detection (COCO dataset: cars, motorbikes, buses, trucks)
-- DenseNet-based accident detection (binary classification)
-- Vehicle classification and counting per image
-- Traffic metrics calculation (intensity, occupancy, estimated speed)
-- NGSI-LD ItemFlowObserved entity generation
-- Performance monitoring and error handling
-- Domain-agnostic design via YAML configuration
+SPDX-License-Identifier: MIT
 
 Module: src.agents.analytics.cv_analysis_agent
-Author: nguyễn Nhật Quang
+Project: UIP - Urban Intelligence Platform
+Author: Nguyen Nhat Quang <nguyennhatquang522004@gmail.com>
 Created: 2025-11-21
 Version: 1.0.0
 License: MIT
+
+Description:
+    Performs object detection and traffic metrics calculation using YOLOX deep learning model.
+    Detects vehicles from camera images and generates ItemFlowObserved NGSI-LD entities.
+
+Core Features:
+    - Asynchronous batch image downloading with connection pooling
+    - YOLOX object detection (COCO dataset: cars, motorbikes, buses, trucks)
+    - DenseNet-based accident detection (binary classification)
+    - Vehicle classification and counting per image
+    - Traffic metrics calculation (intensity, occupancy, estimated speed)
+    - NGSI-LD ItemFlowObserved entity generation
+    - Performance monitoring and error handling
+    - Domain-agnostic design via YAML configuration
 
 LICENSE INFORMATION:
     This module uses YOLOX (Apache-2.0) and DenseNet via timm (Apache-2.0).

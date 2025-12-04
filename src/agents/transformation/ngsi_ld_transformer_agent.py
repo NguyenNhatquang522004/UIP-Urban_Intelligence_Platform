@@ -1,27 +1,30 @@
-"""
-NGSI-LD Transformer Agent - Domain-Agnostic Entity Transformation
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""NGSI-LD Transformer Agent - Domain-Agnostic Entity Transformation.
+
+UIP - Urban Intelligence Platform
+Copyright (C) 2024-2025 UIP Team
+
+SPDX-License-Identifier: MIT
 
 Module: src.agents.transformation.ngsi_ld_transformer_agent
-Author: Nguyen Dinh Anh Tuan
+Project: UIP - Urban Intelligence Platform
+Author: Nguyen Dinh Anh Tuan <nguyentuan834897@gmail.com>
 Created: 2025-11-22
 Version: 1.0.0
 License: MIT
-Transforms raw data into NGSI-LD format compliant with ETSI CIM NGSI-LD specifications.
-Features domain-agnostic, config-driven architecture for flexible entity mapping.
+
+Description:
+    Transforms raw data into NGSI-LD format compliant with ETSI CIM NGSI-LD specifications.
+    Features domain-agnostic, config-driven architecture for flexible entity mapping.
 
 Core Capabilities:
-- Reads raw JSON data from any domain (traffic, IoT, smart city, etc.)
-- Applies configurable mapping rules from YAML configuration
-- Generates NGSI-LD compliant entities with proper context
-- Validates output against NGSI-LD JSON schema
-- Supports Property, GeoProperty, and Relationship types
-- Handles temporal properties and multi-attribute entities
-
-Module: src.agents.transformation.ngsi_ld_transformer_agent
-Author: Builder Layer LOD System
-Created: 2024-09-15
-Version: 1.0.0
-License: MIT
+    - Reads raw JSON data from any domain (traffic, IoT, smart city, etc.)
+    - Applies configurable mapping rules from YAML configuration
+    - Generates NGSI-LD compliant entities with proper context
+    - Validates output against NGSI-LD JSON schema
+    - Supports Property, GeoProperty, and Relationship types
+    - Handles temporal properties and multi-attribute entities
 
 Dependencies:
     - PyYAML>=6.0: Configuration file parsing

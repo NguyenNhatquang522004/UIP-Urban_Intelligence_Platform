@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """LOD Linkset Enrichment Agent.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
 
 Module: src.agents.rdf_linked_data.lod_linkset_enrichment_agent
 Author: Nguyen Dinh Anh Tuan
@@ -15,7 +22,7 @@ Description:
     cross-dataset links, making the data discoverable and reusable in the
     global Linked Open Data ecosystem.
     
-    Key Features:
+Key Features:
     - Automatic entity matching with DBpedia, Wikidata, GeoNames
     - Geographic location-based linking via GeoNames (refCity)
     - Semantic entity type matching with DBpedia/Wikidata (seeAlso)

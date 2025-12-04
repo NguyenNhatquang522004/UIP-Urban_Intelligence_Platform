@@ -1,26 +1,31 @@
-"""
-Accident State Lifecycle Management Agent
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Accident State Lifecycle Management Agent.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
 Module: src.agents.state_management.accident_state_manager_agent
 Author: Nguyen Dinh Anh Tuan
 Created: 2025-11-24
 Version: 1.0.0
 License: MIT
 
-
 Description:
-Manages the complete lifecycle of traffic accident entities from detection
-through resolution, including state transitions, severity tracking, and
-automatic escalation.
+    Manages the complete lifecycle of traffic accident entities from detection
+    through resolution, including state transitions, severity tracking, and
+    automatic escalation.
 
-STATE LIFECYCLE:
-1. DETECTED -> Initial detection from CV analysis
-2. CONFIRMED -> Validated by multiple sources
-3. ACTIVE -> Confirmed accident with ongoing impact
-4. RESOLVING -> Emergency services on scene
-5. RESOLVED -> Accident cleared
-6. ARCHIVED -> Historical record
-
-
+State Lifecycle:
+    1. DETECTED -> Initial detection from CV analysis
+    2. CONFIRMED -> Validated by multiple sources
+    3. ACTIVE -> Confirmed accident with ongoing impact
+    4. RESOLVING -> Emergency services on scene
+    5. RESOLVED -> Accident cleared
+    6. ARCHIVED -> Historical record
 """
 
 import logging

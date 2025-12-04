@@ -1,5 +1,14 @@
-"""Debug congestion detection
-Module: tests.test_congestion_debug.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Debug Congestion Detection.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
+Module: tests.test_congestion_debug
 Author: Nguyen Dinh Anh Tuan
 Created: 2025-11-25
 Version: 1.0.0

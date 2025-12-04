@@ -1,5 +1,12 @@
-"""
-Kafka Entity Publisher Agent
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Kafka Entity Publisher Agent.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
 
 Module: src.agents.kafka_entity_publisher_agent
 Author: Nguyen Dinh Anh Tuan
@@ -8,20 +15,16 @@ Version: 1.0.0
 License: MIT
 
 Description:
-Publishes NGSI-LD entities directly to Kafka topics for consumption by Stellio Context Broker.
-Bypasses the API Gateway by publishing to the internal Kafka topic used by Stellio's search service.
+    Publishes NGSI-LD entities directly to Kafka topics for consumption by
+    Stellio Context Broker. Bypasses the API Gateway by publishing to the
+    internal Kafka topic used by Stellio's search service.
 
 Core Functionality:
-- Direct Kafka topic publication for high-throughput scenarios
-- Batch publishing support for efficient bulk operations
-- Automatic serialization of NGSI-LD entities to JSON
-- Connection pooling and retry logic for reliability
-- Support for entity creation, update, and deletion operations
-
-Module: src.agents.kafka_entity_publisher_agent
-Author: Builder Layer Integration Team
-Version: 1.0.0
-License: MIT
+    - Direct Kafka topic publication for high-throughput scenarios
+    - Batch publishing support for efficient bulk operations
+    - Automatic serialization of NGSI-LD entities to JSON
+    - Connection pooling and retry logic for reliability
+    - Support for entity creation, update, and deletion operations
 
 Dependencies:
     - kafka-python>=2.0: Kafka client library

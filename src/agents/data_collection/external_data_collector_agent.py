@@ -1,7 +1,15 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """External Data Collector Agent.
 
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
 Module: src.agents.data_collection.external_data_collector_agent
-Author: Nguyen Viet Hoang 
+Author: Nguyen Viet Hoang
 Created: 2025-11-21
 Version: 2.0.0
 License: MIT

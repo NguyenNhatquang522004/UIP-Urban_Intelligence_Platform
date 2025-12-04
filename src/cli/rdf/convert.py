@@ -1,19 +1,28 @@
-"""
-RDF Conversion CLI
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""RDF Conversion CLI.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
 Module: src.cli.rdf.convert
-Author: Nguyen Viet Hoang 
+Author: Nguyen Viet Hoang
 Created: 2025-11-26
 Version: 1.0.0
 License: MIT
+
 Description:
     Convert between RDF formats (Turtle, JSON-LD, RDF/XML).
 
- Features:
+Features:
     - Input/Output format selection
     - Triple count reporting
+
 Usage:
     python convert.py input.ttl output.jsonld --input-format turtle --output-format jsonld
-    
 """
 
 

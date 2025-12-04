@@ -1,14 +1,22 @@
-"""
-CLI RDF Tools Module
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""CLI RDF Tools Module.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
 Module: src.cli.rdf
-Author: nguyễn Nhật Quang
+Author: Nguyen Nhat Quang
 Created: 2025-11-25
 Version: 1.0.0
 License: MIT
+
 Description:
     Command-line utilities for RDF data generation, validation,
     and processing.
-
 """
 
 __version__ = "1.0.0"

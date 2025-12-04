@@ -1,24 +1,29 @@
-"""
-Congestion State Tracking and Zone Management Agent
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Congestion State Tracking and Zone Management Agent.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
 Module: src.agents.state_management.congestion_state_manager_agent
 Author: Nguyen Dinh Anh Tuan
 Created: 2025-11-25
 Version: 1.0.0
 License: MIT
 
+Description:
+    Manages traffic congestion states across road segments and zones,
+    tracking congestion levels, duration, and automatic alert generation.
 
-Description: 
-Manages traffic congestion states across road segments and zones,
-tracking congestion levels, duration, and automatic alert generation.
-
-CONGESTION LEVELS:
-- FREE_FLOW: < 30% capacity
-- LIGHT: 30-50% capacity
-- MODERATE: 50-70% capacity
-- HEAVY: 70-90% capacity
-- SEVERE: > 90% capacity
-
-
+Congestion Levels:
+    - FREE_FLOW: < 30% capacity
+    - LIGHT: 30-50% capacity
+    - MODERATE: 50-70% capacity
+    - HEAVY: 70-90% capacity
+    - SEVERE: > 90% capacity
 """
 
 import logging

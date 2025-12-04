@@ -1,22 +1,29 @@
-"""
-Webhook Notification Handler
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Webhook Notification Handler.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
 Module: src.agents.notification.webhook_notification_handler
-Author: nguyễn Nhật Quang
+Author: Nguyen Nhat Quang
 Created: 2025-11-23
 Version: 1.0.0
 License: MIT
 
-Delivers notifications to external systems via HTTP webhooks.
-Supports custom payloads, retry logic, and circuit breaker pattern.
+Description:
+    Delivers notifications to external systems via HTTP webhooks.
+    Supports custom payloads, retry logic, and circuit breaker pattern.
 
-FEATURES:
-- Async webhook delivery (non-blocking)
-- Retry with exponential backoff
-- Circuit breaker for failing endpoints
-- Request signing for security
-- Webhook response logging
-
-
+Features:
+    - Async webhook delivery (non-blocking)
+    - Retry with exponential backoff
+    - Circuit breaker for failing endpoints
+    - Request signing for security
+    - Webhook response logging
 """
 
 try:

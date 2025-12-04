@@ -1,5 +1,12 @@
-"""
-Centralized Logging Utility Module
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Centralized Logging Utility Module.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
 
 Module: src.core.logger
 Author: Nguyen Dinh Anh Tuan
@@ -8,17 +15,15 @@ Version: 1.0.0
 License: MIT
 
 Description:
-Provides unified logging configuration for all agents with support for structured
-logging, multiple output formats, and configurable log levels.
+    Provides unified logging configuration for all agents with support for structured
+    logging, multiple output formats, and configurable log levels.
 
 Features:
-- JSON-formatted logging for production environments
-- Human-readable console output for development
-- File-based logging with automatic rotation
-- Structured logging with contextual information
-- Integration with popular log aggregation tools
-
-
+    - JSON-formatted logging for production environments
+    - Human-readable console output for development
+    - File-based logging with automatic rotation
+    - Structured logging with contextual information
+    - Integration with popular log aggregation tools
 
 Dependencies:
     - python-json-logger>=2.0: JSON log formatting

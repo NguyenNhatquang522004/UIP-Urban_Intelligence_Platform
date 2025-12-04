@@ -1,16 +1,22 @@
 #!/usr/bin/env python3
-"""
-YOLOX Model Weights Downloader
+# -*- coding: utf-8 -*-
+"""YOLOX Model Weights Downloader.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
 
 Module: scripts.download_yolox_weights
-Author: Nguyễn Nhật Quang
-Created: 2025-12-1
+Author: Nguyen Nhat Quang
+Created: 2025-12-01
 Version: 1.0.0
 License: MIT
 
 Description:
-Downloads pre-trained YOLOX weights from Megvii releases for object detection.
-All models are licensed under Apache-2.0.
+    Downloads pre-trained YOLOX weights from Megvii releases for object detection.
+    All models are licensed under Apache-2.0.
 
 Usage:
     python scripts/download_yolox_weights.py [--model MODEL_NAME]
@@ -19,9 +25,6 @@ Usage:
         python scripts/download_yolox_weights.py                    # Download yolox-s (default)
         python scripts/download_yolox_weights.py --model yolox-m    # Download yolox-m
         python scripts/download_yolox_weights.py --all              # Download all models
-
-Copyright (c) 2024 Traffic LOD Pipeline Project Contributors
-SPDX-License-Identifier: MIT
 """
 
 import argparse

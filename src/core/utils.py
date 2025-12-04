@@ -1,5 +1,12 @@
-"""
-Shared Utility Functions Module
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Shared Utility Functions Module.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
 
 Module: src.core.utils
 Author: Nguyen Dinh Anh Tuan
@@ -8,18 +15,16 @@ Version: 1.0.0
 License: MIT
 
 Description:
-Common utility functions used across all agents and services in the system.
-Provides helpers for ID generation, data formatting, file I/O, and validation.
+    Common utility functions used across all agents and services in the system.
+    Provides helpers for ID generation, data formatting, file I/O, and validation.
 
 Core Utilities:
-- Entity ID generation with namespace support
-- Timestamp formatting and timezone handling
-- JSON/YAML file operations with error handling
-- URL parsing and query parameter manipulation
-- Hash generation for data integrity
-- Retry decorators for external service calls
-
-
+    - Entity ID generation with namespace support
+    - Timestamp formatting and timezone handling
+    - JSON/YAML file operations with error handling
+    - URL parsing and query parameter manipulation
+    - Hash generation for data integrity
+    - Retry decorators for external service calls
 
 Examples:
     >>> from src.core.utils import generate_entity_id, format_timestamp

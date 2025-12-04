@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """Multi-Agent Workflow Orchestrator.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
 
 Module: src.orchestrator
 Author: Nguyen Dinh Anh Tuan
 Created: 2025-11-28
-Modified: 2025-11-28
-Version: 1.0.0
+Version: 2.3.0
 License: MIT
 
 Description:
@@ -21,12 +27,7 @@ Description:
 
 Usage:
     python src/orchestrator.py --config config/workflow.yaml
-Created: 2024-11-01
-Version: 2.3.0
-License: MIT
-
-Usage:
-    python orchestrator.py --config config/workflow.yaml --phase all
+"""
 
 Arguments:
     --config: Path to workflow configuration YAML file

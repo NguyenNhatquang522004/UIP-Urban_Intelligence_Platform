@@ -1,25 +1,32 @@
-"""
-Centralized State Management Agent
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Centralized State Management Agent.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
 Module: src.agents.state_management.state_manager_agent
 Author: Nguyen Dinh Anh Tuan
 Created: 2025-11-24
 Version: 1.0.0
 License: MIT
 
-
 Description:
-This agent provides a unified interface for managing application state across
-all agents and services. It maintains state consistency, handles concurrent updates,
-and provides state snapshots for recovery.
+    This agent provides a unified interface for managing application state across
+    all agents and services. It maintains state consistency, handles concurrent updates,
+    and provides state snapshots for recovery.
 
-ARCHITECTURE:
-- In-memory state store with TTL support
-- Redis backend integration (PRODUCTION-READY)
-- Atomic state updates with optimistic locking
-- State change event notifications
-- Automatic state persistence and recovery
+Architecture:
+    - In-memory state store with TTL support
+    - Redis backend integration (PRODUCTION-READY)
+    - Atomic state updates with optimistic locking
+    - State change event notifications
+    - Automatic state persistence and recovery
 
-REAL IMPLEMENTATION - Full Redis integration, disabled by default for safety
+    Full Redis integration, disabled by default for safety.
 """
 
 import logging

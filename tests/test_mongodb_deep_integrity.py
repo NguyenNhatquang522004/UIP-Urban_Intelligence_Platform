@@ -1,8 +1,15 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """MongoDB NGSI-LD Data Integrity Test Suite.
 
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
 Module: tests.test_mongodb_deep_integrity
-Author: Nguyễn Nhật Quang
+Author: Nguyen Nhat Quang
 Created: 2025-11-30
 Version: 1.0.0
 License: MIT
@@ -11,7 +18,7 @@ Description:
     Deep verification test for MongoDB NGSI-LD data integrity.
     Validates complete field preservation and data structure compliance.
 
-    Test Coverage:
+Test Coverage:
     1. All NGSI-LD fields preserved (id, type, @context)
     2. All Property attributes preserved with type and value
     3. All GeoProperty attributes preserved with GeoJSON

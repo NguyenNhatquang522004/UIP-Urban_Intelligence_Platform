@@ -1,20 +1,29 @@
-"""
-Cache Manager Agent
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Cache Manager Agent.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
 Module: src.agents.cache.cache_manager_agent
-Authors: Nguyen Viet Hoang
+Author: Nguyen Viet Hoang
 Created: 2025-11-25
 Version: 1.0.0
 License: MIT
 
-Manages distributed caching with Redis backend for improved performance.
-Implements caching strategies, TTL management, and cache warming.
+Description:
+    Manages distributed caching with Redis backend for improved performance.
+    Implements caching strategies, TTL management, and cache warming.
 
-CACHE STRATEGIES:
-- Write-through: Update cache immediately on write
-- Write-behind: Async cache updates
-- Cache-aside: Lazy loading on cache miss
+Cache Strategies:
+    - Write-through: Update cache immediately on write
+    - Write-behind: Async cache updates
+    - Cache-aside: Lazy loading on cache miss
 
-REAL PRODUCTION IMPLEMENTATION - Full Redis client with connection pooling
+    Full production implementation with Redis client and connection pooling.
 """
 
 

@@ -1,5 +1,12 @@
-# State Updater Agent
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """State Updater Agent - Real-Time Entity State Updates.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
 
 Module: src.agents.context_management.state_updater_agent
 Author: Nguyen Viet Hoang

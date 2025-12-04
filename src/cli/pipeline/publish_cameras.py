@@ -1,11 +1,19 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """Camera Entity Publisher Script.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
 
 Module: src.cli.pipeline.publish_cameras
 Author: Nguyen Dinh Anh Tuan
-Created: 2025-11-250
+Created: 2025-11-25
 Version: 1.0.0
 License: MIT
+
 Description:
     Publishes camera entities from cameras_updated.json to Stellio Context Broker
     using NGSI-LD REST API with verified application/ld+json content type.
@@ -16,7 +24,6 @@ Usage:
 Notes:
     - Requires cameras_updated.json with fresh timestamps from image_refresh_agent
     - Uses application/ld+json with @context in request body
-
 """
 
 import json

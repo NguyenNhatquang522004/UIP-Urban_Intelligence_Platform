@@ -1,27 +1,31 @@
-"""
-Multi-Channel Alert Dispatcher Agent
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Multi-Channel Alert Dispatcher Agent.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
 Module: src.agents.notification.alert_dispatcher_agent
-Author: nguyễn Nhật Quang
+Author: Nguyen Nhat Quang
 Created: 2025-11-22
 Version: 1.0.0
 License: MIT
-Domain-agnostic notification system that receives NGSI-LD subscription webhooks
-from Stellio Context Broker and dispatches alerts via multiple communication channels.
+
+Description:
+    Domain-agnostic notification system that receives NGSI-LD subscription webhooks
+    from Stellio Context Broker and dispatches alerts via multiple communication channels.
 
 Core Capabilities:
-- HTTP webhook endpoint for Stellio notification reception
-- Multi-channel delivery: WebSocket, Firebase Cloud Messaging, Email, SMS, HTTP Webhooks
-- Priority-based message routing and queuing
-- Jinja2 template engine for customizable message formatting
-- Per-user rate limiting to prevent notification spam
-- Retry logic with exponential backoff for failed deliveries
-- Delivery tracking, statistics, and audit logging
-
-Module: src.agents.notification.alert_dispatcher_agent
-Author: Builder Layer Development Team
-Created: 2024-10-05
-Version: 1.0.0
-License: MIT
+    - HTTP webhook endpoint for Stellio notification reception
+    - Multi-channel delivery: WebSocket, Firebase Cloud Messaging, Email, SMS, HTTP Webhooks
+    - Priority-based message routing and queuing
+    - Jinja2 template engine for customizable message formatting
+    - Per-user rate limiting to prevent notification spam
+    - Retry logic with exponential backoff for failed deliveries
+    - Delivery tracking, statistics, and audit logging
 
 Dependencies:
     - flask>=2.0: HTTP webhook server

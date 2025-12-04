@@ -1,27 +1,30 @@
-"""
-NGSI-LD to RDF Conversion Agent
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""NGSI-LD to RDF Conversion Agent.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
 Module: src.agents.rdf_linked_data.ngsi_ld_to_rdf_agent
 Author: Nguyen Viet Hoang
 Created: 2025-11-24
 Version: 1.0.0
 License: MIT
 
-Domain-agnostic conversion of NGSI-LD JSON-LD entities to RDF triples with support
-for multiple serialization formats and comprehensive namespace management.
+Description:
+    Domain-agnostic conversion of NGSI-LD JSON-LD entities to RDF triples with support
+    for multiple serialization formats and comprehensive namespace management.
 
 Core Capabilities:
-- JSON-LD parsing and expansion using rdflib framework
-- RDF triple generation following subject-predicate-object pattern
-- Multiple output formats: Turtle, N-Triples, RDF/XML, JSON-LD
-- Configurable namespace prefixes and URI resolution
-- Streaming support for processing large entity datasets
-- RDF syntax validation and error reporting
-
-Module: src.agents.rdf_linked_data.ngsi_ld_to_rdf_agent
-Author: Builder Layer LOD System
-Created: 2024-09-20
-Version: 1.0.0
-License: MIT
+    - JSON-LD parsing and expansion using rdflib framework
+    - RDF triple generation following subject-predicate-object pattern
+    - Multiple output formats: Turtle, N-Triples, RDF/XML, JSON-LD
+    - Configurable namespace prefixes and URI resolution
+    - Streaming support for processing large entity datasets
+    - RDF syntax validation and error reporting
 
 Dependencies:
     - rdflib>=6.0: RDF graph manipulation and serialization

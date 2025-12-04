@@ -1,18 +1,25 @@
-"""
-Neo4j Query CLI
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Neo4j Query CLI.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
 Module: src.cli.graph.neo4j_query
-Author: nguyễn Nhật Quang
+Author: Nguyen Nhat Quang
 Created: 2025-11-25
 Version: 1.0.0
 License: MIT
+
 Description:
-Command-line Neo4j graph queries.
+    Command-line Neo4j graph queries.
 
-This CLI provides commands to query the Neo4j graph database for:
-- Nearby traffic cameras within a specified radius of given coordinates.
-- Locations with frequent accident patterns based on historical data.
-
-
+    This CLI provides commands to query the Neo4j graph database for:
+    - Nearby traffic cameras within a specified radius of given coordinates.
+    - Locations with frequent accident patterns based on historical data.
 """
 
 import logging

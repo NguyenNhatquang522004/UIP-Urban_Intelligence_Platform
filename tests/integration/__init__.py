@@ -1,13 +1,19 @@
-"""Builder Layer - Multi-Agent Traffic Management System.
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Integration Test Package.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
 
 Module: tests.integration
-Author: Nguyễn Nhật Quang
+Author: Nguyen Nhat Quang
 Created: 2025-11-23
-Version: 2.3.0
+Version: 1.0.0
 License: MIT
+
 Description:
     Integration tests for the Builder Layer multi-agent traffic management system.
-    
-
 """
-

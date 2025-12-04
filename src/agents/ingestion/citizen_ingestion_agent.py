@@ -1,8 +1,15 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """Citizen Ingestion Agent - FastAPI Server for Citizen Science Reports.
 
-Module: agents.ingestion.citizen_ingestion_agent
-Author: Nguyen Dinh Anh Tuan
+UIP - Urban Intelligence Platform
+Copyright (C) 2024-2025 UIP Team
+
+SPDX-License-Identifier: MIT
+
+Module: src.agents.ingestion.citizen_ingestion_agent
+Project: UIP - Urban Intelligence Platform
+Author: Nguyen Dinh Anh Tuan <nguyentuan834897@gmail.com>
 Created: 2025-11-26
 Version: 1.0.0
 License: MIT

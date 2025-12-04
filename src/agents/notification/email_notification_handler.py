@@ -1,22 +1,31 @@
-"""
-Email Notification Handler
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Email Notification Handler.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
 Module: src.agents.notification.email_notification_handler
-Author: nguyễn Nhật Quang
+Author: Nguyen Nhat Quang
 Created: 2025-11-23
 Version: 1.0.0
 License: MIT
 
-Sends email notifications for traffic alerts, incident reports,
-and system notifications using SMTP.
+Description:
+    Sends email notifications for traffic alerts, incident reports,
+    and system notifications using SMTP.
 
-FEATURES:
-- HTML email templates with styling
-- Attachment support (incident reports, PDFs)
-- Batch email sending
-- Retry logic with exponential backoff
-- Rate limiting to prevent spam
+Features:
+    - HTML email templates with styling
+    - Attachment support (incident reports, PDFs)
+    - Batch email sending
+    - Retry logic with exponential backoff
+    - Rate limiting to prevent spam
 
-REAL PRODUCTION IMPLEMENTATION - Full SMTP integration with smtplib and email.mime
+    Full SMTP integration with smtplib and email.mime.
 """
 
 import logging

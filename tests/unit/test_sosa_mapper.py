@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """SOSA Mapper Unit Test Suite.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
 Module: tests.unit.test_sosa_mapper
 Author: Nguyen Dinh Anh Tuan
 Created: 2025-11-23

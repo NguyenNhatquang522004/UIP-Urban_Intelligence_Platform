@@ -1,5 +1,12 @@
-"""
-Data Seeder for Workflow Testing
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Data Seeder for Workflow Testing.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
 
 Module: src.core.data_seeder
 Author: Nguyen Dinh Anh Tuan
@@ -8,18 +15,16 @@ Version: 1.0.0
 License: MIT
 
 Description:
-Generates mock NGSI-LD entities for testing workflow phases without requiring
-real data sources. Supports configurable entity generation for cameras, accidents,
-patterns, and observations.
+    Generates mock NGSI-LD entities for testing workflow phases without requiring
+    real data sources. Supports configurable entity generation for cameras, accidents,
+    patterns, and observations.
 
 Core Features:
-- Configurable mock data generation via workflow.yaml
-- NGSI-LD compliant entity structure
-- Realistic property values with randomization
-- Support for temporal and geospatial properties
-- Batch generation for performance testing
-
-
+    - Configurable mock data generation via workflow.yaml
+    - NGSI-LD compliant entity structure
+    - Realistic property values with randomization
+    - Support for temporal and geospatial properties
+    - Batch generation for performance testing
 
 Configuration:
     Enable via workflow.yaml:

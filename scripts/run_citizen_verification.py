@@ -1,14 +1,21 @@
 #!/usr/bin/env python3
-"""
-Citizen Report Verification Runner
-Runs CV agent in citizen verification mode to process pending reports
+# -*- coding: utf-8 -*-
+"""Citizen Report Verification Runner.
 
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
+Module: scripts.run_citizen_verification
 Author: Nguyen Dinh Anh Tuan
 Created: 2025-11-28
-Modified: 2025-11-28
 Version: 1.0.0
 License: MIT
-SPDX-License-Identifier: MIT
+
+Description:
+    Runs CV agent in citizen verification mode to process pending reports.
 
 Computer Vision Stack:
     - YOLOX (Apache-2.0) - Vehicle detection

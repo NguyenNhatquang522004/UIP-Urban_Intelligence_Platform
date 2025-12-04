@@ -1,5 +1,12 @@
-"""
-Centralized Configuration Loader Utility
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Centralized Configuration Loader Utility.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
 
 Module: src.core.config_loader
 Author: Nguyen Dinh Anh Tuan
@@ -8,16 +15,15 @@ Version: 1.0.0
 License: MIT
 
 Description:
-Provides unified YAML configuration loading, validation, and management
-for all agents and services in the LOD pipeline system.
+    Provides unified YAML configuration loading, validation, and management
+    for all agents and services in the LOD pipeline system.
 
 Core Features:
-- YAML configuration file parsing with error handling
-- Environment variable interpolation in config values
-- Configuration merging from multiple sources
-- Type-safe configuration access with default values
-- Validation of required fields and data types
-
+    - YAML configuration file parsing with error handling
+    - Environment variable interpolation in config values
+    - Configuration merging from multiple sources
+    - Type-safe configuration access with default values
+    - Validation of required fields and data types
 
 Dependencies:
     - PyYAML>=6.0: YAML file parsing

@@ -1,8 +1,15 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """Pattern Recognition Agent - Time-Series Analysis & Forecasting.
 
+UIP - Urban Intelligence Platform
+Copyright (C) 2024-2025 UIP Team
+
+SPDX-License-Identifier: MIT
+
 Module: src.agents.analytics.pattern_recognition_agent
-Author: nguyễn Nhật Quang
+Project: UIP - Urban Intelligence Platform
+Author: Nguyen Nhat Quang <nguyennhatquang522004@gmail.com>
 Created: 2025-11-21
 Version: 2.0.0
 License: MIT

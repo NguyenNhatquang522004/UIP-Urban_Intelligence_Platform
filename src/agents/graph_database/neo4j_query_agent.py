@@ -1,21 +1,30 @@
-"""
-Neo4j Query Agent for Graph Analytics
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Neo4j Query Agent for Graph Analytics.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
 Module: src.agents.graph_database.neo4j_query_agent
-Authors: Nguyen Viet Hoang
-created: 2025-11-25
+Author: Nguyen Viet Hoang
+Created: 2025-11-25
 Version: 1.0.0
 License: MIT
 
-Executes graph queries on Neo4j for relationship discovery,
-path finding, and network analysis.
+Description:
+    Executes graph queries on Neo4j for relationship discovery,
+    path finding, and network analysis.
 
-QUERY CAPABILITIES:
-- Find related entities (cameras near accident)
-- Path finding (shortest path between cameras)
-- Pattern matching (recurring accident locations)
-- Centrality analysis (most important cameras)
+Query Capabilities:
+    - Find related entities (cameras near accident)
+    - Path finding (shortest path between cameras)
+    - Pattern matching (recurring accident locations)
+    - Centrality analysis (most important cameras)
 
-FULL PRODUCTION IMPLEMENTATION - Real Neo4j Driver with Session Management
+    Full production implementation with Neo4j Driver and Session Management.
 """
 
 import logging

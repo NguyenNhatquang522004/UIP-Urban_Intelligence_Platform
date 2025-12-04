@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
-"""Test Citizen Ingestion API với hình ảnh thực tế từ local file
-Module: tests.test_citizen_with_real_image.py
+# -*- coding: utf-8 -*-
+"""Test Citizen Ingestion API with Real Local Image Files.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
+Module: tests.test_citizen_with_real_image
 Author: Nguyen Dinh Anh Tuan
 Created: 2025-11-25
 Version: 1.0.0

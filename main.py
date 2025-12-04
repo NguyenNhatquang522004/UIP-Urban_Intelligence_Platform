@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
-"""
-Main Application Entry Point - LOD Pipeline System
+# -*- coding: utf-8 -*-
+"""Main Application Entry Point - LOD Pipeline System.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
 
 Module: main
 Author: Nguyen Dinh Anh Tuan
 Created: 2025-11-28
-Modified: 2025-11-28
 Version: 1.0.0
 License: MIT
 

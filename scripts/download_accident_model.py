@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """DETR Accident Detection Model Download Script.
 
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
 Module: scripts.download_accident_model
-Author:Nguyễn Nhật Quang
+Author: Nguyen Nhat Quang
 Created: 2025-11-26
 Version: 1.0.0
 License: MIT
-
-SPDX-License-Identifier: MIT
 
 Description:
     Downloads the pre-trained DETR accident detection model from HuggingFace.

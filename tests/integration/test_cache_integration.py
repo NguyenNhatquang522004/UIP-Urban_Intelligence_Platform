@@ -1,7 +1,19 @@
-"""Integration Tests for Cache - PRODUCTION READY
-Author: nguyễn Nhật Quang
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Cache Integration Test Suite.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
+Module: tests.integration.test_cache_integration
+Author: Nguyen Nhat Quang
 Created: 2025-11-25
+Version: 1.0.0
 License: MIT
+
 Description:
     Production-ready integration tests for Redis cache functionality.
     Validates cache operations, data persistence, and error handling.

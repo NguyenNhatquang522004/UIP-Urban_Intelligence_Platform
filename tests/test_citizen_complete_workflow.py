@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
-"""
-Module: tests.test_citizen_complete_workflow.py
+# -*- coding: utf-8 -*-
+"""Citizen Complete Workflow Integration Test.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
+Module: tests.test_citizen_complete_workflow
 Author: Nguyen Dinh Anh Tuan
 Created: 2025-11-25
 Version: 1.0.0
@@ -10,7 +18,7 @@ Description:
     End-to-end integration test for the complete citizen observation workflow with
     AI-powered image verification using YOLOX.
     
-    Workflow Steps:
+Workflow Steps:
     1. Send citizen report → Citizen API
     2. Background enrichment (Weather + Air Quality)
     3. Save to Stellio (aiVerified=false, aiConfidence=0.0)

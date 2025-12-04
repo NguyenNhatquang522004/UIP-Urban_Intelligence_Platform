@@ -1,22 +1,28 @@
-"""
-Cache Invalidation Agent
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Cache Invalidation Agent.
 
-Intelligently invalidates cache entries when source data changes.
-Implements event-driven cache invalidation and dependency tracking.
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
 
 Module: src.agents.cache.cache_invalidator_agent
-Authors: Nguyen Viet Hoang
+Author: Nguyen Viet Hoang
 Created: 2025-11-25
 Version: 1.0.0
 License: MIT
 
-INVALIDATION STRATEGIES:
-- Time-based: TTL expiration
-- Event-based: Invalidate on data change
-- Dependency-based: Cascade invalidation
-- Pattern-based: Bulk invalidation
+Description:
+    Intelligently invalidates cache entries when source data changes.
+    Implements event-driven cache invalidation and dependency tracking.
 
-
+Invalidation Strategies:
+    - Time-based: TTL expiration
+    - Event-based: Invalidate on data change
+    - Dependency-based: Cascade invalidation
+    - Pattern-based: Bulk invalidation
 """
 
 

@@ -1,18 +1,26 @@
-"""
-Neo4j Graph Database Synchronization Agent
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Neo4j Graph Database Synchronization Agent.
 
-Synchronizes traffic entities and relationships to Neo4j graph database
-for advanced relationship queries and graph-based analytics.
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
 Module: src.agents.graph_database.neo4j_sync_agent
-Authors: Nguyen Viet Hoang
-created: 2025-11-25
+Author: Nguyen Viet Hoang
+Created: 2025-11-25
 Version: 1.0.0
 License: MIT
-GRAPH SCHEMA:
-- Nodes: Camera, Observation, Accident, Congestion, Pattern
-- Relationships: OBSERVES, DETECTS, CAUSES, CORRELATES_WITH
 
+Description:
+    Synchronizes traffic entities and relationships to Neo4j graph database
+    for advanced relationship queries and graph-based analytics.
 
+Graph Schema:
+    - Nodes: Camera, Observation, Accident, Congestion, Pattern
+    - Relationships: OBSERVES, DETECTS, CAUSES, CORRELATES_WITH
 """
 
 try:

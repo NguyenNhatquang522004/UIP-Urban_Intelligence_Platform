@@ -1,23 +1,29 @@
-"""
-Temporal State Tracking Agent
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Temporal State Tracking Agent.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
 Module: src.agents.state_management.temporal_state_tracker_agent
 Author: Nguyen Dinh Anh Tuan
 Created: 2025-11-24
 Version: 1.0.0
 License: MIT
 
-
 Description:
-This agent tracks state changes over time, maintaining historical records
-for temporal queries, trend analysis, and state recovery.
+    This agent tracks state changes over time, maintaining historical records
+    for temporal queries, trend analysis, and state recovery.
 
-FEATURES:
-- Time-series state storage with efficient indexing
-- Temporal query support (point-in-time, range queries)
-- State change event logging
-- Historical trend analysis
-- State diff computation between timestamps
-
+Features:
+    - Time-series state storage with efficient indexing
+    - Temporal query support (point-in-time, range queries)
+    - State change event logging
+    - Historical trend analysis
+    - State diff computation between timestamps
 """
 
 try:

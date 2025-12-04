@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """NGSI-LD Transformer Unit Test Suite.
-Unit Tests for NGSI-LD Transformer - PRODUCTION READY
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
+Module: tests.unit.test_ngsi_ld_transformer
 Author: Nguyen Dinh Anh Tuan
 Created: 2025-11-23
 Version: 1.0.0

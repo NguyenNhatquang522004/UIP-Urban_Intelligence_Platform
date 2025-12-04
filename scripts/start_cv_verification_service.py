@@ -1,17 +1,22 @@
 #!/usr/bin/env python3
-"""
-CV Agent Citizen Verification Background Service
-Module: scripts.start_cv_verification_service.py
-Author: nguyễn Nhật Quang
+# -*- coding: utf-8 -*-
+"""CV Agent Citizen Verification Background Service.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
+Module: scripts.start_cv_verification_service
+Author: Nguyen Nhat Quang
 Created: 2025-11-23
 Version: 1.0.0
 License: MIT
-SPDX-License-Identifier: MIT
-
 
 Description:
-Chạy như một daemon để liên tục verify citizen reports từ Stellio.
-Poll Stellio mỗi 30 giây để tìm reports chưa được verify (aiVerified=false).
+    Runs as a daemon to continuously verify citizen reports from Stellio.
+    Poll Stellio every 30 seconds to find reports not yet verified (aiVerified=false).
 
 Computer Vision Stack:
     - YOLOX (Apache-2.0) - Vehicle detection

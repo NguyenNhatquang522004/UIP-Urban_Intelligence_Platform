@@ -2,20 +2,23 @@
 # -*- coding: utf-8 -*-
 """Real-time Traffic Data Generator Pipeline.
 
-This module provides a streamlined pipeline for generating real traffic observations
-from live camera streams, processing them through computer vision analysis, and
-synchronizing the results across the LOD (Linked Open Data) infrastructure.
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
 
 Module: run_cv_and_sync
-Project: Builder-Layer-End - Traffic LOD Pipeline
-Author: Nguyễn Nhật Quang 
+Author: Nguyen Nhat Quang
 Created: 2025-12-01
 Version: 2.0.0
 License: MIT
 
-SPDX-License-Identifier: MIT
-
 Description:
+    This module provides a streamlined pipeline for generating real traffic observations
+    from live camera streams, processing them through computer vision analysis, and
+    synchronizing the results across the LOD (Linked Open Data) infrastructure.
+    
     This script orchestrates a subset of the full LOD pipeline, focusing on
     rapid data collection and analytics. It runs the following agents in sequence:
     
@@ -26,9 +29,6 @@ Description:
     5. Congestion Detection Agent - Analyzes traffic congestion levels
     6. Accident Detection Agent - Detects potential traffic accidents (DETR)
     7. Pattern Recognition Agent - Identifies temporal traffic patterns
-
-License Notice:
-    This file is part of Builder-Layer-End Traffic LOD Pipeline.
     
     Copyright (c) 2024-2025 Traffic LOD Pipeline Project Contributors
     

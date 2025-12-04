@@ -1,34 +1,36 @@
-"""
-SOSA/SSN Semantic Mapper Agent
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""SOSA/SSN Semantic Mapper Agent.
+
+UIP - Urban Intelligence Platform
+Copyright (C) 2024-2025 UIP Team
+
+SPDX-License-Identifier: MIT
 
 Module: src.agents.transformation.sosa_ssn_mapper_agent
-Author: Nguyen Dinh Anh Tuan
+Project: UIP - Urban Intelligence Platform
+Author: Nguyen Dinh Anh Tuan <nguyentuan834897@gmail.com>
 Created: 2025-11-22
 Version: 1.0.0
 License: MIT
 
-Enhances NGSI-LD entities with W3C SOSA/SSN ontology properties for semantic
-interoperability in sensor observation systems. Domain-agnostic implementation
-via configuration-driven mapping rules.
+Description:
+    Enhances NGSI-LD entities with W3C SOSA/SSN ontology properties for semantic
+    interoperability in sensor observation systems. Domain-agnostic implementation
+    via configuration-driven mapping rules.
 
 SOSA (Sensor, Observation, Sample, and Actuator) Ontology:
     W3C/OGC standard for representing sensor systems, observations, sampling,
     and actuation. Provides a lightweight core for SSN (Semantic Sensor Network).
 
 Core Features:
-- Adds sosa:Sensor type classification to entities
-- Creates sosa:observes relationships to ObservableProperty instances
-- Establishes sosa:isHostedBy relationships to Platform entities
-- Generates ObservableProperty entities for observed phenomena
-- Creates Platform entities representing hosting infrastructure
-- Preserves all original NGSI-LD properties and relationships
-- Merges @context arrays with SOSA/SSN semantic contexts
-
-Module: src.agents.transformation.sosa_ssn_mapper_agent
-Author: Builder Layer LOD System
-Created: 2024-09-25
-Version: 1.0.0
-License: MIT
+    - Adds sosa:Sensor type classification to entities
+    - Creates sosa:observes relationships to ObservableProperty instances
+    - Establishes sosa:isHostedBy relationships to Platform entities
+    - Generates ObservableProperty entities for observed phenomena
+    - Creates Platform entities representing hosting infrastructure
+    - Preserves all original NGSI-LD properties and relationships
+    - Merges @context arrays with SOSA/SSN semantic contexts
 
 Dependencies:
     - PyYAML>=6.0: SOSA mapping configuration parsing
