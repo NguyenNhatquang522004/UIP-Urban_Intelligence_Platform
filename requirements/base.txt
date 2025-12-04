@@ -60,7 +60,7 @@ numpy>=1.24.0
 pandas>=2.0.0
 
 # Database Drivers
-psycopg2-binary>=2.9.0  # PostgreSQL
+asyncpg>=0.29.0  # PostgreSQL async driver (Apache-2.0 - MIT compatible)
 neo4j>=5.0.0  # Neo4j Graph Database
 pymongo>=4.6.0  # MongoDB driver for NGSI-LD entity storage
 

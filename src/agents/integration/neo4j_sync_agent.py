@@ -36,7 +36,7 @@ Node Types Created:
 
 Dependencies:
     - neo4j>=5.0: Neo4j Python driver
-    - psycopg2-binary>=2.9: PostgreSQL client
+    - asyncpg>=0.29: PostgreSQL async client (Apache-2.0 - MIT compatible)
     - PyYAML>=6.0: Configuration parsing
 
 Configuration:
@@ -79,10 +79,10 @@ import sys
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
+import asyncio
 
-import psycopg2
+import asyncpg
 import yaml
-from psycopg2.extras import RealDictCursor
 
 # Add project root to path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
@@ -183,11 +183,15 @@ class Neo4jSyncConfig:
 
 
 # ============================================================================
-# PostgreSQL Connector
+# PostgreSQL Connector (using asyncpg - Apache-2.0 License, MIT compatible)
 # ============================================================================
 
 class PostgresConnector:
-    """Connect to Stellio PostgreSQL database and extract entities."""
+    """Connect to Stellio PostgreSQL database and extract entities using asyncpg.
+    
+    Note: This class uses asyncpg (Apache-2.0) instead of psycopg2 (LGPL-3.0)
+    to ensure 100% MIT license compatibility for the entire project.
+    """
     
     def __init__(self, config: Dict[str, Any]):
         """
@@ -197,28 +201,89 @@ class PostgresConnector:
             config: PostgreSQL connection configuration
         """
         self.config = config
-        self.connection = None
-        logger.info("PostgreSQL connector initialized")
+        self.connection: Optional[asyncpg.Connection] = None
+        self._loop: Optional[asyncio.AbstractEventLoop] = None
+        logger.info("PostgreSQL connector initialized (asyncpg)")
     
-    def connect(self) -> None:
-        """Establish connection to PostgreSQL database."""
+    def _get_event_loop(self) -> asyncio.AbstractEventLoop:
+        """Get or create event loop for async operations."""
         try:
-            self.connection = psycopg2.connect(
+            return asyncio.get_running_loop()
+        except RuntimeError:
+            if self._loop is None or self._loop.is_closed():
+                self._loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(self._loop)
+            return self._loop
+    
+    async def _async_connect(self) -> None:
+        """Async connection to PostgreSQL database."""
+        try:
+            self.connection = await asyncpg.connect(
                 host=self.config['host'],
                 port=self.config['port'],
                 database=self.config['database'],
                 user=self.config['user'],
-                password=self.config['password'],
-                cursor_factory=RealDictCursor
+                password=self.config['password']
             )
             logger.info(f"Connected to PostgreSQL: {self.config['host']}:{self.config['port']}/{self.config['database']}")
         except Exception as e:
             logger.error(f"Failed to connect to PostgreSQL: {e}")
             raise
     
+    def connect(self) -> None:
+        """Establish connection to PostgreSQL database (sync wrapper)."""
+        loop = self._get_event_loop()
+        if loop.is_running():
+            # If already in async context, schedule connection
+            asyncio.ensure_future(self._async_connect())
+        else:
+            loop.run_until_complete(self._async_connect())
+    
+    async def _async_fetch_entities(self, table: str = 'entity_payload') -> List[Dict[str, Any]]:
+        """Async fetch all entities from entity_payload table."""
+        if not self.connection:
+            raise RuntimeError("Not connected to PostgreSQL")
+        
+        try:
+            query = f"""
+                SELECT 
+                    entity_id,
+                    payload,
+                    types,
+                    created_at,
+                    modified_at
+                FROM {table}
+                WHERE deleted_at IS NULL
+                ORDER BY created_at ASC
+            """
+            rows = await self.connection.fetch(query)
+            
+            entities = []
+            for row in rows:
+                entity = dict(row)
+                # Parse JSONB payload (asyncpg returns dict directly for jsonb)
+                if isinstance(entity['payload'], str):
+                    entity['payload'] = json.loads(entity['payload'])
+                # Extract entity type from types array (parse URI to get simple name)
+                if entity['types'] and len(entity['types']) > 0:
+                    type_uri = entity['types'][0]
+                    # Extract simple name from URI (e.g., "Camera" from ".../Camera")
+                    # Handle both "/" and "#" as separators
+                    entity['entity_type'] = type_uri.split('/')[-1].split('#')[-1]
+                else:
+                    entity['entity_type'] = 'Entity'
+                entities.append(entity)
+            
+            logger.info(f"Fetched {len(entities)} entities from PostgreSQL")
+            return entities
+        
+        except Exception as e:
+            logger.error(f"Failed to fetch entities: {e}")
+            raise
+    
     def fetch_entities(self, table: str = 'entity_payload') -> List[Dict[str, Any]]:
         """
-        Fetch all entities from entity_payload table.
+        Fetch all entities from entity_payload table (sync wrapper).
         
         Args:
             table: Table name (default: entity_payload)
@@ -226,53 +291,44 @@ class PostgresConnector:
         Returns:
             List of entity dictionaries with parsed JSONB payload
         """
+        loop = self._get_event_loop()
+        if loop.is_running():
+            # Create a future and wait for it
+            future = asyncio.ensure_future(self._async_fetch_entities(table))
+            return future
+        else:
+            return loop.run_until_complete(self._async_fetch_entities(table))
+    
+    async def _async_execute_query(self, query: str) -> List[Dict[str, Any]]:
+        """Execute a custom query and return results as list of dicts."""
         if not self.connection:
             raise RuntimeError("Not connected to PostgreSQL")
-        
-        try:
-            with self.connection.cursor() as cursor:
-                query = f"""
-                    SELECT 
-                        entity_id,
-                        payload,
-                        types,
-                        created_at,
-                        modified_at
-                    FROM {table}
-                    WHERE deleted_at IS NULL
-                    ORDER BY created_at ASC
-                """
-                cursor.execute(query)
-                rows = cursor.fetchall()
-                
-                entities = []
-                for row in rows:
-                    entity = dict(row)
-                    # Parse JSONB payload
-                    if isinstance(entity['payload'], str):
-                        entity['payload'] = json.loads(entity['payload'])
-                    # Extract entity type from types array (parse URI to get simple name)
-                    if entity['types'] and len(entity['types']) > 0:
-                        type_uri = entity['types'][0]
-                        # Extract simple name from URI (e.g., "Camera" from ".../Camera")
-                        # Handle both "/" and "#" as separators
-                        entity['entity_type'] = type_uri.split('/')[-1].split('#')[-1]
-                    else:
-                        entity['entity_type'] = 'Entity'
-                    entities.append(entity)
-                
-                logger.info(f"Fetched {len(entities)} entities from PostgreSQL")
-                return entities
-        
-        except Exception as e:
-            logger.error(f"Failed to fetch entities: {e}")
-            raise
+        rows = await self.connection.fetch(query)
+        return [dict(row) for row in rows]
+    
+    def execute_query(self, query: str) -> List[Dict[str, Any]]:
+        """Execute a custom query (sync wrapper)."""
+        loop = self._get_event_loop()
+        if loop.is_running():
+            future = asyncio.ensure_future(self._async_execute_query(query))
+            return future
+        else:
+            return loop.run_until_complete(self._async_execute_query(query))
+    
+    async def _async_close(self) -> None:
+        """Async close connection."""
+        if self.connection:
+            await self.connection.close()
+            logger.info("PostgreSQL connection closed")
     
     def close(self) -> None:
-        """Close PostgreSQL connection."""
+        """Close PostgreSQL connection (sync wrapper)."""
         if self.connection:
-            self.connection.close()
-            logger.info("PostgreSQL connection closed")
+            loop = self._get_event_loop()
+            if loop.is_running():
+                asyncio.ensure_future(self._async_close())
+            else:
+                loop.run_until_complete(self._async_close())
 
 
 # ============================================================================
@@ -640,19 +696,25 @@ class Neo4jSyncAgent:
         """
         
         try:
-            with self.pg_connector.connection.cursor() as cursor:
-                cursor.execute(query)
-                rows = cursor.fetchall()
-                
-                # Create index mapping: {0: "urn:ngsi-ld:Camera:TTH%20406", 1: "urn:ngsi-ld:Camera:TTH%2021.84", ...}
-                # Note: cursor uses RealDictCursor, so rows are dicts not tuples
-                camera_mapping = {idx: row['entity_id'] for idx, row in enumerate(rows)}
-                logger.info(f"Built camera mapping with {len(camera_mapping)} entries")
-                if len(camera_mapping) > 0:
-                    first_5 = dict(list(camera_mapping.items())[:5])
-                    logger.debug(f"First 5 mappings: {first_5}")
-                
-                return camera_mapping
+            # Use asyncpg's execute_query method (returns list of dicts via sync wrapper)
+            rows = self.pg_connector.execute_query(query)
+            
+            # Handle both async future and direct result
+            if hasattr(rows, '__await__') or hasattr(rows, 'result'):
+                # If we got a future, run it
+                loop = self.pg_connector._get_event_loop()
+                if not loop.is_running():
+                    rows = loop.run_until_complete(rows) if hasattr(rows, '__await__') else rows
+            
+            # Create index mapping: {0: "urn:ngsi-ld:Camera:TTH%20406", ...}
+            # Note: asyncpg returns Record objects that work like dicts
+            camera_mapping = {idx: row['entity_id'] for idx, row in enumerate(rows)}
+            logger.info(f"Built camera mapping with {len(camera_mapping)} entries")
+            if len(camera_mapping) > 0:
+                first_5 = dict(list(camera_mapping.items())[:5])
+                logger.debug(f"First 5 mappings: {first_5}")
+            
+            return camera_mapping
         
         except Exception as e:
             logger.error(f"Failed to build camera mapping: {e}")

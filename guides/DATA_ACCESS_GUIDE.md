@@ -74,7 +74,7 @@ python --version
 # Output: Python 3.9.x or higher
 
 # 3. Install Python packages
-pip install requests neo4j psycopg2-binary rdflib pandas
+pip install requests neo4j asyncpg rdflib pandas
 
 # Or use requirements.txt (provided in project)
 pip install -r requirements.txt
@@ -91,7 +91,7 @@ requests==2.31.0
 
 # Database drivers
 neo4j==5.14.0
-psycopg2-binary==2.9.9
+asyncpg==0.29.0  # PostgreSQL async driver (Apache-2.0, MIT-compatible)
 
 # RDF processing
 rdflib==7.0.0
@@ -2797,13 +2797,17 @@ ORDER BY ?timestamp
 #### Mistake 3: Access PostgreSQL Directly
 ```python
 # ❌ SAI: Bypass Stellio và query PostgreSQL trực tiếp
-import psycopg2
-conn = psycopg2.connect(
-    host="localhost", database="stellio_search",
-    user="stellio_user", password="stellio_test"
-)
-cursor = conn.cursor()
-cursor.execute("SELECT entity_payload FROM entity_payload WHERE entity_id = 'Camera:0'")
+import asyncpg
+import asyncio
+
+async def bad_query():
+    conn = await asyncpg.connect(
+        host="localhost", database="stellio_search",
+        user="stellio_user", password="stellio_test"
+    )
+    row = await conn.fetchrow("SELECT entity_payload FROM entity_payload WHERE entity_id = 'Camera:0'")
+    await conn.close()
+    return row
 
 # ❌ Vấn đề: 
 #    - Bypass Stellio logic (permissions, validation)
@@ -3498,41 +3502,48 @@ psql -h localhost -p 5432 -U stellio_user -d stellio_search
 
 #### Python Example
 ```python
-import psycopg2
+import asyncpg
+import asyncio
 import json
 
-# Connect to PostgreSQL
-conn = psycopg2.connect(
-    host="localhost",
-    port=5432,
-    database="stellio_search",
-    user="stellio_user",
-    password="stellio_test"
-)
+async def query_entities():
+    # Connect to PostgreSQL using asyncpg (Apache-2.0, MIT-compatible)
+    conn = await asyncpg.connect(
+        host="localhost",
+        port=5432,
+        database="stellio_search",
+        user="stellio_user",
+        password="stellio_test"
+    )
 
-cursor = conn.cursor()
+    # Query entity_payload table (where NGSI-LD entities are stored)
+    rows = await conn.fetch("""
+        SELECT entity_id, entity_type, entity_payload 
+        FROM entity_payload 
+        LIMIT 100
+    """)
 
-# Query entity_payload table (where NGSI-LD entities are stored)
-cursor.execute("""
-    SELECT entity_id, entity_type, entity_payload 
-    FROM entity_payload 
-    LIMIT 100
-""")
+    print(f"Total entities: {len(rows)}")
 
-rows = cursor.fetchall()
-print(f"Total entities: {len(rows)}")
+    for row in rows:
+        entity_id = row['entity_id']
+        entity_type = row['entity_type']
+        payload = row['entity_payload']
+        
+        print(f"\nEntity: {entity_id}")
+        print(f"Type: {entity_type}")
+        
+        # Parse JSON payload (asyncpg returns dict for jsonb columns)
+        if isinstance(payload, str):
+            data = json.loads(payload)
+        else:
+            data = payload
+        print(f"Data: {json.dumps(data, indent=2)[:200]}...")
 
-for row in rows:
-    entity_id, entity_type, payload = row
-    print(f"\nEntity: {entity_id}")
-    print(f"Type: {entity_type}")
-    
-    # Parse JSON payload
-    data = json.loads(payload)
-    print(f"Data: {json.dumps(data, indent=2)[:200]}...")
+    await conn.close()
 
-cursor.close()
-conn.close()
+# Run the async function
+asyncio.run(query_entities())
 ```
 
 ### 📊 Useful SQL Queries
@@ -4856,7 +4867,8 @@ import requests
 from requests.auth import HTTPBasicAuth
 import json
 from pathlib import Path
-import psycopg2
+import asyncpg
+import asyncio
 from neo4j import GraphDatabase
 
 class LODDataExtractor:
@@ -4968,33 +4980,36 @@ class LODDataExtractor:
         return all_nodes
     
     def extract_postgresql_data(self):
-        """Extract all entities from PostgreSQL"""
+        """Extract all entities from PostgreSQL (async)"""
         print("\n=== Extracting from PostgreSQL ===")
         
-        conn = psycopg2.connect(**self.pg_config)
-        cursor = conn.cursor()
+        async def _extract():
+            conn = await asyncpg.connect(**self.pg_config)
+            
+            # Get all entities
+            rows = await conn.fetch("""
+                SELECT entity_id, entity_type, entity_payload, created_at, modified_at
+                FROM entity_payload
+            """)
+            
+            entities = []
+            for row in rows:
+                # asyncpg returns Record objects that behave like dicts
+                payload = row['entity_payload']
+                if isinstance(payload, str):
+                    payload = json.loads(payload)
+                entities.append({
+                    'id': row['entity_id'],
+                    'type': row['entity_type'],
+                    'payload': payload,
+                    'created_at': str(row['created_at']),
+                    'modified_at': str(row['modified_at'])
+                })
+            
+            await conn.close()
+            return entities
         
-        # Get all entities
-        cursor.execute("""
-            SELECT entity_id, entity_type, entity_payload, created_at, modified_at
-            FROM entity_payload
-        """)
-        
-        rows = cursor.fetchall()
-        entities = []
-        
-        for row in rows:
-            entity_id, entity_type, payload, created_at, modified_at = row
-            entities.append({
-                'id': entity_id,
-                'type': entity_type,
-                'payload': json.loads(payload),
-                'created_at': str(created_at),
-                'modified_at': str(modified_at)
-            })
-        
-        cursor.close()
-        conn.close()
+        entities = asyncio.run(_extract())
         
         # Save to file
         with open('extracted_postgresql_data.json', 'w', encoding='utf-8') as f:

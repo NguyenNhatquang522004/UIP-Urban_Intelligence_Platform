@@ -29,6 +29,7 @@ Core Features:
 Dependencies:
     - requests>=2.28: HTTP client
     - PyYAML>=6.0: Configuration parsing
+    - asyncpg>=0.29: PostgreSQL async driver (Apache-2.0 - MIT compatible)
 
 Configuration:
     config/congestion_config.yaml:
@@ -49,6 +50,7 @@ Example:
 
 from __future__ import annotations
 
+import asyncio
 import json
 import logging
 import os
@@ -58,10 +60,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
+import asyncpg
 import requests
 import yaml
-import psycopg2
-from psycopg2.extras import RealDictCursor
 
 from src.core.config_loader import expand_env_var
 
@@ -380,34 +381,34 @@ class CongestionDetectionAgent:
         # Step 2: Query all Camera entities from PostgreSQL to get code -> entity_id mapping
         code_to_entity_id = {}
         
-        try:
-            # Expand env vars from config values, then override with direct env vars
-            pg_host = os.environ.get('POSTGRES_HOST') or expand_env_var(postgres_cfg.get('host', 'localhost'))
-            pg_port = int(os.environ.get('POSTGRES_PORT') or expand_env_var(postgres_cfg.get('port', 5432)))
-            pg_database = os.environ.get('POSTGRES_DATABASE') or expand_env_var(postgres_cfg.get('database', 'stellio_search'))
-            pg_user = os.environ.get('POSTGRES_USER') or expand_env_var(postgres_cfg.get('user', 'stellio'))
-            pg_password = os.environ.get('POSTGRES_PASSWORD') or expand_env_var(postgres_cfg.get('password', 'stellio_password'))
-            
-            conn = psycopg2.connect(
-                host=pg_host,
-                port=pg_port,
-                database=pg_database,
-                user=pg_user,
-                password=pg_password,
-                cursor_factory=RealDictCursor
-            )
-            
-            # Query all Camera entities - entity_id contains the camera code
-            # Format: urn:ngsi-ld:Camera:TTH%20406 -> code is "TTH 406" (URL encoded)
-            query = """
-                SELECT entity_id 
-                FROM entity_payload 
-                WHERE 'https://uri.etsi.org/ngsi-ld/default-context/Camera' = ANY(types)
-            """
-            
-            with conn.cursor() as cursor:
-                cursor.execute(query)
-                rows = cursor.fetchall()
+        async def _fetch_camera_entities() -> Dict[str, str]:
+            """Async function to fetch camera entities from PostgreSQL."""
+            mapping = {}
+            try:
+                # Expand env vars from config values, then override with direct env vars
+                pg_host = os.environ.get('POSTGRES_HOST') or expand_env_var(postgres_cfg.get('host', 'localhost'))
+                pg_port = int(os.environ.get('POSTGRES_PORT') or expand_env_var(postgres_cfg.get('port', 5432)))
+                pg_database = os.environ.get('POSTGRES_DATABASE') or expand_env_var(postgres_cfg.get('database', 'stellio_search'))
+                pg_user = os.environ.get('POSTGRES_USER') or expand_env_var(postgres_cfg.get('user', 'stellio'))
+                pg_password = os.environ.get('POSTGRES_PASSWORD') or expand_env_var(postgres_cfg.get('password', 'stellio_password'))
+                
+                conn = await asyncpg.connect(
+                    host=pg_host,
+                    port=pg_port,
+                    database=pg_database,
+                    user=pg_user,
+                    password=pg_password
+                )
+                
+                # Query all Camera entities - entity_id contains the camera code
+                # Format: urn:ngsi-ld:Camera:TTH%20406 -> code is "TTH 406" (URL encoded)
+                query = """
+                    SELECT entity_id 
+                    FROM entity_payload 
+                    WHERE 'https://uri.etsi.org/ngsi-ld/default-context/Camera' = ANY(types)
+                """
+                
+                rows = await conn.fetch(query)
                 
                 # Extract camera code from entity_id and build mapping
                 from urllib.parse import unquote
@@ -417,13 +418,30 @@ class CongestionDetectionAgent:
                     if ':Camera:' in entity_id:
                         encoded_code = entity_id.split(':Camera:')[-1]
                         camera_code = unquote(encoded_code)
-                        code_to_entity_id[camera_code] = entity_id
+                        mapping[camera_code] = entity_id
                 
-                logger.info(f"Built code->entity_id mapping with {len(code_to_entity_id)} Camera entities from PostgreSQL")
-            
-            conn.close()
+                logger.info(f"Built code->entity_id mapping with {len(mapping)} Camera entities from PostgreSQL")
+                
+                await conn.close()
+            except Exception as e:
+                logger.error(f"Failed to query PostgreSQL for camera mapping: {e}")
+            return mapping
+        
+        try:
+            # Run async function in event loop
+            try:
+                loop = asyncio.get_running_loop()
+                # If we're already in an async context, create task
+                import concurrent.futures
+                with concurrent.futures.ThreadPoolExecutor() as executor:
+                    code_to_entity_id = executor.submit(
+                        lambda: asyncio.run(_fetch_camera_entities())
+                    ).result()
+            except RuntimeError:
+                # No running loop, safe to use asyncio.run
+                code_to_entity_id = asyncio.run(_fetch_camera_entities())
         except Exception as e:
-            logger.error(f"Failed to query PostgreSQL for camera mapping: {e}")
+            logger.error(f"Failed to run async PostgreSQL query: {e}")
             code_to_entity_id = {}
         
         # Step 3: Combine mappings: index -> code -> entity_id
