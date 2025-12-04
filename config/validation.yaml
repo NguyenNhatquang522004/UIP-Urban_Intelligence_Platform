@@ -1,11 +1,22 @@
-# Smart Data Models Validation Configuration
-# 100% Domain-Agnostic - Works with ANY LOD domain
-#Module: NGSI-LD Entity Validator
-#Author: Nguyen Dinh Anh Tuan
-#Created: 2025-11-23
+# ============================================================================
+# UIP - Urban Intelligence Platform
+# Copyright (c) 2024-2025 UIP Team. All rights reserved.
+# https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+#
+# SPDX-License-Identifier: MIT
+# ============================================================================
+# File: config/validation.yaml
+# Module: Smart Data Models Validation Configuration
+# Author: Nguyen Dinh Anh Tuan
+# Created: 2025-11-23
 # Version: 1.0.0
-#License: MIT
-# Description: Configuration file for validating NGSI-LD entities against Smart Data Models and LOD criteria
+# License: MIT
+#
+# Description:
+#   100% Domain-Agnostic - Works with ANY LOD domain
+#   Validates NGSI-LD entities against Smart Data Models and LOD criteria
+# ============================================================================
+
 # LOD (Linked Open Data) 5-Star Rating Criteria
 # Based on Tim Berners-Lee's 5-star deployment scheme
 lod_criteria:

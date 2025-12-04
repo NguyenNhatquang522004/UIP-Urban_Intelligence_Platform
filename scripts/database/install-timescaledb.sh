@@ -1,9 +1,14 @@
 #!/bin/bash
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Nguyen Nhat Quang
+#
 # Install TimescaleDB extension in PostGIS image
-#Module: scripts/database/install-timescaledb.sh
-#Author: nguyễn Nhật Quang
-#Created: 2025-11-29
-#Version: 1.0.0
+#
+# Module: scripts/database/install-timescaledb.sh
+# Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+# Created: 2025-11-29
+# Version: 1.0.0
+# Description: TimescaleDB installation script for Stellio database
 set -e
 
 # Add TimescaleDB repository

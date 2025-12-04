@@ -1,3 +1,14 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Nguyen Nhat Quang
+#
+# UIP - Urban Intelligence Platform
+# Project configuration file (PEP 518/621 compliant)
+#
+# Module: pyproject.toml
+# Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+# Version: 2.0.0
+# Repository: https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
 [build-system]
 requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"

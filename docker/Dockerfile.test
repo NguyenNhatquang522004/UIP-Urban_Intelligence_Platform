@@ -1,9 +1,21 @@
-# Test Dockerfile for Integration Testing
-# Optimized for minimal size and faster builds
-#Author: nguyễn Nhật Quang
-#Created: 2025-11-24
-#Version: 1.0.0
-#License: MIT
+# ============================================================================
+# UIP - Urban Intelligence Platform
+# Copyright (c) 2024-2025 UIP Team. All rights reserved.
+# https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+#
+# SPDX-License-Identifier: MIT
+# ============================================================================
+# File: docker/Dockerfile.test
+# Module: Test Dockerfile for Integration Testing
+# Author: Nguyen Nhat Quang
+# Created: 2025-11-24
+# Version: 1.0.0
+# License: MIT
+#
+# Description:
+#   Optimized for minimal size and faster builds
+# ============================================================================
+
 # Stage 1: Base Image
 FROM python:3.10-slim
 

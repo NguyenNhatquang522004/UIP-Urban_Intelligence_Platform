@@ -1,12 +1,22 @@
-# State Updater Agent Configuration
-# Domain-agnostic real-time entity state updater
-# Processes events from multiple sources and updates Stellio Context Broker
-# Module: State Updater Agent
+# ============================================================================
+# UIP - Urban Intelligence Platform
+# Copyright (c) 2024-2025 UIP Team. All rights reserved.
+# https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+#
+# SPDX-License-Identifier: MIT
+# ============================================================================
+# File: config/state_updater_config.yaml
+# Module: State Updater Agent Configuration
 # Author: Nguyen Viet Hoang
 # Created: 2025-11-25
 # Version: 1.0.0
-#License: MIT
-# Description: Configuration file for state updater agent
+# License: MIT
+#
+# Description:
+#   Domain-agnostic real-time entity state updater
+#   Processes events from multiple sources and updates Stellio Context Broker
+# ============================================================================
+
 state_updater:
   # Event Sources Configuration
   # Supports multiple event source types for maximum flexibility

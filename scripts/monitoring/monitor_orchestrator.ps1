@@ -1,10 +1,14 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Nguyen Nhat Quang
+#
 # Monitor Orchestrator Progress in Real-Time
 # Shows phases, agents, and skipping warnings
-#Module: scripts.monitoring.monitor-orchestrator
-#Author:Nguyễn Nhật Quang
-#Created: 2025-11-26
-#Version: 1.0.0
-#License: MIT
+#
+# Module: scripts/monitoring/monitor_orchestrator.ps1
+# Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+# Created: 2025-11-26
+# Version: 1.0.0
+# Description: Real-time orchestrator monitoring script
 param(
     [int]$RefreshSeconds = 5,
     [int]$MaxIterations = 60

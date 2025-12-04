@@ -1,8 +1,21 @@
-# Production Dockerfile for UIP - Urban Intelligence Platform
-# Multi-stage build for optimized image size
-#Author: nguyễn Nhật Quang
-#Created: 2025-11-24
-#Version: 1.0.0
+# ============================================================================
+# UIP - Urban Intelligence Platform
+# Copyright (c) 2024-2025 UIP Team. All rights reserved.
+# https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+#
+# SPDX-License-Identifier: MIT
+# ============================================================================
+# File: Dockerfile
+# Module: Production Dockerfile for UIP
+# Author: Nguyen Nhat Quang
+# Created: 2025-11-24
+# Version: 1.0.0
+# License: MIT
+#
+# Description:
+#   Multi-stage build for optimized production image size
+# ============================================================================
+
 # Stage 1: Builder
 FROM python:3.11-slim as builder
 

@@ -1,14 +1,23 @@
-# LOD Linkset Mapping Configuration
-# Configuration for linking NGSI-LD entities to external LOD Cloud datasets
-# Compliant with OLP 2025 requirements for LOD Cloud integration
-#Module: LOD Linkset Enrichment Agent
-#Author: nguyễn Nhật Quang
-#Created: 2025-11-29
-#Version: 1.0.0
-#License: MIT
-# Purpose:
-#   Enable automatic enrichment of entities with owl:sameAs relationships
-#   to DBpedia, Wikidata, and GeoNames for LOD Cloud compliance
+# ============================================================================
+# UIP - Urban Intelligence Platform
+# Copyright (c) 2024-2025 UIP Team. All rights reserved.
+# https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+#
+# SPDX-License-Identifier: MIT
+# ============================================================================
+# File: config/lod_linkset_mappings.yaml
+# Module: LOD Linkset Enrichment Agent Configuration
+# Author: Nguyen Nhat Quang
+# Created: 2025-11-29
+# Version: 1.0.0
+# License: MIT
+#
+# Description:
+#   Configuration for linking NGSI-LD entities to external LOD Cloud datasets
+#   Compliant with OLP 2025 requirements for LOD Cloud integration
+#   Enable automatic enrichment with owl:sameAs relationships to
+#   DBpedia, Wikidata, and GeoNames for LOD Cloud compliance
+# ============================================================================
 
 # Entity Type Configuration
 # Define which LOD sources to use for each NGSI-LD entity type

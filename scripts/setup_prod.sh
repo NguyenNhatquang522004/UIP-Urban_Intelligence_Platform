@@ -1,16 +1,17 @@
 #!/bin/bash
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Nguyen Nhat Quang
 #
 # Production Environment Setup - PRODUCTION READY
 #
 # Initializes production infrastructure.
 # REQUIRES: kubectl, helm, terraform (optional)
 #
-#Author: nguyễn Nhật Quang
-#Created: 2025-11-25
-#Version: 1.0.0
-#License: MIT
-#Description:
-#Production environment setup script for the traffic monitoring system.
+# Module: scripts/setup_prod.sh
+# Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+# Created: 2025-11-25
+# Version: 1.0.0
+# Description: Production environment setup script for the traffic monitoring system
 set -e
 
 NAMESPACE=${NAMESPACE:-traffic-system}

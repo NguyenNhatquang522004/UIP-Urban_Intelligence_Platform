@@ -1,11 +1,22 @@
-# Integration Test Configuration
-# Defines test scenarios, expected outcomes, and verification rules
-# Module: Integration Test Suite
-#Author Nguyen Viet Hoang 
-#Created: 2025-11-24
-#Version: 1.0.0
-#License: MIT
-# Description: Configuration file for integration tests of the entire pipeline
+# ============================================================================
+# UIP - Urban Intelligence Platform
+# Copyright (c) 2024-2025 UIP Team. All rights reserved.
+# https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+#
+# SPDX-License-Identifier: MIT
+# ============================================================================
+# File: config/integration_test_config.yaml
+# Module: Integration Test Configuration
+# Author: Nguyen Viet Hoang
+# Created: 2025-11-24
+# Version: 1.0.0
+# License: MIT
+#
+# Description:
+#   Defines test scenarios, expected outcomes, and verification rules
+#   for integration tests of the entire pipeline
+# ============================================================================
+
 integration_tests:
   # Test timeout settings
   timeouts:

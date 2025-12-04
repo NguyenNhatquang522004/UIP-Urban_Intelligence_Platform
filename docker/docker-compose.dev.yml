@@ -1,13 +1,23 @@
-#Author: nguyễn Nhật Quang
-#Created: 2025-11-25
-#Version: 1.0.0
-#License: MIT
-#Description:
-#Development environment Docker Compose for the traffic monitoring system.
+# ============================================================================
+# UIP - Urban Intelligence Platform
+# Copyright (c) 2024-2025 UIP Team. All rights reserved.
+# https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+#
+# SPDX-License-Identifier: MIT
+# ============================================================================
+# File: docker/docker-compose.dev.yml
+# Module: Development Docker Compose Configuration
+# Author: Nguyen Nhat Quang
+# Created: 2025-11-25
+# Version: 1.0.0
+# License: MIT
+#
+# Description:
+#   Development environment Docker Compose for the traffic monitoring system
+#   Production-ready configuration for Development Environment
+# ============================================================================
 
 version: '3.8'
-
-# Production-ready Docker Compose for Development Environment
 
 services:
   orchestrator:

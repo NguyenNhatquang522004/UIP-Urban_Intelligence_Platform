@@ -1,3 +1,11 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Nguyen Nhat Quang
+#
+# Module: requirements/base.txt
+# Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+# Version: 1.0.0
+# Description: Base production dependencies for UIP Traffic System
+#
 # Base Production Dependencies
 # Core libraries required for runtime
 

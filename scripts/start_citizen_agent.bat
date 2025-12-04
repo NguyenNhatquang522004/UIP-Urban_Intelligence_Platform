@@ -1,7 +1,15 @@
-
 @echo off
+REM SPDX-License-Identifier: MIT
+REM Copyright (c) 2025 Nguyen Nhat Quang
+REM
 REM Start Citizen Ingestion Agent FastAPI Server
 REM Uses virtual environment and loads API keys from data_sources.yaml
+REM
+REM Module: scripts/start_citizen_agent.bat
+REM Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+REM Created: 2025-11-26
+REM Version: 1.0.0
+REM Description: Batch script to start the Citizen Ingestion Agent
 
 echo ========================================
 echo Starting Citizen Ingestion Agent
