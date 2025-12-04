@@ -27,7 +27,7 @@ Description:
 
 Usage:
     python src/orchestrator.py --config config/workflow.yaml
-"""
+
 
 Arguments:
     --config: Path to workflow configuration YAML file

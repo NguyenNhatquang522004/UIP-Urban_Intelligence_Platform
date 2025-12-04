@@ -283,3 +283,50 @@ class ConfigLoader:
 
 # Global instance for convenience
 config_loader = ConfigLoader()
+
+
+def load_config(config_path: str, domain: Optional[str] = None) -> Dict[str, Any]:
+    """
+    Convenience function to load configuration from a YAML file.
+    
+    This function provides a simple interface for loading configuration files
+    without needing to instantiate a ConfigLoader object directly.
+    
+    Args:
+        config_path: Path to the configuration file (can be absolute or relative)
+        domain: Optional domain section to extract from the configuration
+        
+    Returns:
+        Configuration dictionary
+        
+    Raises:
+        ConfigurationError: If file not found or invalid YAML
+        
+    Examples:
+        >>> config = load_config('config/workflow.yaml')
+        >>> print(config['phases'])
+        
+        >>> redis_config = load_config('config/redis.yaml', domain='production')
+    """
+    config_path = Path(config_path)
+    
+    if not config_path.exists():
+        raise ConfigurationError(f"Configuration file not found: {config_path}")
+    
+    try:
+        with open(config_path, 'r', encoding='utf-8') as f:
+            config_data = yaml.safe_load(f)
+    except yaml.YAMLError as e:
+        raise ConfigurationError(f"Invalid YAML in {config_path}: {e}")
+    
+    if config_data is None:
+        raise ConfigurationError(f"Configuration file is empty: {config_path}")
+    
+    # Expand environment variables
+    config_data = expand_env_var(config_data)
+    
+    # Extract domain section if specified
+    if domain and domain in config_data:
+        return config_data[domain]
+    
+    return config_data

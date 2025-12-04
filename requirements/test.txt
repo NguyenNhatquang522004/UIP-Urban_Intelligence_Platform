@@ -27,3 +27,6 @@ freezegun>=1.4.0  # Mock datetime
 
 # Coverage
 coverage[toml]>=7.3.0
+
+# Redis client (required for cache integration tests)
+redis>=4.5.0
