@@ -145,7 +145,7 @@ The Entity Publisher Agent follows a **100% domain-agnostic, 100% config-driven*
 ============================================================================= test session starts =============================================================================
 platform win32 -- Python 3.10.0, pytest-7.4.3, pluggy-1.6.0
 cachedir: .pytest_cache
-rootdir: D:\olp\Builder-Layer-End
+rootdir: D:\olp\UIP-Urban_Intelligence_Platform
 configfile: pytest.ini
 plugins: asyncio-0.21.1, cov-4.1.0, mock-3.12.0
 collected 47 items

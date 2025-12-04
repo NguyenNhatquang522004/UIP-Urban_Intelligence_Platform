@@ -2,7 +2,7 @@
 
 **Agent**: Subscription Manager Agent  
 **Version**: 1.0.0  
-**Author**: Builder Layer Development Team  
+**Author**: UIP Development Team  
 **Date**: January 2025  
 **Status**: ✅ PRODUCTION READY
 
@@ -730,7 +730,7 @@ pip install pyyaml requests pytest pytest-cov
 ```bash
 # Clone repository
 git clone <repository-url>
-cd Builder-Layer-End
+cd UIP-Urban_Intelligence_Platform
 
 # Install dependencies
 pip install -r requirements.txt

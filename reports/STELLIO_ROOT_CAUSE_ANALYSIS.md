@@ -429,7 +429,7 @@ docker exec test-postgres psql -U stellio -d stellio_search -c "\dt"
 ### Bước 2: Re-publish entities (5 phút)
 ```bash
 # Entities in Kafka đã bị consume, cần publish lại
-docker run --rm --network builder-layer-end_test-network \
+docker run --rm --network uip-platform_test-network \
   -v "./src/agents:/app" -v "./data:/data" \
   python:3.10-slim bash -c \
   "pip install -q kafka-python && cd /app && \

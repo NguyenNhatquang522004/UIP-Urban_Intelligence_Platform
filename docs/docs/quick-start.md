@@ -20,8 +20,8 @@ Before starting, ensure you have:
 ## 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/your-org/builder-layer-end.git
-cd builder-layer-end
+git clone https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform.git
+cd UIP-Urban_Intelligence_Platform
 ```
 
 ## 2️⃣ Start with Docker Compose
@@ -234,7 +234,7 @@ Now that your system is running:
 ## 🆘 Need Help?
 
 - 📋 [Troubleshooting Guide](guides/troubleshooting)
-- 💬 [GitHub Issues](https://github.com/your-org/builder-layer-end/issues)
+- 💬 [GitHub Issues](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/issues)
 - 📧 Email: support@example.com
 
 ---

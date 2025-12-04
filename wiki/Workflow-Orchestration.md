@@ -332,7 +332,7 @@ The workflow dashboard shows:
 
 ```yaml
 workflow:
-  name: "Traffic LOD Pipeline"
+  name: "UIP - Urban Intelligence Platform"
   version: "2.0.0"
   
   settings:

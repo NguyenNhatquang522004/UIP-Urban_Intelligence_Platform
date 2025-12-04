@@ -1,8 +1,8 @@
-# Builder Layer End - API Documentation
+# UIP - Urban Intelligence Platform - API Documentation
 
 ## Overview
 
-The Builder Layer End system provides a RESTful API for accessing traffic monitoring data, querying entities, and managing system operations.
+The UIP - Urban Intelligence Platform system provides a RESTful API for accessing traffic monitoring data, querying entities, and managing system operations.
 
 **Base URL**: `http://localhost:8000/api/v1`
 
@@ -700,4 +700,4 @@ fetch(`${API_URL}/subscriptions`, {
 For API support and questions:
 - **Email**: support@example.com
 - **Documentation**: https://docs.example.com
-- **GitHub**: https://github.com/your-org/builder-layer-end
+- **GitHub**: https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform

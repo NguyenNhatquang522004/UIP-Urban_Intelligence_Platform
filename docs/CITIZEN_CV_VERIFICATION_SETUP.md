@@ -46,7 +46,7 @@ docker compose down
 
 ```bash
 # Terminal 1: Start Citizen API
-cd D:\olp\Builder-Layer-End
+cd D:\olp\UIP-Urban_Intelligence_Platform
 python -m uvicorn src.agents.ingestion.citizen_ingestion_agent:app --host 0.0.0.0 --port 8001
 
 # Terminal 2: Start CV Verification Service
@@ -68,8 +68,8 @@ After=network.target stellio.service
 [Service]
 Type=simple
 User=appuser
-WorkingDirectory=/opt/builder-layer-end
-Environment="PYTHONPATH=/opt/builder-layer-end"
+WorkingDirectory=/opt/uip-urban-intelligence-platform
+Environment="PYTHONPATH=/opt/uip-urban-intelligence-platform"
 ExecStart=/usr/bin/python3 start_cv_verification_service.py
 Restart=always
 RestartSec=10
@@ -277,7 +277,7 @@ python test_citizen_complete_workflow.py
 echo $PYTHONPATH
 
 # Set if needed
-export PYTHONPATH=/path/to/Builder-Layer-End
+export PYTHONPATH=/path/to/UIP-Urban_Intelligence_Platform
 ```
 
 ### Stellio connection errors:
@@ -288,5 +288,5 @@ curl http://localhost:8080/ngsi-ld/v1/entities?type=CitizenObservation&limit=1
 
 # Check network
 docker network ls
-docker network inspect builder-layer-end_test-network
+docker network inspect uip-platform_test-network
 ```

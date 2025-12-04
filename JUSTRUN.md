@@ -109,7 +109,7 @@ Chạy tất cả với Docker Compose:
 ## 📦 Cấu Trúc Project
 
 ```
-Builder-Layer-End/
+UIP-Urban_Intelligence_Platform/
 ├── justrun.ps1              # PowerShell "just run" script
 ├── Makefile                 # Make-based "just run" system
 ├── docker-compose.yml       # Full stack orchestration
@@ -195,7 +195,7 @@ docker-compose logs stellio-api-gateway
 ```powershell
 # 1. Clone
 git clone <repo-url>
-cd Builder-Layer-End
+cd UIP-Urban_Intelligence_Platform
 
 # 2. Chạy development (tự động setup)
 .\justrun.ps1 dev

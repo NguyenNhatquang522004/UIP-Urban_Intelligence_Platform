@@ -3,6 +3,7 @@
 #Author: nguyễn Nhật Quang
 #Created: 2025-11-29
 #Version: 1.0.0
+#License: MIT
 # Purpose:
 #   Define Docker services for Stellio official dependencies: Kafka and PostgreSQL with TimescaleDB and PostGIS extensions
 #   Configure environment variables, ports, volumes, and health checks for optimal

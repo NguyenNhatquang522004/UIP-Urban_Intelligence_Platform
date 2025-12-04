@@ -613,7 +613,7 @@ accident_detection:
 1. **Clone Repository**:
    ```bash
    git clone <repository_url>
-   cd Builder-Layer-End
+   cd UIP-Urban_Intelligence_Platform
    ```
 
 2. **Install Dependencies**:

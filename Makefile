@@ -1,5 +1,5 @@
 # ============================================================================
-# Builder Layer End - One Command Setup & Run
+# UIP - Urban Intelligence Platform - One Command Setup & Run
 # ============================================================================
 # Usage:
 #   make             - Show help
@@ -40,7 +40,7 @@ build:
 
 # Install the package (GNU Make standard target)
 install: build
-	@echo "📦 Installing builder-layer-end..."
+	@echo "📦 Installing uip-urban-intelligence-platform..."
 	@if exist .venv ( \
 		.venv\Scripts\pip install . \
 	) else ( \
@@ -48,15 +48,15 @@ install: build
 	)
 	@echo "✅ Package installed successfully!"
 	@echo ""
-	@echo "Usage: builder-orchestrator"
+	@echo "Usage: uip-orchestrator"
 
 # Uninstall the package
 uninstall:
-	@echo "🗑️ Uninstalling builder-layer-end..."
+	@echo "🗑️ Uninstalling uip-urban-intelligence-platform..."
 	@if exist .venv ( \
-		.venv\Scripts\pip uninstall -y builder-layer-end \
+		.venv\Scripts\pip uninstall -y uip-urban-intelligence-platform \
 	) else ( \
-		pip uninstall -y builder-layer-end \
+		pip uninstall -y uip-urban-intelligence-platform \
 	)
 	@echo "✅ Package uninstalled"
 
@@ -81,7 +81,7 @@ distclean: clean
 
 help:
 	@echo "╔════════════════════════════════════════════════════════════════╗"
-	@echo "║  Builder Layer End - GNU Make Build System                    ║"
+	@echo "║  UIP - Urban Intelligence Platform - GNU Make Build System   ║"
 	@echo "╚════════════════════════════════════════════════════════════════╝"
 	@echo ""
 	@echo "GNU Make Standard Targets:"

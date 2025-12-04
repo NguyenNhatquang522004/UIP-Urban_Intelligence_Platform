@@ -43,8 +43,8 @@ The HCMC Traffic Monitoring System is a **multi-agent orchestration platform** t
 
 ```bash
 # Clone repository
-git clone https://github.com/your-org/builder-layer-end.git
-cd builder-layer-end
+git clone https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform.git
+cd UIP-Urban_Intelligence_Platform
 
 # Start all services
 docker-compose up -d

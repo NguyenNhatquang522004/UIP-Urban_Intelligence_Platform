@@ -1,7 +1,349 @@
-# Code Owners
-# This file defines who is responsible for reviewing code in different parts of the repository
-# See https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+# =============================================================================
+# CODEOWNERS - UIP (Urban Intelligence Platform)
+# =============================================================================
+#
+# This file defines who is responsible for reviewing changes to specific parts
+# of the codebase. When a pull request modifies files matching a pattern,
+# GitHub automatically requests reviews from the listed code owners.
+#
+# Syntax:
+#   <pattern> @github-username @github-team
+#
+# Order matters - later patterns override earlier patterns.
+# For more info: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+#
+# =============================================================================
+# Team Members:
+# =============================================================================
+# @NguyenNhatquang522004 - Nguyễn Nhật Quang (Lead Developer)
+# @JamesNguyen106        - Nguyễn Việt Hoàng (Full-Stack Developer)
+# @NguyenDinhAnhTuan04   - Nguyễn Đình Anh Tuấn (Backend Developer)
+# =============================================================================
 
-# Default owners for everything in the repo
-# These owners will be the default owners for everything unless a more specific rule matches
-* @your-org/core-team
+# =============================================================================
+# DEFAULT OWNERSHIP
+# =============================================================================
+# All files not matched by more specific rules below
+* @NguyenNhatquang522004
+
+# =============================================================================
+# ROOT LEVEL - Project Configuration & Entry Points
+# =============================================================================
+
+# Main entry points (Author: Nguyen Dinh Anh Tuan)
+/main.py @NguyenDinhAnhTuan04
+/orchestrator.py @NguyenDinhAnhTuan04
+
+# Build & Package configuration (Lead Developer)
+/pyproject.toml @NguyenNhatquang522004
+/setup.py @NguyenNhatquang522004
+/Makefile @NguyenNhatquang522004
+/MANIFEST.in @NguyenNhatquang522004
+/pytest.ini @NguyenNhatquang522004
+
+# =============================================================================
+# SOURCE CODE - /src/
+# =============================================================================
+
+# Core Module (Author: Nguyen Dinh Anh Tuan)
+/src/__init__.py @NguyenDinhAnhTuan04
+/src/orchestrator.py @NguyenDinhAnhTuan04
+/src/core/ @NguyenDinhAnhTuan04
+/src/utils/ @NguyenDinhAnhTuan04
+
+# CLI Module
+/src/cli/ @NguyenDinhAnhTuan04
+/src/cli/rdf/ @JamesNguyen106
+/src/cli/graph/ @NguyenNhatquang522004
+/src/cli/cache/ @NguyenNhatquang522004
+
+# =============================================================================
+# AGENT SYSTEM - /src/agents/
+# =============================================================================
+
+# Agent Base & Init (Author: Nguyen Nhat Quang)
+/src/agents/__init__.py @NguyenNhatquang522004
+
+# Analytics Agents (Author: Nguyen Nhat Quang)
+/src/agents/analytics/ @NguyenNhatquang522004
+
+# Data Collection Agents (Author: Nguyen Viet Hoang)
+/src/agents/data_collection/ @JamesNguyen106
+
+# Transformation Agents (Author: Nguyen Dinh Anh Tuan)
+/src/agents/transformation/ @NguyenDinhAnhTuan04
+
+# State Management Agents (Author: Nguyen Dinh Anh Tuan)
+/src/agents/state_management/ @NguyenDinhAnhTuan04
+
+# Notification Agents (Author: Nguyen Nhat Quang)
+/src/agents/notification/ @NguyenNhatquang522004
+
+# RDF & Linked Data Agents
+/src/agents/rdf_linked_data/__init__.py @JamesNguyen106
+/src/agents/rdf_linked_data/smart_data_models_validation_agent.py @JamesNguyen106
+/src/agents/rdf_linked_data/triplestore_loader_agent.py @JamesNguyen106
+/src/agents/rdf_linked_data/ngsi_ld_to_rdf_agent.py @JamesNguyen106
+/src/agents/rdf_linked_data/content_negotiation_agent.py @JamesNguyen106
+/src/agents/rdf_linked_data/lod_linkset_enrichment_agent.py @NguyenDinhAnhTuan04
+
+# Context Management Agents
+/src/agents/context_management/temporal_data_manager_agent.py @NguyenNhatquang522004
+/src/agents/context_management/stellio_state_query_agent.py @JamesNguyen106
+/src/agents/context_management/state_updater_agent.py @JamesNguyen106
+/src/agents/context_management/entity_publisher_agent.py @JamesNguyen106
+
+# Integration Agents (Author: Nguyen Nhat Quang)
+/src/agents/integration/ @NguyenNhatquang522004
+
+# Monitoring Agents
+/src/agents/monitoring/__init__.py @JamesNguyen106
+/src/agents/monitoring/performance_monitor_agent.py @NguyenDinhAnhTuan04
+/src/agents/monitoring/health_check_agent.py @NguyenDinhAnhTuan04
+/src/agents/monitoring/data_quality_validator_agent.py @JamesNguyen106
+
+# Ingestion Agents (Author: Nguyen Dinh Anh Tuan)
+/src/agents/ingestion/ @NguyenDinhAnhTuan04
+
+# Kafka Publisher (Author: Nguyen Dinh Anh Tuan)
+/src/agents/kafka_entity_publisher_agent.py @NguyenDinhAnhTuan04
+/src/agents/run_kafka_publisher.py @NguyenDinhAnhTuan04
+
+# =============================================================================
+# FRONTEND APPLICATION - /apps/traffic-web-app/frontend/
+# =============================================================================
+
+# Build & Config (Author: Nguyen Dinh Anh Tuan)
+/apps/traffic-web-app/frontend/vite.config.ts @NguyenDinhAnhTuan04
+/apps/traffic-web-app/frontend/src/vite-env.d.ts @NguyenDinhAnhTuan04
+/apps/traffic-web-app/frontend/src/types/ @NguyenDinhAnhTuan04
+/apps/traffic-web-app/frontend/src/store/ @NguyenDinhAnhTuan04
+
+# App Entry & Routing (Author: Nguyen Dinh Anh Tuan)
+/apps/traffic-web-app/frontend/src/main.tsx @NguyenDinhAnhTuan04
+/apps/traffic-web-app/frontend/src/App.tsx @NguyenDinhAnhTuan04
+
+# Services
+/apps/traffic-web-app/frontend/src/services/api.ts @NguyenDinhAnhTuan04
+/apps/traffic-web-app/frontend/src/services/websocket.ts @NguyenDinhAnhTuan04
+/apps/traffic-web-app/frontend/src/services/citizenReportService.ts @NguyenDinhAnhTuan04
+/apps/traffic-web-app/frontend/src/services/docsService.ts @NguyenNhatquang522004
+
+# Pages
+/apps/traffic-web-app/frontend/src/pages/LandingPage.tsx @NguyenDinhAnhTuan04
+/apps/traffic-web-app/frontend/src/pages/Dashboard.tsx @NguyenDinhAnhTuan04
+/apps/traffic-web-app/frontend/src/pages/DocsPage.tsx @NguyenNhatquang522004
+
+# Hooks (Author: Nguyen Dinh Anh Tuan)
+/apps/traffic-web-app/frontend/src/hooks/ @NguyenDinhAnhTuan04
+
+# Landing Page Components (Author: Nguyen Dinh Anh Tuan)
+/apps/traffic-web-app/frontend/src/components/landing/ @NguyenDinhAnhTuan04
+
+# Map & Visualization Components (Author: Nguyen Nhat Quang)
+/apps/traffic-web-app/frontend/src/components/TrafficMap.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/Sidebar.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/FilterPanel.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/AnalyticsDashboard.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/WeatherOverlay.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/VehicleHeatmap.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/TimeMachine.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/SpeedZones.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/SimpleLegend.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/RouteVisualization.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/RoutePlanner.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/PollutantCircles.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/PatternZones.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/NotificationProvider.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/MapLegend.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/HumidityVisibilityLayer.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/HistoricalViewBanner.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/ErrorBoundary.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/CorrelationPanel.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/CorrelationLines.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/ConnectionStatus.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/CameraDetailModal.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/AQIHeatmap.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/AccidentMarkers.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/AccidentFrequencyChart.tsx @NguyenNhatquang522004
+/apps/traffic-web-app/frontend/src/components/CircleDrawTool.tsx @NguyenNhatquang522004
+
+# Citizen Report Components (Author: Nguyen Nhat Quang)
+/apps/traffic-web-app/frontend/src/components/CitizenReport*.tsx @NguyenNhatquang522004
+
+# Docs Components (Author: Nguyen Nhat Quang)
+/apps/traffic-web-app/frontend/src/components/docs/ @NguyenNhatquang522004
+
+# Agent UI Components (Author: Nguyen Nhat Quang)
+/apps/traffic-web-app/frontend/src/components/agents/ @NguyenNhatquang522004
+
+# =============================================================================
+# BACKEND APPLICATION - /apps/traffic-web-app/backend/
+# =============================================================================
+
+# Server & Core (Author: Nguyen Dinh Anh Tuan)
+/apps/traffic-web-app/backend/src/server.ts @NguyenDinhAnhTuan04
+/apps/traffic-web-app/backend/src/types/ @NguyenDinhAnhTuan04
+/apps/traffic-web-app/backend/src/utils/ @NguyenDinhAnhTuan04
+/apps/traffic-web-app/backend/src/services/ @NguyenDinhAnhTuan04
+/apps/traffic-web-app/backend/src/routes/ @NguyenDinhAnhTuan04
+
+# Backend Tests (Author: Nguyen Nhat Quang)
+/apps/traffic-web-app/backend/src/routes/__tests__/ @NguyenNhatquang522004
+
+# Examples (Author: Nguyen Nhat Quang)
+/apps/traffic-web-app/backend/examples/ @NguyenNhatquang522004
+
+# Setup Scripts (Author: Nguyen Nhat Quang)
+/apps/traffic-web-app/backend/scripts/ @NguyenNhatquang522004
+
+# =============================================================================
+# TESTS - /tests/
+# =============================================================================
+
+# Test Base (Author: Nguyen Nhat Quang)
+/tests/__init__.py @NguyenNhatquang522004
+/tests/unit/__init__.py @NguyenNhatquang522004
+/tests/integration/__init__.py @NguyenNhatquang522004
+
+# Unit Tests
+/tests/unit/test_sosa_mapper.py @NguyenDinhAnhTuan04
+/tests/unit/test_ngsi_ld_transformer.py @NguyenDinhAnhTuan04
+/tests/unit/test_image_refresh_agent.py @JamesNguyen106
+/tests/unit/test_pattern_recognition.py @NguyenNhatquang522004
+/tests/unit/test_orchestrator.py @NguyenNhatquang522004
+/tests/unit/test_data_seeder.py @NguyenNhatquang522004
+/tests/unit/test_config_loader.py @NguyenNhatquang522004
+/tests/unit/test_cache_manager.py @NguyenNhatquang522004
+/tests/unit/test_alert_dispatcher.py @NguyenNhatquang522004
+/tests/unit/test_accident_detection.py @NguyenNhatquang522004
+
+# Integration Tests
+/tests/test_refdevice_extraction.py @NguyenDinhAnhTuan04
+/tests/test_jsonld_extraction.py @NguyenDinhAnhTuan04
+/tests/test_congestion_full.py @NguyenDinhAnhTuan04
+/tests/test_congestion_debug.py @NguyenDinhAnhTuan04
+/tests/test_citizen_*.py @NguyenDinhAnhTuan04
+/tests/test_mongodb_deep_integrity.py @NguyenNhatquang522004
+
+# =============================================================================
+# CONFIGURATION - /config/
+# =============================================================================
+
+# Agent Configurations (Author: Nguyen Dinh Anh Tuan)
+/config/agents.yaml @NguyenDinhAnhTuan04
+/config/workflow.yaml @NguyenDinhAnhTuan04
+/config/validation.yaml @NguyenDinhAnhTuan04
+/config/temporal_config.yaml @NguyenDinhAnhTuan04
+/config/sosa_mappings.yaml @NguyenDinhAnhTuan04
+/config/ngsi_ld_mappings.yaml @NguyenDinhAnhTuan04
+/config/namespaces.yaml @NguyenDinhAnhTuan04
+/config/health_check_config.yaml @NguyenDinhAnhTuan04
+/config/data_sources.yaml @NguyenDinhAnhTuan04
+/config/performance_monitor_config.yaml @NguyenDinhAnhTuan04
+
+# Analytics & Pattern Config (Author: Nguyen Nhat Quang)
+/config/pattern_config.yaml @NguyenNhatquang522004
+/config/pattern_recognition.yaml @NguyenNhatquang522004
+/config/mongodb_config.yaml @NguyenNhatquang522004
+/config/lod_linkset_mappings.yaml @NguyenNhatquang522004
+/config/incident_report_config.yaml @NguyenNhatquang522004
+/config/subscriptions.yaml @NguyenNhatquang522004
+/config/gateway-application.yml @NguyenNhatquang522004
+
+# Integration Config (Author: Nguyen Viet Hoang)
+/config/stellio.yaml @JamesNguyen106
+/config/state_updater_config.yaml @JamesNguyen106
+/config/neo4j_sync.yaml @JamesNguyen106
+/config/fuseki.yaml @JamesNguyen106
+
+# =============================================================================
+# SCRIPTS - /scripts/
+# =============================================================================
+
+# Setup & Deploy Scripts (Author: Nguyen Nhat Quang)
+/scripts/setup_prod.sh @NguyenNhatquang522004
+/scripts/setup_dev.sh @NguyenNhatquang522004
+/scripts/deploy.sh @NguyenNhatquang522004
+/scripts/rollback.sh @NguyenNhatquang522004
+/scripts/health_check.sh @NguyenNhatquang522004
+/scripts/monitoring_setup.sh @NguyenNhatquang522004
+
+# Database Scripts (Author: Nguyen Nhat Quang)
+/scripts/database/ @NguyenNhatquang522004
+
+# Pipeline Scripts (Author: Nguyen Nhat Quang)
+/scripts/pipeline/ @NguyenNhatquang522004
+
+# Monitoring Scripts (Author: Nguyen Nhat Quang)
+/scripts/monitoring/ @NguyenNhatquang522004
+
+# CV & Model Scripts (Author: Nguyen Nhat Quang)
+/scripts/download_yolox_weights.py @NguyenNhatquang522004
+/scripts/download_accident_model.py @NguyenNhatquang522004
+/scripts/start_cv_verification_service.py @NguyenNhatquang522004
+/scripts/verify_mongodb_ngsild_data.py @NguyenNhatquang522004
+/scripts/seed_mongodb_sample_data.py @NguyenNhatquang522004
+
+# Citizen Feature Scripts (Author: Nguyen Dinh Anh Tuan)
+/scripts/seed_citizen_reports.py @NguyenDinhAnhTuan04
+/scripts/run_citizen_verification.py @NguyenDinhAnhTuan04
+
+# =============================================================================
+# DOCKER & DEVOPS
+# =============================================================================
+
+# Docker Files (Author: Nguyen Nhat Quang)
+/docker/ @NguyenNhatquang522004
+/Dockerfile @NguyenNhatquang522004
+/docker-compose.yml @NguyenNhatquang522004
+
+# =============================================================================
+# GITHUB & CI/CD
+# =============================================================================
+
+# GitHub Config & Workflows (Lead Developer)
+/.github/ @NguyenNhatquang522004
+
+# =============================================================================
+# DOCUMENTATION
+# =============================================================================
+
+# All Documentation - Team Collaboration
+/docs/ @NguyenNhatquang522004 @JamesNguyen106 @NguyenDinhAnhTuan04
+/guides/ @NguyenNhatquang522004 @JamesNguyen106 @NguyenDinhAnhTuan04
+/reports/ @NguyenNhatquang522004 @JamesNguyen106 @NguyenDinhAnhTuan04
+*.md @NguyenNhatquang522004 @JamesNguyen106 @NguyenDinhAnhTuan04
+
+# Docusaurus Documentation
+/apps/traffic-web-app/frontend/docs/ @NguyenNhatquang522004 @JamesNguyen106 @NguyenDinhAnhTuan04
+
+# =============================================================================
+# ASSETS & DATA
+# =============================================================================
+
+# Assets (Lead Developer)
+/assets/ @NguyenNhatquang522004
+
+# Data Files (All Team)
+/data/ @NguyenNhatquang522004 @JamesNguyen106 @NguyenDinhAnhTuan04
+
+# =============================================================================
+# SPECIAL FILES - Require All Approvers
+# =============================================================================
+
+# Security-sensitive files
+/.github/CODEOWNERS @NguyenNhatquang522004 @JamesNguyen106 @NguyenDinhAnhTuan04
+/.github/SECURITY.md @NguyenNhatquang522004 @JamesNguyen106 @NguyenDinhAnhTuan04
+/COPYING @NguyenNhatquang522004 @JamesNguyen106 @NguyenDinhAnhTuan04
+/LICENSE @NguyenNhatquang522004 @JamesNguyen106 @NguyenDinhAnhTuan04
+
+# Project Identity Files
+/AUTHORS.md @NguyenNhatquang522004 @JamesNguyen106 @NguyenDinhAnhTuan04
+/CONTRIBUTORS.md @NguyenNhatquang522004 @JamesNguyen106 @NguyenDinhAnhTuan04
+/CHANGELOG.md @NguyenNhatquang522004 @JamesNguyen106 @NguyenDinhAnhTuan04
+/README.md @NguyenNhatquang522004 @JamesNguyen106 @NguyenDinhAnhTuan04
+
+# =============================================================================
+# END OF CODEOWNERS
+# =============================================================================

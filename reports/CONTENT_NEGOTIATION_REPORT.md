@@ -886,7 +886,7 @@ content_negotiation:
 ```bash
 # Clone repository
 git clone <repo-url>
-cd Builder-Layer-End
+cd UIP-Urban_Intelligence_Platform
 
 # Create virtual environment
 python -m venv .venv

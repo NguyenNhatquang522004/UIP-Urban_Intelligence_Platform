@@ -1,7 +1,7 @@
 # Workflow Orchestrator - Implementation Report
 
 **Date:** November 1, 2025  
-**Project:** LOD Data Pipeline - Builder Layer  
+**Project:** LOD Data Pipeline - UIP  
 **Component:** Multi-Agent Workflow Orchestrator  
 **Status:** ✅ PRODUCTION READY
 
@@ -683,7 +683,7 @@ OVERALL STATUS: PRODUCTION READY ✅
 
 1. **Clone Repository:**
    ```bash
-   cd D:\olp\Builder-Layer-End
+   cd D:\olp\UIP-Urban_Intelligence_Platform
    ```
 
 2. **Activate Virtual Environment:**

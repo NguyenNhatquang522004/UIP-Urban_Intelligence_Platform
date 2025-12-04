@@ -2,7 +2,7 @@
 
 > **Hướng dẫn chi tiết để khai thác 100% data từ LOD Cloud và các hệ thống lưu trữ**
 > 
-> Document này cung cấp tất cả endpoints, queries, và methods để truy cập đầy đủ data trong project Builder Layer LOD System.
+> Document này cung cấp tất cả endpoints, queries, và methods để truy cập đầy đủ data trong project UIP LOD System.
 
 ---
 
@@ -116,7 +116,7 @@ matplotlib==3.8.2
 
 ```yaml
 # Save as: docker-compose.test.yml
-# Location: D:\olp\Builder-Layer-End\docker-compose.test.yml
+# Location: D:\olp\UIP-Urban_Intelligence_Platform\docker-compose.test.yml
 
 version: '3.8'
 
@@ -270,13 +270,13 @@ volumes:
 
 ```powershell
 # Navigate to project directory
-cd D:\olp\Builder-Layer-End
+cd D:\olp\UIP-Urban_Intelligence_Platform
 
 # Start all services
 docker-compose -f docker-compose.test.yml up -d
 
 # Output:
-# Creating network "builder-layer-end_lod-network" with driver "bridge"
+# Creating network "uip-platform_lod-network" with driver "bridge"
 # Creating test-zookeeper ... done
 # Creating test-postgres  ... done
 # Creating test-redis     ... done
@@ -830,7 +830,7 @@ docker logs test-stellio-api-gateway
 
 ```powershell
 # Verify network connectivity
-docker network inspect builder-layer-end_lod-network
+docker network inspect uip-platform_lod-network
 
 # Test from inside container
 docker exec -it test-stellio-api-gateway curl http://postgres:5432

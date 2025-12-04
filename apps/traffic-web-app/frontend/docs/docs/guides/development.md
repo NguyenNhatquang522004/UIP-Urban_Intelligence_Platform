@@ -17,8 +17,8 @@ Complete guide for local development, debugging, testing, and preparing contribu
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/your-org/hcmc-traffic.git
-cd hcmc-traffic
+git clone https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform.git
+cd UIP-Urban_Intelligence_Platform
 ```
 
 ### 2. Install Dependencies
@@ -867,4 +867,4 @@ Both backend and frontend support hot reload in development:
 
 ## License
 
-MIT License
+MIT License - Copyright (c) 2024-2025 UIP Contributors (Nguyễn Nhật Quang, Nguyễn Việt Hoàng, Nguyễn Đình Anh Tuấn)

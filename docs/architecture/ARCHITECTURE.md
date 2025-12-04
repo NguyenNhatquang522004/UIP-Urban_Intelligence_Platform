@@ -1,8 +1,8 @@
-# Builder Layer End - Architecture Documentation
+# UIP - Urban Intelligence Platform - Architecture Documentation
 
 ## Overview
 
-Builder Layer End is a comprehensive **Linked Open Data (LOD)** pipeline system for real-time traffic monitoring in Ho Chi Minh City. The system processes traffic camera data, performs computer vision analysis, and publishes standardized NGSI-LD entities enriched with SOSA/SSN ontologies to semantic triple stores.
+UIP - Urban Intelligence Platform is a comprehensive **Linked Open Data (LOD)** pipeline system for real-time traffic monitoring in Ho Chi Minh City. The system processes traffic camera data, performs computer vision analysis, and publishes standardized NGSI-LD entities enriched with SOSA/SSN ontologies to semantic triple stores.
 
 ## System Architecture
 
@@ -204,7 +204,7 @@ Located in `config/` directory:
 │    Docker Compose Stack                 │
 │                                         │
 │  ┌─────────────────────────────────┐   │
-│  │  Builder Layer End Container     │   │
+│  │  UIP Platform Container          │   │
 │  │  - Orchestrator                  │   │
 │  │  - All agents                    │   │
 │  │  - Port: 8000 (API Gateway)      │   │

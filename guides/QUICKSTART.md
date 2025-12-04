@@ -202,7 +202,7 @@ python agents/data_collection/image_refresh_agent.py --domain medical_devices --
 
 ```bash
 # Make sure you're in the project root directory
-cd d:\olp\Builder-Layer-End
+cd d:\olp\UIP-Urban_Intelligence_Platform
 
 # Reinstall dependencies
 pip install -r requirements.txt
@@ -212,7 +212,7 @@ pip install -r requirements.txt
 
 ```bash
 # Verify you're in the correct directory
-pwd  # Should show: d:\olp\Builder-Layer-End
+pwd  # Should show: d:\olp\UIP-Urban_Intelligence_Platform
 
 # Check config file exists
 ls config/data_sources.yaml

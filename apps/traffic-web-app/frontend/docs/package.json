@@ -1,8 +1,34 @@
 {
-    "name": "hcmc-traffic-monitoring-docs",
-    "version": "1.0.0",
-    "description": "Documentation for HCMC Traffic Monitoring System",
+    "name": "uip-urban-intelligence-platform-docs",
+    "version": "2.0.0",
+    "description": "Documentation for UIP - Urban Intelligence Platform",
     "private": true,
+    "author": {
+        "name": "UIP Contributors",
+        "url": "https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform"
+    },
+    "contributors": [
+        {
+            "name": "Nguyễn Nhật Quang",
+            "email": "nguyennhatquang522004@gmail.com",
+            "url": "https://github.com/NguyenNhatquang522004"
+        },
+        {
+            "name": "Nguyễn Việt Hoàng",
+            "email": "viethoang01062004nt@gmail.com",
+            "url": "https://github.com/JamesNguyen106"
+        },
+        {
+            "name": "Nguyễn Đình Anh Tuấn",
+            "email": "nguyentuan834897@gmail.com",
+            "url": "https://github.com/NguyenDinhAnhTuan04"
+        }
+    ],
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform.git"
+    },
     "scripts": {
         "docusaurus": "docusaurus",
         "start": "docusaurus start",

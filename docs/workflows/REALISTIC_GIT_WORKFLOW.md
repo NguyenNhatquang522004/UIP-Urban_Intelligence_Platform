@@ -25,8 +25,8 @@ git config user.email
 
 # Clone repository
 cd d:\projects
-git clone https://github.com/yourusername/builder-layer-end.git
-cd builder-layer-end
+git clone https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform.git
+cd UIP-Urban_Intelligence_Platform
 ```
 
 #### 🖥️ Máy 2 - Person 2 (Data Integration Developer - Tran Thi B)
@@ -42,8 +42,8 @@ git config user.email
 
 # Clone repository
 cd d:\projects
-git clone https://github.com/yourusername/builder-layer-end.git
-cd builder-layer-end
+git clone https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform.git
+cd UIP-Urban_Intelligence_Platform
 ```
 
 #### 🖥️ Máy 3 - Person 3 (DevOps Engineer - Le Van C)
@@ -59,8 +59,8 @@ git config user.email
 
 # Clone repository
 cd d:\projects
-git clone https://github.com/yourusername/builder-layer-end.git
-cd builder-layer-end
+git clone https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform.git
+cd UIP-Urban_Intelligence_Platform
 ```
 
 ### 2. Thiết lập GitHub Personal Access Tokens (Cho mỗi người)
@@ -109,7 +109,7 @@ Get-Content $env:USERPROFILE\.ssh\id_ed25519.pub | Set-Clipboard
 **Clone repository bằng SSH:**
 
 ```bash
-git clone git@github.com:yourusername/builder-layer-end.git
+git clone git@github.com:NguyenNhatquang522004/UIP-Urban_Intelligence_Platform.git
 ```
 
 ---
@@ -122,7 +122,7 @@ git clone git@github.com:yourusername/builder-layer-end.git
 
 ```powershell
 # Person 3 trên máy của mình
-cd d:\projects\builder-layer-end
+cd d:\projects\UIP-Urban_Intelligence_Platform
 
 # Kiểm tra Git identity
 git config user.name   # Should show: Le Van C
@@ -309,7 +309,7 @@ git branch -d feature/cicd-infrastructure
 **Trên Máy 1 (Person 1 - Nguyen Van A):**
 
 ```powershell
-cd d:\projects\builder-layer-end
+cd d:\projects\UIP-Urban_Intelligence_Platform
 
 # Verify Git identity
 git config user.name   # Should show: Nguyen Van A
@@ -372,7 +372,7 @@ git push origin feature/core-logging-system
 **Trên Máy 2 (Person 2 - Tran Thi B) - CÙNG LÚC với Person 1:**
 
 ```powershell
-cd d:\projects\builder-layer-end
+cd d:\projects\UIP-Urban_Intelligence_Platform
 
 # Verify Git identity
 git config user.name   # Should show: Tran Thi B
@@ -480,7 +480,7 @@ git push origin feature/core-logging-system
 **Trên Máy 3 (Person 3):**
 
 ```powershell
-cd d:\projects\builder-layer-end
+cd d:\projects\UIP-Urban_Intelligence_Platform
 
 # Pull latest
 git checkout main
@@ -602,7 +602,7 @@ git push origin --delete feature/camera-data-collection
 **Trên Máy 1:**
 
 ```powershell
-cd d:\projects\builder-layer-end
+cd d:\projects\UIP-Urban_Intelligence_Platform
 
 git checkout main
 git pull origin main
@@ -622,7 +622,7 @@ git push -u origin feature/analytics-agents
 **Trên Máy 2 (CÙNG LÚC):**
 
 ```powershell
-cd d:\projects\builder-layer-end
+cd d:\projects\UIP-Urban_Intelligence_Platform
 
 git checkout main
 git pull origin main
@@ -750,7 +750,7 @@ Remove-Item Env:GIT_COMMITTER_DATE
 **Trên Máy 1 (Person 1 muốn xem code của Person 2):**
 
 ```powershell
-cd d:\projects\builder-layer-end
+cd d:\projects\UIP-Urban_Intelligence_Platform
 
 # Fetch all branches from remote
 git fetch --all
@@ -773,7 +773,7 @@ git checkout feature/core-logging-system
 **Trên Máy 2 (Person 2 made a typo):**
 
 ```powershell
-cd d:\projects\builder-layer-end
+cd d:\projects\UIP-Urban_Intelligence_Platform
 
 git commit -m "feat: implemnt data collector"  # Typo!
 
@@ -794,7 +794,7 @@ git push origin feature/camera-data-collection
 **Trên Máy 2 (Person 2):**
 
 ```powershell
-cd d:\projects\builder-layer-end
+cd d:\projects\UIP-Urban_Intelligence_Platform
 
 git checkout feature/stellio-integration
 
@@ -819,7 +819,7 @@ git push origin feature/stellio-integration
 **Trên Máy 3 (Person 3 has messy commits):**
 
 ```powershell
-cd d:\projects\builder-layer-end
+cd d:\projects\UIP-Urban_Intelligence_Platform
 
 git checkout feature/deployment-scripts
 
@@ -853,7 +853,7 @@ git push -f origin feature/deployment-scripts
 **Trên Máy 1 (Person 1 needs to switch tasks urgently):**
 
 ```powershell
-cd d:\projects\builder-layer-end
+cd d:\projects\UIP-Urban_Intelligence_Platform
 
 git checkout feature/analytics-agents
 
@@ -896,10 +896,10 @@ git push origin feature/analytics-agents
 **Trên Máy 1 (Person 1's fork):**
 
 ```powershell
-cd d:\projects\builder-layer-end
+cd d:\projects\UIP-Urban_Intelligence_Platform
 
 # Add upstream remote (original repo)
-git remote add upstream https://github.com/original-org/builder-layer-end.git
+git remote add upstream https://github.com/original-org/UIP-Urban_Intelligence_Platform.git
 
 # Fetch upstream changes
 git fetch upstream
@@ -1032,7 +1032,7 @@ param(
 
 Write-Host "🔄 Daily Sync for $PersonName" -ForegroundColor Cyan
 
-cd d:\projects\builder-layer-end
+cd d:\projects\UIP-Urban_Intelligence_Platform
 
 # Verify Git identity
 $currentUser = git config user.name
@@ -1244,7 +1244,7 @@ PERSON 3 (Machine $Machine3IP) - Follow these steps:
 ═══════════════════════════════════════════════════════════
 
 1. Open PowerShell on Machine 3
-2. Navigate to: cd d:\projects\builder-layer-end
+2. Navigate to: cd d:\projects\UIP-Urban_Intelligence_Platform
 3. Run these commands:
 
    git checkout -b feature/cicd-infrastructure
@@ -1393,7 +1393,7 @@ Write-Host "🖥️  Machine 1 - Person 1: Nguyen Van A" -ForegroundColor Green
 git config user.name   # Should be: Nguyen Van A
 git config user.email  # Should be: nguyenvana@company.com
 
-cd d:\projects\builder-layer-end
+cd d:\projects\UIP-Urban_Intelligence_Platform
 
 # Daily work based on EXECUTION_ORDER.md
 switch ($Day) {
@@ -1438,7 +1438,7 @@ Write-Host "🖥️  Machine 2 - Person 2: Tran Thi B" -ForegroundColor Cyan
 git config user.name   # Should be: Tran Thi B
 git config user.email  # Should be: tranthib@company.com
 
-cd d:\projects\builder-layer-end
+cd d:\projects\UIP-Urban_Intelligence_Platform
 
 switch ($Day) {
     2 {
@@ -1480,7 +1480,7 @@ Write-Host "🖥️  Machine 3 - Person 3: Le Van C" -ForegroundColor Yellow
 git config user.name   # Should be: Le Van C
 git config user.email  # Should be: levanc@company.com
 
-cd d:\projects\builder-layer-end
+cd d:\projects\UIP-Urban_Intelligence_Platform
 
 switch ($Day) {
     1 {
@@ -1888,7 +1888,7 @@ git log --pretty=format:'%ad' --date=short | sort | uniq -c
 **Trên Máy 3 (Person 3 handles urgently):**
 
 ```powershell
-cd d:\projects\builder-layer-end
+cd d:\projects\UIP-Urban_Intelligence_Platform
 
 git checkout main
 git pull origin main

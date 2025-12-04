@@ -2,6 +2,9 @@
 # Optimized for minimal size and faster builds
 #Author: nguyễn Nhật Quang
 #Created: 2025-11-24
+#Version: 1.0.0
+#License: MIT
+# Stage 1: Base Image
 FROM python:3.10-slim
 
 WORKDIR /app

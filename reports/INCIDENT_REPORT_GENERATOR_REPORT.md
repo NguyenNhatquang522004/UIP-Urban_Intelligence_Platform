@@ -1082,8 +1082,8 @@ selenium>=4.0     # Optional, for Folium PNG export
 
 #### 1. Clone Repository
 ```bash
-git clone https://github.com/yourusername/builder-layer.git
-cd builder-layer
+git clone https://github.com/yourusername/uip-platform.git
+cd uip-platform
 ```
 
 #### 2. Create Virtual Environment

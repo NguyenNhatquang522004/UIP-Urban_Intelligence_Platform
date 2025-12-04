@@ -1,4 +1,4 @@
-# Production Dockerfile for Builder Layer End
+# Production Dockerfile for UIP - Urban Intelligence Platform
 # Multi-stage build for optimized image size
 #Author: nguyễn Nhật Quang
 #Created: 2025-11-24

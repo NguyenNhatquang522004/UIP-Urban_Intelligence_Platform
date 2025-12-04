@@ -1,6 +1,14 @@
-# HCMC Traffic Monitoring System - Documentation
+# UIP - Urban Intelligence Platform - Documentation
 
-This directory contains the complete Docusaurus documentation for the project.
+This directory contains the complete Docusaurus documentation for the UIP project.
+
+## 👥 Team
+
+| Name | Role | GitHub |
+|------|------|--------|
+| **Nguyễn Nhật Quang** | Lead Developer | [@NguyenNhatquang522004](https://github.com/NguyenNhatquang522004) |
+| **Nguyễn Việt Hoàng** | Full-Stack Developer | [@JamesNguyen106](https://github.com/JamesNguyen106) |
+| **Nguyễn Đình Anh Tuấn** | Backend Developer | [@NguyenDinhAnhTuan04](https://github.com/NguyenDinhAnhTuan04) |
 
 ## 📚 Documentation Structure
 
@@ -261,4 +269,8 @@ vercel --prod
 
 ---
 
-Built with ❤️ using [Docusaurus](https://docusaurus.io/)
+Built with ❤️ by the UIP Team using [Docusaurus](https://docusaurus.io/)
+
+## 📄 License
+
+MIT License - Copyright (c) 2024-2025 UIP Contributors (Nguyễn Nhật Quang, Nguyễn Việt Hoàng, Nguyễn Đình Anh Tuấn)

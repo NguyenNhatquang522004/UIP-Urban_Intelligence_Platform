@@ -352,8 +352,8 @@ jobs:
           file: ./docker/Dockerfile.test
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/builder-layer-test:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/builder-layer-test:${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/uip-platform-test:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/uip-platform-test:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
       

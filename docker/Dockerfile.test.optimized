@@ -2,6 +2,8 @@
 # Reduces final image size by 60-70%
 #Author: nguyễn Nhật Quang
 #Created: 2025-11-24
+#Version: 1.0.0
+#License: MIT
 # Stage 1: Builder - Install dependencies
 FROM python:3.10-slim AS builder
 

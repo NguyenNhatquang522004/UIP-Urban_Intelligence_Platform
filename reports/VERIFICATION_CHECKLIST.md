@@ -5,7 +5,7 @@
 ### 1. Kiểm tra code compile thành công
 ```powershell
 # Chạy lệnh này - phải KHÔNG có lỗi
-& D:/olp/Builder-Layer-End/.venv/Scripts/python.exe -m py_compile `
+& D:/olp/UIP-Urban_Intelligence_Platform/.venv/Scripts/python.exe -m py_compile `
     agents/analytics/accident_detection_agent.py `
     agents/analytics/congestion_detection_agent.py `
     agents/analytics/pattern_recognition_agent.py `
@@ -17,9 +17,9 @@
 ### 2. Kiểm tra imports hoạt động
 ```powershell
 # Test import từng agent
-& D:/olp/Builder-Layer-End/.venv/Scripts/python.exe -c "from agents.analytics import accident_detection_agent; print('✅ OK')"
-& D:/olp/Builder-Layer-End/.venv/Scripts/python.exe -c "from agents.analytics import congestion_detection_agent; print('✅ OK')"
-& D:/olp/Builder-Layer-End/.venv/Scripts/python.exe -c "from agents.analytics import pattern_recognition_agent; print('✅ OK')"
+& D:/olp/UIP-Urban_Intelligence_Platform/.venv/Scripts/python.exe -c "from agents.analytics import accident_detection_agent; print('✅ OK')"
+& D:/olp/UIP-Urban_Intelligence_Platform/.venv/Scripts/python.exe -c "from agents.analytics import congestion_detection_agent; print('✅ OK')"
+& D:/olp/UIP-Urban_Intelligence_Platform/.venv/Scripts/python.exe -c "from agents.analytics import pattern_recognition_agent; print('✅ OK')"
 
 # ✅ Kết quả mong đợi: In ra "✅ OK" cho mỗi agent
 ```
@@ -27,8 +27,8 @@
 ### 3. Kiểm tra YAML configs
 ```powershell
 # Validate YAML syntax
-& D:/olp/Builder-Layer-End/.venv/Scripts/python.exe -c "import yaml; yaml.safe_load(open('config/congestion_config.yaml')); print('✅ Valid')"
-& D:/olp/Builder-Layer-End/.venv/Scripts/python.exe -c "import yaml; yaml.safe_load(open('config/pattern_config.yaml')); print('✅ Valid')"
+& D:/olp/UIP-Urban_Intelligence_Platform/.venv/Scripts/python.exe -c "import yaml; yaml.safe_load(open('config/congestion_config.yaml')); print('✅ Valid')"
+& D:/olp/UIP-Urban_Intelligence_Platform/.venv/Scripts/python.exe -c "import yaml; yaml.safe_load(open('config/pattern_config.yaml')); print('✅ Valid')"
 
 # ✅ Kết quả mong đợi: In ra "✅ Valid" cho mỗi file
 ```
@@ -36,7 +36,7 @@
 ### 4. Test file creation
 ```powershell
 # Chạy automated test
-& D:/olp/Builder-Layer-End/.venv/Scripts/python.exe test_phase5_file_creation.py
+& D:/olp/UIP-Urban_Intelligence_Platform/.venv/Scripts/python.exe test_phase5_file_creation.py
 
 # ✅ Kết quả mong đợi: 
 #    - "✅ ALL TESTS PASSED"
@@ -138,7 +138,7 @@ $output | Select-String -Pattern "Input File Not Found|Empty Entity List|Skippin
 ### Test 3: Verify File Structures
 ```powershell
 # Check JSON validity
-& D:/olp/Builder-Layer-End/.venv/Scripts/python.exe -c @"
+& D:/olp/UIP-Urban_Intelligence_Platform/.venv/Scripts/python.exe -c @"
 import json
 from pathlib import Path
 
@@ -200,11 +200,11 @@ for f in files:
 ### Nếu gặp ImportError
 ```powershell
 # Activate virtual environment
-& D:/olp/Builder-Layer-End/.venv/Scripts/Activate.ps1
+& D:/olp/UIP-Urban_Intelligence_Platform/.venv/Scripts/Activate.ps1
 
 # Verify Python path
 python -c "import sys; print(sys.executable)"
-# Should point to: D:\olp\Builder-Layer-End\.venv\Scripts\python.exe
+# Should point to: D:\olp\UIP-Urban_Intelligence_Platform\.venv\Scripts\python.exe
 ```
 
 ### Nếu file không được tạo

@@ -1,5 +1,5 @@
 # 🎯 COMPREHENSIVE TEST REPORT - Image Refresh Agent
-## Builder Layer LOD System - Data Collection Module
+## UIP LOD System - Data Collection Module
 
 **Date**: November 1, 2025  
 **Test Environment**: Windows 10, Python 3.10.0  

@@ -275,7 +275,7 @@ pytest tests/rdf_linked_data/test_ngsi_ld_to_rdf_agent.py --cov=agents/rdf_linke
 ```
 ========== test session starts ==========
 platform win32 -- Python 3.10.0
-rootdir: D:\olp\Builder-Layer-End
+rootdir: D:\olp\UIP-Urban_Intelligence_Platform
 plugins: cov-4.1.0
 collected 50 items
 
@@ -740,11 +740,11 @@ Proceed with full dataset conversion (722 entities) and RDF store integration. T
 
 ### Full Test Suite Execution
 ```
-(.venv) PS D:\olp\Builder-Layer-End> pytest tests/rdf_linked_data/test_ngsi_ld_to_rdf_agent.py -v --tb=line -x
+(.venv) PS D:\olp\UIP-Urban_Intelligence_Platform> pytest tests/rdf_linked_data/test_ngsi_ld_to_rdf_agent.py -v --tb=line -x
 
 ========== test session starts ==========
 platform win32 -- Python 3.10.0, pytest-7.4.3
-rootdir: D:\olp\Builder-Layer-End
+rootdir: D:\olp\UIP-Urban_Intelligence_Platform
 plugins: cov-4.1.0
 collected 50 items
 

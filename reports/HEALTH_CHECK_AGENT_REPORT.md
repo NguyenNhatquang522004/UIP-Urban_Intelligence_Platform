@@ -2,7 +2,7 @@
 
 **Version:** 1.0.0  
 **Date:** November 1, 2025  
-**Author:** Builder Layer Development Team
+**Author:** UIP Development Team
 
 ---
 

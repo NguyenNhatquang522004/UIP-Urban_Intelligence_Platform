@@ -1,4 +1,4 @@
-"""Setup Configuration for Builder Layer.
+"""Setup Configuration for UIP - Urban Intelligence Platform.
 
 Module: setup
 Author: Nguyen Dinh Anh Tuan
@@ -8,7 +8,7 @@ Version: 1.0.0
 License: MIT
 
 Description:
-    Package setup and distribution configuration for the Builder Layer
+    Package setup and distribution configuration for the UIP
     Multi-Agent Traffic Management System.
 """
 
@@ -31,14 +31,14 @@ if requirements_file.exists():
         ]
 
 setup(
-    name="builder-layer-end",
+    name="uip-urban-intelligence-platform",
     version="1.0.0",
     description="Multi-Agent Linked Open Data Pipeline for Traffic Management",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="Nguyễn Nhật Quang, Nguyễn Việt Hoàng, Nguyễn Đình Anh Tuấn",
-    author_email="nguyennhatquang522004@gmail.com , nguyenviethoang@gmail.com , nguyendinhanhtuan@gmail.com",
-    url="https://github.com/your-org/builder-layer-end",
+    author_email="nguyennhatquang522004@gmail.com, viethoang01062004nt@gmail.com, nguyentuan834897@gmail.com",
+    url="https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform",
     
     # Package configuration
     packages=find_packages(where="src"),
@@ -59,7 +59,7 @@ setup(
     # Entry points
     entry_points={
         "console_scripts": [
-            "builder-orchestrator=orchestrator:main",
+            "uip-orchestrator=orchestrator:main",
         ],
     },
     
@@ -81,8 +81,8 @@ setup(
     
     # Project URLs
     project_urls={
-        "Documentation": "https://github.com/your-org/builder-layer-end/docs",
-        "Source": "https://github.com/your-org/builder-layer-end",
-        "Bug Reports": "https://github.com/your-org/builder-layer-end/issues",
+        "Documentation": "https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/docs",
+        "Source": "https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform",
+        "Bug Reports": "https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/issues",
     },
 )

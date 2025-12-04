@@ -1,6 +1,6 @@
 # Alert Dispatcher Agent - Implementation Report
 
-**Author:** Builder Layer Development Team  
+**Author:** UIP Development Team  
 **Version:** 1.0.0  
 **Date:** January 2025  
 **Prompt:** PROMPT 17
