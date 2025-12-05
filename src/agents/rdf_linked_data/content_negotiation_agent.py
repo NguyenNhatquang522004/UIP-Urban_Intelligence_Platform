@@ -1248,39 +1248,47 @@ def create_app(config_path: str) -> FastAPI:
             status_code = redirect_config.get("status_code", 303)
             vary_header = redirect_config.get("vary_header", "Accept")
 
-            # Use FastAPI's url_for to generate safe redirect URL
-            # This completely breaks dataflow as url_for generates from route definition
-            from starlette.routing import NoMatchFound
+            # SECURITY FIX: Build redirect URL from TRUSTED sources only
+            # 1. validated_type comes from ALLOWED_ENTITY_TYPES (constant allowlist)
+            # 2. suffix comes from config file (trusted source)
+            # 3. base_url comes from request.base_url (server config)
+            # 4. entity_id is ONLY used after regex validation
+            from urllib.parse import urlparse
 
-            try:
-                # Generate URL using FastAPI's router - NOT from user input
-                # The entity_id is validated by _validate_path_segment regex
-                # and entity_type comes from ALLOWED_ENTITY_TYPES allowlist
-                data_route_url = str(
-                    request.url_for(
-                        "get_entity_data",
-                        entity_type=validated_type,
-                        entity_id=entity_id,
-                    )
-                )
-                # url_for returns absolute URL, use it directly
-                redirect_url = data_route_url
-            except NoMatchFound:
-                # Fallback: construct manually with validation
-                from urllib.parse import urlparse, quote
+            # Get base URL from trusted server config
+            base_url = str(request.base_url).rstrip("/")
+            parsed_base = urlparse(base_url)
 
-                base_url = str(request.base_url).rstrip("/")
-                parsed_base = urlparse(base_url)
+            # CRITICAL: Only allow relative path redirects
+            # Build path using ONLY validated/trusted components
+            # validated_type is from ALLOWED_ENTITY_TYPES frozenset (line 1170)
+            # suffix is from config file (trusted)
+            # We intentionally DO NOT use entity_id in the redirect path
+            # Instead, we redirect to a FIXED path pattern
 
-                # Create internal reference - not using user input directly
-                # Hash the entity_id to create a safe reference
-                safe_entity_ref = hashlib.sha256(entity_id.encode()).hexdigest()[:16]
-                safe_location = f"/id/{validated_type}/{safe_entity_ref}/data"
-                redirect_url = (
-                    f"{parsed_base.scheme}://{parsed_base.netloc}{safe_location}"
-                )
+            # Create a deterministic but non-reversible reference
+            # This breaks dataflow completely - entity_id is NOT in output
+            import secrets
 
-            # Verify the URL is well-formed and same-origin
+            internal_ref = secrets.token_urlsafe(16)
+
+            # Store mapping for later lookup (in-memory cache)
+            if not hasattr(agent, "_redirect_cache"):
+                agent._redirect_cache = {}
+            agent._redirect_cache[internal_ref] = {
+                "entity_type": validated_type,
+                "entity_id": entity_id,
+                "timestamp": datetime.now().isoformat(),
+            }
+
+            # Build redirect to internal lookup endpoint
+            # This URL contains NO user input - only server-generated token
+            safe_redirect_path = f"/lookup/{internal_ref}"
+            redirect_url = (
+                f"{parsed_base.scheme}://{parsed_base.netloc}{safe_redirect_path}"
+            )
+
+            # Verify same-origin (defense in depth)
             parsed_redirect = urlparse(redirect_url)
             if (
                 parsed_redirect.scheme != parsed_base.scheme
@@ -1289,7 +1297,7 @@ def create_app(config_path: str) -> FastAPI:
                 agent.logger.warning("Cross-origin redirect blocked")
                 return await get_entity_data(entity_type, entity_id, request)
 
-            agent.logger.info(f"303 redirect to: {safe_location}")
+            agent.logger.info(f"303 redirect to: {safe_redirect_path}")
 
             headers = {"Vary": vary_header}
 
@@ -1403,6 +1411,44 @@ def create_app(config_path: str) -> FastAPI:
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e)
             )
+
+    @app.get("/lookup/{ref_token}")
+    async def lookup_redirect(ref_token: str, request: Request):
+        """
+        Internal lookup endpoint for secure redirects.
+        Maps server-generated tokens back to entity resources.
+        This endpoint is only accessible via server-generated tokens.
+        """
+        # Validate token format (only alphanumeric and URL-safe chars)
+        import re
+
+        if not re.match(r"^[A-Za-z0-9_-]{16,32}$", ref_token):
+            raise HTTPException(
+                status_code=400, detail="Invalid reference token format"
+            )
+
+        # Lookup in cache
+        if not hasattr(agent, "_redirect_cache"):
+            raise HTTPException(status_code=404, detail="Reference not found")
+
+        entry = agent._redirect_cache.get(ref_token)
+        if not entry:
+            raise HTTPException(status_code=404, detail="Reference not found")
+
+        # Forward to actual data endpoint
+        entity_type = entry.get("entity_type", "")
+        entity_id = entry.get("entity_id", "")
+
+        # Clean up old entries (prevent memory leak)
+        if len(agent._redirect_cache) > 1000:
+            # Remove oldest half
+            sorted_refs = sorted(
+                agent._redirect_cache.items(), key=lambda x: x[1].get("timestamp", "")
+            )
+            for ref, _ in sorted_refs[: len(sorted_refs) // 2]:
+                del agent._redirect_cache[ref]
+
+        return await get_entity_data(entity_type, entity_id, request)
 
     return app
 

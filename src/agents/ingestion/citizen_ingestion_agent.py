@@ -654,9 +654,6 @@ async def process_citizen_report_background(
     except Exception as e:
         logger.error(f"💥 Background task failed: {e}", exc_info=True)
 
-    except Exception as e:
-        logger.error(f"💥 Background task failed: {e}", exc_info=True)
-
 
 # ============================================================================
 # API Endpoints
