@@ -9,7 +9,7 @@
 **Testing Framework**: pytest 7.4.3
 
 ### Overview
-Successfully implemented a comprehensive end-to-end integration test suite for all 25 agents in the Builder Layer system. The suite validates complete data pipelines from raw camera data ingestion through NGSI-LD transformation, semantic enrichment, and LOD publication.
+Successfully implemented a comprehensive end-to-end integration test suite for all 25 agents in the UIP system. The suite validates complete data pipelines from raw camera data ingestion through NGSI-LD transformation, semantic enrichment, and LOD publication.
 
 ### Key Achievements
 - ✅ **10 Integration Tests** - Complete test coverage of all system interactions
@@ -882,7 +882,7 @@ confluentinc/cp-zookeeper:7.5.0
 
 ### Summary
 
-The complete integration test suite successfully validates all 25 agents in the Builder Layer system working together in a realistic multi-service environment. The suite provides:
+The complete integration test suite successfully validates all 25 agents in the UIP system working together in a realistic multi-service environment. The suite provides:
 
 ✅ **Comprehensive Coverage** - 10 integration tests covering all major workflows  
 ✅ **Realistic Environment** - Docker Compose stack with 8 production-like services  
@@ -920,10 +920,10 @@ The complete integration test suite successfully validates all 25 agents in the 
 
 ## Contact & Support
 
-**Project**: Builder Layer - LOD Pipeline  
+**Project**: UIP - Urban Intelligence Platform - LOD Pipeline  
 **Version**: 1.0.0  
 **Test Suite**: Complete Integration Tests  
-**Author**: Builder Layer Team  
+**Author**: UIP Team  
 **Date**: 2024
 
 For issues, questions, or contributions:

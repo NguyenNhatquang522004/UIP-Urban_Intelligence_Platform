@@ -439,7 +439,8 @@ def process_frame(camera_id: str, frame: bytes):
 # src/api/health.py
 from flask import Blueprint, jsonify
 import redis
-import psycopg2
+import asyncpg
+import asyncio
 from neo4j import GraphDatabase
 
 health_bp = Blueprint('health', __name__)
@@ -462,10 +463,15 @@ def health_check():
     }), 200 if all_healthy else 503
 
 def check_postgres():
+    async def _check():
+        try:
+            conn = await asyncpg.connect(os.environ['DATABASE_URL'])
+            await conn.close()
+            return True
+        except:
+            return False
     try:
-        conn = psycopg2.connect(os.environ['DATABASE_URL'])
-        conn.close()
-        return True
+        return asyncio.run(_check())
     except:
         return False
 

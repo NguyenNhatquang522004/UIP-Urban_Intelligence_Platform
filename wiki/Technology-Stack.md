@@ -1,6 +1,6 @@
 # 🔧 Technology Stack
 
-Complete list of technologies, frameworks, and tools used in Builder Layer End.
+Complete list of technologies, frameworks, and tools used in UIP - Urban Intelligence Platform.
 
 ---
 
@@ -68,7 +68,7 @@ Complete list of technologies, frameworks, and tools used in Builder Layer End.
 | Technology | Version | Purpose |
 |------------|---------|---------|
 | neo4j | 5.0+ | Neo4j driver |
-| psycopg2-binary | 2.9+ | PostgreSQL driver |
+| asyncpg | 0.29+ | PostgreSQL async driver (Apache-2.0) |
 | pymongo | 4.6+ | MongoDB driver |
 | kafka-python | 2.0+ | Kafka client |
 

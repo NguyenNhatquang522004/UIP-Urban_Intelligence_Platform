@@ -3,15 +3,15 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-    title: 'HCMC Traffic Monitoring System',
+    title: 'UIP - Urban Intelligence Platform',
     tagline: 'Real-time Linked Open Data Pipeline for Smart City Traffic Management',
     favicon: 'img/favicon.ico',
 
-    url: 'https://your-domain.com',
-    baseUrl: '/',
+    url: 'https://nguyennhatquang522004.github.io',
+    baseUrl: '/UIP-Urban_Intelligence_Platform/',
 
-    organizationName: 'lod-pipeline-team',
-    projectName: 'builder-layer-end',
+    organizationName: 'NguyenNhatquang522004',
+    projectName: 'UIP-Urban_Intelligence_Platform',
 
     onBrokenLinks: 'warn',
     onBrokenMarkdownLinks: 'warn',
@@ -35,13 +35,13 @@ const config: Config = {
             {
                 docs: {
                     sidebarPath: './sidebars.ts',
-                    editUrl: 'https://github.com/your-org/builder-layer-end/tree/main/',
+                    editUrl: 'https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/tree/main/apps/traffic-web-app/frontend/docs/',
                     showLastUpdateTime: false,
                     showLastUpdateAuthor: false,
                 },
                 blog: {
                     showReadingTime: true,
-                    editUrl: 'https://github.com/your-org/builder-layer-end/tree/main/',
+                    editUrl: 'https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/tree/main/apps/traffic-web-app/frontend/docs/',
                 },
                 theme: {
                     customCss: './src/css/custom.css',
@@ -53,9 +53,9 @@ const config: Config = {
     themeConfig: {
         image: 'img/docusaurus-social-card.jpg',
         navbar: {
-            title: 'HCMC Traffic System',
+            title: 'UIP Platform',
             logo: {
-                alt: 'LOD Pipeline Logo',
+                alt: 'UIP Logo',
                 src: 'img/logo.svg',
             },
             items: [
@@ -83,7 +83,7 @@ const config: Config = {
                     position: 'right',
                 },
                 {
-                    href: 'https://github.com/your-org/builder-layer-end',
+                    href: 'https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform',
                     label: 'GitHub',
                     position: 'right',
                 },
@@ -135,12 +135,12 @@ const config: Config = {
                         },
                         {
                             label: 'GitHub',
-                            href: 'https://github.com/your-org/builder-layer-end',
+                            href: 'https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform',
                         },
                     ],
                 },
             ],
-            copyright: `Copyright © ${new Date().getFullYear()} LOD Pipeline Team. Built with Docusaurus.`,
+            copyright: `Copyright © ${new Date().getFullYear()} UIP Contributors (Nguyễn Nhật Quang, Nguyễn Việt Hoàng, Nguyễn Đình Anh Tuấn). Built with Docusaurus.`,
         },
         prism: {
             theme: prismThemes.github,

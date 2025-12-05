@@ -1,11 +1,21 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Nguyen Nhat Quang
+#
+# UIP - Urban Intelligence Platform
+# GitHub Issue Template Configuration
+#
+# Module: .github/ISSUE_TEMPLATE/config.yml
+# Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+# Version: 1.0.0
+
 blank_issues_enabled: false
 contact_links:
   - name: Documentation
-    url: https://github.com/your-org/builder-layer-end/wiki
+    url: https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/wiki
     about: Check our documentation for answers
   - name: Discussions
-    url: https://github.com/your-org/builder-layer-end/discussions
+    url: https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/discussions
     about: Ask questions and discuss with the community
   - name: Security Issue
-    url: https://github.com/your-org/builder-layer-end/security/policy
+    url: https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/security/policy
     about: Report security vulnerabilities privately

@@ -1,6 +1,20 @@
 # ============================================================================
-# Builder Layer End - One Command Setup & Run
+# UIP - Urban Intelligence Platform
+# Copyright (c) 2024-2025 UIP Team. All rights reserved.
+# https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+#
+# SPDX-License-Identifier: MIT
 # ============================================================================
+# File: Makefile
+# Module: One Command Setup & Run
+# Author: Nguyen Nhat Quang
+# Created: 2025-11-27
+# Version: 2.0.0
+# License: MIT
+#
+# Description:
+#   GNU Makefile for project setup, build, and deployment
+#
 # Usage:
 #   make             - Show help
 #   make setup       - Install all dependencies
@@ -9,12 +23,7 @@
 #   make stop        - Stop all services
 #   make clean       - Clean and reset everything
 # ============================================================================
-#Module: Makefile
-#author Nguyễn Nhật Quang
-#created 2025-11-27
-#modified 2025-11-27
-#version 2.0.0
-#license MIT
+
 .PHONY: all install uninstall build clean distclean check help
 .PHONY: setup dev prod stop docker-build docker-up docker-down install-python install-node
 
@@ -40,7 +49,7 @@ build:
 
 # Install the package (GNU Make standard target)
 install: build
-	@echo "📦 Installing builder-layer-end..."
+	@echo "📦 Installing uip-urban-intelligence-platform..."
 	@if exist .venv ( \
 		.venv\Scripts\pip install . \
 	) else ( \
@@ -48,15 +57,15 @@ install: build
 	)
 	@echo "✅ Package installed successfully!"
 	@echo ""
-	@echo "Usage: builder-orchestrator"
+	@echo "Usage: uip-orchestrator"
 
 # Uninstall the package
 uninstall:
-	@echo "🗑️ Uninstalling builder-layer-end..."
+	@echo "🗑️ Uninstalling uip-urban-intelligence-platform..."
 	@if exist .venv ( \
-		.venv\Scripts\pip uninstall -y builder-layer-end \
+		.venv\Scripts\pip uninstall -y uip-urban-intelligence-platform \
 	) else ( \
-		pip uninstall -y builder-layer-end \
+		pip uninstall -y uip-urban-intelligence-platform \
 	)
 	@echo "✅ Package uninstalled"
 
@@ -81,7 +90,7 @@ distclean: clean
 
 help:
 	@echo "╔════════════════════════════════════════════════════════════════╗"
-	@echo "║  Builder Layer End - GNU Make Build System                    ║"
+	@echo "║  UIP - Urban Intelligence Platform - GNU Make Build System   ║"
 	@echo "╚════════════════════════════════════════════════════════════════╝"
 	@echo ""
 	@echo "GNU Make Standard Targets:"

@@ -1,23 +1,29 @@
 # ============================================================================
-# Builder Layer End - Just Run Script (PowerShell)
+# UIP - Urban Intelligence Platform
+# Copyright (c) 2024-2025 UIP Team. All rights reserved.
+# https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+#
+# SPDX-License-Identifier: MIT
 # ============================================================================
-# One command to rule them all: .\justrun.ps1
-# ============================================================================
-# 
+# File: justrun.ps1
+# Module: Just Run Script (PowerShell)
+# Author: Nguyen Nhat Quang
+# Created: 2025-11-27
+# Version: 2.0.0
+# License: MIT
+#
+# Description:
+#   One command to rule them all: .\justrun.ps1
+#
 # Prerequisites (auto-detected):
 #   - Python 3.11+
 #   - Node.js 18+
 #   - Docker Desktop
 #   - Git
 #
-# First time: .\justrun.ps1 dev (auto-installs everything)
+# Usage:
+#   First time: .\justrun.ps1 dev (auto-installs everything)
 # ============================================================================
-#Module: JustRunScript
-#author Nguyễn Nhật Quang
-#created 2025-11-27
-#modified 2025-11-27
-#version 2.0.0
-#license MIT
 
 param(
     [Parameter(Position = 0)]

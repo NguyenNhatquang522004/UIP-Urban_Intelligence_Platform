@@ -1,3 +1,15 @@
+<!--
+SPDX-License-Identifier: MIT
+Copyright (c) 2025 Nguyen Nhat Quang
+
+UIP - Urban Intelligence Platform
+Security Policy
+
+Module: .github/SECURITY.md
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Version: 1.0.0
+-->
+
 # Security Policy
 
 ## Supported Versions
@@ -11,7 +23,7 @@ We release patches for security vulnerabilities for the following versions:
 
 ## Reporting a Vulnerability
 
-We take the security of Builder Layer End seriously. If you believe you have found a security vulnerability, please report it to us as described below.
+We take the security of UIP - Urban Intelligence Platform seriously. If you believe you have found a security vulnerability, please report it to us as described below.
 
 ### Where to Report
 
@@ -20,7 +32,7 @@ We take the security of Builder Layer End seriously. If you believe you have fou
 Instead, please report them via one of the following methods:
 
 1. **Email**: Send details to `security@your-domain.com`
-2. **GitHub Security Advisory**: Use the [GitHub Security Advisory](https://github.com/your-org/builder-layer-end/security/advisories/new) feature
+2. **GitHub Security Advisory**: Use the [GitHub Security Advisory](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/security/advisories/new) feature
 3. **Private Vulnerability Reporting**: Use GitHub's private vulnerability reporting feature
 
 ### What to Include
@@ -157,7 +169,7 @@ Security updates will be released as:
 - **Minor releases** (x.X.x) for moderate security issues
 - **Major releases** (X.x.x) for critical security updates with breaking changes
 
-Subscribe to our [security advisories](https://github.com/your-org/builder-layer-end/security/advisories) to receive notifications.
+Subscribe to our [security advisories](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/security/advisories) to receive notifications.
 
 ## Contact
 
@@ -165,7 +177,7 @@ For security-related questions or concerns:
 
 - **Email**: security@your-domain.com
 - **GitHub Security**: Use the Security tab on this repository
-- **General Support**: Create a [discussion](https://github.com/your-org/builder-layer-end/discussions)
+- **General Support**: Create a [discussion](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/discussions)
 
 ## Acknowledgments
 

@@ -1,7 +1,21 @@
-# Optimized Multi-Stage Dockerfile for Integration Testing
-# Reduces final image size by 60-70%
-#Author: nguyễn Nhật Quang
-#Created: 2025-11-24
+# ============================================================================
+# UIP - Urban Intelligence Platform
+# Copyright (c) 2024-2025 UIP Team. All rights reserved.
+# https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+#
+# SPDX-License-Identifier: MIT
+# ============================================================================
+# File: docker/Dockerfile.test.optimized
+# Module: Optimized Multi-Stage Dockerfile for Integration Testing
+# Author: Nguyen Nhat Quang
+# Created: 2025-11-24
+# Version: 1.0.0
+# License: MIT
+#
+# Description:
+#   Reduces final image size by 60-70%
+# ============================================================================
+
 # Stage 1: Builder - Install dependencies
 FROM python:3.10-slim AS builder
 

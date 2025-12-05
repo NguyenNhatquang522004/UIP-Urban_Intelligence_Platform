@@ -1,16 +1,17 @@
 #!/bin/bash
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Nguyen Nhat Quang
 #
 # Monitoring Setup Script - PRODUCTION READY
 #
 # Configures Prometheus and Grafana monitoring with real deployments.
 # REQUIRES: helm, kubectl
 #
-#Author: nguyễn Nhật Quang
-#Created: 2025-11-25
-#Version: 1.0.0
-#License: MIT
-#Description:
-#Monitoring setup script for the traffic monitoring system.
+# Module: scripts/monitoring_setup.sh
+# Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+# Created: 2025-11-25
+# Version: 1.0.0
+# Description: Monitoring setup script for the traffic monitoring system
 set -e
 
 NAMESPACE=${NAMESPACE:-traffic-system}

@@ -1,11 +1,18 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """Analytics Agents Package.
 
-Module: src.agents.analytics
-Author: nguyễn Nhật Quang
-Created: 2025-11-21
-License: MIT
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
 
 SPDX-License-Identifier: MIT
+
+Module: src.agents.analytics
+Author: Nguyen Nhat Quang
+Created: 2025-11-21
+Version: 1.0.0
+License: MIT
 
 Description:
     Analytical processing agents for traffic monitoring including
@@ -20,25 +27,25 @@ Computer Vision Stack:
 from .cv_analysis_agent import (
     CVAnalysisAgent,
     CVConfig,
-    YOLOXDetector,
+    Detection,
+    DetectionStatus,
+    ImageAnalysisResult,
     ImageDownloader,
     MetricsCalculator,
     NGSILDEntityGenerator,
-    Detection,
-    ImageAnalysisResult,
     TrafficMetrics,
-    DetectionStatus
+    YOLOXDetector,
 )
 
 __all__ = [
-    'CVAnalysisAgent',
-    'CVConfig',
-    'YOLOXDetector',
-    'ImageDownloader',
-    'MetricsCalculator',
-    'NGSILDEntityGenerator',
-    'Detection',
-    'ImageAnalysisResult',
-    'TrafficMetrics',
-    'DetectionStatus'
+    "CVAnalysisAgent",
+    "CVConfig",
+    "YOLOXDetector",
+    "ImageDownloader",
+    "MetricsCalculator",
+    "NGSILDEntityGenerator",
+    "Detection",
+    "ImageAnalysisResult",
+    "TrafficMetrics",
+    "DetectionStatus",
 ]

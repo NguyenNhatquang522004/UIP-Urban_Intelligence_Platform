@@ -1,6 +1,6 @@
 # ⚙️ Configuration Guide
 
-Complete configuration reference for Builder Layer End.
+Complete configuration reference for UIP - Urban Intelligence Platform.
 
 ---
 
@@ -41,7 +41,7 @@ Defines the 9-phase execution workflow:
 
 ```yaml
 workflow:
-  name: "Traffic LOD Pipeline"
+  name: "UIP - Urban Intelligence Platform"
   version: "2.0.0"
   phases:
     - name: "ingestion"

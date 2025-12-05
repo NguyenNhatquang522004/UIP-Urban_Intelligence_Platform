@@ -228,7 +228,7 @@ Cache hits: 0 (first run)
 ### Test 1: Kiểm tra không còn 429
 ```powershell
 # Run agent
-& D:/olp/Builder-Layer-End/.venv/Scripts/python.exe `
+& D:/olp/UIP-Urban_Intelligence_Platform/.venv/Scripts/python.exe `
   -m agents.data_collection.external_data_collector_agent
 
 # Check logs - không còn "rate limit (429)"
@@ -253,7 +253,7 @@ $data | Where-Object { $_.air_quality -eq $null }  # ✅ Should be empty
 ```powershell
 # Run với timestamp
 Measure-Command {
-    & D:/olp/Builder-Layer-End/.venv/Scripts/python.exe `
+    & D:/olp/UIP-Urban_Intelligence_Platform/.venv/Scripts/python.exe `
       -m agents.data_collection.external_data_collector_agent
 }
 

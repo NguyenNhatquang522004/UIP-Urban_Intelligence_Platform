@@ -1,12 +1,23 @@
-# ==============================================================================
-# DATA QUALITY VALIDATOR CONFIGURATION
-# ==============================================================================
-# This configuration defines validation rules for NGSI-LD entities.
-# 100% DOMAIN-AGNOSTIC: Works with ANY NGSI-LD entity type
-# 100% CONFIG-DRIVEN: Add new rules without code changes
+# ============================================================================
+# UIP - Urban Intelligence Platform
+# Copyright (c) 2024-2025 UIP Team. All rights reserved.
+# https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
 #
-# Environment variables can be used with ${VAR_NAME} syntax
-# ==============================================================================
+# SPDX-License-Identifier: MIT
+# ============================================================================
+# File: config/data_quality_config.yaml
+# Module: Data Quality Validator Configuration
+# Author: Nguyen Nhat Quang
+# Created: 2025-11-29
+# Version: 1.0.0
+# License: MIT
+#
+# Description:
+#   Validation rules for NGSI-LD entities
+#   100% DOMAIN-AGNOSTIC: Works with ANY NGSI-LD entity type
+#   100% CONFIG-DRIVEN: Add new rules without code changes
+#   Environment variables can be used with ${VAR_NAME} syntax
+# ============================================================================
 
 data_quality_validator:
   # ==========================================================================

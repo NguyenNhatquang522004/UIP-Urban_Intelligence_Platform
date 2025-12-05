@@ -1,3 +1,14 @@
+<!--
+SPDX-License-Identifier: MIT
+Copyright (c) 2025 Nguyen Nhat Quang
+
+UIP - Urban Intelligence Platform
+One command setup guide for quick project startup
+
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Repository: https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+-->
+
 # 🚀 Just Run - One Command Setup
 
 Hệ thống "Just Run" cho phép bạn chạy toàn bộ project chỉ với **MỘT CÂU LỆNH**.
@@ -109,7 +120,7 @@ Chạy tất cả với Docker Compose:
 ## 📦 Cấu Trúc Project
 
 ```
-Builder-Layer-End/
+UIP-Urban_Intelligence_Platform/
 ├── justrun.ps1              # PowerShell "just run" script
 ├── Makefile                 # Make-based "just run" system
 ├── docker-compose.yml       # Full stack orchestration
@@ -195,7 +206,7 @@ docker-compose logs stellio-api-gateway
 ```powershell
 # 1. Clone
 git clone <repo-url>
-cd Builder-Layer-End
+cd UIP-Urban_Intelligence_Platform
 
 # 2. Chạy development (tự động setup)
 .\justrun.ps1 dev

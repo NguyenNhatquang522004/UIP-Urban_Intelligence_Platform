@@ -1,29 +1,67 @@
 ---
-slug: welcome
-title: Welcome
-authors: [slorber, yangshun]
-tags: [facebook, hello, docusaurus]
+slug: welcome-to-uip-blog
+title: 👋 Chào mừng đến với UIP Blog
+authors: [nguyennhatquang, nguyenviethoang, nguyendinhanhtuan]
+tags: [uip, hello, welcome, traffic-monitoring]
 ---
 
-[Docusaurus blogging features](https://docusaurus.io/docs/blog) are powered by the [blog plugin](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).
+# Chào mừng đến với UIP Blog! 🎉
 
-Here are a few tips you might find useful.
+Đây là trang blog chính thức của **UIP - Urban Intelligence Platform**, nơi chúng tôi chia sẻ kiến thức, kinh nghiệm và cập nhật về dự án.
 
 <!-- truncate -->
 
-Simply add Markdown files (or folders) to the `blog` directory.
+## 📚 Bạn sẽ tìm thấy gì ở đây?
 
-Regular blog authors can be added to `authors.yml`.
+### 1. Technical Deep Dives 🔬
+Phân tích chi tiết về kiến trúc và công nghệ:
+- Agent System Architecture
+- Linked Open Data Integration
+- Real-time Data Processing
+- AI/ML trong Traffic Analysis
 
-The blog post date can be extracted from filenames, such as:
+### 2. Tutorials & Guides 📖
+Hướng dẫn từng bước:
+- Cách deploy UIP
+- Tích hợp với hệ thống của bạn
+- Customize và extend agents
+- API usage examples
 
-- `2019-05-30-welcome.md`
-- `2019-05-30-welcome/index.md`
+### 3. Project Updates 📢
+Cập nhật mới nhất về dự án:
+- New features
+- Performance improvements
+- Bug fixes
+- Roadmap updates
 
-A blog post folder can be convenient to co-locate blog post images:
+### 4. Case Studies 📊
+Ứng dụng thực tế:
+- Real-world deployments
+- Performance benchmarks
+- Lessons learned
 
-![Docusaurus Plushie](./docusaurus-plushie-banner.jpeg)
+## 👥 Về đội ngũ viết blog
 
-The blog supports tags as well!
+| Tác giả | Chuyên môn |
+|---------|------------|
+| **Nguyễn Nhật Quang** | Architecture, Analytics, DevOps |
+| **Nguyễn Việt Hoàng** | RDF, Linked Data, Semantic Web |
+| **Nguyễn Đình Anh Tuấn** | Backend, Frontend, API Design |
 
-**And if you don't want a blog**: just delete this directory, and use `blog: false` in your Docusaurus config.
+## 📬 Kết nối với chúng tôi
+
+- **GitHub:** [UIP Repository](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform)
+- **Issues:** [Report bugs or request features](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/issues)
+- **Discussions:** [Join the community](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/discussions)
+
+## 🔔 Đăng ký theo dõi
+
+Đừng bỏ lỡ các bài viết mới! Star repo trên GitHub để nhận thông báo.
+
+---
+
+**Cảm ơn bạn đã ghé thăm!** 
+
+Hãy bắt đầu với bài viết [Giới thiệu UIP](/blog/introducing-uip) để hiểu tổng quan về dự án.
+
+*UIP Team - Making HCMC Traffic Smarter* 🚦

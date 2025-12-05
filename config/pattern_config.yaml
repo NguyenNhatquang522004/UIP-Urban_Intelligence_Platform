@@ -1,9 +1,21 @@
-# Pattern Recognition Agent Configuration
-# Domain-agnostic time-series analysis framework
-#Author: nguyễn Nhật Quang
-#Created: 2025-11-21
-#Version: 1.0.0
-# Description: Configuration file for pattern recognition agent
+# ============================================================================
+# UIP - Urban Intelligence Platform
+# Copyright (c) 2024-2025 UIP Team. All rights reserved.
+# https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+#
+# SPDX-License-Identifier: MIT
+# ============================================================================
+# File: config/pattern_config.yaml
+# Module: Pattern Recognition Agent Configuration
+# Author: Nguyen Nhat Quang
+# Created: 2025-11-21
+# Version: 1.0.0
+# License: MIT
+#
+# Description:
+#   Domain-agnostic time-series analysis framework
+# ============================================================================
+
 pattern_recognition:
   # Neo4j Connection
   neo4j:

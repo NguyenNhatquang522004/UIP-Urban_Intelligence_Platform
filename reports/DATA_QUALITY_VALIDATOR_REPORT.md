@@ -1,7 +1,7 @@
 # Data Quality Validator Agent - Technical Report
 
 **Date:** 2025-11-02  
-**Author:** Builder Layer  
+**Author:** UIP  
 **Version:** 1.0.0  
 **Status:** Production-Ready ✅
 
@@ -929,7 +929,7 @@ The Data Quality Validator Agent successfully delivers a production-ready, domai
 ✅ **Automatic data cleaning** - normalize before validation  
 ✅ **Detailed reporting** - full transparency  
 
-The system is ready for integration into the Builder Layer pipeline as a pre-publication validation gate for all NGSI-LD entities.
+The system is ready for integration into the UIP pipeline as a pre-publication validation gate for all NGSI-LD entities.
 
 ---
 

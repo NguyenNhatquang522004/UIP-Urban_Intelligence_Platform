@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2024-2025 Builder Layer End Contributors
+Copyright (c) 2024 UIP - Urban Intelligence Platform Contributors
 
 Authors:
   - Nguyen Nhat Quang 
@@ -59,9 +59,15 @@ This project incorporates or depends on the following third-party software:
    - https://github.com/RDFLib/rdflib
    - Used for: RDF/Linked Data processing
 
+7. asyncpg (Apache License 2.0)
+   - Copyright (c) 2016-present the asyncpg authors
+   - https://github.com/MagicStack/asyncpg
+   - Used for: PostgreSQL async database driver
+
 For full license texts of third-party dependencies, please refer to:
 - YOLOX: https://github.com/Megvii-BaseDetection/YOLOX/blob/main/LICENSE
 - Transformers: https://github.com/huggingface/transformers/blob/main/LICENSE
 - PyTorch: https://github.com/pytorch/pytorch/blob/main/LICENSE
 - FastAPI: https://github.com/tiangolo/fastapi/blob/master/LICENSE
 - RDFLib: https://github.com/RDFLib/rdflib/blob/main/LICENSE
+- asyncpg: https://github.com/MagicStack/asyncpg/blob/master/LICENSE

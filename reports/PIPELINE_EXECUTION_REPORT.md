@@ -321,7 +321,7 @@ class KafkaEntityPublisherAgent:
 **Execution Method**:
 ```bash
 # Must run inside Docker network for kafka:9092 DNS resolution
-docker run --rm --network builder-layer-end_test-network \
+docker run --rm --network uip-platform_test-network \
   -v "./src/agents:/app" -v "./data:/data" \
   python:3.10-slim bash -c \
   "pip install -q kafka-python && cd /app && python run_kafka_publisher.py /data/validated_entities.json"

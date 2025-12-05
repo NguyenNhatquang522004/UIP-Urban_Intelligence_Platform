@@ -1,0 +1,121 @@
+<!--
+SPDX-License-Identifier: MIT
+Copyright (c) 2025 Nguyen Nhat Quang
+
+UIP - Urban Intelligence Platform
+List of contributors who have helped build this project
+
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Repository: https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+-->
+
+# Contributors
+
+Thank you to everyone who has contributed to **UIP - Urban Intelligence Platform**! 🎉
+
+This file recognizes all contributors to this project, including the original authors and anyone who has submitted code, documentation, bug reports, or other improvements.
+
+---
+
+## 👥 Core Team
+
+The following individuals are the core maintainers and primary contributors:
+
+| Avatar | Name | GitHub | Role | Contributions |
+|--------|------|--------|------|---------------|
+| 🧑‍💻 | **Nguyễn Nhật Quang** | [@NguyenNhatquang522004](https://github.com/NguyenNhatquang522004) | Lead Developer | Architecture, Backend, DevOps |
+| 🧑‍💻 | **Nguyễn Việt Hoàng** | [@JamesNguyen106](https://github.com/JamesNguyen106) | Full-Stack Developer | Frontend, API, Documentation |
+| 🧑‍💻 | **Nguyễn Đình Anh Tuấn** | [@NguyenDinhAnhTuan04](https://github.com/NguyenDinhAnhTuan04) | Backend Developer | Agents, Data, Testing |
+
+---
+
+## 📊 Contribution Statistics
+
+### By Component
+
+| Component | Primary Contributors |
+|-----------|---------------------|
+| **Multi-Agent System** | Nguyễn Nhật Quang, Nguyễn Đình Anh Tuấn |
+| **Orchestrator** | Nguyễn Nhật Quang |
+| **Traffic Web App** | Nguyễn Việt Hoàng |
+| **Frontend (React)** | Nguyễn Việt Hoàng |
+| **Backend (TypeScript)** | Nguyễn Việt Hoàng, Nguyễn Nhật Quang |
+| **NGSI-LD Integration** | Nguyễn Nhật Quang |
+| **RDF/Linked Data** | Nguyễn Nhật Quang, Nguyễn Đình Anh Tuấn |
+| **Computer Vision** | Nguyễn Nhật Quang |
+| **CI/CD Pipelines** | Nguyễn Nhật Quang |
+| **Docker Infrastructure** | Nguyễn Nhật Quang |
+| **Documentation** | Nguyễn Việt Hoàng, Nguyễn Nhật Quang |
+| **Testing** | Nguyễn Đình Anh Tuấn, Nguyễn Nhật Quang |
+
+---
+
+## 🏆 All Contributors
+
+### Code Contributors
+
+The following people have contributed code to this project:
+
+1. **Nguyễn Nhật Quang** - Project founder, architect, backend systems
+2. **Nguyễn Việt Hoàng** - Full-stack development, UI/UX, documentation
+3. **Nguyễn Đình Anh Tuấn** - Backend development, data processing, testing
+
+### Documentation Contributors
+
+- Nguyễn Nhật Quang - API documentation, architecture docs
+- Nguyễn Việt Hoàng - User guides, Docusaurus site
+- Nguyễn Đình Anh Tuấn - Technical specifications
+
+### Bug Reporters & Testers
+
+- All core team members
+
+---
+
+## 🤝 How to Contribute
+
+We welcome contributions from everyone! Please see our [Contributing Guide](.github/CONTRIBUTING.md) for details on:
+
+- How to submit bug reports
+- How to propose new features
+- How to submit pull requests
+- Code style guidelines
+- Testing requirements
+
+### Becoming a Contributor
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+5. After your PR is merged, you'll be added to this file!
+
+---
+
+## 📜 Contributor License Agreement
+
+By contributing to this project, you agree that your contributions will be licensed under the same [MIT License](LICENSE) that covers the project.
+
+---
+
+## 🙏 Acknowledgments
+
+Special thanks to:
+
+- **ETSI** for the NGSI-LD specification
+- **W3C** for the SOSA/SSN ontologies
+- **FIWARE Foundation** for Smart Data Models
+- **Stellio** for the NGSI-LD context broker
+- **Open Source Community** for the amazing tools and libraries
+
+---
+
+## 📈 Want to be listed here?
+
+Submit a pull request! All contributors who have their PRs merged will be added to this list.
+
+---
+
+*Last updated: December 2025*
+
+Copyright (c) 2024-2025 UIP - Urban Intelligence Platform Contributors

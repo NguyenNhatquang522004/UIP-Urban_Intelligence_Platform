@@ -1,4 +1,12 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """Monitoring CLI Scripts.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
 
 Module: src.cli.monitoring
 Author: Nguyen Dinh Anh Tuan
@@ -12,8 +20,6 @@ Description:
 
 Scripts:
     - progress_monitor: Real-time monitoring of pipeline progress
-
-
 """
 
 __version__ = "1.0.0"

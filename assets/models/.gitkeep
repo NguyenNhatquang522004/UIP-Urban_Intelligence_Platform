@@ -1,0 +1,3 @@
+# This file ensures the directory is tracked by Git
+# ML/AI model files (YOLOX, etc.)
+# Note: Large model files should be stored in Git LFS or downloaded at runtime

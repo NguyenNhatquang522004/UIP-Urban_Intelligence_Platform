@@ -450,4 +450,6 @@ See [Contributing Guide](../../guides/contributing.md) for information on how to
 
 ## License
 
-MIT License - See [LICENSE](../LICENSE) for details.
+MIT License - Copyright (c) 2024-2025 UIP Contributors (Nguyễn Nhật Quang, Nguyễn Việt Hoàng, Nguyễn Đình Anh Tuấn)
+
+See [LICENSE](../LICENSE) for details.

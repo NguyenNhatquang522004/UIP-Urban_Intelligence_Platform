@@ -1,5 +1,12 @@
-"""
-Centralized Logging Utility Module
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Centralized Logging Utility Module.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
 
 Module: src.core.logger
 Author: Nguyen Dinh Anh Tuan
@@ -8,17 +15,15 @@ Version: 1.0.0
 License: MIT
 
 Description:
-Provides unified logging configuration for all agents with support for structured
-logging, multiple output formats, and configurable log levels.
+    Provides unified logging configuration for all agents with support for structured
+    logging, multiple output formats, and configurable log levels.
 
 Features:
-- JSON-formatted logging for production environments
-- Human-readable console output for development
-- File-based logging with automatic rotation
-- Structured logging with contextual information
-- Integration with popular log aggregation tools
-
-
+    - JSON-formatted logging for production environments
+    - Human-readable console output for development
+    - File-based logging with automatic rotation
+    - Structured logging with contextual information
+    - Integration with popular log aggregation tools
 
 Dependencies:
     - python-json-logger>=2.0: JSON log formatting
@@ -31,11 +36,11 @@ Configuration:
 
 Examples:
     >>> from src.core.logger import AgentLogger
-    >>> 
+    >>>
     >>> # Basic usage with default settings
     >>> logger = AgentLogger.setup_logger('my_agent')
     >>> logger.info('Processing started')
-    >>> 
+    >>>
     >>> # Advanced usage with JSON formatting and file output
     >>> logger = AgentLogger.setup_logger(
     ...     name='data_pipeline',
@@ -71,82 +76,82 @@ class AgentLogger:
     """
     Centralized logger for agents with JSON and console output support.
     """
-    
+
     @staticmethod
     def setup_logger(
         name: str,
         level: str = "INFO",
         log_file: Optional[str] = None,
-        json_format: bool = False
+        json_format: bool = False,
     ) -> logging.Logger:
         """
         Setup and configure a logger for an agent.
-        
+
         Args:
             name: Logger name (typically agent name)
             level: Logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
             log_file: Optional file path for log output
             json_format: Use JSON formatted logs
-            
+
         Returns:
             Configured logger instance
         """
         logger = logging.getLogger(name)
         logger.setLevel(getattr(logging, level.upper()))
-        
+
         # Remove existing handlers to avoid duplicates
         logger.handlers.clear()
-        
+
         # Console handler
         console_handler = logging.StreamHandler(sys.stdout)
         console_handler.setLevel(getattr(logging, level.upper()))
-        
+
         if json_format:
             # JSON formatter for structured logging
             formatter = jsonlogger.JsonFormatter(
-                '%(asctime)s %(name)s %(levelname)s %(message)s',
-                datefmt='%Y-%m-%d %H:%M:%S'
+                "%(asctime)s %(name)s %(levelname)s %(message)s",
+                datefmt="%Y-%m-%d %H:%M:%S",
             )
         else:
             # Standard formatter
             formatter = logging.Formatter(
-                '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                datefmt='%Y-%m-%d %H:%M:%S'
+                "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+                datefmt="%Y-%m-%d %H:%M:%S",
             )
-        
+
         console_handler.setFormatter(formatter)
         logger.addHandler(console_handler)
-        
+
         # File handler (optional)
         if log_file:
             log_path = Path(log_file)
             log_path.parent.mkdir(parents=True, exist_ok=True)
-            
-            file_handler = logging.FileHandler(log_file, encoding='utf-8')
+
+            file_handler = logging.FileHandler(log_file, encoding="utf-8")
             file_handler.setLevel(getattr(logging, level.upper()))
             file_handler.setFormatter(formatter)
             logger.addHandler(file_handler)
-        
+
         # Prevent propagation to root logger
         logger.propagate = False
-        
+
         return logger
-    
+
     @staticmethod
     def get_logger(name: str) -> logging.Logger:
         """
         Get an existing logger or create a new one with default settings.
-        
+
         Args:
             name: Logger name
-            
+
         Returns:
             Logger instance
         """
         logger = logging.getLogger(name)
-        
+
         if not logger.handlers:
             # Setup with defaults if not already configured
             return AgentLogger.setup_logger(name)
-        
+
         return logger

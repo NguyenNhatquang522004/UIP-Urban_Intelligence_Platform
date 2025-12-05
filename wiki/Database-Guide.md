@@ -201,21 +201,33 @@ curl -G http://localhost:3030/traffic/query \
 ### Connection
 
 ```python
-import psycopg2
-from psycopg2.extras import RealDictCursor
+import asyncio
+import asyncpg
 
-conn = psycopg2.connect(
-    host="localhost",
-    port=5432,
-    database="traffic",
-    user="traffic_user",
-    password="password"
-)
+async def connect():
+    conn = await asyncpg.connect(
+        host="localhost",
+        port=5432,
+        database="traffic",
+        user="traffic_user",
+        password="password"
+    )
+    return conn
 
-def query(sql, params=None):
-    with conn.cursor(cursor_factory=RealDictCursor) as cur:
-        cur.execute(sql, params)
-        return cur.fetchall()
+async def query(sql, params=None):
+    conn = await connect()
+    try:
+        if params:
+            rows = await conn.fetch(sql, *params)
+        else:
+            rows = await conn.fetch(sql)
+        return [dict(row) for row in rows]
+    finally:
+        await conn.close()
+
+# Sync wrapper for non-async contexts
+def query_sync(sql, params=None):
+    return asyncio.run(query(sql, params))
 ```
 
 ### Schema

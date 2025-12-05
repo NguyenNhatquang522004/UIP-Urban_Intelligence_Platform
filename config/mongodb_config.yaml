@@ -1,11 +1,22 @@
-# MongoDB Configuration for NGSI-LD Entity Storage
-# Module: config.mongodb_config
-#Author: nguyễn Nhật Quang
-#Created: 2025-11-29
-#Version: 1.0.0
-# Purpose:
-#   Configure MongoDB connection and collection settings for storing NGSI-LD entities
-#   Optimize for performance, scalability, and data integrity 
+# ============================================================================
+# UIP - Urban Intelligence Platform
+# Copyright (c) 2024-2025 UIP Team. All rights reserved.
+# https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+#
+# SPDX-License-Identifier: MIT
+# ============================================================================
+# File: config/mongodb_config.yaml
+# Module: MongoDB Configuration for NGSI-LD Entity Storage
+# Author: Nguyen Nhat Quang
+# Created: 2025-11-29
+# Version: 1.0.0
+# License: MIT
+#
+# Description:
+#   Configure MongoDB connection and collection settings for storing
+#   NGSI-LD entities. Optimize for performance, scalability, and data integrity
+# ============================================================================
+
 mongodb:
   # Connection Settings
   # Values are read from environment variables first, fallback to defaults

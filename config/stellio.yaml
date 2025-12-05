@@ -1,13 +1,23 @@
-# Stellio Context Broker Configuration
-# 100% Domain-Agnostic Configuration for NGSI-LD Entity Publishing
+# ============================================================================
+# UIP - Urban Intelligence Platform
+# Copyright (c) 2024-2025 UIP Team. All rights reserved.
+# https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
 #
-# This configuration supports ANY LOD domain (healthcare, geography, commerce, IoT, etc.)
-# without requiring code changes. All endpoint URLs, authentication, batching, and retry
-# logic are defined here.
+# SPDX-License-Identifier: MIT
+# ============================================================================
+# File: config/stellio.yaml
+# Module: Stellio Context Broker Configuration
 # Author: Nguyen Viet Hoang
 # Created: 2025-11-25
 # Version: 1.0.0
-# Description: Configuration file for Stellio Context Broker
+# License: MIT
+#
+# Description:
+#   100% Domain-Agnostic Configuration for NGSI-LD Entity Publishing
+#   Supports ANY LOD domain (healthcare, geography, commerce, IoT, etc.)
+#   without requiring code changes
+# ============================================================================
+
 stellio:
   # Base URL of Stellio Context Broker instance
   # Read from environment variable: STELLIO_URL

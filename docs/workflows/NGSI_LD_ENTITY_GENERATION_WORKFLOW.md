@@ -2,9 +2,9 @@
 
 ## 📋 Executive Summary
 
-This document provides a comprehensive analysis of the NGSI-LD entity generation workflow in the Builder Layer End traffic monitoring system. The project implements a sophisticated multi-agent pipeline that transforms raw sensor data into standardized NGSI-LD entities compliant with ETSI CIM 009 v1.6.1 specifications.
+This document provides a comprehensive analysis of the NGSI-LD entity generation workflow in the UIP - Urban Intelligence Platform traffic monitoring system. The project implements a sophisticated multi-agent pipeline that transforms raw sensor data into standardized NGSI-LD entities compliant with ETSI CIM 009 v1.6.1 specifications.
 
-**Project**: Builder Layer End - Smart City Traffic Monitoring System  
+**Project**: UIP - Urban Intelligence Platform - Smart City Traffic Monitoring System  
 **Standard**: NGSI-LD (ETSI CIM 009 v1.6.1)  
 **Ontologies**: SOSA/SSN (W3C Semantic Sensor Network)  
 **Created**: 2024-10-01  
@@ -1218,7 +1218,7 @@ LIMIT 10
 
 ## 🎓 Conclusion
 
-The Builder Layer End project implements a comprehensive NGSI-LD entity generation workflow that:
+The UIP - Urban Intelligence Platform project implements a comprehensive NGSI-LD entity generation workflow that:
 
 1. **Collects** raw data from 40+ traffic cameras and citizen reports
 2. **Transforms** data into 120+ NGSI-LD entities using configuration-driven mappings
@@ -1235,5 +1235,5 @@ The system demonstrates **full compliance with NGSI-LD specifications** and prov
 
 **Generated**: 2024-12-20  
 **Version**: 1.0.0  
-**Author**: GitHub Copilot AI Assistant  
+**Author**: UIP Team (Nguyen Nhat Quang, Nguyen Viet Hoang, Nguyen Dinh Anh Tuan)  
 **License**: MIT

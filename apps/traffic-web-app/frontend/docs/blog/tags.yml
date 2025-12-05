@@ -1,19 +1,176 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+# UIP Blog Tags
+# Organized by category for better navigation
+
+# Core Project Tags
+uip:
+  label: UIP
+  permalink: /uip
+  description: UIP - Urban Intelligence Platform core content
+
+smart-city:
+  label: Smart City
+  permalink: /smart-city
+  description: Smart city concepts and implementations
+
+traffic-monitoring:
+  label: Traffic Monitoring
+  permalink: /traffic-monitoring
+  description: Real-time traffic monitoring and analysis
+
+hcmc:
+  label: HCMC
+  permalink: /hcmc
+  description: Ho Chi Minh City specific content
+
+# Technical Tags
+architecture:
+  label: Architecture
+  permalink: /architecture
+  description: System architecture and design patterns
+
+agents:
+  label: Agents
+  permalink: /agents
+  description: Multi-agent system and orchestration
+
+python:
+  label: Python
+  permalink: /python
+  description: Python programming and best practices
+
+technical:
+  label: Technical
+  permalink: /technical
+  description: Technical deep dives and explanations
+
+# Data & Semantics Tags
+linked-data:
+  label: Linked Data
+  permalink: /linked-data
+  description: Linked Open Data and semantic web
+
+rdf:
+  label: RDF
+  permalink: /rdf
+  description: RDF triple store and SPARQL queries
+
+ngsi-ld:
+  label: NGSI-LD
+  permalink: /ngsi-ld
+  description: NGSI-LD context broker and entities
+
+semantic-web:
+  label: Semantic Web
+  permalink: /semantic-web
+  description: Semantic web technologies
+
+# Frontend Tags
+frontend:
+  label: Frontend
+  permalink: /frontend
+  description: Frontend development and React
+
+react:
+  label: React
+  permalink: /react
+  description: React.js components and patterns
+
+typescript:
+  label: TypeScript
+  permalink: /typescript
+  description: TypeScript programming
+
+leaflet:
+  label: Leaflet
+  permalink: /leaflet
+  description: Leaflet.js maps and geospatial
+
+# Backend Tags
+backend:
+  label: Backend
+  permalink: /backend
+  description: Backend development and APIs
+
+api:
+  label: API
+  permalink: /api
+  description: REST API and FastAPI
+
+fastapi:
+  label: FastAPI
+  permalink: /fastapi
+  description: FastAPI framework
+
+# AI/ML Tags
+ai:
+  label: AI
+  permalink: /ai
+  description: Artificial Intelligence
+
+yolox:
+  label: YOLOX
+  permalink: /yolox
+  description: YOLOX object detection model
+
+computer-vision:
+  label: Computer Vision
+  permalink: /computer-vision
+  description: Computer vision and image processing
+
+accident-detection:
+  label: Accident Detection
+  permalink: /accident-detection
+  description: AI-powered accident detection
+
+# DevOps Tags
+docker:
+  label: Docker
+  permalink: /docker
+  description: Docker and containerization
+
+deployment:
+  label: Deployment
+  permalink: /deployment
+  description: Deployment guides and best practices
+
+devops:
+  label: DevOps
+  permalink: /devops
+  description: DevOps practices and CI/CD
+
+# Feature Tags
+citizen-report:
+  label: Citizen Report
+  permalink: /citizen-report
+  description: Citizen reporting system
+
+mobile:
+  label: Mobile
+  permalink: /mobile
+  description: Mobile development and PWA
+
+interactive:
+  label: Interactive
+  permalink: /interactive
+  description: Interactive examples and demos
+
+# Meta Tags
+announcement:
+  label: Announcement
+  permalink: /announcement
+  description: Project announcements and news
+
+welcome:
+  label: Welcome
+  permalink: /welcome
+  description: Welcome and introduction posts
 
 hello:
   label: Hello
   permalink: /hello
-  description: Hello tag description
+  description: Greeting and welcome posts
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
-
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+traffic:
+  label: Traffic
+  permalink: /traffic
+  description: Traffic analysis and patterns

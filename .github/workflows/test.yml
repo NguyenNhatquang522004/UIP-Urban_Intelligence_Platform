@@ -1,10 +1,21 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Nguyen Nhat Quang
+#
+# UIP - Urban Intelligence Platform
+# GitHub Actions Workflow: Tests
+#
+# Module: .github/workflows/test.yml
+# Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+# Version: 1.0.0
+
 name: Tests
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [ main, develop, Quang ]
   pull_request:
     branches: [ main, develop ]
+  workflow_dispatch:
 
 jobs:
   test:

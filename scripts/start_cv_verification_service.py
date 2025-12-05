@@ -1,17 +1,22 @@
 #!/usr/bin/env python3
-"""
-CV Agent Citizen Verification Background Service
-Module: scripts.start_cv_verification_service.py
-Author: nguyễn Nhật Quang
+# -*- coding: utf-8 -*-
+"""CV Agent Citizen Verification Background Service.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
+Module: scripts.start_cv_verification_service
+Author: Nguyen Nhat Quang
 Created: 2025-11-23
 Version: 1.0.0
 License: MIT
-SPDX-License-Identifier: MIT
-
 
 Description:
-Chạy như một daemon để liên tục verify citizen reports từ Stellio.
-Poll Stellio mỗi 30 giây để tìm reports chưa được verify (aiVerified=false).
+    Runs as a daemon to continuously verify citizen reports from Stellio.
+    Poll Stellio every 30 seconds to find reports not yet verified (aiVerified=false).
 
 Computer Vision Stack:
     - YOLOX (Apache-2.0) - Vehicle detection
@@ -21,26 +26,27 @@ Usage:
     python scripts/start_cv_verification_service.py
 """
 
-import sys
-import time
 import asyncio
-import yaml
 import logging
 import os
-from pathlib import Path
+import sys
+import time
 from datetime import datetime
+from pathlib import Path
+
+import yaml
 
 # Detect project root - in Docker it's /app, locally it's parent of scripts folder
 script_dir = Path(__file__).parent
-if script_dir.name == 'scripts':
+if script_dir.name == "scripts":
     # Running from local scripts/ folder
     project_root = script_dir.parent
 else:
     # Running from Docker container where script is copied to /app
     project_root = script_dir
-    
+
 # Also check PYTHONPATH from environment
-env_path = os.environ.get('PYTHONPATH', '')
+env_path = os.environ.get("PYTHONPATH", "")
 if env_path and Path(env_path).exists():
     project_root = Path(env_path)
 
@@ -51,11 +57,11 @@ from src.agents.analytics.cv_analysis_agent import CVAnalysisAgent
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     handlers=[
-        logging.FileHandler('logs/cv_verification_service.log'),
-        logging.StreamHandler()
-    ]
+        logging.FileHandler("logs/cv_verification_service.log"),
+        logging.StreamHandler(),
+    ],
 )
 logger = logging.getLogger(__name__)
 
@@ -63,42 +69,46 @@ logger = logging.getLogger(__name__)
 async def verification_loop(agent: CVAnalysisAgent, poll_interval: int = 30):
     """
     Main verification loop - Poll Stellio và verify reports
-    
+
     Args:
         agent: CV Analysis Agent instance
         poll_interval: Seconds between polls (default 30s)
     """
     logger.info(f"🤖 CV Verification Service started - Polling every {poll_interval}s")
-    
+
     iteration = 0
-    
+
     while True:
         iteration += 1
         start_time = time.time()
-        
+
         try:
             logger.info(f"\n{'='*80}")
-            logger.info(f"Iteration #{iteration} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+            logger.info(
+                f"Iteration #{iteration} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+            )
             logger.info(f"{'='*80}")
-            
+
             # Query and process unverified citizen reports
             processed_count = await agent.process_citizen_reports()
-            
+
             elapsed = time.time() - start_time
-            
+
             if processed_count > 0:
                 logger.info(f"✅ Processed {processed_count} reports in {elapsed:.2f}s")
             else:
-                logger.info(f"💤 No unverified reports found (checked in {elapsed:.2f}s)")
-            
+                logger.info(
+                    f"💤 No unverified reports found (checked in {elapsed:.2f}s)"
+                )
+
             # Wait before next poll
             logger.info(f"⏱️  Next poll in {poll_interval}s...\n")
             await asyncio.sleep(poll_interval)
-            
+
         except KeyboardInterrupt:
             logger.info("\n🛑 Service stopped by user")
             break
-            
+
         except Exception as e:
             logger.error(f"❌ Error in verification loop: {e}", exc_info=True)
             logger.info(f"🔄 Retrying in {poll_interval}s...")
@@ -107,36 +117,36 @@ async def verification_loop(agent: CVAnalysisAgent, poll_interval: int = 30):
 
 def main():
     """Main entry point"""
-    
+
     # Load CV config
-    config_path = project_root / 'config' / 'cv_config.yaml'
-    
+    config_path = project_root / "config" / "cv_config.yaml"
+
     logger.info("📋 Loading CV config...")
-    with open(config_path, 'r', encoding='utf-8') as f:
+    with open(config_path, "r", encoding="utf-8") as f:
         cv_config = yaml.safe_load(f)
-    
+
     # Check if citizen verification is enabled
-    citizen_config = cv_config.get('cv_analysis', {}).get('citizen_verification', {})
-    
-    if not citizen_config.get('enabled', False):
+    citizen_config = cv_config.get("cv_analysis", {}).get("citizen_verification", {})
+
+    if not citizen_config.get("enabled", False):
         logger.error("❌ Citizen verification is disabled in cv_config.yaml!")
         logger.info("   Set citizen_verification.enabled = true to enable")
         sys.exit(1)
-    
-    poll_interval = citizen_config.get('poll_interval', 30)
-    
+
+    poll_interval = citizen_config.get("poll_interval", 30)
+
     logger.info(f"✅ Citizen verification enabled")
     logger.info(f"   Poll interval: {poll_interval}s")
     logger.info(f"   Stellio URL: {citizen_config.get('stellio_url', 'N/A')}")
     logger.info(f"   Max batch: {citizen_config.get('max_reports_per_batch', 10)}")
-    
+
     # Create CV Agent
     logger.info("\n🚀 Initializing CV Analysis Agent...")
     agent = CVAnalysisAgent(config_path)
-    
+
     # Create logs directory if not exists
     Path("logs").mkdir(exist_ok=True)
-    
+
     # Start verification loop
     try:
         asyncio.run(verification_loop(agent, poll_interval))
@@ -144,8 +154,9 @@ def main():
         logger.info("\n👋 Service shutdown complete")
 
 
-if __name__ == '__main__':
-    print("""
+if __name__ == "__main__":
+    print(
+        """
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                                                                              ║
 ║              CV AGENT - CITIZEN VERIFICATION BACKGROUND SERVICE              ║
@@ -156,6 +167,7 @@ if __name__ == '__main__':
 ║  Press Ctrl+C to stop                                                        ║
 ║                                                                              ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
-    """)
-    
+    """
+    )
+
     main()

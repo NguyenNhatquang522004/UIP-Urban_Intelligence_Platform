@@ -1,5 +1,14 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Nguyen Nhat Quang
+#
 # LOD Pipeline Runner Script
 # Activates virtual environment and runs orchestrator
+#
+# Module: scripts/pipeline/run_pipeline.ps1
+# Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+# Created: 2025-11-26
+# Version: 1.0.0
+# Description: Pipeline runner script for LOD Data Orchestrator
 
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host "LOD Data Pipeline Orchestrator" -ForegroundColor Cyan
@@ -41,7 +50,8 @@ $exitCode = $LASTEXITCODE
 Write-Host ""
 if ($exitCode -eq 0) {
     Write-Host "Pipeline completed successfully!" -ForegroundColor Green
-} else {
+}
+else {
     Write-Host "Pipeline failed with exit code: $exitCode" -ForegroundColor Red
 }
 

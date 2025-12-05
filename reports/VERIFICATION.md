@@ -143,7 +143,7 @@
 
 ### Installation
 ```bash
-cd d:\olp\Builder-Layer-End
+cd d:\olp\UIP-Urban_Intelligence_Platform
 pip install -r requirements.txt
 ```
 

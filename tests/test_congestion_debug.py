@@ -1,5 +1,14 @@
-"""Debug congestion detection
-Module: tests.test_congestion_debug.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Debug Congestion Detection.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
+Module: tests.test_congestion_debug
 Author: Nguyen Dinh Anh Tuan
 Created: 2025-11-25
 Version: 1.0.0
@@ -13,11 +22,13 @@ Usage:
     python tests/test_congestion_debug.py
 """
 
-from src.agents.analytics.congestion_detection_agent import CongestionDetectionAgent
 import json
 
+from src.agents.analytics.congestion_detection_agent import CongestionDetectionAgent
+
 agent = CongestionDetectionAgent()
-obs = json.load(open('data/observations.json'))
+with open("data/observations.json") as f:
+    obs = json.load(f)
 
 print(f"Total observations: {len(obs)}\n")
 
@@ -25,7 +36,7 @@ print(f"Total observations: {len(obs)}\n")
 for i, sample in enumerate(obs[:5]):
     print(f"=== Observation {i} ===")
     print(f"ID: {sample.get('id')}")
-    
+
     try:
         should_update, new_state, reason, observed_at = agent.detector.evaluate(sample)
         print(f"  should_update: {should_update}")
@@ -35,5 +46,6 @@ for i, sample in enumerate(obs[:5]):
     except Exception as e:
         print(f"  ERROR: {e}")
         import traceback
+
         traceback.print_exc()
     print()

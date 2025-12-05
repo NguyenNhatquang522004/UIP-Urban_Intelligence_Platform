@@ -1,24 +1,24 @@
 <p align="center">
-  <img src="assets/images/logo.png" alt="Builder Layer End Logo" width="200" height="200">
+  <img src="assets/images/logo.png" alt="UIP - Urban Intelligence Platform Logo" width="200" height="200">
 </p>
 
-<h1 align="center">Builder Layer End</h1>
+<h1 align="center">UIP - Urban Intelligence Platform</h1>
 
 <p align="center">
   <strong>Multi-Agent Linked Open Data Pipeline for Smart Traffic Management</strong>
 </p>
 
 <p align="center">
-  <a href="https://github.com/NguyenNhatquang522004/builder-layer-end/actions/workflows/test.yml">
-    <img src="https://github.com/NguyenNhatquang522004/builder-layer-end/actions/workflows/test.yml/badge.svg" alt="Tests">
+  <a href="https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/actions/workflows/test.yml">
+    <img src="https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/actions/workflows/test.yml/badge.svg" alt="Tests">
   </a>
-  <a href="https://github.com/NguyenNhatquang522004/builder-layer-end/actions/workflows/lint.yml">
-    <img src="https://github.com/NguyenNhatquang522004/builder-layer-end/actions/workflows/lint.yml/badge.svg" alt="Lint">
+  <a href="https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/actions/workflows/lint.yml">
+    <img src="https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/actions/workflows/lint.yml/badge.svg" alt="Lint">
   </a>
-  <a href="https://codecov.io/gh/NguyenNhatquang522004/builder-layer-end">
-    <img src="https://codecov.io/gh/NguyenNhatquang522004/builder-layer-end/branch/main/graph/badge.svg" alt="codecov">
+  <a href="https://codecov.io/gh/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform">
+    <img src="https://codecov.io/gh/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/branch/main/graph/badge.svg" alt="codecov">
   </a>
-  <a href="https://github.com/NguyenNhatquang522004/builder-layer-end/blob/main/LICENSE">
+  <a href="https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/blob/main/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT">
   </a>
 </p>
@@ -39,12 +39,63 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/discussions">
+    <img src="https://img.shields.io/badge/GitHub-Discussions-blue?logo=github" alt="Discussions">
+  </a>
+  <a href="https://groups.google.com/g/uip-platform">
+    <img src="https://img.shields.io/badge/Mailing%20List-Google%20Groups-red?logo=google" alt="Mailing List">
+  </a>
+  <a href="https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/wiki">
+    <img src="https://img.shields.io/badge/Wiki-Documentation-green?logo=gitbook" alt="Wiki">
+  </a>
+</p>
+
+<p align="center">
   <a href="#-features">Features</a> •
   <a href="#-one-command-run">One Command</a> •
   <a href="#-quick-start">Quick Start</a> •
   <a href="#-architecture">Architecture</a> •
+  <a href="#-team">Team</a> •
+  <a href="#-community">Community</a> •
   <a href="#-contributing">Contributing</a>
 </p>
+
+---
+
+## 👥 Team
+
+This project is developed and maintained by:
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/NguyenNhatquang522004">
+        <img src="https://github.com/NguyenNhatquang522004.png" width="100px;" alt="Nguyễn Nhật Quang"/><br />
+        <sub><b>Nguyễn Nhật Quang</b></sub>
+      </a><br />
+      <sub>Lead Developer</sub><br />
+      <sub>🏗️ Architecture | 🔧 Backend | ⚙️ DevOps</sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/JamesNguyen106">
+        <img src="https://github.com/JamesNguyen106.png" width="100px;" alt="Nguyễn Việt Hoàng"/><br />
+        <sub><b>Nguyễn Việt Hoàng</b></sub>
+      </a><br />
+      <sub>Full-Stack Developer</sub><br />
+      <sub>🎨 Frontend | 🔌 API | 📚 Docs</sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/NguyenDinhAnhTuan04">
+        <img src="https://github.com/NguyenDinhAnhTuan04.png" width="100px;" alt="Nguyễn Đình Anh Tuấn"/><br />
+        <sub><b>Nguyễn Đình Anh Tuấn</b></sub>
+      </a><br />
+      <sub>Backend Developer</sub><br />
+      <sub>🤖 Agents | 📊 Data | 🧪 Testing</sub>
+    </td>
+  </tr>
+</table>
+
+> 📄 See [AUTHORS.md](AUTHORS.md) for detailed information and [CONTRIBUTORS.md](CONTRIBUTORS.md) for all contributors.
 
 ---
 
@@ -98,9 +149,9 @@
 
 ## 📖 Overview
 
-**Builder Layer End** is a production-ready, multi-agent system for processing real-time traffic data in Ho Chi Minh City and publishing it as **Linked Open Data (LOD)**. The system integrates computer vision (YOLOX + DETR), semantic web technologies (RDF, NGSI-LD, SOSA/SSN), and modern microservices architecture.
+**UIP - Urban Intelligence Platform** is a production-ready, multi-agent system for processing real-time traffic data in Ho Chi Minh City and publishing it as **Linked Open Data (LOD)**. The system integrates computer vision (YOLOX + DETR), semantic web technologies (RDF, NGSI-LD, SOSA/SSN), and modern microservices architecture.
 
-### Why Builder Layer End?
+### Why UIP?
 
 - 🚀 **Production-Ready**: Battle-tested with comprehensive error handling, retry logic, and graceful shutdown
 - 🔧 **Config-Driven**: 100% YAML-configurable — no code changes needed for new domains
@@ -165,8 +216,8 @@
 
 ```bash
 # Clone repository
-git clone https://github.com/NguyenNhatquang522004/builder-layer-end.git
-cd builder-layer-end
+git clone https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform.git
+cd UIP-Urban_Intelligence_Platform
 
 # Copy environment configuration
 cp .env.example .env
@@ -194,8 +245,8 @@ docker-compose ps
 
 ```bash
 # Clone repository
-git clone https://github.com/NguyenNhatquang522004/builder-layer-end.git
-cd builder-layer-end
+git clone https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform.git
+cd UIP-Urban_Intelligence_Platform
 
 # Create Python virtual environment
 python -m venv .venv
@@ -218,8 +269,8 @@ This project supports standard GNU Make targets for building and installing:
 
 ```bash
 # Clone repository
-git clone https://github.com/NguyenNhatquang522004/builder-layer-end.git
-cd builder-layer-end
+git clone https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform.git
+cd UIP-Urban_Intelligence_Platform
 
 # View all available targets
 make help
@@ -293,7 +344,7 @@ python orchestrator.py --dry-run
 ## 📁 Project Structure
 
 ```
-builder-layer-end/
+UIP-Urban_Intelligence_Platform/
 │
 ├── 📂 src/                              # Python source code
 │   ├── agents/                          # Multi-agent system (38 agents in 12 categories)
@@ -478,7 +529,7 @@ builder-layer-end/
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────────┐
-│                              BUILDER LAYER END                                       │
+│                              UIP - URBAN INTELLIGENCE PLATFORM                       │
 │                    Multi-Agent Linked Open Data Pipeline                            │
 ├─────────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                     │
@@ -994,7 +1045,7 @@ Define orchestration phases in `config/workflow.yaml`:
 
 ```yaml
 workflow:
-  name: "Traffic LOD Pipeline"
+  name: "UIP - Urban Intelligence Platform"
   version: "2.0.0"
 
 phases:
@@ -1077,6 +1128,36 @@ npm install
 npm run start    # Development server
 npm run build    # Production build
 ```
+
+---
+
+## 💬 Community
+
+Join our community to get help, share ideas, and connect with other users:
+
+| Channel | Description | Link |
+|---------|-------------|------|
+| 💬 **GitHub Discussions** | Q&A, ideas, and general discussion | [Join Discussions](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/discussions) |
+| 📧 **Mailing List** | Announcements & release notifications | [Google Groups](https://groups.google.com/g/uip-platform) |
+| 📖 **Wiki** | Comprehensive documentation | [GitHub Wiki](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/wiki) |
+| 🐛 **Issues** | Bug reports & feature requests | [GitHub Issues](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/issues) |
+
+### Discussion Categories
+
+- **📣 Announcements**: Official project announcements (maintainers only)
+- **❓ Q&A**: Ask questions and get help from the community
+- **💡 Ideas**: Share and discuss new feature ideas
+- **🎉 Show and Tell**: Share your projects built with UIP
+- **📋 RFCs**: Request for Comments on major changes
+
+### Mailing List
+
+Subscribe to receive:
+- 📢 Release announcements
+- 🔔 Important updates
+- 📝 Monthly newsletters
+
+**Subscribe**: Send email to [uip-platform+subscribe@googlegroups.com](mailto:uip-platform+subscribe@googlegroups.com)
 
 ---
 
@@ -1181,7 +1262,7 @@ The **MIT License** covers all code in this project. You are free to:
 ```
 MIT License
 
-Copyright (c) 2024-2025 Traffic LOD Pipeline Project Contributors
+Copyright (c) 2024-2025 UIP - Urban Intelligence Platform Contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -1224,14 +1305,14 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 
 | Channel | Description | Link |
 |---------|-------------|------|
-| 📧 **Mailing List** | Announcements & discussions | [builder-layer-end@googlegroups.com](https://groups.google.com/g/builder-layer-end) |
-| 💬 **Discord** | Real-time chat & support | [Join Discord](https://discord.gg/builder-layer-end) |
-| 💬 **Discussions** | Q&A & community | [GitHub Discussions](https://github.com/NguyenNhatquang522004/builder-layer-end/discussions) |
+| 📧 **Mailing List** | Announcements & discussions | [uip-platform@googlegroups.com](https://groups.google.com/g/uip-platform) |
+| 💬 **Discord** | Real-time chat & support | [Join Discord](https://discord.gg/uip-platform) |
+| 💬 **Discussions** | Q&A & community | [GitHub Discussions](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/discussions) |
 
 ### Other Resources
 
 - 📖 **Documentation**: [docs/](docs/)
-- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/NguyenNhatquang522004/builder-layer-end/issues)
+- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/issues)
 - 📧 **Email**: nguyennhatquang522004@gmail.com
 
 ---

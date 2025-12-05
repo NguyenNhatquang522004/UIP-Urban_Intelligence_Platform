@@ -1,3 +1,11 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Nguyen Nhat Quang
+#
+# Module: requirements/base.txt
+# Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+# Version: 1.0.0
+# Description: Base production dependencies for UIP Traffic System
+#
 # Base Production Dependencies
 # Core libraries required for runtime
 
@@ -43,6 +51,10 @@ opencv-python>=4.8.0
 # Model: hilmantm/detr-traffic-accident-detection
 transformers>=4.35.0
 
+# PyTorch Image Models (Apache-2.0)
+# Required for YOLOX and other vision models
+timm>=0.9.0
+
 # PyTorch (BSD-style license)
 torch>=2.0.0
 torchvision>=0.15.0
@@ -52,7 +64,7 @@ numpy>=1.24.0
 pandas>=2.0.0
 
 # Database Drivers
-psycopg2-binary>=2.9.0  # PostgreSQL
+asyncpg>=0.29.0  # PostgreSQL async driver (Apache-2.0 - MIT compatible)
 neo4j>=5.0.0  # Neo4j Graph Database
 pymongo>=4.6.0  # MongoDB driver for NGSI-LD entity storage
 

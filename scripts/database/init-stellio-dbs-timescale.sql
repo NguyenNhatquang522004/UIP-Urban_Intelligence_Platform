@@ -1,7 +1,12 @@
---Module: scripts/database/init-stellio-dbs-timescale.sql
---Author: nguyễn Nhật Quang
---Created: 2025-11-29
---Version: 1.0.0
+-- SPDX-License-Identifier: MIT
+-- Copyright (c) 2025 Nguyen Nhat Quang
+--
+-- Module: scripts/database/init-stellio-dbs-timescale.sql
+-- Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+-- Created: 2025-11-29
+-- Version: 1.0.0
+-- Description: Initialize Stellio databases with TimescaleDB extension
+--
 -- Initialize Stellio databases with TimescaleDB extension
 -- Stellio requires TimescaleDB for time-series data hypertables
 

@@ -1,6 +1,18 @@
-## Support for Builder Layer End
+<!--
+SPDX-License-Identifier: MIT
+Copyright (c) 2025 Nguyen Nhat Quang
 
-Thank you for using Builder Layer End! This document provides information on how to get help and support.
+UIP - Urban Intelligence Platform
+Support Documentation
+
+Module: .github/SUPPORT.md
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Version: 1.0.0
+-->
+
+## Support for UIP - Urban Intelligence Platform
+
+Thank you for using UIP - Urban Intelligence Platform! This document provides information on how to get help and support.
 
 ## 📚 Documentation
 
@@ -26,7 +38,7 @@ If you've found a bug, please:
    - Error logs
    - Environment details
 
-[Create Bug Report](https://github.com/NguyenNhatquang522004/builder-layer-end/issues/new?template=bug_report.yml)
+[Create Bug Report](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/issues/new?template=bug_report.yml)
 
 ## 💡 Feature Requests
 
@@ -36,7 +48,7 @@ Have an idea for a new feature?
 2. **Use the [Feature Request template](.github/ISSUE_TEMPLATE/feature_request.yml)**
 3. **Describe your use case clearly**
 
-[Request Feature](https://github.com/NguyenNhatquang522004/builder-layer-end/issues/new?template=feature_request.yml)
+[Request Feature](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/issues/new?template=feature_request.yml)
 
 ## 💬 Getting Help
 
@@ -46,17 +58,17 @@ Join our community to get help and connect with other users:
 
 | Channel | Description | Link |
 |---------|-------------|------|
-| 📧 **Mailing List** | Announcements & discussions | [builder-layer-end@googlegroups.com](https://groups.google.com/g/builder-layer-end) |
-| 💬 **Discord** | Real-time chat & support | [Join Discord](https://discord.gg/builder-layer-end) |
-| 💬 **GitHub Discussions** | Q&A & community discussions | [GitHub Discussions](https://github.com/NguyenNhatquang522004/builder-layer-end/discussions) |
+| 📧 **Mailing List** | Announcements & discussions | [uip-platform@googlegroups.com](https://groups.google.com/g/uip-platform) |
+| 💬 **Discord** | Real-time chat & support | [Join Discord](https://discord.gg/uip-platform) |
+| 💬 **GitHub Discussions** | Q&A & community discussions | [GitHub Discussions](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/discussions) |
 
 ### GitHub Discussions
 
-For questions and general discussion, use [GitHub Discussions](https://github.com/NguyenNhatquang522004/builder-layer-end/discussions):
+For questions and general discussion, use [GitHub Discussions](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/discussions):
 
 - **Q&A**: Ask questions
 - **Ideas**: Share and discuss ideas
-- **Show and Tell**: Share your projects using Builder Layer End
+- **Show and Tell**: Share your projects using UIP
 - **General**: General discussion
 
 ### Mailing List
@@ -67,7 +79,7 @@ Subscribe to our mailing list to receive:
 - 📝 Community newsletters
 - 💡 Tips and best practices
 
-**Subscribe**: [builder-layer-end@googlegroups.com](https://groups.google.com/g/builder-layer-end)
+**Subscribe**: [uip-platform@googlegroups.com](https://groups.google.com/g/uip-platform)
 
 ### Community Support
 
@@ -82,22 +94,22 @@ Subscribe to our mailing list to receive:
 Please report security issues privately:
 
 1. **Email**: security@your-domain.com
-2. **GitHub Security Advisory**: [Create Security Advisory](https://github.com/NguyenNhatquang522004/builder-layer-end/security/advisories/new)
+2. **GitHub Security Advisory**: [Create Security Advisory](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/security/advisories/new)
 
 See [SECURITY.md](SECURITY.md) for more information.
 
 ## 📞 Contact
 
-- **General Questions**: Use [GitHub Discussions](https://github.com/NguyenNhatquang522004/builder-layer-end/discussions)
-- **Bug Reports**: [GitHub Issues](https://github.com/NguyenNhatquang522004/builder-layer-end/issues)
-- **Mailing List**: [builder-layer-end@googlegroups.com](https://groups.google.com/g/builder-layer-end)
+- **General Questions**: Use [GitHub Discussions](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/discussions)
+- **Bug Reports**: [GitHub Issues](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/issues)
+- **Mailing List**: [uip-platform@googlegroups.com](https://groups.google.com/g/uip-platform)
 - **Email**: nguyennhatquang522004@gmail.com
 
 ## ❓ FAQ
 
 ### Installation & Setup
 
-**Q: How do I install Builder Layer End?**
+**Q: How do I install UIP - Urban Intelligence Platform?**
 
 A: See the [Installation Guide](../README.md#installation) in the README.
 
@@ -273,4 +285,4 @@ If you find this project helpful:
 - 💡 Suggest features
 - 🤝 Contribute code
 
-Thank you for using Builder Layer End! 🚀
+Thank you for using UIP - Urban Intelligence Platform! 🚀

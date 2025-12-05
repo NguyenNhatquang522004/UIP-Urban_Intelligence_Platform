@@ -1,3 +1,13 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Nguyen Nhat Quang
+#
+# UIP - Urban Intelligence Platform
+# Dependabot Configuration for Automated Dependency Updates
+#
+# Module: .github/dependabot.yml
+# Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+# Version: 1.0.0
+
 version: 2
 updates:
   # Maintain dependencies for GitHub Actions
@@ -14,9 +24,11 @@ updates:
       prefix: "ci"
       include: "scope"
     reviewers:
-      - "your-org/devops-team"
+      - "NguyenNhatquang522004"
+      - "JamesNguyen106"
+      - "NguyenDinhAnhTuan04"
     assignees:
-      - "your-org/devops-team"
+      - "NguyenNhatquang522004"
     open-pull-requests-limit: 5
 
   # Maintain dependencies for pip (Python)
@@ -33,9 +45,10 @@ updates:
       prefix: "deps"
       include: "scope"
     reviewers:
-      - "your-org/backend-team"
+      - "NguyenNhatquang522004"
+      - "NguyenDinhAnhTuan04"
     assignees:
-      - "your-org/backend-team"
+      - "NguyenNhatquang522004"
     open-pull-requests-limit: 10
     # Group all patch updates together
     groups:
@@ -72,9 +85,11 @@ updates:
       prefix: "docker"
       include: "scope"
     reviewers:
-      - "your-org/devops-team"
+      - "NguyenNhatquang522004"
+      - "JamesNguyen106"
+      - "NguyenDinhAnhTuan04"
     assignees:
-      - "your-org/devops-team"
+      - "NguyenNhatquang522004"
     open-pull-requests-limit: 5
 
   # Maintain dependencies for Docker test files
@@ -91,7 +106,9 @@ updates:
       prefix: "docker"
       include: "scope"
     reviewers:
-      - "your-org/devops-team"
+      - "NguyenNhatquang522004"
+      - "JamesNguyen106"
+      - "NguyenDinhAnhTuan04"
     assignees:
-      - "your-org/devops-team"
+      - "NguyenNhatquang522004"
     open-pull-requests-limit: 5

@@ -1,10 +1,14 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Nguyen Nhat Quang
+#
 # Monitor Orchestrator Progress in Real-Time
 # Shows phases, agents, and skipping warnings
-#Module: scripts.monitoring.monitor-orchestrator
-#Author:Nguyễn Nhật Quang
-#Created: 2025-11-26
-#Version: 1.0.0
-#License: MIT
+#
+# Module: scripts/monitoring/monitor_orchestrator.ps1
+# Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+# Created: 2025-11-26
+# Version: 1.0.0
+# Description: Real-time orchestrator monitoring script
 param(
     [int]$RefreshSeconds = 5,
     [int]$MaxIterations = 60
@@ -40,9 +44,11 @@ while ($iteration -lt $MaxIterations) {
         $latestAgent | ForEach-Object {
             if ($_.Line -match "completed") {
                 Write-Host $_.Line -ForegroundColor Green
-            } elseif ($_.Line -match "failed") {
+            }
+            elseif ($_.Line -match "failed") {
                 Write-Host $_.Line -ForegroundColor Red
-            } else {
+            }
+            else {
                 Write-Host $_.Line -ForegroundColor Cyan
             }
         }
@@ -54,7 +60,8 @@ while ($iteration -lt $MaxIterations) {
             $warnings | ForEach-Object {
                 Write-Host $_.Line -ForegroundColor Magenta
             }
-        } else {
+        }
+        else {
             Write-Host "✅ No skipping warnings detected!" -ForegroundColor Green
         }
         
@@ -86,23 +93,25 @@ while ($iteration -lt $MaxIterations) {
         # File Creation Status
         Write-Host "`n━━━ OUTPUT FILES STATUS ━━━" -ForegroundColor Yellow
         $files = @(
-            @{Name="observations.json"; Path="data/observations.json"},
-            @{Name="accidents.json"; Path="data/accidents.json"},
-            @{Name="congestion.json"; Path="data/congestion.json"},
-            @{Name="patterns.json"; Path="data/patterns.json"},
-            @{Name="cameras_enriched.json"; Path="data/cameras_enriched.json"}
+            @{Name = "observations.json"; Path = "data/observations.json" },
+            @{Name = "accidents.json"; Path = "data/accidents.json" },
+            @{Name = "congestion.json"; Path = "data/congestion.json" },
+            @{Name = "patterns.json"; Path = "data/patterns.json" },
+            @{Name = "cameras_enriched.json"; Path = "data/cameras_enriched.json" }
         )
         
         foreach ($file in $files) {
             if (Test-Path $file.Path) {
                 $size = (Get-Item $file.Path).Length
                 Write-Host "  ✅ $($file.Name) - $size bytes" -ForegroundColor Green
-            } else {
+            }
+            else {
                 Write-Host "  ❌ $($file.Name) - NOT CREATED YET" -ForegroundColor Red
             }
         }
         
-    } else {
+    }
+    else {
         Write-Host "⏳ Waiting for log file..." -ForegroundColor Yellow
     }
     

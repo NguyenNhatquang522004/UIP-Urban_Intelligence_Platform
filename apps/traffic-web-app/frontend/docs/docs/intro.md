@@ -1,14 +1,14 @@
 ---
 slug: /
-title: HCMC Traffic Monitoring System
+title: UIP - Urban Intelligence Platform
 sidebar_position: 1
 ---
 
-# HCMC Traffic Monitoring System
+# UIP - Urban Intelligence Platform
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/python-3.9+-blue.svg)
 ![React](https://img.shields.io/badge/react-18.2-blue.svg)
@@ -23,9 +23,17 @@ sidebar_position: 1
 
 ---
 
+## 👥 Development Team
+
+| Name | Role | Responsibilities |
+|------|------|------------------|
+| **Nguyễn Nhật Quang** | Lead Developer | Architecture, Backend, DevOps, CV Integration |
+| **Nguyễn Việt Hoàng** | Full-Stack Developer | Frontend, API, Documentation |
+| **Nguyễn Đình Anh Tuấn** | Backend Developer | Agent System, Data Processing, Testing |
+
 ## 🎯 What is this project?
 
-The HCMC Traffic Monitoring System is a **production-ready, multi-agent orchestration platform** that:
+The UIP - Urban Intelligence Platform is a **production-ready, multi-agent orchestration platform** that:
 
 - 🚦 **Monitors real-time traffic** from 1,000+ camera locations
 - 🤖 **Detects accidents** using YOLOX computer vision
@@ -66,8 +74,8 @@ Get started in **3 steps** (5 minutes):
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/your-org/builder-layer-end.git
-cd builder-layer-end
+git clone https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform.git
+cd UIP-Urban_Intelligence_Platform
 
 # 2. Configure environment
 cp .env.example .env
@@ -208,3 +216,7 @@ For more details, see the LICENSE file in the project root.
 ---
 
 Ready to explore? Start with the [Prerequisites](installation/prerequisites) page! 🚀
+
+**Built with ❤️ by the UIP Team**
+
+Copyright (c) 2024-2025 UIP Contributors (Nguyễn Nhật Quang, Nguyễn Việt Hoàng, Nguyễn Đình Anh Tuấn)

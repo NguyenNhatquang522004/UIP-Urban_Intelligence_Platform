@@ -1,10 +1,22 @@
-# Content Negotiation Agent Configuration
-# Implements LOD best practices for content negotiation
-# Domain-agnostic, config-driven HTTP server
-#Author: Nguyễn Việt Hoàng
-#Created: 2025-11-22
-#Version: 1.0.0
-# Description: Configuration file for content negotiation agent
+# ============================================================================
+# UIP - Urban Intelligence Platform
+# Copyright (c) 2024-2025 UIP Team. All rights reserved.
+# https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+#
+# SPDX-License-Identifier: MIT
+# ============================================================================
+# File: config/content_negotiation_config.yaml
+# Module: Content Negotiation Agent Configuration
+# Author: Nguyen Viet Hoang
+# Created: 2025-11-22
+# Version: 1.0.0
+# License: MIT
+#
+# Description:
+#   Implements LOD best practices for content negotiation
+#   Domain-agnostic, config-driven HTTP server
+# ============================================================================
+
 content_negotiation:
   server:
     host: "0.0.0.0"

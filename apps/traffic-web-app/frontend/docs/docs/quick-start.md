@@ -1,6 +1,6 @@
 # Quick Start Guide
 
-Get the HCMC Traffic Monitoring System running in **5 minutes**! ⚡
+Get the UIP - Urban Intelligence Platform running in **5 minutes**! ⚡
 
 ## Prerequisites Check
 
@@ -20,8 +20,8 @@ Before starting, ensure you have:
 ## 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/your-org/builder-layer-end.git
-cd builder-layer-end
+git clone https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform.git
+cd UIP-Urban_Intelligence_Platform
 ```
 
 ## 2️⃣ Start with Docker Compose
@@ -244,9 +244,15 @@ Now that your system is running:
 ## 🆘 Need Help?
 
 - 📋 [Troubleshooting Guide](guides/troubleshooting)
-- 💬 [GitHub Issues](https://github.com/your-org/builder-layer-end/issues)
-- 📧 Email: support@example.com
+- 💬 [GitHub Issues](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/issues)
+- 📧 Email: nguyennhatquang522004@gmail.com
 
 ---
 
 **Happy monitoring!** 🚦 Ready to dive deeper? Check out the [Architecture Overview](architecture/overview).
+
+---
+
+**Built with ❤️ by the UIP Team**
+
+Copyright (c) 2024-2025 UIP Contributors (Nguyễn Nhật Quang, Nguyễn Việt Hoàng, Nguyễn Đình Anh Tuấn)

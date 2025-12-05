@@ -1,7 +1,15 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """Accident Detection Agent Unit Test Suite.
+
+UIP - Urban Intelligence Platform
+Copyright (c) 2024-2025 UIP Team. All rights reserved.
+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+
 Module: tests.unit.test_accident_detection
-Author: nguyễn Nhật Quang
+Author: Nguyen Nhat Quang
 Created: 2025-11-21
 Version: 1.0.0
 License: MIT
@@ -14,12 +22,10 @@ Usage:
     pytest tests/unit/test_accident_detection.py
 """
 
-import pytest
-
 
 class TestAccidentDetection:
     """Test accident detection logic."""
-    
+
     def test_detect_accident_from_observations(self):
         """Test accident detection algorithm."""
         # Sudden drop in speed + increase in density = potential accident
@@ -27,18 +33,18 @@ class TestAccidentDetection:
             {"speed": 60, "density": 20, "timestamp": "10:00"},
             {"speed": 15, "density": 80, "timestamp": "10:05"},  # Accident signature
         ]
-        
+
         # Detection logic
         speed_drop = observations[0]["speed"] - observations[1]["speed"]
         density_increase = observations[1]["density"] - observations[0]["density"]
-        
+
         # Threshold: speed drops >40 km/h AND density increases >50%
         accident_detected = speed_drop > 40 and density_increase > 50
-        
+
         assert accident_detected is True
         assert speed_drop == 45
         assert density_increase == 60
-    
+
     def test_severity_classification(self):
         """Test severity level classification."""
         accidents = [
@@ -46,7 +52,7 @@ class TestAccidentDetection:
             {"speed_drop": 40, "severity": "moderate"},
             {"speed_drop": 60, "severity": "severe"},
         ]
-        
+
         for accident in accidents:
             drop = accident["speed_drop"]
             if drop < 30:
@@ -55,5 +61,5 @@ class TestAccidentDetection:
                 expected = "moderate"
             else:
                 expected = "severe"
-            
+
             assert accident["severity"] == expected

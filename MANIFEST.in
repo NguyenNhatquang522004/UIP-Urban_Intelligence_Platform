@@ -1,7 +1,24 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Nguyen Nhat Quang
+#
+# UIP - Urban Intelligence Platform
+# Package manifest file for source distribution
+#
+# Module: MANIFEST.in
+# Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+# Version: 1.0.0
+
 include README.md
 include LICENSE
+include COPYING
+include NEWS
+include AUTHORS.md
 include CHANGELOG.md
-include CONTRIBUTING.md
+include CONTRIBUTORS.md
+include DISCUSSIONS.md
+include .github/CONTRIBUTING.md
+include .github/CODE_OF_CONDUCT.md
+include .github/SECURITY.md
 include pyproject.toml
 include setup.py
 include .env.example

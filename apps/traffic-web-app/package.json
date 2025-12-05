@@ -1,0 +1,73 @@
+{
+  "name": "hcmc-traffic-monitoring",
+  "version": "1.0.0",
+  "description": "Full-stack HCMC Traffic Monitoring System - Real-time traffic analysis and visualization platform for Ho Chi Minh City",
+  "private": true,
+  "homepage": "https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "scripts": {
+    "install:backend": "cd backend && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "install:all": "npm run install:backend && npm run install:frontend",
+    "dev": "powershell -ExecutionPolicy Bypass -File ./start-dev.ps1",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "build:all": "npm run build:backend && npm run build:frontend",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm run preview",
+    "test": "npm run test:backend && npm run test:frontend",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "test:agents": "cd backend && npm run test:agents",
+    "lint": "npm run lint:backend && npm run lint:frontend",
+    "lint:backend": "cd backend && npm run lint",
+    "lint:frontend": "cd frontend && npm run lint",
+    "clean": "npm run clean:backend && npm run clean:frontend",
+    "clean:backend": "cd backend && rimraf dist node_modules",
+    "clean:frontend": "cd frontend && rimraf dist node_modules",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down"
+  },
+  "keywords": [
+    "traffic",
+    "monitoring",
+    "hcmc",
+    "ho-chi-minh-city",
+    "real-time",
+    "websocket",
+    "ngsi-ld",
+    "stellio",
+    "smart-city",
+    "iot",
+    "urban-intelligence",
+    "traffic-analysis",
+    "computer-vision",
+    "typescript",
+    "react",
+    "express"
+  ],
+  "author": {
+    "name": "Nguyen Nhat Quang",
+    "url": "https://github.com/NguyenNhatquang522004"
+  },
+  "contributors": [
+    {
+      "name": "UIP Team",
+      "url": "https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform"
+    }
+  ],
+  "license": "MIT"
+}

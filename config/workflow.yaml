@@ -1,14 +1,24 @@
-#Author: Nguyen Dinh Anh Tuan
-#Created: 2025-11-20
-#Version: 1.0.0
-# Multi-Agent Workflow Orchestration Configuration
-# 100% DOMAIN-AGNOSTIC - Works with ANY LOD domain (healthcare, geography, commerce, etc.)
-# ALL workflow configurations are here - NO hardcoded logic in Python code
+# ============================================================================
+# UIP - Urban Intelligence Platform
+# Copyright (c) 2024-2025 UIP Team. All rights reserved.
+# https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+#
+# SPDX-License-Identifier: MIT
+# ============================================================================
+# File: config/workflow.yaml
+# Module: Workflow Orchestrator Configuration
+# Author: Nguyen Dinh Anh Tuan
+# Created: 2025-11-20
+# Version: 1.0.0
+# License: MIT
+#
+# Description:
+#   Multi-Agent Workflow Orchestration Configuration
+#   100% DOMAIN-AGNOSTIC - Works with ANY LOD domain
+#   ALL workflow configurations are here - NO hardcoded logic in Python code
+# ============================================================================
 
 # Seed Data Configuration
-# Set enabled: true to generate mock data for testing (no real accidents/patterns needed)
-# Set enabled: false to use real data from actual processing
-# NOTE: Seeding happens BEFORE validation agents run, so it seeds accidents.json, patterns.json, etc.
 seed_data:
   enabled: false  # Set to true to seed mock data, false to use real data
   files:

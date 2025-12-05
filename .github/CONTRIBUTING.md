@@ -1,6 +1,18 @@
-# Contributing to Builder Layer End
+<!--
+SPDX-License-Identifier: MIT
+Copyright (c) 2025 Nguyen Nhat Quang
 
-Thank you for your interest in contributing to Builder Layer End! This document provides guidelines and instructions for contributing to this project.
+UIP - Urban Intelligence Platform
+Contribution Guidelines
+
+Module: .github/CONTRIBUTING.md
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Version: 1.0.0
+-->
+
+# Contributing to UIP - Urban Intelligence Platform
+
+Thank you for your interest in contributing to UIP - Urban Intelligence Platform! This document provides guidelines and instructions for contributing to this project.
 
 ## Table of Contents
 
@@ -32,12 +44,12 @@ This project adheres to a code of conduct that all contributors are expected to 
 1. **Fork the repository** on GitHub
 2. **Clone your fork** locally:
    ```bash
-   git clone https://github.com/your-username/builder-layer-end.git
-   cd builder-layer-end
+   git clone https://github.com/<your-github-username>/UIP-Urban_Intelligence_Platform.git
+   cd UIP-Urban_Intelligence_Platform
    ```
 3. **Add upstream remote**:
    ```bash
-   git remote add upstream https://github.com/original-org/builder-layer-end.git
+   git remote add upstream https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform.git
    ```
 
 ## Development Setup
@@ -382,8 +394,8 @@ Use the [Feature Request template](.github/ISSUE_TEMPLATE/feature_request.yml) t
 ## Getting Help
 
 - **Documentation**: Check the [docs/](docs/) folder
-- **Discussions**: Use [GitHub Discussions](https://github.com/your-org/builder-layer-end/discussions)
-- **Issues**: Search [existing issues](https://github.com/your-org/builder-layer-end/issues)
+- **Discussions**: Use [GitHub Discussions](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/discussions)
+- **Issues**: Search [existing issues](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/issues)
 - **Chat**: Join our Slack/Discord (if available)
 
 ## License
@@ -397,4 +409,4 @@ Contributors will be recognized in:
 - GitHub Contributors page
 - Release notes
 
-Thank you for contributing to Builder Layer End! 🚀
+Thank you for contributing to UIP - Urban Intelligence Platform! 🚀

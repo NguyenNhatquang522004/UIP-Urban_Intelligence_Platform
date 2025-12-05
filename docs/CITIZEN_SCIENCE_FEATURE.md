@@ -704,4 +704,4 @@ For questions or issues:
 
 **Version:** 1.0.0  
 **Last Updated:** 2025-11-22  
-**Author:** Builder Layer Citizen Science Team
+**Author:** UIP Citizen Science Team

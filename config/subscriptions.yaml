@@ -1,10 +1,21 @@
-# Subscription Manager Agent Configuration
-# Domain-agnostic NGSI-LD subscription definitions
-
-#Author: nguyễn Nhật Quang
-#Created: 2025-11-22
+# ============================================================================
+# UIP - Urban Intelligence Platform
+# Copyright (c) 2024-2025 UIP Team. All rights reserved.
+# https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+#
+# SPDX-License-Identifier: MIT
+# ============================================================================
+# File: config/subscriptions.yaml
+# Module: Subscription Manager Agent Configuration
+# Author: Nguyen Nhat Quang
+# Created: 2025-11-22
 # Version: 1.0.0
-# Description: Configuration file for subscription manager agent
+# License: MIT
+#
+# Description:
+#   Domain-agnostic NGSI-LD subscription definitions
+# ============================================================================
+
 subscription_manager:
   # Stellio Subscription API Configuration
   # All connection values are read from environment variables (.env file)

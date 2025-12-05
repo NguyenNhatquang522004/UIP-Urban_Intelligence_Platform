@@ -1,3 +1,11 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Nguyen Nhat Quang
+#
+# Module: requirements/test.txt
+# Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+# Version: 1.0.0
+# Description: Testing dependencies for UIP Traffic System
+#
 # Testing Dependencies
 # Testing frameworks and utilities
 
@@ -19,3 +27,6 @@ freezegun>=1.4.0  # Mock datetime
 
 # Coverage
 coverage[toml]>=7.3.0
+
+# Redis client (required for cache integration tests)
+redis>=4.5.0

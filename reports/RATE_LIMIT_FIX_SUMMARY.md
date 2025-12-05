@@ -222,7 +222,7 @@ openweathermap:
 
 ### 1. Run Orchestrator
 ```powershell
-python D:\olp\Builder-Layer-End\orchestrator.py
+python D:\olp\UIP-Urban_Intelligence_Platform\orchestrator.py
 ```
 
 ### 2. Monitor Logs for 429 Handling
@@ -328,6 +328,6 @@ The rate limit fix ensures 100% API call success by:
 
 ---
 
-**Author**: Builder Layer LOD System  
+**Author**: UIP LOD System  
 **Version**: 2.1.0 (Rate Limit Fix)  
 **Compliance**: 100% User Requirements Met

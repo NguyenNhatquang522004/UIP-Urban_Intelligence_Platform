@@ -1,25 +1,33 @@
-yangshun:
-  name: Yangshun Tay
-  title: Ex-Meta Staff Engineer, Co-founder GreatFrontEnd
-  url: https://linkedin.com/in/yangshun
-  image_url: https://github.com/yangshun.png
+# =============================================================================
+# UIP - Urban Intelligence Platform - Blog Authors
+# =============================================================================
+
+nguyennhatquang:
+  name: Nguyễn Nhật Quang
+  title: Lead Developer & System Architect
+  url: https://github.com/NguyenNhatquang522004
+  image_url: https://github.com/NguyenNhatquang522004.png
   page: true
   socials:
-    x: yangshunz
-    linkedin: yangshun
-    github: yangshun
-    newsletter: https://www.greatfrontend.com
+    github: NguyenNhatquang522004
+    email: nguyennhatquang522004@gmail.com
 
-slorber:
-  name: Sébastien Lorber
-  title: Docusaurus maintainer
-  url: https://sebastienlorber.com
-  image_url: https://github.com/slorber.png
-  page:
-    # customize the url of the author page at /blog/authors/<permalink>
-    permalink: '/all-sebastien-lorber-articles'
+nguyenviethoang:
+  name: Nguyễn Việt Hoàng
+  title: Full-Stack Developer
+  url: https://github.com/JamesNguyen106
+  image_url: https://github.com/JamesNguyen106.png
+  page: true
   socials:
-    x: sebastienlorber
-    linkedin: sebastienlorber
-    github: slorber
-    newsletter: https://thisweekinreact.com
+    github: JamesNguyen106
+    email: viethoang01062004nt@gmail.com
+
+nguyendinhanhtuan:
+  name: Nguyễn Đình Anh Tuấn
+  title: Backend Developer
+  url: https://github.com/NguyenDinhAnhTuan04
+  image_url: https://github.com/NguyenDinhAnhTuan04.png
+  page: true
+  socials:
+    github: NguyenDinhAnhTuan04
+    email: nguyentuan834897@gmail.com
