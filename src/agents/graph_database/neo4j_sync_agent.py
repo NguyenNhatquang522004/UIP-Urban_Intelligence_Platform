@@ -25,7 +25,6 @@ Graph Schema:
 
 try:
     from neo4j import Driver, GraphDatabase
-    from neo4j.exceptions import Neo4jError, ServiceUnavailable
 
     NEO4J_AVAILABLE = True
 except ImportError:
@@ -33,7 +32,6 @@ except ImportError:
     GraphDatabase = None  # type: ignore
     Driver = None  # type: ignore
 
-import json
 import logging
 from datetime import datetime
 from typing import Any, Dict, List, Optional
@@ -249,7 +247,6 @@ class Neo4jSyncAgent:
             logger.warning("Database clear skipped (symbolic mode)")
             return True
 
-        cypher = "MATCH (n) DETACH DELETE n"
         logger.warning("Symbolic database clear executed")
         return True
 

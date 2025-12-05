@@ -101,6 +101,7 @@ def check_server_health():
             print("✅ Server is healthy")
             print(f"Response: {response.json()}")
             return True
+        return None
     except:
         print("❌ Server is not running")
         return False

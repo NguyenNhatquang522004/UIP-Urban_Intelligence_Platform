@@ -81,11 +81,11 @@ import os
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from dataclasses import asdict, dataclass, field
+from dataclasses import dataclass, field
 from datetime import datetime
 from enum import Enum
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional
 
 import requests
 import yaml
@@ -418,7 +418,7 @@ class AgentExecutor:
         name = agent_config.get("name")
         module_path = agent_config.get("module")
         enabled = agent_config.get("enabled", True)
-        timeout = agent_config.get("timeout", 60)
+        agent_config.get("timeout", 60)
 
         if not enabled:
             logger.info(f"Agent {name} is disabled, skipping")
@@ -662,7 +662,7 @@ class WorkflowOrchestrator:
         try:
             # Pre-flight health checks
             logger.info("Running pre-flight health checks...")
-            endpoint_results = self.health_checker.check_all()
+            self.health_checker.check_all()
             # check_all now returns dict or raises exception if required check fails
 
             # Execute phases

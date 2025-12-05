@@ -38,7 +38,7 @@ from typing import Any, Dict
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
 try:
-    from src.utils.mongodb_helper import MongoDBHelper, get_mongodb_helper
+    from src.utils.mongodb_helper import get_mongodb_helper
 
     MONGODB_AVAILABLE = True
 except ImportError:
@@ -66,6 +66,7 @@ class TestMongoDBPublisher(unittest.TestCase):
                 db = self.helper._client[self.helper._db_name]
                 db[self.test_collection].delete_many({})
             except Exception:
+                # Cleanup failure is acceptable in tests - next test will handle it
                 pass
 
     def _create_test_entity(

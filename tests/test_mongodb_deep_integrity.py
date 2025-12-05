@@ -30,7 +30,6 @@ Test Coverage:
 import json
 import sys
 from copy import deepcopy
-from datetime import datetime
 
 try:
     from src.utils.mongodb_helper import get_mongodb_helper

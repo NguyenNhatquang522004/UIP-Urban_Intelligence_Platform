@@ -36,13 +36,11 @@ except ImportError:
     REQUESTS_AVAILABLE = False
     requests = None  # type: ignore
 
-import asyncio
 import hashlib
 import hmac
 import json
 import logging
-import time
-from datetime import datetime, timedelta
+from datetime import datetime
 from typing import Any, Dict, List, Optional
 
 logger = logging.getLogger(__name__)

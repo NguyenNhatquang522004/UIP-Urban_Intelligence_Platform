@@ -66,7 +66,7 @@ import sys
 import time
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Set, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 import yaml
 
@@ -875,6 +875,7 @@ def main(config: Dict = None):
     # Create and run agent
     agent = SmartDataModelsValidationAgent(config_path=args.config)
     agent.run(source_file=args.source)
+    return None
 
 
 if __name__ == "__main__":

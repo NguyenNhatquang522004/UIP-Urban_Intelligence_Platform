@@ -34,7 +34,6 @@ except ImportError:
     REDIS_AVAILABLE = False
     redis = None  # type: ignore
 
-import json
 import logging
 from datetime import datetime
 from typing import Any, Dict, List, Optional, Set

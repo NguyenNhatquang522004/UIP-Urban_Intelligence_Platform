@@ -22,10 +22,6 @@ Usage:
     pytest tests/unit/test_ngsi_ld_transformer.py
 """
 
-from datetime import datetime
-
-import pytest
-
 
 class TestNGSILDTransformer:
     """Test NGSI-LD transformation."""

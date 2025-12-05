@@ -52,11 +52,10 @@ Usage:
 """
 
 import asyncio
-import json
 import sys
 from datetime import datetime
 from pathlib import Path
-from unittest.mock import AsyncMock, MagicMock, patch
+from unittest.mock import AsyncMock, patch
 
 import pytest
 import yaml
@@ -420,7 +419,7 @@ async def test_process_citizen_reports_traffic_jam_verified():
     # Load CV config
     config_path = Path(__file__).parent.parent.parent / "config" / "cv_config.yaml"
     with open(config_path, "r") as f:
-        config_data = yaml.safe_load(f)
+        yaml.safe_load(f)
 
     # Create config object with citizen_verification_enabled
     class MockConfig:
@@ -523,7 +522,7 @@ async def test_process_citizen_reports_accident_with_accident_model():
     # Load CV config
     config_path = Path(__file__).parent.parent.parent / "config" / "cv_config.yaml"
     with open(config_path, "r") as f:
-        config_data = yaml.safe_load(f)
+        yaml.safe_load(f)
 
     # Create MockConfig with required attributes
     class MockConfig:
@@ -651,7 +650,7 @@ async def test_full_citizen_science_workflow():
     # Load CV config
     config_path = Path(__file__).parent.parent.parent / "config" / "cv_config.yaml"
     with open(config_path, "r") as f:
-        config_data = yaml.safe_load(f)
+        yaml.safe_load(f)
 
     # Create MockConfig
     class MockConfig:

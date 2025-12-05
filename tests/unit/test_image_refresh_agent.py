@@ -22,8 +22,7 @@ Usage:
     pytest tests/unit/test_image_refresh_agent.py
 """
 
-from pathlib import Path
-from unittest.mock import MagicMock, Mock, patch
+from unittest.mock import patch
 
 import pytest
 

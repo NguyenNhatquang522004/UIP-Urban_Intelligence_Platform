@@ -66,24 +66,30 @@ Example Request:
     }
 """
 
-import json
 import logging
 import os
 import uuid
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, Optional
 
 import yaml
 
 # Import centralized environment variable expansion helper
 from src.core.config_loader import expand_env_var
 
+
+def _mask_sensitive_id(value: str) -> str:
+    """Mask sensitive ID for secure logging - show first and last chars only."""
+    if not value or len(value) < 4:
+        return "***"
+    return f"{value[:2]}***{value[-2:]}"
+
+
 # FastAPI & Uvicorn
 try:
     import uvicorn
     from fastapi import BackgroundTasks, FastAPI, HTTPException, status
-    from fastapi.responses import JSONResponse
     from pydantic import BaseModel, Field, field_validator
 
     FASTAPI_AVAILABLE = True
@@ -544,7 +550,9 @@ async def process_citizen_report_background(
         aq_enricher: Air quality API client
         transformer: NGSI-LD transformer and Stellio publisher
     """
-    logger.info(f"🚀 Processing report: {report.reportType} from user {report.userId}")
+    logger.info(
+        f"🚀 Processing report: {report.reportType} from user {_mask_sensitive_id(report.userId)}"
+    )
 
     try:
         # Step 1: Fetch enrichment data in parallel
@@ -634,7 +642,9 @@ if FASTAPI_AVAILABLE:
         Returns:
             202 Accepted with report ID
         """
-        logger.info(f"📥 Received report: {report.reportType} from {report.userId}")
+        logger.info(
+            f"📥 Received report: {report.reportType} from {_mask_sensitive_id(report.userId)}"
+        )
 
         # Generate report ID for tracking
         report_id = str(uuid.uuid4())

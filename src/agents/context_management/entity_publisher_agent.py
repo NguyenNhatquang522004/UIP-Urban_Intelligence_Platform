@@ -62,12 +62,11 @@ import time
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional
 
 import requests
 import yaml
 from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry
 
 from src.core.config_loader import expand_env_var
 
@@ -800,8 +799,10 @@ class BatchPublisher:
                     logger.info(f"Retrying in {delay} seconds...")
                     time.sleep(delay)
 
-        # All retries failed
-        raise last_exception
+        # All retries failed - raise the last exception or a generic one
+        if last_exception is not None:
+            raise last_exception
+        raise requests.exceptions.RequestException("All retry attempts failed")
 
     def _calculate_backoff_delay(self, attempt: int) -> float:
         """

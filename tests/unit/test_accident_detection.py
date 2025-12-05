@@ -22,8 +22,6 @@ Usage:
     pytest tests/unit/test_accident_detection.py
 """
 
-import pytest
-
 
 class TestAccidentDetection:
     """Test accident detection logic."""

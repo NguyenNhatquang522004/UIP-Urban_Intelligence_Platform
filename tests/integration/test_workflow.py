@@ -70,7 +70,7 @@ class TestWorkflowOrchestration:
     )
     def test_agent_modules_exist(self, workflow_config, project_root: Path):
         """Test all agent modules exist as files."""
-        src_dir = project_root / "src"
+        project_root / "src"
 
         for phase in workflow_config["phases"]:
             for agent in phase["agents"]:
@@ -85,7 +85,6 @@ class TestWorkflowOrchestration:
     @patch("src.agents.data_collection.image_refresh_agent.ImageRefreshAgent")
     async def test_phase_execution_mock(self, mock_agent):
         """Test phase execution with mocked agents."""
-        import asyncio
 
         # Mock agent execution
         mock_instance = Mock()

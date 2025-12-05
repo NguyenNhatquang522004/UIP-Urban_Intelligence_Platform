@@ -68,12 +68,11 @@ import time
 from dataclasses import asdict, dataclass
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Tuple
 
 import requests
 import yaml
 from rdflib import Graph, URIRef
-from rdflib.plugins.parsers import notation3, ntriples
 
 from src.core.config_loader import expand_env_var
 
@@ -175,7 +174,8 @@ class ConfigLoader:
             if env_var in os.environ:
                 auth["password"] = os.environ[env_var]
             else:
-                logger.warning(f"Environment variable {env_var} not set for password")
+                # Log warning without revealing env variable name
+                logger.warning("Required password environment variable not set")
 
     def validate_config(self, config: Dict) -> None:
         """
@@ -1123,7 +1123,7 @@ def main(config: Dict = None):
         if not rdf_dirs:
             logger.error("No RDF directories found in data/")
             logger.info("Please run NGSI-LD to RDF Agent first to generate RDF files")
-            return
+            return None
 
         logger.info(f"Found {len(rdf_dirs)} RDF directories: {rdf_dirs}")
 
@@ -1152,6 +1152,7 @@ def main(config: Dict = None):
                 print(f"  - {error}")
         print(f"\nReport saved to: {report_path}")
         print("=" * 80)
+        return None
 
     except Exception as e:
         logger.error(f"Fatal error: {e}", exc_info=True)

@@ -77,7 +77,6 @@ import asyncio
 import json
 import logging
 import sys
-from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
@@ -91,7 +90,7 @@ from src.core.config_loader import expand_env_var
 
 # Neo4j driver (required dependency)
 try:
-    from neo4j import Driver, GraphDatabase, Session, Transaction
+    from neo4j import Driver, GraphDatabase, Transaction
 
     NEO4J_AVAILABLE = True
 except ImportError:

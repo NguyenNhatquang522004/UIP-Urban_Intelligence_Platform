@@ -274,7 +274,6 @@ class DetectionMethod(ABC):
         Returns:
             (detected, confidence, reason)
         """
-        pass
 
 
 class SpeedVarianceDetector(DetectionMethod):

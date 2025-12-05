@@ -23,9 +23,7 @@ Description:
 """
 
 import argparse
-import json
 import logging
-from typing import Any, Dict, List, Optional
 
 try:
     from neo4j import GraphDatabase

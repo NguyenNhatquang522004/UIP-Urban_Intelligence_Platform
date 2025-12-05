@@ -77,8 +77,6 @@ from src.core.config_loader import expand_env_var
 class RateLimitExceeded(Exception):
     """Custom exception for API rate limit (429) errors requiring extended delay."""
 
-    pass
-
 
 class RetryHandler:
     """

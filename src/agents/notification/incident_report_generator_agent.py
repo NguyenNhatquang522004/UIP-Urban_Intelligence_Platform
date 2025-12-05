@@ -58,8 +58,6 @@ import json
 import logging
 import os
 import smtplib
-import sqlite3
-from collections import defaultdict
 from datetime import datetime, timedelta
 from email.mime.application import MIMEApplication
 from email.mime.multipart import MIMEMultipart
@@ -71,10 +69,9 @@ import matplotlib
 
 matplotlib.use("Agg")  # Non-interactive backend
 import matplotlib.pyplot as plt
-import requests
 import yaml
 from flask import Flask, jsonify, request, send_file
-from jinja2 import Environment, FileSystemLoader, Template
+from jinja2 import Environment, FileSystemLoader, Template, select_autoescape
 
 from src.core.config_loader import expand_env_var
 
@@ -211,7 +208,7 @@ class Neo4jQueryExecutor:
 
         query_config = self.queries.get(query_name, {})
         query_text = query_config.get("query", "")
-        timeout = query_config.get("timeout", 10)
+        query_config.get("timeout", 10)
 
         if not query_text:
             logger.error(f"Query not found: {query_name}")
@@ -615,9 +612,12 @@ class ReportGenerator:
         self.sections_config = config.get_report_sections()
         self.viz_config = config.get_visualizations_config()
 
-        # Initialize Jinja2 environment
+        # Initialize Jinja2 environment with autoescape for security
         template_dir = Path(__file__).parent.parent.parent / "templates"
-        self.jinja_env = Environment(loader=FileSystemLoader(str(template_dir)))
+        self.jinja_env = Environment(
+            loader=FileSystemLoader(str(template_dir)),
+            autoescape=select_autoescape(["html", "htm", "xml"]),
+        )
 
         # Initialize visualization generator
         self.viz_gen = VisualizationGenerator(self.viz_config)

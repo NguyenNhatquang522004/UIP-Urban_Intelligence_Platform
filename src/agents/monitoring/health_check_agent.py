@@ -68,17 +68,12 @@ References:
     - Prometheus: https://prometheus.io/
 """
 
-import json
 import logging
-import os
-import re
-import sqlite3
 import threading
 import time
-from collections import defaultdict
-from datetime import datetime, timedelta
+from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List
 
 # HTTP requests
 import requests
@@ -290,7 +285,7 @@ class ServiceChecker:
         password = config.get("password", "")
         database = config.get("database", "neo4j")
         query = config.get("query")
-        timeout = config.get("timeout", 10)
+        config.get("timeout", 10)
 
         driver = GraphDatabase.driver(uri, auth=(username, password))
 

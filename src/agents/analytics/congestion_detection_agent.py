@@ -469,7 +469,7 @@ class CongestionDetectionAgent:
         try:
             # Run async function in event loop
             try:
-                loop = asyncio.get_running_loop()
+                asyncio.get_running_loop()
                 # If we're already in an async context, create task
                 import concurrent.futures
 

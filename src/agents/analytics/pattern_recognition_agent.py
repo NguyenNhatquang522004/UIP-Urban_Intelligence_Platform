@@ -64,10 +64,7 @@ import json
 import logging
 import os
 import statistics
-import warnings
-from abc import ABC, abstractmethod
-from collections import defaultdict, deque
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from collections import defaultdict
 from datetime import datetime, timedelta
 from typing import Any, Dict, List, Optional, Tuple
 
@@ -76,7 +73,7 @@ import yaml
 
 # Neo4j driver
 try:
-    from neo4j import Driver, GraphDatabase, Session
+    from neo4j import Driver, GraphDatabase
 
     NEO4J_AVAILABLE = True
 except ImportError:
@@ -85,7 +82,6 @@ except ImportError:
 
 # Pandas for time-series
 try:
-    import numpy as np
     import pandas as pd
 
     PANDAS_AVAILABLE = True
@@ -347,7 +343,7 @@ class Neo4jConnector:
                 # Restore original logging level
                 neo4j_logger.setLevel(original_level)
 
-        except Exception as e:
+        except Exception:
             # If query fails (e.g., label doesn't exist), return False
             # No logging needed - this is expected during readiness checks
             return False
@@ -380,7 +376,7 @@ class Neo4jConnector:
             finally:
                 neo4j_logger.setLevel(original_level)
 
-        except Exception as e:
+        except Exception:
             # Expected during readiness checks when relationships don't exist yet
             return False
 

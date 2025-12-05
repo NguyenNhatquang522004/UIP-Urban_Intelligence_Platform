@@ -56,20 +56,17 @@ Architecture:
     Event Sources → Deduplicator → Batcher → Stellio PATCH → Metrics
 """
 
-import asyncio
 import hashlib
 import json
 import logging
 import os
 import threading
 import time
-from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, field
-from datetime import datetime, timedelta
-from pathlib import Path
+from datetime import datetime
 from queue import Empty, Queue
-from typing import Any, Dict, List, Optional, Set, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 from urllib.parse import urljoin
 
 import requests
@@ -86,7 +83,7 @@ except ImportError:
     KAFKA_AVAILABLE = False
 
 try:
-    import websocket
+    pass
 
     WEBSOCKET_AVAILABLE = True
 except ImportError:
@@ -455,12 +452,13 @@ class WebhookEventSource:
                         jsonify({"status": "accepted", "event_id": event.event_id}),
                         202,
                     )
-                except:
+                except Exception:  # Queue full or other queue error
                     return jsonify({"error": "Queue full"}), 503
 
             except Exception as e:
                 logger.error(f"Webhook error: {e}")
-                return jsonify({"error": str(e)}), 400
+                # Avoid exposing internal error details to clients
+                return jsonify({"error": "Invalid request format"}), 400
 
         # Health check endpoint
         @self.app.route("/health", methods=["GET"])

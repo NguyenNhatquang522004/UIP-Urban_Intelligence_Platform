@@ -22,7 +22,6 @@ Usage:
     pytest tests/integration/test_transformation_pipeline.py
 """
 
-from datetime import datetime, timezone
 
 import pytest
 

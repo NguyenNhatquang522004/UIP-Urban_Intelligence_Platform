@@ -76,8 +76,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 import yaml
-from rdflib import OWL, RDF, RDFS, XSD, Graph, Literal, Namespace, URIRef
-from rdflib.namespace import NamespaceManager as RDFLibNamespaceManager
+from rdflib import RDF, XSD, Graph, Literal, Namespace, URIRef
 from rdflib.util import guess_format
 
 # Configure logging

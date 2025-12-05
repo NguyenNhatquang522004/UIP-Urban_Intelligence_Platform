@@ -72,17 +72,14 @@ References:
     - Grafana: https://grafana.com/docs/
 """
 
-import json
 import logging
 import os
 import statistics
-import sys
 import threading
 import time
 from collections import defaultdict, deque
-from datetime import datetime, timedelta
-from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from datetime import datetime
+from typing import Any, Dict, List, Optional
 
 # System monitoring
 import psutil
@@ -93,12 +90,10 @@ from neo4j import GraphDatabase, basic_auth
 
 # Prometheus metrics
 from prometheus_client import (
-    REGISTRY,
     CollectorRegistry,
     Counter,
     Gauge,
     Histogram,
-    Summary,
     generate_latest,
     start_http_server,
 )

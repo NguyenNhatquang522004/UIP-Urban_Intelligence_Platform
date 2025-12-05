@@ -28,4 +28,5 @@ try:
     from .neo4j_query_agent import Neo4jQueryAgent
     from .neo4j_sync_agent import Neo4jSyncAgent
 except ImportError:
+    # Neo4j dependencies not installed - agents unavailable
     pass

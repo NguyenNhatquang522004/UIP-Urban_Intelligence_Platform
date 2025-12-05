@@ -32,7 +32,7 @@ from typing import Any, Dict, List, Optional
 
 try:
     from neo4j import GraphDatabase
-    from neo4j.exceptions import Neo4jError, ServiceUnavailable
+    from neo4j.exceptions import Neo4jError
 
     NEO4J_AVAILABLE = True
 except ImportError:

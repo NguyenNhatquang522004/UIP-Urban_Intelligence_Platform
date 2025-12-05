@@ -62,17 +62,15 @@ import gzip
 import hashlib
 import json
 import logging
-import os
 import re
 import time
-from collections import defaultdict, deque
 from dataclasses import dataclass, field
-from datetime import datetime, timedelta
+from datetime import datetime
 from enum import Enum
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urljoin
 
 import httpx
 import jwt
@@ -80,7 +78,6 @@ import yaml
 from fastapi import FastAPI, HTTPException, Request, Response, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from starlette.background import BackgroundTask
 from starlette.middleware.base import BaseHTTPMiddleware
 
 # Import centralized environment variable expansion helper
@@ -777,7 +774,7 @@ class ResponseCache:
             try:
                 # Get all keys matching patterns
                 for pattern in patterns:
-                    pattern_regex = pattern.replace("*", ".*")
+                    pattern.replace("*", ".*")
                     keys = self.redis_client.keys(f"{self.redis_key_prefix}*")
                     for key in keys:
                         # This is simplified; in production, store path with key
@@ -905,7 +902,7 @@ class CircuitBreaker:
 
             return response
 
-        except Exception as e:
+        except Exception:
             # Failure - increment counter and potentially open circuit
             state.failure_count += 1
             state.last_failure_time = current_time

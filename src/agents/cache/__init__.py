@@ -29,4 +29,5 @@ try:
     from .cache_invalidator_agent import CacheInvalidatorAgent
     from .cache_manager_agent import CacheManagerAgent
 except ImportError:
+    # Optional dependencies not installed - agents unavailable
     pass

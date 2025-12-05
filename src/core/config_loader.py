@@ -130,6 +130,7 @@ def expand_env_var(value: Any) -> Any:
             if "." in result:
                 return float_val
         except (ValueError, AttributeError):
+            # Type conversion failed - return string value unchanged
             pass
 
     return result
@@ -137,8 +138,6 @@ def expand_env_var(value: Any) -> Any:
 
 class ConfigurationError(Exception):
     """Raised when configuration is invalid or missing."""
-
-    pass
 
 
 class ConfigLoader:

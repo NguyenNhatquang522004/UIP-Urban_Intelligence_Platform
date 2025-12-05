@@ -60,23 +60,20 @@ import asyncio
 import hashlib
 import json
 import logging
-import os
 import re
 from dataclasses import dataclass, field
 from datetime import datetime
 from enum import Enum
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
-from urllib.parse import parse_qs, urlencode, urljoin, urlparse
 
 import httpx
 import yaml
 from fastapi import FastAPI, HTTPException, Request, Response, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, PlainTextResponse, RedirectResponse
-from jinja2 import Environment, FileSystemLoader, Template, TemplateNotFound
-from rdflib import Graph, Literal, Namespace, URIRef
-from rdflib.namespace import RDF, RDFS, XSD
+from jinja2 import Environment, FileSystemLoader, TemplateNotFound
+from rdflib import Graph
 
 # Import centralized environment variable expansion helper
 from src.core.config_loader import expand_env_var
@@ -132,17 +129,19 @@ class BackendConfig:
         return self.url.format(**kwargs)
 
 
-@dataclass
+@dataclass(order=True)
 class AcceptFormat:
     """Parsed Accept header format with quality value"""
 
-    mime_type: str
-    quality: float
-    params: Dict[str, str] = field(default_factory=dict)
+    # Use negative quality for descending order (dataclass sorts ascending)
+    _sort_key: float = field(init=False, repr=False)
+    mime_type: str = field(compare=False)
+    quality: float = field(compare=False)
+    params: Dict[str, str] = field(default_factory=dict, compare=False)
 
-    def __lt__(self, other):
-        """Compare by quality (descending)"""
-        return self.quality > other.quality
+    def __post_init__(self):
+        # Negate quality for descending sort order
+        self._sort_key = -self.quality
 
 
 @dataclass

@@ -71,27 +71,24 @@ References:
 import asyncio
 import gzip
 import hashlib
-import json
 import logging
 import re
 import time
 from dataclasses import dataclass, field
-from datetime import datetime, timedelta
+from datetime import datetime
 from enum import Enum
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional
 
 import yaml
 
 from src.core.config_loader import expand_env_var
 
 try:
-    import redis.asyncio as aioredis
     from redis.asyncio import ConnectionPool, Redis
 except ImportError:
     # Fallback for older redis-py versions
-    import aioredis
     from aioredis import ConnectionPool, Redis
 
 
@@ -473,6 +470,7 @@ class CacheWarmer:
             try:
                 await self._warming_task
             except asyncio.CancelledError:
+                # CancelledError is expected when stopping task intentionally
                 pass
         self.logger.info("Cache warming stopped")
 
@@ -599,6 +597,7 @@ class CacheInvalidator:
             try:
                 await task
             except asyncio.CancelledError:
+                # CancelledError is expected when stopping tasks intentionally
                 pass
         self.logger.info("Cache invalidation stopped")
 
@@ -1198,7 +1197,8 @@ class CacheManagerAgent:
 
         except Exception as e:
             self.logger.error(f"Health check error: {e}")
-            return {"status": "unhealthy", "error": str(e)}
+            # Avoid exposing internal error details to clients
+            return {"status": "unhealthy", "error": "Internal health check failure"}
 
 
 # FastAPI application for Cache Manager API

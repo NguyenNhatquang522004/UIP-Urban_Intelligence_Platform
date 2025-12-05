@@ -52,7 +52,6 @@ import json
 import logging
 import os
 import sys
-from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -323,7 +322,7 @@ def main(config: Dict = None):
             print("=" * 80)
             print("Entities found: 0")
             print("=" * 80)
-            return
+            return None
 
         # Save entities
         output_path = agent.save_entities(entities, args.output)

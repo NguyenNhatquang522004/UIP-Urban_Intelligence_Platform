@@ -22,8 +22,6 @@ Usage:
     pytest tests/unit/test_sosa_mapper.py
 """
 
-import pytest
-
 
 class TestSOSAMapper:
     """Test SOSA/SSN RDF mapping."""

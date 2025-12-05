@@ -59,16 +59,14 @@ Architecture:
 """
 
 import gzip
-import hashlib
 import json
 import logging
 import os
 import statistics
-import time
 from collections import defaultdict
 from datetime import datetime, timedelta
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional
 from urllib.parse import urljoin
 
 import requests
@@ -79,7 +77,7 @@ from src.core.config_loader import expand_env_var
 
 # Optional dependencies
 try:
-    from neo4j import GraphDatabase
+    pass
 
     NEO4J_AVAILABLE = True
 except ImportError:

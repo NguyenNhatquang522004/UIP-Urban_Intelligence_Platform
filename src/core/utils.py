@@ -40,8 +40,6 @@ Examples:
 
 import hashlib
 import json
-import os
-import re
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -352,7 +350,7 @@ def retry_with_backoff(max_retries: int = 3, backoff_base: float = 2.0):
             for attempt in range(max_retries):
                 try:
                     return await func(*args, **kwargs)
-                except Exception as e:
+                except Exception:
                     if attempt == max_retries - 1:
                         raise
                     wait_time = backoff_base**attempt

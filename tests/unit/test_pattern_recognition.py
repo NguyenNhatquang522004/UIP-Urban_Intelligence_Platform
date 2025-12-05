@@ -22,9 +22,7 @@ Usage:
     pytest tests/unit/test_pattern_recognition.py
 """
 
-from datetime import datetime, timedelta
-
-import pytest
+from datetime import datetime
 
 
 class TestPatternRecognition:

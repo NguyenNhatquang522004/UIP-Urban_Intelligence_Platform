@@ -68,9 +68,7 @@ References:
     - Firebase Admin SDK: https://firebase.google.com/docs/admin/setup
 """
 
-import json
 import logging
-import os
 import re
 import smtplib
 import time
@@ -80,7 +78,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from pathlib import Path
 from threading import Lock
-from typing import Any, Dict, List, Optional, Set
+from typing import Any, Dict, List, Set
 
 import requests
 import yaml
@@ -712,7 +710,8 @@ class AlertDispatcher:
         except Exception as e:
             logger.error(f"Error handling webhook: {e}")
             self.stats["alerts_failed"] += 1
-            return jsonify({"error": str(e)}), 500
+            # Avoid exposing internal error details to clients
+            return jsonify({"error": "Internal processing error"}), 500
 
     def _extract_variables(
         self, notification: Dict[str, Any], alert_type: str

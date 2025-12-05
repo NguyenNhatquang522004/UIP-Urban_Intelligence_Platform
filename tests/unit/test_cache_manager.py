@@ -22,7 +22,7 @@ Usage:
     pytest tests/unit/test_cache_manager.py
 """
 
-from unittest.mock import MagicMock, Mock, patch
+from unittest.mock import MagicMock, patch
 
 import pytest
 
@@ -46,7 +46,7 @@ class TestCacheManager:
 
     def test_ttl_expiration(self, cache_manager):
         """Test TTL-based expiration logic."""
-        from datetime import datetime, timedelta
+        from datetime import datetime
 
         # Test that default TTL is set correctly
         assert cache_manager._default_ttl == 3600

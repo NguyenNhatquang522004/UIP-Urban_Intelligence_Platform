@@ -52,13 +52,12 @@ Architecture:
 
 import json
 import logging
-import os
 import re
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import Any, Dict, List, Optional, Tuple
 from urllib.parse import urlparse, urlunparse
 
 import requests
@@ -841,6 +840,7 @@ class DataCleaner:
                     # Update entity
                     self._set_nested_value(entity, field_path, utc_string)
                 except (ValueError, AttributeError):
+                    # Invalid datetime format - skip timezone conversion for this field
                     pass
 
         return entity

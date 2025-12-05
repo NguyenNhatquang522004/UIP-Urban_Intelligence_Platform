@@ -67,9 +67,8 @@ import json
 import logging
 import sys
 import time
-from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Set
+from typing import Any, Dict, List, Optional
 
 import yaml
 
@@ -542,7 +541,6 @@ class SOSASSNMapperAgent:
         # DO NOT initialize sosa:madeObservation here!
         # Reason: Stellio rejects empty arrays in Relationship.object
         # Solution: entity_publisher_agent will add this via PATCH after Observations exist
-        pass
 
     def merge_context(self, entity: Dict[str, Any]) -> None:
         """
@@ -848,6 +846,7 @@ def main(config: Dict = None):
     # Create and run agent
     agent = SOSASSNMapperAgent(config_path=args.config)
     agent.run(source_file=args.source, output_file=args.output)
+    return None
 
 
 if __name__ == "__main__":

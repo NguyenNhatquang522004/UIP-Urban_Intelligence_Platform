@@ -22,7 +22,7 @@ Usage:
     pytest tests/unit/test_alert_dispatcher.py
 """
 
-from unittest.mock import AsyncMock, Mock
+from unittest.mock import AsyncMock
 
 import pytest
 

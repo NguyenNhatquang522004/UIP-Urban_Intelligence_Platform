@@ -28,14 +28,8 @@ Features:
     Full SMTP integration with smtplib and email.mime.
 """
 
-import hashlib
 import logging
-import smtplib
-import time
 from datetime import datetime
-from email.mime.application import MIMEApplication
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
 from typing import Any, Dict, List, Optional
 
 logger = logging.getLogger(__name__)
@@ -141,7 +135,7 @@ class EmailNotificationHandler:
 
         severity = alert.get("severity", "MEDIUM")
         title = alert.get("title", "Traffic Alert")
-        description = alert.get("description", "")
+        alert.get("description", "")
 
         # Generate HTML email body
         body_html = self._generate_alert_html(alert)

@@ -67,7 +67,6 @@ References:
 import json
 import logging
 import sys
-from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional
@@ -173,7 +172,7 @@ class TransformationEngine:
                     # Try parsing as ISO format
                     dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
                     return dt.isoformat() + "Z"
-                except:
+                except (ValueError, AttributeError):
                     return value
             elif isinstance(value, datetime):
                 return value.isoformat() + "Z"
@@ -1054,6 +1053,7 @@ def main(config: Dict = None):
     except Exception as e:
         print(f"Fatal error: {e}", file=sys.stderr)
         sys.exit(1)
+    return None
 
 
 if __name__ == "__main__":

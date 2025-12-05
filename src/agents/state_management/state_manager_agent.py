@@ -29,10 +29,9 @@ Architecture:
     Full Redis integration, disabled by default for safety.
 """
 
-import json
 import logging
 from datetime import datetime, timedelta
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, Optional
 
 try:
     import redis

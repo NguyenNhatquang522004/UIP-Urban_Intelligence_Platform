@@ -140,7 +140,7 @@ def main():
         try:
             # Transform to NGSI-LD
             entity = transform_to_ngsi_ld(camera)
-            entity_id = entity["id"]
+            entity["id"]
 
             # Publish
             success, message = publish_entity(entity)

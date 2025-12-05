@@ -36,7 +36,6 @@ except ImportError:
     redis = None  # type: ignore
     TimeSeries = None  # type: ignore
 
-import json
 import logging
 from collections import defaultdict
 from datetime import datetime, timedelta

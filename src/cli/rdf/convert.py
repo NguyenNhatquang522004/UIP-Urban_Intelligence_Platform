@@ -28,7 +28,6 @@ Usage:
 
 import argparse
 import logging
-from pathlib import Path
 
 try:
     from rdflib import Graph

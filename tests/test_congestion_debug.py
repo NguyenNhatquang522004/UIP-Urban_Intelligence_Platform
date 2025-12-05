@@ -27,7 +27,8 @@ import json
 from src.agents.analytics.congestion_detection_agent import CongestionDetectionAgent
 
 agent = CongestionDetectionAgent()
-obs = json.load(open("data/observations.json"))
+with open("data/observations.json") as f:
+    obs = json.load(f)
 
 print(f"Total observations: {len(obs)}\n")
 

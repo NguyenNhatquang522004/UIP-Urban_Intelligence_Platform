@@ -38,7 +38,7 @@ def validate_rdf(input_file: str, shapes_file: str = None):
     """Validate RDF file against SHACL shapes."""
     if not PYSHACL_AVAILABLE:
         print("ERROR: pyshacl library not available")
-        return
+        return None
 
     try:
         # Load data graph
