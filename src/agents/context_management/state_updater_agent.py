@@ -682,7 +682,8 @@ class EntityUpdater:
 
                 # Get attribute value - extract from dict if needed
                 raw_attr = event.updates[attr_name]
-                attr_value = raw_attr.get("value") if isinstance(raw_attr, dict) else raw_attr
+                # Note: attr_value used for type normalization before validation
+                _ = raw_attr.get("value") if isinstance(raw_attr, dict) else raw_attr
 
                 # Validate based on rules
                 for field, constraints in validation.items():

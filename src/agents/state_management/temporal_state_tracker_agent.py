@@ -36,8 +36,9 @@ except ImportError:
     redis = None  # type: ignore
     TimeSeries = None  # type: ignore
 
-# Reference for CodeQL - TimeSeries used conditionally when Redis available
-_TimeSeries = TimeSeries
+# TimeSeries used conditionally when Redis is available
+if REDIS_TIMESERIES_AVAILABLE:
+    assert TimeSeries is not None  # nosec: type available
 
 import logging
 from collections import defaultdict

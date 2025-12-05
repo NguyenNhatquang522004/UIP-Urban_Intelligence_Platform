@@ -472,6 +472,7 @@ async def test_process_citizen_reports_traffic_jam_verified():
 
         # Mock image download
         import io
+
         mock_image = PILImage.new("RGB", (640, 480), color="blue")
 
         img_bytes = io.BytesIO()

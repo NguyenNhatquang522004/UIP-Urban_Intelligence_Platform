@@ -100,13 +100,15 @@ def _mask_entity_id(entity_id: str) -> str:
 
 def _sanitize_log_value(value: str, max_length: int = 50) -> str:
     """Sanitize user input for safe logging - prevent log injection.
-    
+
     Removes newlines, control characters, and truncates long values.
     """
     if not value:
         return "***"
     # Remove newlines and control characters to prevent log injection
-    sanitized = "".join(c if c.isprintable() and c not in "\n\r\t" else "_" for c in str(value))
+    sanitized = "".join(
+        c if c.isprintable() and c not in "\n\r\t" else "_" for c in str(value)
+    )
     # Truncate long values
     if len(sanitized) > max_length:
         return sanitized[:max_length] + "..."
@@ -525,20 +527,22 @@ class NGSILDTransformer:
         """
         url = f"{self.stellio_base_url}/ngsi-ld/v1/entities"
 
+        # Extract and mask entity ID before logging to prevent sensitive data exposure
+        entity_id_raw = entity.get("id", "unknown")
+        masked_id = _mask_entity_id(entity_id_raw)
+
         try:
             response = self.session.post(url, json=entity, timeout=10)
 
             if response.status_code in [201, 204]:
-                logger.info(
-                    f"✅ Published entity to Stellio: {_mask_entity_id(entity['id'])}"
-                )
+                logger.info(f"✅ Published entity to Stellio: {masked_id}")
 
                 # Optionally publish to MongoDB (non-blocking)
                 if self._mongodb_helper and self._mongodb_helper.enabled:
                     try:
                         if self._mongodb_helper.insert_entity(entity):
                             logger.info(
-                                f"✅ Published CitizenObservation to MongoDB: {_mask_entity_id(entity['id'])}"
+                                f"✅ Published CitizenObservation to MongoDB: {masked_id}"
                             )
                     except Exception as e:
                         logger.warning(f"MongoDB publish failed (non-critical): {e}")
@@ -577,9 +581,11 @@ async def process_citizen_report_background(
         aq_enricher: Air quality API client
         transformer: NGSI-LD transformer and Stellio publisher
     """
-    logger.info(
-        f"🚀 Processing report: {_sanitize_log_value(report.reportType)} from user {_mask_sensitive_id(report.userId)}"
-    )
+    # Sanitize user input before logging to prevent log injection
+    safe_report_type = _sanitize_log_value(report.reportType)
+    safe_user_id = _mask_sensitive_id(report.userId)
+
+    logger.info(f"🚀 Processing report: {safe_report_type} from user {safe_user_id}")
 
     try:
         # Step 1: Fetch enrichment data in parallel
@@ -588,25 +594,22 @@ async def process_citizen_report_background(
             aq_enricher.fetch(report.latitude, report.longitude),
         )
 
-        logger.info(
-            "📊 Enrichment complete: Weather and AQ data fetched successfully"
-        )
+        logger.info("📊 Enrichment complete: Weather and AQ data fetched successfully")
 
         # Step 2: Transform to NGSI-LD
         entity = transformer.transform(report, weather_data, aq_data)
-        logger.info(f"🔄 Transformed to NGSI-LD: {_mask_entity_id(entity['id'])}")
+        # Extract and mask entity ID before logging
+        entity_id_raw = entity.get("id", "unknown")
+        masked_id = _mask_entity_id(entity_id_raw)
+        logger.info(f"🔄 Transformed to NGSI-LD: {masked_id}")
 
         # Step 3: Publish to Stellio
         success = transformer.publish_to_stellio(entity)
 
         if success:
-            logger.info(
-                f"✅ Report processing complete: {_mask_entity_id(entity['id'])}"
-            )
+            logger.info(f"✅ Report processing complete: {masked_id}")
         else:
-            logger.error(
-                f"❌ Failed to publish report: {_mask_entity_id(entity['id'])}"
-            )
+            logger.error(f"❌ Failed to publish report: {masked_id}")
 
     except Exception as e:
         logger.error(f"💥 Background task failed: {e}", exc_info=True)
@@ -673,9 +676,10 @@ if FASTAPI_AVAILABLE:
         Returns:
             202 Accepted with report ID
         """
-        logger.info(
-            f"📥 Received report: {_sanitize_log_value(report.reportType)} from {_mask_sensitive_id(report.userId)}"
-        )
+        # Sanitize user input before logging to prevent log injection
+        safe_report_type = _sanitize_log_value(report.reportType)
+        safe_user_id = _mask_sensitive_id(report.userId)
+        logger.info(f"📥 Received report: {safe_report_type} from {safe_user_id}")
 
         # Generate report ID for tracking
         report_id = str(uuid.uuid4())

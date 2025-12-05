@@ -84,7 +84,7 @@ All API keys now support **multiple values separated by commas**:
 
 ```env
 # Single key (legacy format - still supported)
-GEMINI_API_KEY=AIzaSyDtelIruWqGr2BOa-VIpqpBdL_-Ih8MGBQ
+GEMINI_API_KEY=your_gemini_api_key_here
 
 # Multiple keys (new format - recommended)
 GEMINI_API_KEY=key1,key2,key3
