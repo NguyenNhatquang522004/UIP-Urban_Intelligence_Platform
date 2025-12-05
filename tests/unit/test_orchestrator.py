@@ -36,8 +36,9 @@ except ImportError:
     WorkflowOrchestrator = None  # type: ignore
     ORCHESTRATOR_AVAILABLE = False
 
-# Reference to suppress unused import warning
-_WorkflowOrchestrator = WorkflowOrchestrator
+# Verify import succeeded when available
+if ORCHESTRATOR_AVAILABLE:
+    assert WorkflowOrchestrator is not None  # nosec: import verified
 
 
 @pytest.mark.skipif(

@@ -337,7 +337,11 @@ def main(config: Dict = None):
         print(f"Output file:     {output_path}")
         print("=" * 80)
 
-        return {"status": "success", "entities_found": len(entities), "output_file": output_path}
+        return {
+            "status": "success",
+            "entities_found": len(entities),
+            "output_file": output_path,
+        }
 
     except Exception as e:
         logger.error(f"Fatal error: {e}", exc_info=True)

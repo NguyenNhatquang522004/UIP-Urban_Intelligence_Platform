@@ -7,7 +7,7 @@ Hỗ trợ nhiều API keys cho mỗi service, cách nhau bởi dấu phẩy:
 
 ```env
 # Ví dụ: 1 key
-GEMINI_API_KEY=AIzaSyDtelIruWqGr2BOa-VIpqpBdL_-Ih8MGBQ
+GEMINI_API_KEY=your_gemini_api_key_here
 
 # Ví dụ: 3 keys
 GEMINI_API_KEY=key1,key2,key3

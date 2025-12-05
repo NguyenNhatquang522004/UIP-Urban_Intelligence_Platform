@@ -948,7 +948,9 @@ class ContentNegotiationAgent:
                     return rdfxml_data, format_config.get_content_type()
                 else:
                     # Unsupported format for fuseki source
-                    raise ValueError(f"Unsupported format for fuseki: {format_config.mime_type}")
+                    raise ValueError(
+                        f"Unsupported format for fuseki: {format_config.mime_type}"
+                    )
 
             elif format_config.source == "convert":
                 # Fetch JSON-LD and convert
@@ -1150,17 +1152,19 @@ def create_app(config_path: str) -> FastAPI:
         dangerous_patterns = [
             "..",  # Path traversal
             "//",  # Protocol injection
-            "?",   # Query string
-            "#",   # Fragment
-            "%",   # URL encoding (could be used to bypass)
-            "\n", "\r",  # Header injection
-            "<", ">",    # XSS
+            "?",  # Query string
+            "#",  # Fragment
+            "%",  # URL encoding (could be used to bypass)
+            "\n",
+            "\r",  # Header injection
+            "<",
+            ">",  # XSS
         ]
         for pattern in dangerous_patterns:
             if pattern in segment:
                 return False
         # Must match safe pattern
-        return bool(re.match(r'^[a-zA-Z0-9_:\-\.]+$', segment))
+        return bool(re.match(r"^[a-zA-Z0-9_:\-\.]+$", segment))
 
     @app.get("/id/{entity_type}/{entity_id}")
     async def get_entity_non_information(
@@ -1171,12 +1175,15 @@ def create_app(config_path: str) -> FastAPI:
         Returns 303 redirect to information resource.
         """
         # Validate user input to prevent URL injection
-        if not _validate_path_segment(entity_type) or not _validate_path_segment(entity_id):
+        if not _validate_path_segment(entity_type) or not _validate_path_segment(
+            entity_id
+        ):
             agent.logger.warning("Invalid entity_type or entity_id blocked")
             from fastapi.responses import JSONResponse
+
             return JSONResponse(
                 status_code=400,
-                content={"error": "Invalid entity_type or entity_id format"}
+                content={"error": "Invalid entity_type or entity_id format"},
             )
 
         # Build path from validated segments only
@@ -1186,7 +1193,7 @@ def create_app(config_path: str) -> FastAPI:
             # Get suffix from config (trusted source, not user input)
             redirect_config = agent.config.get_redirects_config()
             suffix = redirect_config.get("information_resource_suffix", "/data")
-            
+
             # Construct location from validated path + trusted suffix
             location = f"{path}{suffix}"
 
@@ -1201,15 +1208,36 @@ def create_app(config_path: str) -> FastAPI:
             vary_header = redirect_config.get("vary_header", "Accept")
 
             # Build full URL using only validated relative path
+            # Security: base_url is from request.base_url (trusted server config)
+            # location is constructed from validated segments only
             base_url = str(request.base_url).rstrip("/")
+
+            # Final validation: ensure redirect stays within same origin
+            # by checking the constructed URL is properly formed
+            from urllib.parse import urlparse
+
+            parsed_base = urlparse(base_url)
+            # Ensure we're redirecting to same scheme and host
             full_location = f"{base_url}{location}"
+            parsed_redirect = urlparse(full_location)
+
+            # Security check: redirect must be same origin
+            if (
+                parsed_redirect.scheme != parsed_base.scheme
+                or parsed_redirect.netloc != parsed_base.netloc
+            ):
+                agent.logger.warning("Cross-origin redirect blocked")
+                return await get_entity_data(entity_type, entity_id, request)
 
             agent.logger.info(f"303 redirect: {path} -> {location}")
 
             headers = {"Vary": vary_header}
 
+            # nosec: URL is validated - same origin, safe path segments only
             return RedirectResponse(
-                url=full_location, status_code=status_code, headers=headers
+                url=full_location,  # noqa: S104
+                status_code=status_code,
+                headers=headers,
             )
 
         # If redirects disabled, fall through to data handler
