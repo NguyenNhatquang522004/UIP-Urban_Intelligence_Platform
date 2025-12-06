@@ -1506,7 +1506,7 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 ## 🗺️ Roadmap
 
 <details>
-<summary><strong>📦 Các mốc lộ trình đã hoàn thành (Legacy Roadmap)</strong></summary>
+<summary><strong>📦 Legacy Roadmap</strong></summary>
 
 ### v1.0.0 (Legacy) ✅
 
