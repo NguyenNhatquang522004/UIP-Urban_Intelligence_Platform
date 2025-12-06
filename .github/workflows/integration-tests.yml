@@ -185,7 +185,7 @@ jobs:
       
       - name: Upload HTML coverage report
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v5
         with:
           name: coverage-report
           path: htmlcov/
@@ -280,7 +280,7 @@ jobs:
       
       - name: Upload test report
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v5
         with:
           name: e2e-test-report
           path: report.html
@@ -320,7 +320,7 @@ jobs:
       
       - name: Upload Bandit report
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v5
         with:
           name: bandit-report
           path: bandit-report.json
