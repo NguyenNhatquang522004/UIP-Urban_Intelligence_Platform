@@ -105,6 +105,7 @@ All third-party dependencies use licenses compatible with MIT:
 - Hippocratic 2.1: Compatible for ethical/non-harmful use cases
 
 Development-only tools (not distributed):
+
 - GPL-2.0 (pylint): Dev tool only, not bundled
 - LGPL-2.1 (astroid): Dev tool only, not bundled
 
