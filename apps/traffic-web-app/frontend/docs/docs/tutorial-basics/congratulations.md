@@ -14,7 +14,7 @@ Author: UIP Team
 Version: 1.0.0
 -->
 
-# Congratulations!
+# Congratulations
 
 You have just learned the **basics of Docusaurus** and made some changes to the **initial template**.
 

@@ -86,7 +86,7 @@ ENABLE_DEBUG_TOOLBAR=true
 
 ### Backend Debugging (Python)
 
-#### VS Code Configuration
+#### VS Code Configuration for Backend
 
 **`.vscode/launch.json`**:
 
@@ -173,7 +173,7 @@ logger.error('Error occurred', exc_info=True)
 
 ### Frontend Debugging (React + TypeScript)
 
-#### VS Code Configuration
+#### VS Code Configuration for Frontend
 
 **`.vscode/launch.json`** (add to configurations):
 
@@ -396,6 +396,10 @@ tracemalloc.stop()
 # 2. Implement pagination
 # 3. Clear caches regularly
 ```
+
+### Environment Variables Reference
+
+```bash
 DEBUG=true
 APP_PORT=8000
 
@@ -441,7 +445,7 @@ cd apps/traffic-web-app/frontend
 npm run dev
 ```
 
-Visit: http://localhost:3000
+Visit: `http://localhost:3000`
 
 ### Documentation Site
 
@@ -450,7 +454,7 @@ cd apps/traffic-web-app/frontend/docs
 npm run start
 ```
 
-Visit: http://localhost:3001
+Visit: `http://localhost:3001`
 
 ## Development Tools
 
@@ -616,6 +620,7 @@ git commit -m "test(integration): add end-to-end tests"
 ```
 
 **Types**:
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation
@@ -654,7 +659,7 @@ git push origin feature/your-feature
 
 ## Database Management
 
-### MongoDB
+### MongoDB Management
 
 ```bash
 # Connect to MongoDB
@@ -668,7 +673,7 @@ db.cameras.find().pretty()
 db.accidents.find().sort({timestamp: -1}).limit(10)
 ```
 
-### Redis
+### Redis Management
 
 ```bash
 # Connect to Redis
@@ -686,7 +691,7 @@ FLUSHDB
 
 ### Fuseki
 
-Visit: http://localhost:3030/dataset.html
+Visit: `http://localhost:3030/dataset.html`
 
 ## Agent Development
 
@@ -834,7 +839,7 @@ describe('MyComponent', () => {
 });
 ```
 
-## Performance Profiling
+## Advanced Performance Profiling
 
 ### Backend Profiling
 

@@ -711,12 +711,12 @@ scrape_configs:
 
 ```bash
 # Import dashboard
-curl -X POST http://grafana:3000/api/dashboards/db \
-  -H "Content-Type: application/json" \
+curl -X POST http://grafana:3000/api/dashboards/db \\
+  -H \"Content-Type: application/json\" \\
   -d @config/grafana_dashboard.json
 ```
 
-## SSL/TLS Configuration
+## SSL/TLS Configuration for Kubernetes
 
 ```bash
 # Install cert-manager

@@ -24,9 +24,11 @@ Before starting, ensure you have:
 - ✅ **Internet connection** for pulling images
 
 :::tip Optional for Development
+
 - Node.js 18+ (for frontend development)
 - Python 3.9+ (for backend development)
 - Git (for version control)
+
 :::
 
 ## 1️⃣ Clone Repository
@@ -47,6 +49,7 @@ docker-compose logs -f
 ```
 
 This starts **10+ services**:
+
 - Neo4j (graph database)
 - Apache Jena Fuseki (RDF triplestore)
 - Stellio (NGSI-LD context broker)
@@ -70,15 +73,12 @@ docker-compose ps
 # - redis: Up (healthy)
 # - backend: Up
 # - frontend: Up
-# Check service status
-docker-compose ps
-
-# All services should show "Up" status
-# Wait 2-3 minutes for database initialization
 ```
 
 :::info Service Health
+
 You can also check individual service health:
+
 ```bash
 # Neo4j
 curl http://localhost:7474
@@ -89,36 +89,44 @@ curl http://localhost:3030/$/ping
 # Backend API
 curl http://localhost:8001/health
 ```
+
 :::
 
 ## 4️⃣ Access Applications
 
 ### 🗺️ Frontend (Main Application)
-**URL**: http://localhost:5173
+
+**URL**: `http://localhost:5173`
 
 Features:
+
 - Interactive traffic map with 1,000+ cameras
 - Real-time accident detection
 - Analytics dashboard
 - Citizen report system
 
 ### 🔧 Backend API
-**URL**: http://localhost:8001
+
+**URL**: `http://localhost:8001`
 
 Endpoints:
+
 - `/health` - Health check
 - `/cameras` - Camera locations
 - `/accidents` - Accident data
 - `/docs` - Swagger UI (FastAPI auto-generated)
 
 ### 🕸️ Neo4j Browser
-**URL**: http://localhost:7474
+
+**URL**: `http://localhost:7474`
 
 Credentials:
+
 - Username: `neo4j`
 - Password: `neo4j123`
 
 Try this Cypher query:
+
 ```cypher
 MATCH (c:Camera)-[:DETECTED]->(a:Accident)
 RETURN c.name, a.severity, a.timestamp
@@ -126,13 +134,16 @@ LIMIT 10
 ```
 
 ### 📚 Apache Jena Fuseki
-**URL**: http://localhost:3030
+
+**URL**: `http://localhost:3030`
 
 Datasets:
+
 - `/traffic` - Traffic data
 - `/sosa` - SOSA/SSN observations
 
 Try this SPARQL query:
+
 ```sparql
 PREFIX sosa: <http://www.w3.org/ns/sosa/>
 SELECT ?sensor ?observation ?result
@@ -148,7 +159,7 @@ LIMIT 10
 
 ### Test 1: View Traffic Map
 
-1. Open http://localhost:5173
+1. Open `http://localhost:5173`
 2. You should see a map of Ho Chi Minh City
 3. Camera markers should appear (red/yellow/green)
 4. Click any marker to see details
@@ -179,17 +190,19 @@ LIMIT 10
 
 1. Open browser console (F12)
 2. Watch for WebSocket messages:
-   ```
+
+   ```text
    [WS] Connected to ws://localhost:8001/ws
    [WS] Received: {"type": "accident", "data": {...}}
    ```
+
 3. Data should update automatically without page refresh
 
-## 🎉 Success!
+## 🎉 Success
 
 If you see all the above working, **congratulations!** 🎊
 
-Your HCMC Traffic Monitoring System is fully operational.
+Your UIP - Urban Intelligence Platform is fully operational.
 
 ## 🔧 Troubleshooting
 
@@ -257,7 +270,7 @@ Now that your system is running:
 
 - 📋 [Troubleshooting Guide](guides/troubleshooting)
 - 💬 [GitHub Issues](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/issues)
-- 📧 Email: nguyennhatquang522004@gmail.com
+- 📧 Email: `nguyennhatquang522004@gmail.com`
 
 ---
 
@@ -265,6 +278,6 @@ Now that your system is running:
 
 ---
 
-**Built with ❤️ by the UIP Team**
+### Built with ❤️ by the UIP Team
 
 Copyright (c) 2025 UIP Contributors (Nguyễn Nhật Quang, Nguyễn Việt Hoàng, Nguyễn Đình Anh Tuấn)

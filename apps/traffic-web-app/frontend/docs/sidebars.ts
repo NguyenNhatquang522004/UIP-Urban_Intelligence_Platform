@@ -20,6 +20,9 @@ const sidebars: SidebarsConfig = {
             label: '📦 Installation',
             items: [
                 'installation/prerequisites',
+                'installation/docker-setup',
+                'installation/local-setup',
+                'installation/environment-config',
             ],
         },
         {
@@ -159,6 +162,7 @@ const sidebars: SidebarsConfig = {
                 'guides/contributing',
                 'guides/development',
                 'guides/deployment',
+                'guides/troubleshooting',
             ],
         },
         {

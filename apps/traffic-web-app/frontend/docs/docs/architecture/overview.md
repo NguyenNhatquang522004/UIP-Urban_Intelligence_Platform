@@ -154,28 +154,33 @@ graph TB
 ## 🎯 Design Principles
 
 ### 1. **Microservices Architecture**
+
 - Each agent is an independent, loosely-coupled component
 - Services communicate via REST APIs, Kafka, or direct database access
 - Docker containers ensure isolation and portability
 
 ### 2. **Multi-Agent Orchestration**
+
 - **30+ specialized agents** work in parallel
 - Orchestrator manages execution order and dependencies
 - Agents can be added/removed without affecting others
 
 ### 3. **Semantic Web Standards**
+
 - **NGSI-LD** for context information management
 - **SOSA/SSN** for sensor observations
 - **RDF** for linked open data
 - **SPARQL** for semantic queries
 
 ### 4. **Real-time Processing**
+
 - **WebSocket** connections for live updates
 - **Kafka** streaming for high-throughput data
 - **Redis** caching for fast access
 - **Async/await** patterns throughout
 
 ### 5. **Scalability & Resilience**
+
 - Horizontal scaling of agents
 - Database replication and sharding
 - Circuit breakers and retry logic
@@ -299,16 +304,19 @@ sequenceDiagram
 ## 🔐 Security Architecture
 
 ### 1. Authentication & Authorization
+
 - JWT tokens for API authentication
 - Role-based access control (RBAC)
 - API key management for external integrations
 
 ### 2. Data Protection
+
 - HTTPS/TLS encryption in transit
 - Database encryption at rest
 - Sensitive data masking in logs
 
 ### 3. Network Security
+
 - Docker network isolation
 - Firewall rules for service access
 - Rate limiting on public endpoints
@@ -332,6 +340,7 @@ graph LR
 ```
 
 ### Vertical Scaling
+
 - Increase container resources (CPU, RAM)
 - Optimize database queries with indexes
 - Implement caching at multiple levels
@@ -339,16 +348,19 @@ graph LR
 ## 🔍 Monitoring & Observability
 
 ### Metrics Collection
+
 - **Prometheus** for metrics scraping
 - **Grafana** for visualization
 - **Custom dashboards** for agent performance
 
 ### Logging
+
 - Centralized logging with **ELK stack** (Elasticsearch, Logstash, Kibana)
 - Structured JSON logging
 - Log levels: DEBUG, INFO, WARNING, ERROR, CRITICAL
 
 ### Tracing
+
 - Distributed tracing with **Jaeger**
 - Request tracking across services
 - Performance bottleneck identification
@@ -356,21 +368,24 @@ graph LR
 ## 🚀 Deployment Architectures
 
 ### Development
-```
+
+```text
 Single machine
 Docker Compose
 All services on localhost
 ```
 
 ### Staging
-```
+
+```text
 Single VM or EC2 instance
 Docker Compose
 External access via reverse proxy
 ```
 
 ### Production
-```
+
+```text
 Kubernetes cluster (EKS/GKE/AKS)
 Multi-node setup
 Auto-scaling

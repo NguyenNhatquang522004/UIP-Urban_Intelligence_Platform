@@ -36,12 +36,14 @@ We pledge to make participation in our project a harassment-free experience for 
 ### Our Standards
 
 **Positive behavior includes:**
+
 - Using welcoming and inclusive language
 - Being respectful of differing viewpoints
 - Gracefully accepting constructive criticism
 - Focusing on what is best for the community
 
 **Unacceptable behavior includes:**
+
 - Trolling, insulting/derogatory comments
 - Public or private harassment
 - Publishing others' private information
@@ -94,7 +96,7 @@ docker-compose up -d
 
 ### Branch Strategy
 
-```
+```text
 main
 ├── develop          # Development branch
 ├── feature/*        # Feature branches
@@ -125,7 +127,7 @@ git checkout -b feature/your-feature-name
 
 ### Commit Message Format
 
-```
+```text
 <type>(<scope>): <description>
 
 [optional body]
@@ -134,6 +136,7 @@ git checkout -b feature/your-feature-name
 ```
 
 **Types:**
+
 | Type | Description |
 |------|-------------|
 | `feat` | New feature |
@@ -146,7 +149,8 @@ git checkout -b feature/your-feature-name
 | `perf` | Performance improvements |
 
 **Examples:**
-```
+
+```text
 feat(agent): add weather enrichment agent
 
 Implements OpenWeatherMap integration for camera data enrichment.
@@ -190,6 +194,7 @@ mypy src/
 ```
 
 **Configuration (.pre-commit-config.yaml):**
+
 ```yaml
 repos:
   - repo: https://github.com/psf/black
@@ -329,18 +334,21 @@ export class CameraService {
 ### Before Submitting
 
 1. **Sync with upstream**
+
    ```bash
    git fetch upstream
    git rebase upstream/develop
    ```
 
 2. **Run tests**
+
    ```bash
    pytest
    npm test
    ```
 
 3. **Run linters**
+
    ```bash
    pre-commit run --all-files
    ```
@@ -353,6 +361,7 @@ export class CameraService {
 ### Creating a Pull Request
 
 1. Push your branch:
+
    ```bash
    git push origin feature/your-feature-name
    ```
@@ -454,6 +463,7 @@ Any other context or screenshots.
 ### Good First Issues
 
 Look for issues labeled:
+
 - `good first issue` - Great for newcomers
 - `help wanted` - Extra attention needed
 - `documentation` - Documentation improvements
@@ -464,7 +474,7 @@ Look for issues labeled:
 
 When adding new features, follow this structure:
 
-```
+```text
 src/
 ├── agents/               # Add new agents here
 │   └── your_category/
@@ -502,7 +512,7 @@ config/
 
 ---
 
-## 🙏 Thank You!
+## 🙏 Thank You
 
 Your contributions make this project better. We appreciate your time and effort!
 

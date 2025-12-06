@@ -18,11 +18,13 @@ const config: Config = {
     tagline: 'Real-time Linked Open Data Pipeline for Smart City Traffic Management',
     favicon: 'img/favicon.ico',
 
-    url: 'https://your-domain.com',
-    baseUrl: '/',
+    url: 'https://nguyennhatquang522004.github.io',
+    baseUrl: '/UIP-Urban_Intelligence_Platform/',
+    trailingSlash: false,
 
     organizationName: 'NguyenNhatquang522004',
     projectName: 'UIP-Urban_Intelligence_Platform',
+    deploymentBranch: 'gh-pages',
 
     onBrokenLinks: 'warn',
     onBrokenMarkdownLinks: 'warn',
@@ -158,12 +160,7 @@ const config: Config = {
             darkTheme: prismThemes.dracula,
             additionalLanguages: ['python', 'typescript', 'yaml', 'bash', 'docker', 'nginx'],
         },
-        algolia: {
-            appId: 'YOUR_APP_ID',
-            apiKey: 'YOUR_SEARCH_API_KEY',
-            indexName: 'your_index_name',
-            contextualSearch: true,
-        },
+        // Search will be added later when Algolia is configured
     } satisfies Preset.ThemeConfig,
 
     plugins: [
