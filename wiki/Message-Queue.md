@@ -140,7 +140,7 @@ queues:
 ```json
 {
   "type": "traffic.observation",
-  "timestamp": "2024-01-15T10:30:00Z",
+  "timestamp": "2025-11-29T10:30:00Z",
   "source": "cv_agent",
   "payload": {
     "camera_id": "TTH-406",
@@ -164,10 +164,10 @@ queues:
 ```json
 {
   "type": "alert.congestion",
-  "timestamp": "2024-01-15T10:30:00Z",
+  "timestamp": "2025-11-29T10:30:00Z",
   "priority": "high",
   "payload": {
-    "alert_id": "alert-2024-001",
+    "alert_id": "alert-2025-001",
     "camera_id": "TTH-406",
     "severity": "warning",
     "message": "High congestion detected",
@@ -185,13 +185,13 @@ queues:
 ```json
 {
   "type": "state.update",
-  "timestamp": "2024-01-15T10:30:00Z",
+  "timestamp": "2025-11-29T10:30:00Z",
   "entity_type": "Camera",
   "entity_id": "urn:ngsi-ld:Camera:TTH-406",
   "operation": "UPDATE",
   "payload": {
     "status": "active",
-    "lastObservation": "2024-01-15T10:30:00Z"
+    "lastObservation": "2025-11-29T10:30:00Z"
   }
 }
 ```

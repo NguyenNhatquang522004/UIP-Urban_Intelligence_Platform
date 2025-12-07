@@ -174,7 +174,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 - Vulnerability fixes
 
-## [2.0.0] - 2024-01-15
+## [2.0.0] - 2025-11-29
 
 ### Added
 - NGSI-LD context broker integration with Stellio

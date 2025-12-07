@@ -255,7 +255,7 @@ Complete guide to Smart Data Models integration in UIP - Urban Intelligence Plat
   },
   "dateModified": {
     "type": "Property",
-    "value": "2024-01-15T10:30:00Z"
+    "value": "2025-11-29T10:30:00Z"
   }
 }
 ```
@@ -268,11 +268,11 @@ Complete guide to Smart Data Models integration in UIP - Urban Intelligence Plat
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
     "https://raw.githubusercontent.com/smart-data-models/dataModel.Transportation/master/context.jsonld"
   ],
-  "id": "urn:ngsi-ld:TrafficFlowObserved:obs-2024-01-15-TTH406",
+  "id": "urn:ngsi-ld:TrafficFlowObserved:obs-2025-11-29-TTH406",
   "type": "TrafficFlowObserved",
   "dateObserved": {
     "type": "Property",
-    "value": "2024-01-15T10:30:00Z"
+    "value": "2025-11-29T10:30:00Z"
   },
   "vehicleCount": {
     "type": "Property",

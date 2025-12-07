@@ -364,7 +364,7 @@ def setup_logging(level: str = "INFO"):
 
 ```json
 {
-  "timestamp": "2024-01-15T10:30:00.123456Z",
+  "timestamp": "2025-11-29T10:30:00.123456Z",
   "level": "INFO",
   "logger": "uip.agents.cv_agent",
   "message": "Processed observation",

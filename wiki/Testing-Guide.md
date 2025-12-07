@@ -212,10 +212,10 @@ class TestPatternRecognition:
     def test_detect_congestion_pattern(self, agent):
         """Test congestion pattern detection"""
         traffic_data = [
-            {"timestamp": "2024-01-15T08:00:00Z", "flow": 0.3},
-            {"timestamp": "2024-01-15T08:15:00Z", "flow": 0.5},
-            {"timestamp": "2024-01-15T08:30:00Z", "flow": 0.8},
-            {"timestamp": "2024-01-15T08:45:00Z", "flow": 0.9},
+            {"timestamp": "2025-11-29T08:00:00Z", "flow": 0.3},
+            {"timestamp": "2025-11-29T08:15:00Z", "flow": 0.5},
+            {"timestamp": "2025-11-29T08:30:00Z", "flow": 0.8},
+            {"timestamp": "2025-11-29T08:45:00Z", "flow": 0.9},
         ]
         
         patterns = agent.detect_patterns(traffic_data)

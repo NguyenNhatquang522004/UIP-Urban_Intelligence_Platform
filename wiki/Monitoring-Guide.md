@@ -354,7 +354,7 @@ logger.info("camera_processed",
 
 ```json
 {
-  "timestamp": "2024-01-15T10:30:00.123Z",
+  "timestamp": "2025-11-29T10:30:00.123Z",
   "level": "info",
   "logger": "traffic_analyzer",
   "event": "camera_processed",

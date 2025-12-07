@@ -356,7 +356,7 @@ configs = db["configs"]
         "detection_zones": [...]
     },
     "metadata": {
-        "installed_date": ISODate("2024-01-15"),
+        "installed_date": ISODate("2025-11-29"),
         "vendor": "Hikvision"
     }
 }
@@ -367,7 +367,7 @@ configs = db["configs"]
     "type": "CONGESTION",
     "severity": "HIGH",
     "camera_id": ObjectId("..."),
-    "timestamp": ISODate("2024-01-15T10:30:00Z"),
+    "timestamp": ISODate("2025-11-29T10:30:00Z"),
     "data": {
         "vehicle_count": 150,
         "density": 85.5,

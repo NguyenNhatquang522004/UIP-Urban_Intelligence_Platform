@@ -143,7 +143,7 @@ Entities → Linkset Agent → LOD Links (DBpedia, Wikidata)
   "intensity": {
     "type": "Property",
     "value": 150,
-    "observedAt": "2024-01-15T10:30:00Z"
+    "observedAt": "2025-11-29T10:30:00Z"
   }
 }
 ```

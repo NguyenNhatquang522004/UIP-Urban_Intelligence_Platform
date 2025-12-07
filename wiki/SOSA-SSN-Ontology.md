@@ -163,13 +163,13 @@ UIP - Urban Intelligence Platform uses SOSA/SSN to:
 @prefix uip: <https://uip.hcmut.edu.vn/ontology#> .
 
 # Traffic Flow Observation
-<urn:ngsi-ld:Observation:obs-2024-01-15-TTH406>
+<urn:ngsi-ld:Observation:obs-2025-11-29-TTH406>
     a sosa:Observation ;
     rdfs:label "Traffic observation at TTH 406" ;
     sosa:madeBySensor <urn:ngsi-ld:Camera:TTH-406> ;
     sosa:observedProperty uip:VehicleCount ;
     sosa:hasFeatureOfInterest <urn:ngsi-ld:Road:truong-thi-hoa> ;
-    sosa:resultTime "2024-01-15T10:30:00Z"^^xsd:dateTime ;
+    sosa:resultTime "2025-11-29T10:30:00Z"^^xsd:dateTime ;
     sosa:hasResult [
         a sosa:Result ;
         uip:vehicleCount 45 ;
@@ -200,11 +200,11 @@ UIP - Urban Intelligence Platform uses SOSA/SSN to:
     sosa:isHostedBy <urn:ngsi-ld:WeatherStation:ws-001> .
 
 # Weather Observation
-<urn:ngsi-ld:Observation:weather-2024-01-15>
+<urn:ngsi-ld:Observation:weather-2025-11-29>
     a sosa:Observation ;
     sosa:madeBySensor <urn:ngsi-ld:Sensor:temperature-001> ;
     sosa:observedProperty uip:Temperature ;
-    sosa:resultTime "2024-01-15T10:30:00Z"^^xsd:dateTime ;
+    sosa:resultTime "2025-11-29T10:30:00Z"^^xsd:dateTime ;
     sosa:hasResult [
         a sosa:Result ;
         uip:temperatureValue 32.5 ;
@@ -577,7 +577,7 @@ ex:MyObservation
 # Include observation provenance
 <urn:ngsi-ld:Observation:obs-001>
     sosa:madeBySensor <urn:ngsi-ld:Camera:TTH-406> ;
-    sosa:resultTime "2024-01-15T10:30:00Z"^^xsd:dateTime ;
+    sosa:resultTime "2025-11-29T10:30:00Z"^^xsd:dateTime ;
     prov:wasGeneratedBy <urn:ngsi-ld:Activity:cv-detection> .
 ```
 

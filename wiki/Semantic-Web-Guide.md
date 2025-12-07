@@ -91,8 +91,8 @@ UIP - Urban Intelligence Platform implements a comprehensive Semantic Web stack:
   },
   "dateObserved": {
     "type": "Property",
-    "value": "2024-01-15T10:30:00Z",
-    "observedAt": "2024-01-15T10:30:00Z"
+    "value": "2025-11-29T10:30:00Z",
+    "observedAt": "2025-11-29T10:30:00Z"
   },
   "controlledAsset": {
     "type": "Relationship",
@@ -156,7 +156,7 @@ POST /ngsi-ld/v1/subscriptions
     sosa:madeBySensor <urn:ngsi-ld:Device:camera-001> ;
     sosa:observedProperty <urn:ngsi-ld:ObservableProperty:traffic-flow> ;
     sosa:hasSimpleResult 150 ;
-    sosa:resultTime "2024-01-15T10:30:00Z"^^xsd:dateTime .
+    sosa:resultTime "2025-11-29T10:30:00Z"^^xsd:dateTime .
 ```
 
 ### SOSA Classes Used
@@ -215,7 +215,7 @@ WHERE {
        sosa:madeBySensor ?sensor ;
        sosa:hasSimpleResult ?value ;
        sosa:resultTime ?time .
-  FILTER (?time > "2024-01-15T00:00:00Z"^^xsd:dateTime)
+  FILTER (?time > "2025-11-29T00:00:00Z"^^xsd:dateTime)
 }
 ORDER BY DESC(?time)
 LIMIT 100

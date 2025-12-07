@@ -131,7 +131,7 @@ class CameraObserverAgent:
 {
   "source_type": "camera",
   "source_id": "CAM-001",
-  "timestamp": "2024-01-15T10:30:00Z",
+  "timestamp": "2025-11-29T10:30:00Z",
   "location": {
     "type": "Point",
     "coordinates": [106.6297, 10.8231]
