@@ -67,7 +67,7 @@
  * @example
  * const maestro = new TrafficMaestroAgent();
  * const prediction = await maestro.predictEventImpact({
- *   eventDate: '2024-12-31T20:00:00Z',
+ *   eventDate: '2025-12-05T20:00:00Z',
  *   venueName: 'Phu Tho Stadium',
  *   expectedAttendees: 25000,
  *   horizonHours: 6

@@ -128,13 +128,13 @@ graph TD
   "vehicleCount": {
     "type": "Property",
     "value": 156,
-    "observedAt": "2024-03-10T08:30:00Z",
+    "observedAt": "2025-11-22T08:30:00Z",
     "unitCode": "vehicles"
   },
   "congestionLevel": {
     "type": "Property",
     "value": "high",
-    "observedAt": "2024-03-10T08:30:00Z"
+    "observedAt": "2025-11-22T08:30:00Z"
   },
   "refDistrict": {
     "type": "Relationship",
@@ -166,7 +166,7 @@ uip:OBS001 a sosa:Observation ;
     sosa:madeBySensor uip:CAM001 ;
     sosa:observedProperty uip:VehicleCountProperty ;
     sosa:hasSimpleResult 156 ;
-    sosa:resultTime "2024-03-10T08:30:00Z"^^xsd:dateTime ;
+    sosa:resultTime "2025-11-22T08:30:00Z"^^xsd:dateTime ;
     sosa:hasFeatureOfInterest uip:RoadSegment001 .
 
 # Observable Property

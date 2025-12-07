@@ -147,7 +147,7 @@ export enum ReportType {
   },
   "reportedAt": {
     "type": "Property",
-    "value": "2024-05-15T08:30:00Z"
+    "value": "2025-11-25T08:30:00Z"
   },
   "refNearbyCamera": {
     "type": "Relationship",

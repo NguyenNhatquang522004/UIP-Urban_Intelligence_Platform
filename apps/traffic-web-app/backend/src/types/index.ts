@@ -48,7 +48,7 @@
  *   location: { lat: 10.762622, lng: 106.660172 },
  *   status: 'online',
  *   cameraType: 'PTZ',
- *   dateModified: '2024-11-27T10:00:00Z'
+ *   dateModified: '2025-11-27T10:00:00Z'
  * };
  * 
  * const params: CameraQueryParams = {

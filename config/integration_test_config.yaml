@@ -166,7 +166,7 @@ integration_tests:
             type: "traffic_anomaly"
             severity: "high"
             confidence: 0.95
-            timestamp: "2024-11-02T10:30:00Z"
+            timestamp: "2025-11-21T10:30:00Z"
         
         - action: "run_agent"
           agent: "cv_analysis_agent"
