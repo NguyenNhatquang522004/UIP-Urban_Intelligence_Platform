@@ -1,13 +1,21 @@
 <!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+============================================================================
 UIP - Urban Intelligence Platform
-Critical bug fix report.
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
-Module: reports/CRITICAL_BUGFIX_REPORT.md
-Author: UIP Team
+SPDX-License-Identifier: MIT
+============================================================================
+File: reports/CRITICAL_BUGFIX_REPORT.md
+Module: Critical Bug Fix Report
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+
+Description:
+  Critical bug fix report - Rate Limit Retry Logic.
+============================================================================
 -->
 
 # Critical Bug Fix Report - Rate Limit Retry Logic

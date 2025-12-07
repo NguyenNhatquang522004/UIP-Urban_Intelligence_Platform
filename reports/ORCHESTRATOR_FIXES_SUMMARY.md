@@ -1,13 +1,21 @@
 <!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+============================================================================
 UIP - Urban Intelligence Platform
-Orchestrator fixes summary.
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
-Module: reports/ORCHESTRATOR_FIXES_SUMMARY.md
-Author: UIP Team
+SPDX-License-Identifier: MIT
+============================================================================
+File: reports/ORCHESTRATOR_FIXES_SUMMARY.md
+Module: Orchestrator Fixes Summary
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+
+Description:
+  Orchestrator fixes summary.
+============================================================================
 -->
 
 # Orchestrator Error & Warning Fixes - Complete Summary

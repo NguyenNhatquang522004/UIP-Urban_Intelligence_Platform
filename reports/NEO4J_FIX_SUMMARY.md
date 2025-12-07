@@ -1,13 +1,21 @@
 <!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+============================================================================
 UIP - Urban Intelligence Platform
-Neo4j fix summary.
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
-Module: reports/NEO4J_FIX_SUMMARY.md
-Author: UIP Team
+SPDX-License-Identifier: MIT
+============================================================================
+File: reports/NEO4J_FIX_SUMMARY.md
+Module: Neo4j Fix Summary
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+
+Description:
+  Neo4j timing issue fix summary.
+============================================================================
 -->
 
 # ✅ NEO4J TIMING ISSUE - FIX HOÀN THÀNH 100%

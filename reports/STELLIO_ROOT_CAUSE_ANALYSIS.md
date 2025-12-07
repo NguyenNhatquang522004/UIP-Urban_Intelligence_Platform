@@ -1,13 +1,21 @@
 <!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+============================================================================
 UIP - Urban Intelligence Platform
-Stellio root cause analysis.
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
-Module: reports/STELLIO_ROOT_CAUSE_ANALYSIS.md
-Author: UIP Team
+SPDX-License-Identifier: MIT
+============================================================================
+File: reports/STELLIO_ROOT_CAUSE_ANALYSIS.md
+Module: Stellio Root Cause Analysis
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+
+Description:
+  Stellio root cause analysis.
+============================================================================
 -->
 
 # 🔍 PHÂN TÍCH NGUYÊN NHÂN GỐC RỄ - STELLIO BYPASS

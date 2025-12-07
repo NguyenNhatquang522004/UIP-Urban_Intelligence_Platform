@@ -1,13 +1,21 @@
 <!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+============================================================================
 UIP - Urban Intelligence Platform
-Smart Data Models Validation Agent report.
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
-Module: reports/SMART_DATA_MODELS_VALIDATION_REPORT.md
-Author: UIP Team
+SPDX-License-Identifier: MIT
+============================================================================
+File: reports/SMART_DATA_MODELS_VALIDATION_REPORT.md
+Module: Smart Data Models Validation Report
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+
+Description:
+  Smart Data Models Validation Agent report.
+============================================================================
 -->
 
 # Smart Data Models Validation Agent - Test Report

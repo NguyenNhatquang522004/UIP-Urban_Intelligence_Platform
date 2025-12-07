@@ -1,13 +1,21 @@
 <!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+============================================================================
 UIP - Urban Intelligence Platform
-Cache Manager Agent comprehensive report.
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
-Module: reports/CACHE_MANAGER_REPORT.md
-Author: UIP Team
+SPDX-License-Identifier: MIT
+============================================================================
+File: reports/CACHE_MANAGER_REPORT.md
+Module: Cache Manager Report
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+
+Description:
+  Cache Manager Agent comprehensive report.
+============================================================================
 -->
 
 # CACHE MANAGER AGENT - COMPREHENSIVE REPORT
