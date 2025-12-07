@@ -3,15 +3,24 @@ sidebar_position: 1
 ---
 
 <!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+============================================================================
 UIP - Urban Intelligence Platform
-Cache Manager Agent Documentation.
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
-Module: apps/traffic-web-app/frontend/docs/docs/agents/cache/cache-manager.md
-Author: UIP Team
+SPDX-License-Identifier: MIT
+============================================================================
+File: agents/cache/cache-manager.md
+Module: Cache - Cache Manager Agent
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+
+Description:
+  Cache Manager Agent documentation for distributed caching with Redis
+  backend for improved performance across the UIP platform.
+============================================================================
 -->
 
 # Cache Manager Agent
@@ -117,7 +126,7 @@ cache_manager.set("observation:OBS_001", observation)
 cache_manager.set("query:accidents:severe", results, ttl=60)
 
 # Aggregation caching
-cache_manager.set("stats:hourly:2025-01-15T10", hourly_stats)
+cache_manager.set("stats:hourly:2025-11-29T10", hourly_stats)
 ```
 
 ## ⚙️ Configuration

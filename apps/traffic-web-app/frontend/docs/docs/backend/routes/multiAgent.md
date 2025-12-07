@@ -7,10 +7,25 @@ description: REST API endpoints for coordinated multi-agent interactions combini
 keywords: [multi-agent, coordination, graph-investigator, traffic-maestro, ai]
 ---
 
-<!--
+{/*
+============================================================================
+UIP - Urban Intelligence Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
+
 SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team
--->
+============================================================================
+File: apps/traffic-web-app/frontend/docs/docs/backend/routes/multiAgent.md
+Module: Traffic Web App - Multi-Agent Routes Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  Multi-agent routes documentation for coordinated AI agent interactions.
+============================================================================
+*/}
 
 # Multi-Agent Routes
 
@@ -54,7 +69,7 @@ Investigate an incident using multimodal analysis: internal context (Stellio + N
     "investigation": {
       "accidentId": "urn:ngsi-ld:RoadAccident:001",
       "severity": "high",
-      "timestamp": "2025-01-15T10:30:00.000Z"
+      "timestamp": "2025-11-29T10:30:00.000Z"
     },
     "internalContext": {
       "stellioData": {
@@ -127,8 +142,8 @@ Predict traffic impact from upcoming events using external event APIs (Ticketmas
     "lng": 106.7030
   },
   "timeRange": {
-    "start": "2025-01-15T00:00:00.000Z",
-    "end": "2025-01-16T00:00:00.000Z"
+    "start": "2025-11-29T00:00:00.000Z",
+    "end": "2025-11-30T00:00:00.000Z"
   }
 }
 ```
@@ -144,7 +159,7 @@ Predict traffic impact from upcoming events using external event APIs (Ticketmas
         "id": "event-001",
         "name": "K-Pop Concert",
         "venue": "Phu Tho Stadium",
-        "startTime": "2025-01-15T19:00:00.000Z",
+        "startTime": "2025-11-29T19:00:00.000Z",
         "expectedAttendance": 25000
       }
     ],

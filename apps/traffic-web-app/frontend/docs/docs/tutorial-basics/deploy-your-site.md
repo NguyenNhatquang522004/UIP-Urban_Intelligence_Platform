@@ -3,15 +3,22 @@ sidebar_position: 5
 ---
 
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 Docusaurus tutorial - Deploy your site.
 
-Module: apps/traffic-web-app/frontend/docs/docs/tutorial-basics/deploy-your-site.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/docs/tutorial-basics/deploy-your-site.md
+Module: Tutorial Basics Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Tutorial on deploying Docusaurus sites.
+============================================================================
 -->
 
 # Deploy your site

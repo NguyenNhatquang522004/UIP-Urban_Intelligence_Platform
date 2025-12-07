@@ -6,15 +6,22 @@ tags: [docker, deployment, devops, uip]
 ---
 
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 Blog post: Docker Deployment Guide.
 
-Module: apps/traffic-web-app/frontend/docs/blog/2019-05-29-long-blog-post.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/blog/2025-11-20-long-blog-post.md
+Module: Blog Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Blog post about Docker deployment guide for UIP.
+============================================================================
 -->
 
 Hướng dẫn chi tiết cách deploy toàn bộ UIP stack sử dụng Docker và Docker Compose. Bài viết này sẽ đi qua từng bước từ setup môi trường đến monitoring.
@@ -72,7 +79,7 @@ docker compose version
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform.git
+git clone https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform.git
 cd UIP-Urban_Intelligence_Platform
 ```
 
@@ -356,6 +363,6 @@ docker compose up -d
 
 ---
 
-**Câu hỏi?** Mở issue trên [GitHub](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/issues)
+**Câu hỏi?** Mở issue trên [GitHub](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/issues)
 
 *Nguyễn Việt Hoàng - Full-Stack Developer @ UIP Team*

@@ -4,7 +4,7 @@
 
 UIP - Urban Intelligence Platform
 Copyright (c) 2025 UIP Team. All rights reserved.
-https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
 SPDX-License-Identifier: MIT
 
@@ -40,7 +40,9 @@ except ImportError:
 logger = logging.getLogger(__name__)
 
 
-def convert_rdf(input_file: str, output_file: str, input_format: str, output_format: str):
+def convert_rdf(
+    input_file: str, output_file: str, input_format: str, output_format: str
+):
     """Convert RDF between formats using rdflib."""
     if not RDFLIB_AVAILABLE:
         print("ERROR: rdflib not available")
@@ -75,7 +77,9 @@ def convert_rdf(input_file: str, output_file: str, input_format: str, output_for
 
 def main():
     """Main CLI entry point."""
-    parser = argparse.ArgumentParser(description="RDF format conversion - Production Ready")
+    parser = argparse.ArgumentParser(
+        description="RDF format conversion - Production Ready"
+    )
     parser.add_argument("input_file", help="Input RDF file")
     parser.add_argument("output_file", help="Output RDF file")
     parser.add_argument(
@@ -93,7 +97,9 @@ def main():
 
     args = parser.parse_args()
 
-    convert_rdf(args.input_file, args.output_file, args.input_format, args.output_format)
+    convert_rdf(
+        args.input_file, args.output_file, args.input_format, args.output_format
+    )
 
 
 if __name__ == "__main__":

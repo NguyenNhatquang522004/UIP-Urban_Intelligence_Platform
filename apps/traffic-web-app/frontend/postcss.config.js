@@ -1,14 +1,17 @@
 /**
- * PostCSS Configuration
- *
- * UIP - Urban Intelligence Platform
- * Copyright (c) 2025 UIP Team. All rights reserved.
- * https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+ * @file postcss.config.js
+ * @module apps/traffic-web-app/frontend/postcss.config
+ * @author Nguyễn Nhật Quang <nguyennhatquang522004@gmail.com>
+ * @created 2025-11-20
+ * @version 1.0.0
+ * @license MIT
+ * @description PostCSS Configuration - Configures Tailwind CSS and Autoprefixer plugins.
  *
  * SPDX-License-Identifier: MIT
- * 
- * @module apps/traffic-web-app/frontend/postcss.config
- * @license MIT
+ * Copyright (c) 2025 UIP Team. All rights reserved.
+ *
+ * UIP - Urban Intelligence Platform
+ * https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
  */
 
 export default {

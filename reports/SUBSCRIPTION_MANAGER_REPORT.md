@@ -1,13 +1,21 @@
 <!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+============================================================================
 UIP - Urban Intelligence Platform
-Subscription Manager Agent implementation report.
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
-Module: reports/SUBSCRIPTION_MANAGER_REPORT.md
-Author: UIP Team
+SPDX-License-Identifier: MIT
+============================================================================
+File: reports/SUBSCRIPTION_MANAGER_REPORT.md
+Module: Subscription Manager Report
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+
+Description:
+  Subscription Manager Agent implementation report.
+============================================================================
 -->
 
 # Subscription Manager Agent - Implementation Report
@@ -15,7 +23,7 @@ Version: 1.0.0
 **Agent**: Subscription Manager Agent  
 **Version**: 1.0.0  
 **Author**: UIP Development Team  
-**Date**: January 2025  
+**Date**: November 2025  
 **Status**: ✅ PRODUCTION READY
 
 ---
@@ -1026,6 +1034,6 @@ The **Subscription Manager Agent** provides production-ready NGSI-LD subscriptio
 
 ---
 
-**Report Generated**: January 2025  
+**Report Generated**: November 2025  
 **Agent Version**: 1.0.0  
 **Implementation Status**: ✅ COMPLETE

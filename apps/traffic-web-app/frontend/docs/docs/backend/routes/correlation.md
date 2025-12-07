@@ -7,10 +7,25 @@ description: RESTful API endpoints for analyzing entity correlations and causal 
 keywords: [correlation, causation, relationship, neo4j, analysis]
 ---
 
-<!--
+{/*
+============================================================================
+UIP - Urban Intelligence Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
+
 SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team
--->
+============================================================================
+File: apps/traffic-web-app/frontend/docs/docs/backend/routes/correlation.md
+Module: Traffic Web App - Correlation Routes Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  Correlation routes documentation for entity correlation analysis.
+============================================================================
+*/}
 
 # Correlation Routes
 

@@ -6,15 +6,22 @@ tags: [uip, rdf, linked-data, semantic-web, ngsi-ld, technical]
 ---
 
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 Blog post: Linked Open Data Integration.
 
-Module: apps/traffic-web-app/frontend/docs/blog/2024-03-10-linked-open-data.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/blog/2025-11-19-linked-open-data.md
+Module: Blog Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Blog post about Linked Open Data integration in UIP.
+============================================================================
 -->
 
 # Linked Open Data - Kết nối dữ liệu thông minh 🌐
@@ -121,13 +128,13 @@ graph TD
   "vehicleCount": {
     "type": "Property",
     "value": 156,
-    "observedAt": "2024-03-10T08:30:00Z",
+    "observedAt": "2025-11-22T08:30:00Z",
     "unitCode": "vehicles"
   },
   "congestionLevel": {
     "type": "Property",
     "value": "high",
-    "observedAt": "2024-03-10T08:30:00Z"
+    "observedAt": "2025-11-22T08:30:00Z"
   },
   "refDistrict": {
     "type": "Relationship",
@@ -159,7 +166,7 @@ uip:OBS001 a sosa:Observation ;
     sosa:madeBySensor uip:CAM001 ;
     sosa:observedProperty uip:VehicleCountProperty ;
     sosa:hasSimpleResult 156 ;
-    sosa:resultTime "2024-03-10T08:30:00Z"^^xsd:dateTime ;
+    sosa:resultTime "2025-11-22T08:30:00Z"^^xsd:dateTime ;
     sosa:hasFeatureOfInterest uip:RoadSegment001 .
 
 # Observable Property

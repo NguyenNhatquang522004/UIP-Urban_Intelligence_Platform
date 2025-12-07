@@ -3,15 +3,22 @@ sidebar_position: 3
 ---
 
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 Stellio State Query Agent Documentation.
 
-Module: apps/traffic-web-app/frontend/docs/docs/agents/context-management/stellio-state-query.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/docs/agents/context-management/stellio-state-query.md
+Module: Context Management Agents Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Documentation for the Stellio State Query Agent component.
+============================================================================
 -->
 
 # Stellio State Query Agent
@@ -80,8 +87,8 @@ history = await query.temporal_query(
     entity_id="urn:ngsi-ld:TrafficCamera:CAM_001",
     attrs=["vehicleCount", "avgSpeed"],
     timerel="between",
-    timeAt="2025-01-15T00:00:00Z",
-    endTimeAt="2025-01-15T23:59:59Z"
+    timeAt="2025-11-29T00:00:00Z",
+    endTimeAt="2025-11-29T23:59:59Z"
 )
 ```
 

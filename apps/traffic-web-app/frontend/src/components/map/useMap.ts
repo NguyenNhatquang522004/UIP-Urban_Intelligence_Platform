@@ -1,15 +1,18 @@
 /**
- * useMap Hook - Access Map Instance
+ * @file useMap.ts
+ * @module apps/traffic-web-app/frontend/src/components/map/useMap
+ * @author Nguyễn Nhật Quang <nguyennhatquang522004@gmail.com>
+ * @created 2025-11-20
+ * @version 1.0.0
+ * @license MIT
+ * @description Hook to access the map instance from any child component.
+ * Compatible with react-leaflet's useMap() API.
  *
  * UIP - Urban Intelligence Platform
  * Copyright (c) 2025 UIP Team. All rights reserved.
- * https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+ * https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
  *
  * SPDX-License-Identifier: MIT
- *
- * @description
- * Hook to access the map instance from any child component.
- * Compatible with react-leaflet's useMap() API.
  */
 
 import { useMap as useReactMapGL } from 'react-map-gl/maplibre';

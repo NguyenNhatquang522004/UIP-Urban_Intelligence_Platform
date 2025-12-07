@@ -3,15 +3,22 @@ sidebar_position: 2
 ---
 
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 Cache Invalidator Agent Documentation.
 
-Module: apps/traffic-web-app/frontend/docs/docs/agents/cache/cache-invalidator.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/docs/agents/cache/cache-invalidator.md
+Module: Cache Agents Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Documentation for the Cache Invalidator Agent component.
+============================================================================
 -->
 
 # Cache Invalidator Agent
@@ -111,7 +118,7 @@ invalidator.invalidate_many([
 ])
 
 # Invalidate by pattern
-invalidator.invalidate_pattern("observation:2025-01-*")
+invalidator.invalidate_pattern("observation:2025-11-*")
 ```
 
 ### Event-Driven Invalidation

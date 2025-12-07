@@ -6,15 +6,22 @@ tags: [uip, performance, optimization, python, backend]
 ---
 
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 Blog post: Performance Optimization.
 
-Module: apps/traffic-web-app/frontend/docs/blog/2024-07-01-performance-optimization.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/blog/2025-11-23-performance-optimization.md
+Module: Blog Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Blog post about optimizing performance for 1000+ camera streams.
+============================================================================
 -->
 
 Xử lý real-time data từ **1000+ camera** là thách thức không nhỏ. Bài viết này chia sẻ các kỹ thuật tối ưu performance mà UIP team đã áp dụng.
@@ -319,6 +326,6 @@ async def traced_operation():
 
 ---
 
-**Bạn có tips optimization nào khác?** Chia sẻ trong [Discussions](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/discussions)!
+**Bạn có tips optimization nào khác?** Chia sẻ trong [Discussions](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/discussions)!
 
 *Nguyễn Nhật Quang & Nguyễn Đình Anh Tuấn - UIP Team*

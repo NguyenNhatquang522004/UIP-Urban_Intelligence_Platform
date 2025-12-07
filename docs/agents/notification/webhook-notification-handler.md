@@ -3,15 +3,24 @@ sidebar_position: 5
 ---
 
 <!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+============================================================================
 UIP - Urban Intelligence Platform
-Webhook Notification Handler Agent Documentation.
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
-Module: apps/traffic-web-app/frontend/docs/docs/agents/notification/webhook-notification-handler.md
-Author: UIP Team
+SPDX-License-Identifier: MIT
+============================================================================
+File: agents/notification/webhook-notification-handler.md
+Module: Notification - Webhook Notification Handler Agent
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+
+Description:
+  Webhook Notification Handler Agent documentation for delivering
+  notifications to external systems via HTTP webhooks.
+============================================================================
 -->
 
 # Webhook Notification Handler Agent
@@ -66,7 +75,7 @@ result = await handler.send(
         "incident_id": "ACC_001",
         "location": {"lat": 10.8231, "lon": 106.6297},
         "severity": "high",
-        "timestamp": "2025-01-15T10:30:00Z"
+        "timestamp": "2025-11-29T10:30:00Z"
     }
 )
 ```

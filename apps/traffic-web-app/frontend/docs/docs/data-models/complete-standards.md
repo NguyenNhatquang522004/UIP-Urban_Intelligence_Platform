@@ -1,13 +1,21 @@
 <!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+============================================================================
 UIP - Urban Intelligence Platform
-Complete data models and standards reference.
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
-Module: apps/traffic-web-app/frontend/docs/docs/data-models/complete-standards.md
-Author: UIP Team
+SPDX-License-Identifier: MIT
+============================================================================
+File: apps/traffic-web-app/frontend/docs/docs/data-models/complete-standards.md
+Module: Complete Data Standards Reference
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+
+Description:
+  Complete data models and standards reference.
+============================================================================
 -->
 
 # Complete Data Models & Standards Reference
@@ -109,7 +117,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
   "status": {
     "type": "Property",
     "value": "active",
-    "observedAt": "2024-01-15T10:30:00Z"
+    "observedAt": "2025-11-29T10:30:00Z"
   },
   "streamUrl": {
     "type": "Property",
@@ -132,7 +140,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
     "type": "Property",
     "value": {
       "@type": "DateTime",
-      "@value": "2024-01-15T10:30:00Z"
+      "@value": "2025-11-29T10:30:00Z"
     }
   },
   "statistics": {
@@ -142,7 +150,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
       "detectionsToday": 15234,
       "avgVehicleCount": 145
     },
-    "observedAt": "2024-01-15T10:30:00Z"
+    "observedAt": "2025-11-29T10:30:00Z"
   },
   "refRoad": {
     "type": "Relationship",
@@ -177,7 +185,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
 
 ```json
 {
-  "id": "urn:ngsi-ld:TrafficAccident:ACC_20240115_001",
+  "id": "urn:ngsi-ld:TrafficAccident:ACC_20251125_001",
   "type": "TrafficAccident",
   "@context": [
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
@@ -187,7 +195,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
     "type": "Property",
     "value": {
       "@type": "DateTime",
-      "@value": "2024-01-15T10:30:00Z"
+      "@value": "2025-11-29T10:30:00Z"
     }
   },
   "location": {
@@ -216,7 +224,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
   "status": {
     "type": "Property",
     "value": "active",
-    "observedAt": "2024-01-15T10:30:00Z"
+    "observedAt": "2025-11-29T10:30:00Z"
   },
   "vehiclesInvolved": {
     "type": "Property",
@@ -241,8 +249,8 @@ Comprehensive documentation for all data models, schemas, and standards used in 
   "images": {
     "type": "Property",
     "value": [
-      "https://storage.traffic.hcmc.gov.vn/accidents/ACC_20240115_001_1.jpg",
-      "https://storage.traffic.hcmc.gov.vn/accidents/ACC_20240115_001_2.jpg"
+      "https://storage.traffic.hcmc.gov.vn/accidents/ACC_20251125_001_1.jpg",
+      "https://storage.traffic.hcmc.gov.vn/accidents/ACC_20251125_001_2.jpg"
     ]
   },
   "description": {
@@ -297,7 +305,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
 
 ```json
 {
-  "id": "urn:ngsi-ld:TrafficFlowObserved:TFO_20240115_CAM_001",
+  "id": "urn:ngsi-ld:TrafficFlowObserved:TFO_20251125_CAM_001",
   "type": "TrafficFlowObserved",
   "@context": [
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
@@ -307,7 +315,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
     "type": "Property",
     "value": {
       "@type": "DateTime",
-      "@value": "2024-01-15T10:30:00Z"
+      "@value": "2025-11-29T10:30:00Z"
     }
   },
   "location": {
@@ -398,23 +406,23 @@ Comprehensive documentation for all data models, schemas, and standards used in 
   "congestionLevel": {
     "type": "Property",
     "value": "moderate",
-    "observedAt": "2024-01-15T10:30:00Z"
+    "observedAt": "2025-11-29T10:30:00Z"
   },
   "averageSpeed": {
     "type": "Property",
     "value": 25.5,
     "unitCode": "km/h",
-    "observedAt": "2024-01-15T10:30:00Z"
+    "observedAt": "2025-11-29T10:30:00Z"
   },
   "vehicleCount": {
     "type": "Property",
     "value": 345,
-    "observedAt": "2024-01-15T10:30:00Z"
+    "observedAt": "2025-11-29T10:30:00Z"
   },
   "incidentCount": {
     "type": "Property",
     "value": 1,
-    "observedAt": "2024-01-15T10:30:00Z"
+    "observedAt": "2025-11-29T10:30:00Z"
   },
   "refCameras": {
     "type": "Relationship",
@@ -473,7 +481,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
 
 ```json
 {
-  "id": "urn:ngsi-ld:WeatherObserved:WEATHER_20240115_1030",
+  "id": "urn:ngsi-ld:WeatherObserved:WEATHER_20251125_1030",
   "type": "WeatherObserved",
   "@context": [
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
@@ -483,7 +491,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
     "type": "Property",
     "value": {
       "@type": "DateTime",
-      "@value": "2024-01-15T10:30:00Z"
+      "@value": "2025-11-29T10:30:00Z"
     }
   },
   "location": {
@@ -559,7 +567,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
 
 ```json
 {
-  "id": "urn:ngsi-ld:AirQualityObserved:AQI_20240115_1030",
+  "id": "urn:ngsi-ld:AirQualityObserved:AQI_20251125_1030",
   "type": "AirQualityObserved",
   "@context": [
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
@@ -569,7 +577,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
     "type": "Property",
     "value": {
       "@type": "DateTime",
-      "@value": "2024-01-15T10:30:00Z"
+      "@value": "2025-11-29T10:30:00Z"
     }
   },
   "location": {
@@ -671,7 +679,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
 
 ```json
 {
-  "id": "urn:ngsi-ld:CitizenReport:CR_20240115_001",
+  "id": "urn:ngsi-ld:CitizenReport:CR_20251125_001",
   "type": "CitizenReport",
   "@context": [
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
@@ -680,7 +688,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
     "type": "Property",
     "value": {
       "@type": "DateTime",
-      "@value": "2024-01-15T10:30:00Z"
+      "@value": "2025-11-29T10:30:00Z"
     }
   },
   "location": {
@@ -705,17 +713,17 @@ Comprehensive documentation for all data models, schemas, and standards used in 
   "status": {
     "type": "Property",
     "value": "submitted",
-    "observedAt": "2024-01-15T10:30:00Z"
+    "observedAt": "2025-11-29T10:30:00Z"
   },
   "verificationStatus": {
     "type": "Property",
     "value": "pending",
-    "observedAt": "2024-01-15T10:30:00Z"
+    "observedAt": "2025-11-29T10:30:00Z"
   },
   "images": {
     "type": "Property",
     "value": [
-      "https://storage.traffic.hcmc.gov.vn/citizen-reports/CR_20240115_001_1.jpg"
+      "https://storage.traffic.hcmc.gov.vn/citizen-reports/CR_20251125_001_1.jpg"
     ]
   },
   "reporter": {
@@ -728,7 +736,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
   },
   "refAccident": {
     "type": "Relationship",
-    "object": "urn:ngsi-ld:TrafficAccident:ACC_20240115_001"
+    "object": "urn:ngsi-ld:TrafficAccident:ACC_20251125_001"
   }
 }
 ```
@@ -774,13 +782,13 @@ traffic:AccidentDetectionProcedure
 ### Observation Example
 
 ```turtle
-traffic:Observation_20240115_103000
+traffic:Observation_20251125_103000
     a sosa:Observation ;
     sosa:madeBySensor traffic:CAM_001 ;
     sosa:hasFeatureOfInterest traffic:RoadSegment_001 ;
     sosa:observedProperty traffic:Accident ;
     sosa:hasSimpleResult "accident_detected" ;
-    sosa:resultTime "2024-01-15T10:30:00Z"^^xsd:dateTime ;
+    sosa:resultTime "2025-11-29T10:30:00Z"^^xsd:dateTime ;
     sosa:hasResult [
         a traffic:AccidentResult ;
         traffic:severity "moderate" ;
@@ -803,12 +811,12 @@ traffic:WeatherStation_001
     geo:long "106.7009"^^xsd:float ;
     traffic:stationName "District 1 Weather Station" .
 
-traffic:WeatherObservation_20240115_103000
+traffic:WeatherObservation_20251125_103000
     a sosa:Observation ;
     sosa:madeBySensor traffic:WeatherStation_001 ;
     sosa:observedProperty traffic:Temperature ;
     sosa:hasSimpleResult "32.5"^^xsd:float ;
-    sosa:resultTime "2024-01-15T10:30:00Z"^^xsd:dateTime ;
+    sosa:resultTime "2025-11-29T10:30:00Z"^^xsd:dateTime ;
     ssn:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
 ```
 
@@ -826,12 +834,12 @@ traffic:AQIStation_001
     geo:long "106.7009"^^xsd:float ;
     traffic:stationName "District 1 AQI Station" .
 
-traffic:AQIObservation_20240115_103000
+traffic:AQIObservation_20251125_103000
     a sosa:Observation ;
     sosa:madeBySensor traffic:AQIStation_001 ;
     sosa:observedProperty traffic:AQI ;
     sosa:hasSimpleResult "85"^^xsd:integer ;
-    sosa:resultTime "2024-01-15T10:30:00Z"^^xsd:dateTime ;
+    sosa:resultTime "2025-11-29T10:30:00Z"^^xsd:dateTime ;
     traffic:category "moderate" ;
     traffic:pm25Value "35.5"^^xsd:float ;
     traffic:pm10Value "58.2"^^xsd:float .
@@ -859,8 +867,8 @@ traffic:
     dcterms:title "HCMC Traffic Management Ontology" ;
     dcterms:description "Ontology for traffic management in Ho Chi Minh City" ;
     dcterms:creator "HCMC Traffic Management Team" ;
-    dcterms:created "2024-01-01"^^xsd:date ;
-    dcterms:modified "2024-01-15"^^xsd:date ;
+    dcterms:created "2025-11-20"^^xsd:date ;
+    dcterms:modified "2025-11-29"^^xsd:date ;
     owl:versionInfo "1.0" .
 
 # Classes

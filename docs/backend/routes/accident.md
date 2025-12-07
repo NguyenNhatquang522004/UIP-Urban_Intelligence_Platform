@@ -8,8 +8,24 @@ keywords: [accident, traffic, incident, safety, neo4j, ngsi-ld]
 ---
 
 <!--
+============================================================================
+UIP - Urban Intelligence Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
+
 SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team
+============================================================================
+File: backend/routes/accident.md
+Module: Backend Routes - Accident Routes
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  Accident Routes documentation for RESTful API endpoints for querying
+  traffic accident entities with severity and location data.
+============================================================================
 -->
 
 # Accident Routes
@@ -64,7 +80,7 @@ List all accidents with optional filters.
       "type": "collision",
       "severity": "serious",
       "description": "Multi-vehicle collision",
-      "timestamp": "2025-01-15T10:30:00.000Z",
+      "timestamp": "2025-11-29T10:30:00.000Z",
       "resolved": false,
       "casualties": 2
     }
@@ -94,7 +110,7 @@ Get currently unresolved accidents.
   ],
   "meta": {
     "activeCount": 3,
-    "timestamp": "2025-01-15T10:30:00.000Z"
+    "timestamp": "2025-11-29T10:30:00.000Z"
   }
 }
 ```

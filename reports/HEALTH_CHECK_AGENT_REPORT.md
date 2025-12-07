@@ -1,19 +1,27 @@
 <!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+============================================================================
 UIP - Urban Intelligence Platform
-Health Check Agent report.
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
-Module: reports/HEALTH_CHECK_AGENT_REPORT.md
-Author: UIP Team
+SPDX-License-Identifier: MIT
+============================================================================
+File: reports/HEALTH_CHECK_AGENT_REPORT.md
+Module: Health Check Agent Report
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+
+Description:
+  Health Check Agent technical report.
+============================================================================
 -->
 
 # Health Check Agent - Technical Report
 
 **Version:** 1.0.0  
-**Date:** November 1, 2025  
+**Date:** November 20, 2025  
 **Author:** UIP Development Team
 
 ---
@@ -144,7 +152,7 @@ The **Health Check Agent** is a comprehensive, domain-agnostic monitoring system
   "type": "http",
   "status": "OK",
   "response_time_ms": 45.2,
-  "timestamp": "2025-11-01T10:00:00Z",
+  "timestamp": "2025-11-20T10:00:00Z",
   "status_code": 200
 }
 ```
@@ -195,7 +203,7 @@ The **Health Check Agent** is a comprehensive, domain-agnostic monitoring system
   "value": 720,
   "threshold": {"min": 700, "max": 750},
   "response_time_ms": 12.3,
-  "timestamp": "2025-11-01T10:00:00Z"
+  "timestamp": "2025-11-20T10:00:00Z"
 }
 ```
 
@@ -247,7 +255,7 @@ The **Health Check Agent** is a comprehensive, domain-agnostic monitoring system
 {
   "status": "GREEN",
   "description": "All services operational",
-  "timestamp": "2025-11-01T10:00:00Z",
+  "timestamp": "2025-11-20T10:00:00Z",
   "checks": [...],
   "summary": {
     "total": 15,
@@ -525,7 +533,7 @@ health_check:
 {
   "status": "GREEN",
   "description": "All services operational",
-  "timestamp": "2025-11-01T10:00:00Z",
+  "timestamp": "2025-11-20T10:00:00Z",
   "checks": [
     {
       "name": "stellio_api",
@@ -563,11 +571,11 @@ health_check:
 {
   "data": [
     {
-      "timestamp": "2025-11-01T09:00:00Z",
+      "timestamp": "2025-11-20T09:00:00Z",
       "status": "GREEN"
     },
     {
-      "timestamp": "2025-11-01T09:05:00Z",
+      "timestamp": "2025-11-20T09:05:00Z",
       "status": "GREEN"
     }
   ]

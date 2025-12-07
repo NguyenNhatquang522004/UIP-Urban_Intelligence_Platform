@@ -5,8 +5,23 @@ description: API client for crowdsourced citizen report submissions
 ---
 
 {/*
+============================================================================
+UIP - Urban Intelligence Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
+
 SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team
+============================================================================
+File: apps/traffic-web-app/frontend/docs/docs/frontend/services/citizenReportService.md
+Module: Traffic Web App - Citizen Report Service Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  API client documentation for crowdsourced citizen report submissions.
+============================================================================
 */}
 
 # Citizen Report Service

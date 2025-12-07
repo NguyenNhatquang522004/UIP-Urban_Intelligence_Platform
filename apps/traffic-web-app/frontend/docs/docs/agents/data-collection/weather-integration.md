@@ -1,13 +1,20 @@
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 Weather integration agent documentation.
 
-Module: apps/traffic-web-app/frontend/docs/docs/agents/data-collection/weather-integration.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/docs/agents/data-collection/weather-integration.md
+Module: Data Collection Agents Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Documentation for the Weather Integration Agent component.
+============================================================================
 -->
 
 # Weather Integration Agent
@@ -138,7 +145,7 @@ for alert in alerts:
 ```python
 # Analyze weather impact on traffic
 correlation = agent.analyze_weather_traffic_impact(
-    date_range=("2024-01-01", "2024-01-31"),
+    date_range=("2025-11-20", "2025-12-05"),
     location="District 1"
 )
 
@@ -424,7 +431,7 @@ def test_weather_traffic_correlation():
     
     # Analyze past month
     correlation = weather_agent.analyze_weather_traffic_impact(
-        date_range=("2024-01-01", "2024-01-31"),
+        date_range=("2025-11-20", "2025-12-05"),
         location="District 1"
     )
     

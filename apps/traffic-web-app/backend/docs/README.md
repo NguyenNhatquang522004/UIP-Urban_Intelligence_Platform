@@ -1,18 +1,22 @@
-    <!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+<!--
+============================================================================
 UIP - Urban Intelligence Platform
-https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
-@module docs/README
-@author UIP Team (Nguyen Nhat Quang, Nguyen Viet Hoang, Nguyen Dinh Anh Tuan)
-@created 2025-11-27
-@modified 2025-11-27
-@version 1.0.0
- * 
- * @description
- * Documentation Directory Index
+SPDX-License-Identifier: MIT
+============================================================================
+File: apps/traffic-web-app/backend/docs/README.md
+Module: Backend Docs Index
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  Documentation Directory Index
+============================================================================
+-->
  * 
  * This directory contains all project documentation organized into three main categories:
  * API documentation, implementation guides, and status reports. Each subdirectory serves

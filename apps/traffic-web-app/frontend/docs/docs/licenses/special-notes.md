@@ -8,11 +8,23 @@ keywords: [license, compliance, hippocratic, LGPL, GPL, ethical, special]
 ---
 
 <!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+============================================================================
 UIP - Urban Intelligence Platform
-https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+============================================================================
+File: apps/traffic-web-app/frontend/docs/docs/licenses/special-notes.md
+Module: Special License Notes Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  Special considerations and compliance notes for specific licenses.
+============================================================================
 -->
 
 # Special License Notes
@@ -63,14 +75,15 @@ These packages have been **removed** from the project to achieve 100% MIT-compat
 
 | Package | Version | Usage |
 |---------|---------|-------|
-| pyphen | 0.17.2 | Hyphenation (triple-licensed) |
 | tqdm | 4.67.1 | Progress bars (dual-licensed) |
+| certifi | 2025.11.12 | CA certificates |
+| pathspec | 0.12.1 | Path matching |
 
-### Triple/Dual License Options
-
-**pyphen:** GPL-2.0+ / LGPL-2.1+ / **MPL-1.1** ← Selected
+### License Selection
 
 **tqdm:** MPL-2.0 / **MIT** ← Selected
+
+> **Note (2025-12):** pyphen has been **removed** from the project (was GPL/LGPL dependency of weasyprint).
 
 ### Compliance
 
@@ -81,38 +94,25 @@ avoiding any copyleft obligations.
 
 ---
 
-## 4. Development-Only GPL/LGPL Packages
+## 4. Development-Only Tools (All MIT)
 
-### Packages Affected (NOT in Production)
+### Current Development Stack
 
 | Package | Version | License | Usage |
 |---------|---------|---------|-------|
-| pylint | 4.0.4 | GPL-2.0 | Code linting |
-| astroid | 4.0.2 | LGPL-2.1 | AST library |
+| ruff | 0.1+ | MIT | Linting & import sorting |
+| black | 23.11+ | MIT | Code formatting |
+| mypy | 1.7+ | MIT | Type checking |
+| pytest | 7.4+ | MIT | Testing framework |
 
-### Compliance Strategy
+> **Note (2025-12):** Previously used GPL tools (pylint, astroid) have been replaced with MIT-licensed ruff.
+
+### Compliance Status
 
 ```mermaid
 flowchart LR
-    A[Development] -->|Uses| B[pylint/astroid]
-    C[Production] -->|Excludes| B
-    C -->|Distributes| D[MIT-only code]
-```
-
-### Exclusion Verification
-
-These packages are:
-
-1. **Not installed** in production Docker images
-2. **Not included** in production requirements.txt
-3. **Listed** in dev-requirements.txt only
-4. **Excluded** from all distribution packages
-
-```dockerfile
-# Production Dockerfile - NO dev dependencies
-FROM python:3.11-slim
-COPY requirements.txt .  # No pylint, astroid
-RUN pip install -r requirements.txt
+    A[Development] -->|Uses| B[ruff - MIT]
+    C[Production] -->|Uses| D[MIT-only code]
 ```
 
 ---
@@ -206,8 +206,8 @@ jobs:
 
 For questions about licensing or third-party dependencies:
 
-- **Repository:** [UIP-Urban_Intelligence_Platform](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform)
-- **Issues:** [GitHub Issues](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/issues)
+- **Repository:** [UIP-Urban_Intelligence_Platform](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform)
+- **Issues:** [GitHub Issues](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/issues)
 - **License File:** [LICENSE](../../../../../LICENSE)
 - **Full Third-Party Licenses:** [THIRD_PARTY_LICENSES.md](../../../../../THIRD_PARTY_LICENSES.md)
 

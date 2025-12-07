@@ -1,13 +1,21 @@
 <!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+============================================================================
 UIP - Urban Intelligence Platform
-Image Refresh Agent verification report.
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
-Module: reports/VERIFICATION.md
-Author: UIP Team
+SPDX-License-Identifier: MIT
+============================================================================
+File: reports/VERIFICATION.md
+Module: Verification Report
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+
+Description:
+  Image Refresh Agent verification report.
+============================================================================
 -->
 
 # ✅ FINAL VERIFICATION - Image Refresh Agent Implementation
@@ -260,7 +268,7 @@ The Image Refresh Agent is **FULLY IMPLEMENTED** and **PRODUCTION-READY**:
 
 ---
 
-**Implementation Date**: November 1, 2025  
+**Implementation Date**: November 20, 2025  
 **Status**: ✅ **COMPLETE AND VERIFIED**  
 **Version**: 1.0.0  
 **Compliance**: 100%

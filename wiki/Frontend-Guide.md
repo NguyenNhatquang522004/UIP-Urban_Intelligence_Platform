@@ -1,13 +1,21 @@
-<!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+﻿<!--
+============================================================================
 UIP - Urban Intelligence Platform
-https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
-Module: wiki/Frontend-Guide.md
-Author: UIP Team
+SPDX-License-Identifier: MIT
+============================================================================
+File: wiki/Frontend-Guide.md
+Module: Frontend Guide
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 2.0.0
+License: MIT
+
+Description:
+  React + TypeScript + TailwindCSS web application documentation.
+============================================================================
 -->
 # 🖥️ Frontend Guide
 
@@ -519,7 +527,7 @@ VITE_DEFAULT_CENTER_LNG=106.6297
 
 ---
 
-## 📚 Related Pages
+## 🔗 Related Pages
 
 - [[Backend-Guide]] - Backend documentation
 - [[API-Reference]] - API endpoints

@@ -1,13 +1,21 @@
 <!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+============================================================================
 UIP - Urban Intelligence Platform
-Frontend application documentation.
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
-Module: apps/traffic-web-app/frontend/README.md
-Author: UIP Team
+SPDX-License-Identifier: MIT
+============================================================================
+File: apps/traffic-web-app/frontend/README.md
+Module: Frontend Application Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+
+Description:
+  Frontend application documentation.
+============================================================================
 -->
 
 # Traffic Monitoring System - Frontend
@@ -442,7 +450,7 @@ curl http://localhost:5000/api/correlations/accident-pattern
 curl http://localhost:5000/api/analytics/hotspots
 
 # Check historical AQI
-curl "http://localhost:5000/api/historical/aqi?startDate=2024-01-01&endDate=2024-12-31"
+curl "http://localhost:5000/api/historical/aqi?startDate=2025-11-20&endDate=2025-12-05"
 ```
 
 ## Production Deployment

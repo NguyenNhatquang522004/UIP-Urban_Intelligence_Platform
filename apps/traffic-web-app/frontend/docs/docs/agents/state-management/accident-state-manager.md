@@ -3,15 +3,22 @@ sidebar_position: 2
 ---
 
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 Accident State Manager Agent Documentation.
 
-Module: apps/traffic-web-app/frontend/docs/docs/agents/state-management/accident-state-manager.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/docs/agents/state-management/accident-state-manager.md
+Module: State Management Agents Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Documentation for the Accident State Manager Agent component.
+============================================================================
 -->
 
 # Accident State Manager Agent
@@ -79,7 +86,7 @@ accident = manager.create_accident({
     "location": {"lat": 10.762, "lon": 106.660},
     "severity": "moderate",
     "detected_by": "CAM_025",
-    "timestamp": "2025-01-15T10:30:00Z"
+    "timestamp": "2025-11-29T10:30:00Z"
 })
 ```
 
@@ -111,7 +118,7 @@ manager.transition(
     accident_id="ACC_001",
     to_state="resolved",
     metadata={
-        "resolution_time": "2025-01-15T11:00:00Z",
+        "resolution_time": "2025-11-29T11:00:00Z",
         "lane_cleared": True
     }
 )

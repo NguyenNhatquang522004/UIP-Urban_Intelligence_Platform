@@ -1,13 +1,21 @@
 <!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+============================================================================
 UIP - Urban Intelligence Platform
-Stellio bypass consequences analysis.
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
-Module: reports/STELLIO_BYPASS_CONSEQUENCES.md
-Author: UIP Team
+SPDX-License-Identifier: MIT
+============================================================================
+File: reports/STELLIO_BYPASS_CONSEQUENCES.md
+Module: Stellio Bypass Consequences
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+
+Description:
+  Stellio bypass consequences analysis.
+============================================================================
 -->
 
 # 🔍 HẬU QUẢ CỦA VIỆC BYPASS STELLIO API GATEWAY
@@ -31,7 +39,7 @@ Kafka offsets: 2-43 (partition 0)
 
 **Bằng chứng từ logs**:
 ```
-2025-11-03 16:09:14 [ntainer#0-0-C-1] DEBUG EntityEventListenerService - processMessage
+2025-11-22 16:09:14 [ntainer#0-0-C-1] DEBUG EntityEventListenerService - processMessage
 - Processing message: {"operationType": "ENTITY_CREATE", "entityId": "urn:ngsi-ld:Camera:TTH 406"...}
 - Processing message: {"operationType": "ENTITY_CREATE", "entityId": "urn:ngsi-ld:ObservableProperty:TrafficFlow"...}
 [... 40 more entities ...]
@@ -92,7 +100,7 @@ $ Invoke-WebRequest -Uri "http://localhost:8082/ngsi-ld/v1/entities?type=Camera"
 ERROR: Unable to connect to the remote server
 
 # Logs show Netty started nhưng không expose REST endpoints
-2025-11-03 15:28:03 INFO - Netty started on port 8082
+2025-11-22 15:28:03 INFO - Netty started on port 8082
 ```
 
 **Nguyên nhân**:

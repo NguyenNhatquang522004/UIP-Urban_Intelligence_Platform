@@ -1,15 +1,18 @@
 /**
- * Marker Component - Map Point Markers
+ * @file Marker.tsx
+ * @module apps/traffic-web-app/frontend/src/components/map/Marker
+ * @author Nguyễn Nhật Quang <nguyennhatquang522004@gmail.com>
+ * @created 2025-11-20
+ * @version 1.0.0
+ * @license MIT
+ * @description Marker component compatible with react-leaflet's Marker API.
+ * Supports custom icons, popups, tooltips, and event handlers.
  *
  * UIP - Urban Intelligence Platform
  * Copyright (c) 2025 UIP Team. All rights reserved.
- * https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+ * https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
  *
  * SPDX-License-Identifier: MIT
- *
- * @description
- * Marker component compatible with react-leaflet's Marker API.
- * Supports custom icons, popups, tooltips, and event handlers.
  */
 
 import React, { ReactNode, useMemo, useCallback, useState } from 'react';

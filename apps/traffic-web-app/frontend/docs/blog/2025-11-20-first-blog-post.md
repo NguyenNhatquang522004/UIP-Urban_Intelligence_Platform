@@ -6,15 +6,22 @@ tags: [smart-city, traffic, uip, hcmc]
 ---
 
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 Blog post: Why Smart Traffic Matters.
 
-Module: apps/traffic-web-app/frontend/docs/blog/2019-05-28-first-blog-post.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/blog/2025-11-20-first-blog-post.md
+Module: Blog Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Blog post about why smart traffic matters.
+============================================================================
 -->
 
 Thành phố Hồ Chí Minh với hơn 10 triệu dân và 8 triệu phương tiện đang đối mặt với thách thức giao thông nghiêm trọng. Bài viết này giải thích tại sao chúng ta cần giải pháp **giao thông thông minh**.

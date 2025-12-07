@@ -1,13 +1,21 @@
 <!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+============================================================================
 UIP - Urban Intelligence Platform
-Weather and Air Quality implementation summary.
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
-Module: apps/traffic-web-app/backend/docs/reports/WEATHER_AIRQUALITY_IMPLEMENTATION.md
-Author: UIP Team
+SPDX-License-Identifier: MIT
+============================================================================
+File: apps/traffic-web-app/backend/docs/reports/WEATHER_AIRQUALITY_IMPLEMENTATION.md
+Module: Weather Air Quality Implementation Report
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+
+Description:
+  Weather and Air Quality implementation summary.
+============================================================================
 -->
 
 # Weather and Air Quality Implementation Summary

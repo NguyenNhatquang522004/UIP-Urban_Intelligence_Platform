@@ -7,15 +7,22 @@ image: /img/uip-banner.png
 ---
 
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 Blog post: Introducing UIP.
 
-Module: apps/traffic-web-app/frontend/docs/blog/2024-01-15-introducing-uip.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/blog/2025-11-20-introducing-uip.md
+Module: Blog Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Blog post introducing UIP - Urban Intelligence Platform.
+============================================================================
 -->
 
 # Chào mừng đến với UIP - Urban Intelligence Platform! 🎉
@@ -96,7 +103,7 @@ UIP được phát triển bởi 3 thành viên:
 
 ```bash
 # Clone repository
-git clone https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform.git
+git clone https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform.git
 
 # Chạy với Docker
 docker-compose up -d
