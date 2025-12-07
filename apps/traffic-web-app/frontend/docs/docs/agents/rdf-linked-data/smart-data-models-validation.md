@@ -3,15 +3,22 @@ sidebar_position: 5
 ---
 
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 Smart Data Models Validation Agent Documentation.
 
-Module: apps/traffic-web-app/frontend/docs/docs/agents/rdf-linked-data/smart-data-models-validation.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/docs/agents/rdf-linked-data/smart-data-models-validation.md
+Module: RDF Linked Data Agents Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Documentation for the Smart Data Models Validation Agent component.
+============================================================================
 -->
 
 # Smart Data Models Validation Agent

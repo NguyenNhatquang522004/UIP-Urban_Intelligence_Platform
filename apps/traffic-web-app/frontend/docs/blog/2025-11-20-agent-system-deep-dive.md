@@ -6,15 +6,22 @@ tags: [uip, architecture, agents, python, technical]
 ---
 
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 Blog post: Agent System Deep Dive.
 
-Module: apps/traffic-web-app/frontend/docs/blog/2024-02-20-agent-system-deep-dive.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/blog/2025-11-20-agent-system-deep-dive.md
+Module: Blog Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Deep dive blog post about UIP Agent System architecture.
+============================================================================
 -->
 
 # Khám phá Agent System - Trái tim của UIP 💡
@@ -271,6 +278,6 @@ Agent System giúp UIP:
 
 ---
 
-**Bạn có câu hỏi về Agent System?** Comment bên dưới hoặc mở issue trên [GitHub](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform)!
+**Bạn có câu hỏi về Agent System?** Comment bên dưới hoặc mở issue trên [GitHub](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform)!
 
 *Nguyễn Nhật Quang - Lead Developer @ UIP Team*

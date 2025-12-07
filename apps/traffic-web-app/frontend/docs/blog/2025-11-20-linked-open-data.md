@@ -6,15 +6,22 @@ tags: [uip, rdf, linked-data, semantic-web, ngsi-ld, technical]
 ---
 
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 Blog post: Linked Open Data Integration.
 
-Module: apps/traffic-web-app/frontend/docs/blog/2024-03-10-linked-open-data.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/blog/2025-11-19-linked-open-data.md
+Module: Blog Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Blog post about Linked Open Data integration in UIP.
+============================================================================
 -->
 
 # Linked Open Data - Kết nối dữ liệu thông minh 🌐

@@ -6,15 +6,22 @@ tags: [uip, hello, welcome, traffic-monitoring]
 ---
 
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 Blog post: Welcome to UIP Blog.
 
-Module: apps/traffic-web-app/frontend/docs/blog/2021-08-26-welcome/index.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/blog/2021-08-26-welcome/index.md
+Module: Blog Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Welcome blog post for UIP.
+============================================================================
 -->
 
 # Chào mừng đến với UIP Blog! 🎉
@@ -62,9 +69,9 @@ Cập nhật mới nhất về dự án:
 
 ## 📬 Kết nối với chúng tôi
 
-- **GitHub:** [UIP Repository](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform)
-- **Issues:** [Report bugs or request features](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/issues)
-- **Discussions:** [Join the community](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform/discussions)
+- **GitHub:** [UIP Repository](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform)
+- **Issues:** [Report bugs or request features](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/issues)
+- **Discussions:** [Join the community](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/discussions)
 
 ## 🔔 Đăng ký theo dõi
 

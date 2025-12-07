@@ -6,15 +6,22 @@ tags: [uip, frontend, react, typescript, maplibre, technical]
 ---
 
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 Blog post: Frontend Architecture.
 
-Module: apps/traffic-web-app/frontend/docs/blog/2024-04-05-frontend-architecture.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/blog/2025-11-20-frontend-architecture.md
+Module: Blog Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Blog post about UIP frontend architecture with React 18.
+============================================================================
 -->
 
 # Xây dựng Dashboard Giao thông Real-time với React 18 ⚡
@@ -421,6 +428,6 @@ const Sidebar: React.FC = () => {
 
 ---
 
-**Source code:** [GitHub Repository](https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform)
+**Source code:** [GitHub Repository](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform)
 
 *Nguyễn Đình Anh Tuấn - Backend Developer @ UIP Team*

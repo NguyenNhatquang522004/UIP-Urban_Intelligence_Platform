@@ -6,15 +6,22 @@ tags: [uip, citizen-report, api, backend, mobile]
 ---
 
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 Blog post: Citizen Reporting System.
 
-Module: apps/traffic-web-app/frontend/docs/blog/2024-06-01-citizen-reporting.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/blog/2025-11-22-citizen-reporting.md
+Module: Blog Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Blog post about UIP Citizen Reporting System.
+============================================================================
 -->
 
 # Citizen Reporting - Dân chủ hóa Giám sát Giao thông 👥

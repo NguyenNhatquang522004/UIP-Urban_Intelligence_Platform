@@ -7,10 +7,25 @@ description: RESTful API endpoints for querying traffic camera entities with geo
 keywords: [camera, api, traffic, image, geo-spatial, ngsi-ld]
 ---
 
-<!--
+{/*
+============================================================================
+UIP - Urban Intelligence Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
+
 SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team
--->
+============================================================================
+File: apps/traffic-web-app/frontend/docs/docs/backend/routes/camera.md
+Module: Traffic Web App - Camera Routes Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  Camera routes documentation for traffic camera API endpoints.
+============================================================================
+*/}
 
 # Camera Routes
 

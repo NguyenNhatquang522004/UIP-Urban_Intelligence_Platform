@@ -1,13 +1,20 @@
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 Air quality agent documentation.
 
-Module: apps/traffic-web-app/frontend/docs/docs/agents/data-collection/air-quality.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/docs/agents/data-collection/air-quality.md
+Module: Data Collection Agents Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Documentation for the Air Quality Agent component.
+============================================================================
 -->
 
 # Air Quality Agent

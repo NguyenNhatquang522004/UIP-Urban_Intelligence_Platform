@@ -7,10 +7,25 @@ description: REST API endpoints for coordinated multi-agent interactions combini
 keywords: [multi-agent, coordination, graph-investigator, traffic-maestro, ai]
 ---
 
-<!--
+{/*
+============================================================================
+UIP - Urban Intelligence Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
+
 SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team
--->
+============================================================================
+File: apps/traffic-web-app/frontend/docs/docs/backend/routes/multiAgent.md
+Module: Traffic Web App - Multi-Agent Routes Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  Multi-agent routes documentation for coordinated AI agent interactions.
+============================================================================
+*/}
 
 # Multi-Agent Routes
 

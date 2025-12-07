@@ -1,13 +1,21 @@
 <!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+============================================================================
 UIP - Urban Intelligence Platform
-Main API documentation.
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
-Module: apps/traffic-web-app/frontend/docs/api/API.md
-Author: UIP Team
+SPDX-License-Identifier: MIT
+============================================================================
+File: apps/traffic-web-app/frontend/docs/api/API.md
+Module: Traffic Web App - Main API Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+
+Description:
+  Main API documentation for the Urban Intelligence Platform.
+============================================================================
 -->
 
 # UIP - Urban Intelligence Platform - API Documentation
@@ -712,4 +720,4 @@ fetch(`${API_URL}/subscriptions`, {
 For API support and questions:
 - **Email**: support@example.com
 - **Documentation**: https://docs.example.com
-- **GitHub**: https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+- **GitHub**: https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform

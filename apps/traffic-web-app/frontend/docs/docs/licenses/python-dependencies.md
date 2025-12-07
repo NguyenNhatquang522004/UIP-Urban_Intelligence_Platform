@@ -8,11 +8,23 @@ keywords: [python, dependencies, licenses, pip, torch, fastapi, opencv]
 ---
 
 <!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+============================================================================
 UIP - Urban Intelligence Platform
-https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
+
+SPDX-License-Identifier: MIT
+============================================================================
+File: apps/traffic-web-app/frontend/docs/docs/licenses/python-dependencies.md
+Module: Python Dependencies Licenses Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  Complete list of Python dependencies and their MIT-compatible licenses.
+============================================================================
 -->
 
 # Python Dependencies Licenses
@@ -219,11 +231,9 @@ Complete documentation of all **168 Python packages** used in the UIP - Urban In
 
 | Package | Version | License | SPDX ID | Description |
 |---------|---------|---------|---------|-------------|
-| weasyprint | 67.0 | BSD | `BSD-3-Clause` | HTML to PDF |
-| reportlab | 4.4.5 | BSD | `BSD-3-Clause` | PDF generation |
-| pyphen | 0.17.2 | GPL/LGPL/MPL-1.1 | `MPL-1.1` | Hyphenation |
+| reportlab | 4.4.5 | BSD | `BSD-3-Clause` | PDF generation (pure Python) |
 
-> pyphen is triple-licensed. This project uses MPL-1.1 option.
+> **Migration Note (2025-12):** weasyprint and pyphen have been **removed** from the project. weasyprint had pyphen (GPL/LGPL) as a dependency, making it incompatible with MIT licensing. PDF generation now uses pure reportlab (BSD license).
 
 ---
 
@@ -237,13 +247,10 @@ These packages are development-only and NOT included in production:
 | pytest-asyncio | 1.3.0 | Apache-2.0 | `Apache-2.0` | Async testing |
 | pytest-cov | 7.0.0 | MIT | `MIT` | Coverage plugin |
 | black | 25.11.0 | MIT | `MIT` | Code formatter |
-| isort | 7.0.0 | MIT | `MIT` | Import sorter |
-| flake8 | 7.3.0 | MIT | `MIT` | Linting |
+| ruff | 0.1+ | MIT | `MIT` | Linting & import sorting |
 | mypy | 1.19.0 | MIT | `MIT` | Type checking |
-| pylint | 4.0.4 | GPL-2.0 | `GPL-2.0-only` | Linting (dev only) |
-| astroid | 4.0.2 | LGPL-2.1 | `LGPL-2.1-only` | AST library (dev only) |
 
-> ⚠️ `pylint` and `astroid` use copyleft licenses but are development-only tools excluded from production distributions.
+> ✅ All development tools are 100% MIT-compatible. Previously used GPL tools (pylint, astroid, flake8, isort) have been replaced with ruff (MIT).
 
 ---
 

@@ -3,15 +3,22 @@ sidebar_position: 3
 ---
 
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 Data Quality Validator Agent Documentation.
 
-Module: apps/traffic-web-app/frontend/docs/docs/agents/monitoring/data-quality-validator.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/docs/agents/monitoring/data-quality-validator.md
+Module: Monitoring Agents Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Documentation for the Data Quality Validator Agent component.
+============================================================================
 -->
 
 # Data Quality Validator Agent

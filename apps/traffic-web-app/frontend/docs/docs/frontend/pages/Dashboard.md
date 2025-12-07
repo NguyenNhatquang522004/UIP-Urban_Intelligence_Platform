@@ -5,8 +5,23 @@ description: Main traffic monitoring interface integrating map, sidebar, and ana
 ---
 
 {/*
+============================================================================
+UIP - Urban Intelligence Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
+
 SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team
+============================================================================
+File: apps/traffic-web-app/frontend/docs/docs/frontend/pages/Dashboard.md
+Module: Traffic Web App - Dashboard Page Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  Main traffic monitoring interface documentation with map, sidebar, analytics.
+============================================================================
 */}
 
 # Dashboard Page

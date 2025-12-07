@@ -7,10 +7,25 @@ description: WebSocket Service for real-time bidirectional communication between
 keywords: [websocket, real-time, pub-sub, heartbeat, broadcast, streaming]
 ---
 
-<!--
+{/*
+============================================================================
+UIP - Urban Intelligence Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
+
 SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team
--->
+============================================================================
+File: apps/traffic-web-app/frontend/docs/docs/backend/services/websocketService.md
+Module: Traffic Web App - WebSocketService Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  WebSocketService documentation for real-time communication.
+============================================================================
+*/}
 
 # WebSocketService - Real-Time Communication
 

@@ -3,15 +3,22 @@ sidebar_position: 1
 ---
 
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 Citizen Ingestion Agent Documentation.
 
-Module: apps/traffic-web-app/frontend/docs/docs/agents/ingestion/citizen-ingestion.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/docs/agents/ingestion/citizen-ingestion.md
+Module: Ingestion Agents Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Documentation for the Citizen Ingestion Agent component.
+============================================================================
 -->
 
 # Citizen Ingestion Agent
