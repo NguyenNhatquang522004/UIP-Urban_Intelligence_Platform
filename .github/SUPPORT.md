@@ -2,7 +2,7 @@
 File: .github/SUPPORT.md
 Module: .github/SUPPORT.md
 Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
-Created: 2025-01-01
+Created: 2025-11-20
 Version: 1.0.0
 License: MIT
 Description: Support Documentation for UIP - Urban Intelligence Platform
