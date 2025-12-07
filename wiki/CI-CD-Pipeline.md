@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 ============================================================================
 UIP - Urban Intelligence Platform
 Copyright (c) 2025 UIP Team. All rights reserved.
@@ -501,7 +501,7 @@ Add these to your README:
 
 ---
 
-## 📚 Related Pages
+## 🔗 Related Pages
 
 - [[Testing-Guide]] - Test documentation
 - [[Contributing]] - Contribution workflow

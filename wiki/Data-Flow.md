@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 ============================================================================
 UIP - Urban Intelligence Platform
 Copyright (c) 2025 UIP Team. All rights reserved.
@@ -573,7 +573,7 @@ class DataQualityAgent:
 
 ---
 
-## 📚 Related Pages
+## 🔗 Related Pages
 
 - [[Multi-Agent-System]] - Agent documentation
 - [[Semantic-Web-Guide]] - Semantic technologies

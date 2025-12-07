@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 ============================================================================
 UIP - Urban Intelligence Platform
 Copyright (c) 2025 UIP Team. All rights reserved.
@@ -287,7 +287,7 @@ A centralized service for maintaining configuration information, naming, and syn
 
 ---
 
-## 📚 Related Pages
+## 🔗 Related Pages
 
 - [[System-Architecture]] - Architecture overview
 - [[Multi-Agent-System]] - Agent documentation

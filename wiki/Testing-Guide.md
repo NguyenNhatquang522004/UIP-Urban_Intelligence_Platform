@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 ============================================================================
 UIP - Urban Intelligence Platform
 Copyright (c) 2025 UIP Team. All rights reserved.
@@ -581,7 +581,7 @@ async def test_async_mock():
 
 ---
 
-## 📚 Related Pages
+## 🔗 Related Pages
 
 - [[Contributing]] - Contribution guidelines
 - [[Configuration]] - Test configuration

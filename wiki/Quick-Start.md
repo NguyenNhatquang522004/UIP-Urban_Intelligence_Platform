@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 ============================================================================
 UIP - Urban Intelligence Platform
 Copyright (c) 2025 UIP Team. All rights reserved.
@@ -226,7 +226,7 @@ ports:
 
 ---
 
-## 📚 Related Pages
+## 🔗 Related Pages
 
 - [[Installation]] - Detailed installation guide
 - [[Docker-Services]] - Docker service details

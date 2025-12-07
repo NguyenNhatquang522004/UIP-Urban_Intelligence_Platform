@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 ============================================================================
 UIP - Urban Intelligence Platform
 Copyright (c) 2025 UIP Team. All rights reserved.
@@ -623,7 +623,7 @@ DEBUG=false
 
 ---
 
-## 📚 Related Pages
+## 🔗 Related Pages
 
 - [[Installation]] - Setup instructions
 - [[Docker-Services]] - Container configuration

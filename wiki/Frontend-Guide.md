@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 ============================================================================
 UIP - Urban Intelligence Platform
 Copyright (c) 2025 UIP Team. All rights reserved.
@@ -527,7 +527,7 @@ VITE_DEFAULT_CENTER_LNG=106.6297
 
 ---
 
-## 📚 Related Pages
+## 🔗 Related Pages
 
 - [[Backend-Guide]] - Backend documentation
 - [[API-Reference]] - API endpoints

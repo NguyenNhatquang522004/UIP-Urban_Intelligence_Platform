@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 ============================================================================
 UIP - Urban Intelligence Platform
 Copyright (c) 2025 UIP Team. All rights reserved.
@@ -568,7 +568,7 @@ slos:
 
 ---
 
-## 📚 Related Pages
+## 🔗 Related Pages
 
 - [[Docker-Services]] - Infrastructure
 - [[Configuration]] - Config files

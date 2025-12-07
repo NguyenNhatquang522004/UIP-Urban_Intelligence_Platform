@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 ============================================================================
 UIP - Urban Intelligence Platform
 Copyright (c) 2025 UIP Team. All rights reserved.
@@ -541,7 +541,7 @@ def sync_camera_to_neo4j(camera: dict):
 
 ---
 
-## 📚 Related Pages
+## 🔗 Related Pages
 
 - [[Docker-Services]] - Database containers
 - [[Configuration]] - Database configuration

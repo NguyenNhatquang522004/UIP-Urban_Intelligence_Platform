@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 ============================================================================
 UIP - Urban Intelligence Platform
 Copyright (c) 2025 UIP Team. All rights reserved.
@@ -555,7 +555,7 @@ spec:
 
 ---
 
-## 📚 Related Pages
+## 🔗 Related Pages
 
 - [[Docker-Services]] - Container configuration
 - [[CI-CD-Pipeline]] - CI/CD workflows

@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 ============================================================================
 UIP - Urban Intelligence Platform
 Copyright (c) 2025 UIP Team. All rights reserved.
@@ -363,7 +363,7 @@ Complete list of technologies, frameworks, and tools used in UIP - Urban Intelli
 
 ---
 
-## 📚 Related Pages
+## 🔗 Related Pages
 
 - [[System-Architecture]] - Architecture overview
 - [[Docker-Services]] - Container details

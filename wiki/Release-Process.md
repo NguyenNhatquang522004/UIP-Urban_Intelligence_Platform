@@ -197,7 +197,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - All dependencies now 100% MIT compatible
 - Added security scanning in CI/CD
 
-## [1.0.0] - 2023-06-01
+## [1.0.0] - 2025-12-08
 
 ### Added
 - Initial release

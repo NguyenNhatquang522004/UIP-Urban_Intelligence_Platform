@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 ============================================================================
 UIP - Urban Intelligence Platform
 Copyright (c) 2025 UIP Team. All rights reserved.
@@ -477,7 +477,7 @@ docker inspect --format='{{.State.Health.Status}}' traffic-postgres
 
 ---
 
-## 📚 Related Pages
+## 🔗 Related Pages
 
 - [[Installation]] - Setup instructions
 - [[Configuration]] - Configuration reference

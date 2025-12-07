@@ -297,8 +297,11 @@ npm install
 
 ---
 
-## 📚 Next Steps
+## 🔗 Related Pages
 
 - [[Quick-Start]] - Get running in 5 minutes
 - [[Configuration]] - Configure for your environment
 - [[System-Architecture]] - Understand the architecture
+- [[Docker-Services]] - Docker setup details
+- [[Technology-Stack]] - Required technologies
+- [[Troubleshooting]] - Common issues

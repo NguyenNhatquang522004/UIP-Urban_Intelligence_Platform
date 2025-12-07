@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 ============================================================================
 UIP - Urban Intelligence Platform
 Copyright (c) 2025 UIP Team. All rights reserved.
@@ -407,7 +407,7 @@ workflow:
 
 ---
 
-## 📚 Related Pages
+## 🔗 Related Pages
 
 - [[Multi-Agent-System]] - Agent documentation
 - [[Configuration]] - Configuration reference

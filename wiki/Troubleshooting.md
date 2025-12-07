@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 ============================================================================
 UIP - Urban Intelligence Platform
 Copyright (c) 2025 UIP Team. All rights reserved.
@@ -522,7 +522,7 @@ python scripts/diagnostics.py > diagnostics.txt
 
 ---
 
-## 📚 Related Pages
+## 🔗 Related Pages
 
 - [[FAQ]] - Frequently asked questions
 - [[Installation]] - Setup instructions

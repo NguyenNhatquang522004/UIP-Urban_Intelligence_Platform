@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 ============================================================================
 UIP - Urban Intelligence Platform
 Copyright (c) 2025 UIP Team. All rights reserved.
@@ -353,7 +353,7 @@ apps/traffic-web-app/frontend/src/
 
 ---
 
-## 📚 Related Pages
+## 🔗 Related Pages
 
 - [[Multi-Agent-System]] - Detailed agent documentation
 - [[Data-Flow]] - Complete data flow diagrams

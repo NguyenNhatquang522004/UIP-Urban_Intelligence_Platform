@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 ============================================================================
 UIP - Urban Intelligence Platform
 Copyright (c) 2025 UIP Team. All rights reserved.
@@ -153,7 +153,7 @@ If you have questions about the license or usage rights, please:
 
 ---
 
-## 📚 Related Pages
+## 🔗 Related Pages
 
 - [[Home]] - Project overview
 - [[Contributing]] - How to contribute

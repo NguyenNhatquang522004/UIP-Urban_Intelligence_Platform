@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 ============================================================================
 UIP - Urban Intelligence Platform
 Copyright (c) 2025 UIP Team. All rights reserved.
@@ -725,7 +725,7 @@ CMD ["node", "dist/app.js"]
 
 ---
 
-## 📚 Related Pages
+## 🔗 Related Pages
 
 - [[Frontend-Guide]] - Frontend documentation
 - [[API-Reference]] - API endpoints
