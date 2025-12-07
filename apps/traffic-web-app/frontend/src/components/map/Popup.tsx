@@ -1,15 +1,18 @@
 /**
- * Popup Component - Information Popups
+ * @file Popup.tsx
+ * @module apps/traffic-web-app/frontend/src/components/map/Popup
+ * @author Nguyễn Nhật Quang <nguyennhatquang522004@gmail.com>
+ * @created 2025-01-01
+ * @version 1.0.0
+ * @license MIT
+ * @description Popup component compatible with react-leaflet's Popup API.
+ * Can be used standalone or as a child of Marker component.
  *
  * UIP - Urban Intelligence Platform
  * Copyright (c) 2025 UIP Team. All rights reserved.
- * https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+ * https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
  *
  * SPDX-License-Identifier: MIT
- *
- * @description
- * Popup component compatible with react-leaflet's Popup API.
- * Can be used standalone or as a child of Marker component.
  */
 
 import React, { ReactNode } from 'react';

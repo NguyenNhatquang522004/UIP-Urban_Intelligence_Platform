@@ -3,7 +3,7 @@
  *
  * UIP - Urban Intelligence Platform
  * Copyright (c) 2025 UIP Team. All rights reserved.
- * https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+ * https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
  *
  * SPDX-License-Identifier: MIT
  *
@@ -228,7 +228,7 @@ const DocsPage: React.FC = () => {
                         />
 
                         <a
-                            href="https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform"
+                            href="https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"

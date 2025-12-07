@@ -1,15 +1,18 @@
 /**
- * MapContainer - Main Map Component Wrapper
+ * @file MapContainer.tsx
+ * @module apps/traffic-web-app/frontend/src/components/map/MapContainer
+ * @author Nguyễn Nhật Quang <nguyennhatquang522004@gmail.com>
+ * @created 2025-01-01
+ * @version 1.0.0
+ * @license MIT
+ * @description React-leaflet compatible MapContainer using react-map-gl + MapLibre GL JS.
+ * Provides the same API as react-leaflet's MapContainer for easy migration.
  *
  * UIP - Urban Intelligence Platform
  * Copyright (c) 2025 UIP Team. All rights reserved.
- * https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+ * https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
  *
  * SPDX-License-Identifier: MIT
- *
- * @description
- * React-leaflet compatible MapContainer using react-map-gl + MapLibre GL JS.
- * Provides the same API as react-leaflet's MapContainer for easy migration.
  */
 
 import React, { useRef, useCallback, forwardRef, useImperativeHandle, ReactNode } from 'react';

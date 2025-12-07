@@ -1,15 +1,18 @@
 /**
- * Polyline Component - Line Geometries
+ * @file Polyline.tsx
+ * @module apps/traffic-web-app/frontend/src/components/map/Polyline
+ * @author Nguyễn Nhật Quang <nguyennhatquang522004@gmail.com>
+ * @created 2025-01-01
+ * @version 1.0.0
+ * @license MIT
+ * @description Polyline component compatible with react-leaflet's Polyline API.
+ * Renders line geometries on the map using MapLibre GL JS.
  *
  * UIP - Urban Intelligence Platform
  * Copyright (c) 2025 UIP Team. All rights reserved.
- * https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+ * https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
  *
  * SPDX-License-Identifier: MIT
- *
- * @description
- * Polyline component compatible with react-leaflet's Polyline API.
- * Renders line geometries on the map using MapLibre GL JS.
  */
 
 import React, { useId, useEffect, ReactNode, useState } from 'react';
