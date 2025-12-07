@@ -118,7 +118,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
   "status": {
     "type": "Property",
     "value": "active",
-    "observedAt": "2024-01-15T10:30:00Z"
+    "observedAt": "2025-11-29T10:30:00Z"
   },
   "streamUrl": {
     "type": "Property",
@@ -141,7 +141,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
     "type": "Property",
     "value": {
       "@type": "DateTime",
-      "@value": "2024-01-15T10:30:00Z"
+      "@value": "2025-11-29T10:30:00Z"
     }
   },
   "statistics": {
@@ -151,7 +151,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
       "detectionsToday": 15234,
       "avgVehicleCount": 145
     },
-    "observedAt": "2024-01-15T10:30:00Z"
+    "observedAt": "2025-11-29T10:30:00Z"
   },
   "refRoad": {
     "type": "Relationship",
@@ -196,7 +196,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
     "type": "Property",
     "value": {
       "@type": "DateTime",
-      "@value": "2024-01-15T10:30:00Z"
+      "@value": "2025-11-29T10:30:00Z"
     }
   },
   "location": {
@@ -225,7 +225,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
   "status": {
     "type": "Property",
     "value": "active",
-    "observedAt": "2024-01-15T10:30:00Z"
+    "observedAt": "2025-11-29T10:30:00Z"
   },
   "vehiclesInvolved": {
     "type": "Property",
@@ -316,7 +316,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
     "type": "Property",
     "value": {
       "@type": "DateTime",
-      "@value": "2024-01-15T10:30:00Z"
+      "@value": "2025-11-29T10:30:00Z"
     }
   },
   "location": {
@@ -407,23 +407,23 @@ Comprehensive documentation for all data models, schemas, and standards used in 
   "congestionLevel": {
     "type": "Property",
     "value": "moderate",
-    "observedAt": "2024-01-15T10:30:00Z"
+    "observedAt": "2025-11-29T10:30:00Z"
   },
   "averageSpeed": {
     "type": "Property",
     "value": 25.5,
     "unitCode": "km/h",
-    "observedAt": "2024-01-15T10:30:00Z"
+    "observedAt": "2025-11-29T10:30:00Z"
   },
   "vehicleCount": {
     "type": "Property",
     "value": 345,
-    "observedAt": "2024-01-15T10:30:00Z"
+    "observedAt": "2025-11-29T10:30:00Z"
   },
   "incidentCount": {
     "type": "Property",
     "value": 1,
-    "observedAt": "2024-01-15T10:30:00Z"
+    "observedAt": "2025-11-29T10:30:00Z"
   },
   "refCameras": {
     "type": "Relationship",
@@ -492,7 +492,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
     "type": "Property",
     "value": {
       "@type": "DateTime",
-      "@value": "2024-01-15T10:30:00Z"
+      "@value": "2025-11-29T10:30:00Z"
     }
   },
   "location": {
@@ -578,7 +578,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
     "type": "Property",
     "value": {
       "@type": "DateTime",
-      "@value": "2024-01-15T10:30:00Z"
+      "@value": "2025-11-29T10:30:00Z"
     }
   },
   "location": {
@@ -689,7 +689,7 @@ Comprehensive documentation for all data models, schemas, and standards used in 
     "type": "Property",
     "value": {
       "@type": "DateTime",
-      "@value": "2024-01-15T10:30:00Z"
+      "@value": "2025-11-29T10:30:00Z"
     }
   },
   "location": {
@@ -714,12 +714,12 @@ Comprehensive documentation for all data models, schemas, and standards used in 
   "status": {
     "type": "Property",
     "value": "submitted",
-    "observedAt": "2024-01-15T10:30:00Z"
+    "observedAt": "2025-11-29T10:30:00Z"
   },
   "verificationStatus": {
     "type": "Property",
     "value": "pending",
-    "observedAt": "2024-01-15T10:30:00Z"
+    "observedAt": "2025-11-29T10:30:00Z"
   },
   "images": {
     "type": "Property",
@@ -789,7 +789,7 @@ traffic:Observation_20240115_103000
     sosa:hasFeatureOfInterest traffic:RoadSegment_001 ;
     sosa:observedProperty traffic:Accident ;
     sosa:hasSimpleResult "accident_detected" ;
-    sosa:resultTime "2024-01-15T10:30:00Z"^^xsd:dateTime ;
+    sosa:resultTime "2025-11-29T10:30:00Z"^^xsd:dateTime ;
     sosa:hasResult [
         a traffic:AccidentResult ;
         traffic:severity "moderate" ;
@@ -817,7 +817,7 @@ traffic:WeatherObservation_20240115_103000
     sosa:madeBySensor traffic:WeatherStation_001 ;
     sosa:observedProperty traffic:Temperature ;
     sosa:hasSimpleResult "32.5"^^xsd:float ;
-    sosa:resultTime "2024-01-15T10:30:00Z"^^xsd:dateTime ;
+    sosa:resultTime "2025-11-29T10:30:00Z"^^xsd:dateTime ;
     ssn:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
 ```
 
@@ -840,7 +840,7 @@ traffic:AQIObservation_20240115_103000
     sosa:madeBySensor traffic:AQIStation_001 ;
     sosa:observedProperty traffic:AQI ;
     sosa:hasSimpleResult "85"^^xsd:integer ;
-    sosa:resultTime "2024-01-15T10:30:00Z"^^xsd:dateTime ;
+    sosa:resultTime "2025-11-29T10:30:00Z"^^xsd:dateTime ;
     traffic:category "moderate" ;
     traffic:pm25Value "35.5"^^xsd:float ;
     traffic:pm10Value "58.2"^^xsd:float .
@@ -868,8 +868,8 @@ traffic:
     dcterms:title "HCMC Traffic Management Ontology" ;
     dcterms:description "Ontology for traffic management in Ho Chi Minh City" ;
     dcterms:creator "HCMC Traffic Management Team" ;
-    dcterms:created "2024-01-01"^^xsd:date ;
-    dcterms:modified "2024-01-15"^^xsd:date ;
+    dcterms:created "2025-11-20"^^xsd:date ;
+    dcterms:modified "2025-11-29"^^xsd:date ;
     owl:versionInfo "1.0" .
 
 # Classes

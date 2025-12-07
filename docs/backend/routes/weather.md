@@ -80,7 +80,7 @@ List all weather observations.
       "windSpeed": 3.5,
       "windDirection": 180,
       "weatherType": "partly_cloudy",
-      "observedAt": "2025-01-15T10:30:00.000Z"
+      "observedAt": "2025-11-29T10:30:00.000Z"
     }
   ]
 }
@@ -114,7 +114,7 @@ Get current weather for a specific location.
     "weatherType": "partly_cloudy",
     "uvIndex": 7,
     "visibility": 10000,
-    "observedAt": "2025-01-15T10:30:00.000Z"
+    "observedAt": "2025-11-29T10:30:00.000Z"
   }
 }
 ```

@@ -129,7 +129,7 @@ graph TB
     "total": 150,
     "limit": 100,
     "offset": 0,
-    "timestamp": "2025-01-15T10:30:00.000Z"
+    "timestamp": "2025-11-29T10:30:00.000Z"
   }
 }
 ```
@@ -267,7 +267,7 @@ curl http://localhost:5000/api/health
 ```json
 {
   "status": "ok",
-  "timestamp": "2025-01-15T10:30:00.000Z",
+  "timestamp": "2025-11-29T10:30:00.000Z",
   "services": {
     "stellio": "connected",
     "neo4j": "connected",

@@ -89,7 +89,7 @@ Returns overall health status and individual service statuses.
 ```json
 {
   "status": "healthy",
-  "timestamp": "2025-01-15T10:30:00.000Z",
+  "timestamp": "2025-11-29T10:30:00.000Z",
   "uptime": 3600,
   "services": {
     "stellio": {
@@ -118,7 +118,7 @@ Returns overall health status and individual service statuses.
 ```json
 {
   "status": "degraded",
-  "timestamp": "2025-01-15T10:30:00.000Z",
+  "timestamp": "2025-11-29T10:30:00.000Z",
   "uptime": 3600,
   "services": {
     "stellio": {
@@ -128,7 +128,7 @@ Returns overall health status and individual service statuses.
     "neo4j": {
       "status": "error",
       "error": "Connection refused",
-      "lastSuccess": "2025-01-15T10:25:00.000Z"
+      "lastSuccess": "2025-11-29T10:25:00.000Z"
     },
     "fuseki": {
       "status": "connected",

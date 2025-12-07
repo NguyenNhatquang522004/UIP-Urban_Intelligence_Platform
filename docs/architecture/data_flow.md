@@ -240,7 +240,7 @@ Neo4j Graph Database
 ### Raw Observation
 ```json
 {
-  "timestamp": "2024-01-15T10:30:00Z",
+  "timestamp": "2025-11-29T10:30:00Z",
   "cameraId": "CAM001",
   "vehicleCount": 45,
   "avgSpeed": 35.5

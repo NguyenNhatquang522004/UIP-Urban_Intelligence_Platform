@@ -204,7 +204,7 @@ error: ❌ Neo4j connection failed
   "level": "info",
   "message": "Camera fetched",
   "service": "uip-traffic-backend",
-  "timestamp": "2025-01-15T10:30:00.000Z",
+  "timestamp": "2025-11-29T10:30:00.000Z",
   "cameraId": "urn:ngsi-ld:Camera:001",
   "responseTime": 125
 }
@@ -217,7 +217,7 @@ error: ❌ Neo4j connection failed
   "level": "error",
   "message": "Database connection failed",
   "service": "uip-traffic-backend",
-  "timestamp": "2025-01-15T10:30:00.000Z",
+  "timestamp": "2025-11-29T10:30:00.000Z",
   "error": {
     "message": "Connection refused",
     "stack": "Error: Connection refused\n    at PostgresService..."
