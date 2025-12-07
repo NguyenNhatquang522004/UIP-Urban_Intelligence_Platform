@@ -31,7 +31,7 @@ class TestSOSAMapper:
         data = {
             "sensor_id": "CAM001",
             "result": 25,
-            "timestamp": "2024-01-15T10:00:00Z",
+            "timestamp": "2025-11-29T10:00:00Z",
         }
 
         sosa_obs = {

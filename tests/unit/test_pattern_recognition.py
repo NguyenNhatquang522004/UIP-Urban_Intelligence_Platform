@@ -32,9 +32,9 @@ class TestPatternRecognition:
         """Test pattern identification from historical data."""
         # Sample congestion history
         events = [
-            {"zone": "Z001", "timestamp": "2024-01-15T08:00:00Z", "level": "heavy"},
-            {"zone": "Z001", "timestamp": "2024-01-16T08:00:00Z", "level": "heavy"},
-            {"zone": "Z001", "timestamp": "2024-01-17T08:00:00Z", "level": "heavy"},
+            {"zone": "Z001", "timestamp": "2025-11-29T08:00:00Z", "level": "heavy"},
+            {"zone": "Z001", "timestamp": "2025-11-30T08:00:00Z", "level": "heavy"},
+            {"zone": "Z001", "timestamp": "2025-12-01T08:00:00Z", "level": "heavy"},
         ]
 
         # Check for pattern (3+ occurrences at same hour)

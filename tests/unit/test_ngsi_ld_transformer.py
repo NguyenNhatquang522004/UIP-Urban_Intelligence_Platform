@@ -31,7 +31,7 @@ class TestNGSILDTransformer:
         observation = {
             "camera_id": "CAM001",
             "vehicles": 15,
-            "timestamp": "2024-01-15T10:30:00Z",
+            "timestamp": "2025-11-29T10:30:00Z",
         }
 
         # Transform to NGSI-LD

@@ -70,7 +70,7 @@ class TestTransformationPipeline:
         ngsi_ld_obs = {
             "id": "urn:ngsi-ld:Observation:OBS001",
             "type": "Observation",
-            "observedAt": "2024-01-15T10:30:00Z",
+            "observedAt": "2025-11-29T10:30:00Z",
             "trafficFlow": {
                 "type": "Property",
                 "value": 120,

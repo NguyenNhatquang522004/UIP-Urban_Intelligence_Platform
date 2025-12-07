@@ -113,7 +113,7 @@ class TestStellioIntegration:
             params={
                 "type": "TrafficObservation",
                 "timerel": "after",
-                "timeAt": "2025-01-01T00:00:00Z",
+                "timeAt": "2025-11-20T00:00:00Z",
             },
             headers={"Accept": "application/ld+json"},
         )
