@@ -110,7 +110,7 @@ subscription_manager:
       # Temporal filter (optional)
       temporal_q:
         timerel: "after"
-        time: "2025-01-01T00:00:00Z"
+        time: "2025-11-20T00:00:00Z"
     
     # Example 2: Accident Alerts (different domain)
     - name: "accident-alerts"
