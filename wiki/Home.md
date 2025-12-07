@@ -119,8 +119,8 @@ Description:
 
 - **GitHub Discussions**: [Ask questions](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/discussions)
 - **GitHub Issues**: [Report bugs](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/issues)
-- **Mailing List**: uip-urban-intelligence@googlegroups.com
-- **Discord**: [Join our server](https://discord.gg/uip-urban-intelligence)
+- **Mailing List**: [Google Groups](https://groups.google.com/g/uip---urban-intelligence-platform)
+- **Discord**: [Join our server](https://discord.com/invite/tbDJqsUu)
 
 ---
 

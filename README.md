@@ -63,7 +63,7 @@ Description:
   <a href="https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/discussions">
     <img src="https://img.shields.io/badge/GitHub-Discussions-blue?logo=github" alt="Discussions">
   </a>
-  <a href="https://groups.google.com/g/uip-platform">
+  <a href="https://groups.google.com/g/uip---urban-intelligence-platform">
     <img src="https://img.shields.io/badge/Mailing%20List-Google%20Groups-red?logo=google" alt="Mailing List">
   </a>
   <a href="https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/wiki">
@@ -1333,7 +1333,7 @@ Join our community to get help, share ideas, and connect with other users:
 | Channel | Description | Link |
 |---------|-------------|------|
 | 💬 **GitHub Discussions** | Q&A, ideas, and general discussion | [Join Discussions](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/discussions) |
-| 📧 **Mailing List** | Announcements & release notifications | [Google Groups](https://groups.google.com/g/uip-platform) |
+| 📧 **Mailing List** | Announcements & release notifications | [Google Groups](https://groups.google.com/g/uip---urban-intelligence-platform) |
 | 📖 **Wiki** | Comprehensive documentation | [GitHub Wiki](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/wiki) |
 | 🐛 **Issues** | Bug reports & feature requests | [GitHub Issues](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/issues) |
 
@@ -1500,8 +1500,8 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 
 | Channel | Description | Link |
 |---------|-------------|------|
-| 📧 **Mailing List** | Announcements & discussions | [uip-platform@googlegroups.com](https://groups.google.com/g/uip-platform) |
-| 💬 **Discord** | Real-time chat & support | [Join Discord](https://discord.gg/uip-platform) |
+| 📧 **Mailing List** | Announcements & discussions | [Google Groups](https://groups.google.com/g/uip---urban-intelligence-platform) |
+| 💬 **Discord** | Real-time chat & support | [Join Discord](https://discord.com/invite/tbDJqsUu) |
 | 💬 **Discussions** | Q&A & community | [GitHub Discussions](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/discussions) |
 
 ### Other Resources

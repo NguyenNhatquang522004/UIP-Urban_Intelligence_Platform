@@ -62,8 +62,8 @@ Join our community to get help and connect with other users:
 
 | Channel | Description | Link |
 |---------|-------------|------|
-| 📧 **Mailing List** | Announcements & discussions | [uip-platform@googlegroups.com](https://groups.google.com/g/uip-platform) |
-| 💬 **Discord** | Real-time chat & support | [Join Discord](https://discord.gg/uip-platform) |
+| 📧 **Mailing List** | Announcements & discussions | [Google Groups](https://groups.google.com/g/uip---urban-intelligence-platform) |
+| 💬 **Discord** | Real-time chat & support | [Join Discord](https://discord.com/invite/tbDJqsUu) |
 | 💬 **GitHub Discussions** | Q&A & community discussions | [GitHub Discussions](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/discussions) |
 
 ### GitHub Discussions
@@ -83,7 +83,7 @@ Subscribe to our mailing list to receive:
 - 📝 Community newsletters
 - 💡 Tips and best practices
 
-**Subscribe**: [uip-platform@googlegroups.com](https://groups.google.com/g/uip-platform)
+**Subscribe**: [Google Groups](https://groups.google.com/g/uip---urban-intelligence-platform)
 
 ### Community Support
 
@@ -106,7 +106,7 @@ See [SECURITY.md](SECURITY.md) for more information.
 
 - **General Questions**: Use [GitHub Discussions](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/discussions)
 - **Bug Reports**: [GitHub Issues](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/issues)
-- **Mailing List**: [uip-platform@googlegroups.com](https://groups.google.com/g/uip-platform)
+- **Mailing List**: [Google Groups](https://groups.google.com/g/uip---urban-intelligence-platform)
 - **Email**: nguyennhatquang522004@gmail.com
 
 ## ❓ FAQ

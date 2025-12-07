@@ -30,10 +30,10 @@ We maintain a mailing list for announcements, discussions, and community engagem
 
 ### Subscribe
 
-**Google Groups**: [uip-urban-intelligence@googlegroups.com](https://groups.google.com/g/uip-urban-intelligence)
+**Google Groups**: [uip---urban-intelligence-platform@googlegroups.com](https://groups.google.com/g/uip---urban-intelligence-platform)
 
 To subscribe:
-1. Visit [Google Groups - UIP Urban Intelligence](https://groups.google.com/g/uip-urban-intelligence)
+1. Visit [Google Groups - UIP Urban Intelligence Platform](https://groups.google.com/g/uip---urban-intelligence-platform)
 2. Click "Ask to join group"
 3. Or send an email to: `uip-urban-intelligence+subscribe@googlegroups.com`
 
@@ -88,7 +88,7 @@ For real-time Q&A and community discussions:
 
 Join our Discord for real-time chat and community support:
 
-**[Join Discord](https://discord.gg/uip-urban-intelligence)** *(Coming Soon)*
+**[Join Discord](https://discord.com/invite/tbDJqsUu)**
 
 ### Channels
 
@@ -244,7 +244,7 @@ See [CONTRIBUTING.md](.github/CONTRIBUTING.md) for details.
 | General Questions | [GitHub Discussions](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/discussions) |
 | Bug Reports | [GitHub Issues](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/issues) |
 | Security Issues | security@uip-urban-intelligence.dev |
-| Mailing List | [uip-urban-intelligence@googlegroups.com](https://groups.google.com/g/uip-urban-intelligence) |
+| Mailing List | [Google Groups](https://groups.google.com/g/uip---urban-intelligence-platform) |
 | Maintainers | [MAINTAINERS.md](MAINTAINERS.md) |---
 
 ## 🙏 Thank You
