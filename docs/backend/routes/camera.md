@@ -8,8 +8,24 @@ keywords: [camera, api, traffic, image, geo-spatial, ngsi-ld]
 ---
 
 <!--
+============================================================================
+UIP - Urban Intelligence Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
+
 SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team
+============================================================================
+File: backend/routes/camera.md
+Module: Backend Routes - Camera Routes
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  Camera Routes documentation for RESTful API endpoints for querying
+  traffic camera entities with geo-spatial filtering.
+============================================================================
 -->
 
 # Camera Routes
@@ -65,7 +81,7 @@ List all cameras with optional filters.
       "imageUrl": "http://camera.hcmc.vn/001/live.jpg",
       "status": "online",
       "type": "PTZ",
-      "dateModified": "2025-01-15T10:30:00.000Z"
+      "dateModified": "2025-11-29T10:30:00.000Z"
     }
   ],
   "meta": {
@@ -109,7 +125,7 @@ Get a specific camera by ID.
     "imageUrl": "http://camera.hcmc.vn/001/live.jpg",
     "status": "online",
     "roadSegment": "urn:ngsi-ld:RoadSegment:nguyen-hue",
-    "dateModified": "2025-01-15T10:30:00.000Z"
+    "dateModified": "2025-11-29T10:30:00.000Z"
   }
 }
 ```
@@ -204,7 +220,7 @@ Get the latest image URL for a camera.
   "data": {
     "cameraId": "urn:ngsi-ld:Camera:001",
     "imageUrl": "http://camera.hcmc.vn/001/live.jpg?t=1705312200",
-    "capturedAt": "2025-01-15T10:30:00.000Z",
+    "capturedAt": "2025-11-29T10:30:00.000Z",
     "resolution": "1920x1080"
   }
 }
@@ -223,7 +239,7 @@ Get traffic metrics observed by the camera.
   "success": true,
   "data": {
     "cameraId": "urn:ngsi-ld:Camera:001",
-    "observedAt": "2025-01-15T10:30:00.000Z",
+    "observedAt": "2025-11-29T10:30:00.000Z",
     "intensity": 85,
     "occupancy": 0.65,
     "averageSpeed": 35.5,

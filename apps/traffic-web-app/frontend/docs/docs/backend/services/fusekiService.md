@@ -7,10 +7,25 @@ description: TypeScript client for Apache Jena Fuseki RDF triplestore providing 
 keywords: [fuseki, sparql, rdf, triplestore, linked data, geonames, dbpedia]
 ---
 
-<!--
+{/*
+============================================================================
+UIP - Urban Intelligence Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
+
 SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team
--->
+============================================================================
+File: apps/traffic-web-app/frontend/docs/docs/backend/services/fusekiService.md
+Module: Traffic Web App - FusekiService Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  FusekiService documentation for SPARQL triplestore client.
+============================================================================
+*/}
 
 # FusekiService - SPARQL Triplestore Client
 
@@ -205,7 +220,7 @@ WHERE {
                traffic:date ?date ;
                traffic:averageSpeed ?avgSpeed ;
                traffic:vehicleCount ?vehicleCount .
-  FILTER(?date >= "2025-01-01T00:00:00Z"^^xsd:dateTime)
+  FILTER(?date >= "2025-11-20T00:00:00Z"^^xsd:dateTime)
 }
 ORDER BY ?date
 ```

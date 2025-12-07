@@ -8,8 +8,24 @@ keywords: [websocket, real-time, pub-sub, heartbeat, broadcast, streaming]
 ---
 
 <!--
+============================================================================
+UIP - Urban Intelligence Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
+
 SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team
+============================================================================
+File: backend/services/websocketService.md
+Module: Backend Services - WebSocketService
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  WebSocketService documentation for real-time bidirectional communication
+  with topic-based pub/sub and heartbeat mechanism.
+============================================================================
 -->
 
 # WebSocketService - Real-Time Communication
@@ -216,7 +232,7 @@ wsService.broadcast({
 {
   "type": "connection",
   "message": "Connected to HCMC Traffic Monitoring System",
-  "timestamp": "2025-01-15T10:30:00.000Z",
+  "timestamp": "2025-11-29T10:30:00.000Z",
   "heartbeatInterval": 10000
 }
 ```
@@ -233,7 +249,7 @@ wsService.broadcast({
     "accidents": [...],
     "patterns": [...]
   },
-  "timestamp": "2025-01-15T10:30:00.000Z"
+  "timestamp": "2025-11-29T10:30:00.000Z"
 }
 ```
 
@@ -251,7 +267,7 @@ wsService.broadcast({
       "status": "active"
     }
   ],
-  "timestamp": "2025-01-15T10:30:30.000Z"
+  "timestamp": "2025-11-29T10:30:30.000Z"
 }
 ```
 
@@ -266,7 +282,7 @@ wsService.broadcast({
     "severity": "high",
     "location": { "latitude": 10.77, "longitude": 106.70 }
   },
-  "timestamp": "2025-01-15T10:31:00.000Z"
+  "timestamp": "2025-11-29T10:31:00.000Z"
 }
 ```
 

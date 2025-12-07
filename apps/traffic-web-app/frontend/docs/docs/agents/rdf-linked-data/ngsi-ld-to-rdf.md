@@ -3,15 +3,22 @@ sidebar_position: 4
 ---
 
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 NGSI-LD to RDF Agent Documentation.
 
-Module: apps/traffic-web-app/frontend/docs/docs/agents/rdf-linked-data/ngsi-ld-to-rdf.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/docs/agents/rdf-linked-data/ngsi-ld-to-rdf.md
+Module: RDF Linked Data Agents Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Documentation for the NGSI-LD to RDF Agent component.
+============================================================================
 -->
 
 # NGSI-LD to RDF Agent
@@ -53,7 +60,7 @@ ngsi_entity = {
     "vehicleCount": {
         "type": "Property",
         "value": 42,
-        "observedAt": "2025-01-15T10:30:00Z"
+        "observedAt": "2025-11-29T10:30:00Z"
     }
 }
 

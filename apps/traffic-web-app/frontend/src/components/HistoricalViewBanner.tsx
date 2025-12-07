@@ -3,7 +3,7 @@
  *
  * UIP - Urban Intelligence Platform
  * Copyright (c) 2025 UIP Team. All rights reserved.
- * https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+ * https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
  *
  * SPDX-License-Identifier: MIT
  *
@@ -33,7 +33,7 @@
  * @example
  * ```tsx
  * <HistoricalViewBanner
- *   timestamp={new Date('2024-11-15T14:30:00')}
+ *   timestamp={new Date('2025-11-29T14:30:00')}
  *   dataCount={{ weather: 45, airQuality: 38, patterns: 12, accidents: 3 }}
  *   onClose={() => setHistoricalMode(false)}
  * />

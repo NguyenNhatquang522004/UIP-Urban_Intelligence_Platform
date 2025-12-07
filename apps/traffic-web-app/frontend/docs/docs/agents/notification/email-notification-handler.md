@@ -3,15 +3,22 @@ sidebar_position: 2
 ---
 
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 Email Notification Handler Agent Documentation.
 
-Module: apps/traffic-web-app/frontend/docs/docs/agents/notification/email-notification-handler.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/docs/agents/notification/email-notification-handler.md
+Module: Notification Agents Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Documentation for the Email Notification Handler Agent component.
+============================================================================
 -->
 
 # Email Notification Handler Agent
@@ -62,7 +69,7 @@ await handler.send_alert(
 await handler.send_report(
     recipients=["management@city.gov"],
     report_type="daily_summary",
-    date="2025-01-15",
+    date="2025-11-29",
     attachments=["report.pdf"]
 )
 ```

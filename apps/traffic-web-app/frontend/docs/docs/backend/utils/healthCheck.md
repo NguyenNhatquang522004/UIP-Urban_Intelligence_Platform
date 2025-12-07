@@ -7,10 +7,25 @@ description: Health check utility for monitoring service connectivity to Stellio
 keywords: [health-check, monitoring, connectivity, status, liveness, readiness]
 ---
 
-<!--
+{/*
+============================================================================
+UIP - Urban Intelligence Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
+
 SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team
--->
+============================================================================
+File: apps/traffic-web-app/frontend/docs/docs/backend/utils/healthCheck.md
+Module: Traffic Web App - Health Check Utility Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  Health check utility documentation for service connectivity monitoring.
+============================================================================
+*/}
 
 # Health Check Utility
 
@@ -73,7 +88,7 @@ Returns overall health status and individual service statuses.
 ```json
 {
   "status": "healthy",
-  "timestamp": "2025-01-15T10:30:00.000Z",
+  "timestamp": "2025-11-29T10:30:00.000Z",
   "uptime": 3600,
   "services": {
     "stellio": {
@@ -102,7 +117,7 @@ Returns overall health status and individual service statuses.
 ```json
 {
   "status": "degraded",
-  "timestamp": "2025-01-15T10:30:00.000Z",
+  "timestamp": "2025-11-29T10:30:00.000Z",
   "uptime": 3600,
   "services": {
     "stellio": {
@@ -112,7 +127,7 @@ Returns overall health status and individual service statuses.
     "neo4j": {
       "status": "error",
       "error": "Connection refused",
-      "lastSuccess": "2025-01-15T10:25:00.000Z"
+      "lastSuccess": "2025-11-29T10:25:00.000Z"
     },
     "fuseki": {
       "status": "connected",

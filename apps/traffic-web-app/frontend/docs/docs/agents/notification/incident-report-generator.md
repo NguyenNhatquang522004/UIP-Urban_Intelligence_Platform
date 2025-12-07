@@ -3,15 +3,22 @@ sidebar_position: 3
 ---
 
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 Incident Report Generator Agent Documentation.
 
-Module: apps/traffic-web-app/frontend/docs/docs/agents/notification/incident-report-generator.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/docs/agents/notification/incident-report-generator.md
+Module: Notification Agents Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Documentation for the Incident Report Generator Agent component.
+============================================================================
 -->
 
 # Incident Report Generator Agent
@@ -66,7 +73,7 @@ report = await generator.generate_accident_report(
 ```python
 # Generate daily summary
 summary = await generator.generate_daily_summary(
-    date="2025-01-15",
+    date="2025-11-29",
     zones=["district_1", "district_3"],
     format="html"
 )
@@ -78,8 +85,8 @@ summary = await generator.generate_daily_summary(
 # Generate reports for date range
 reports = await generator.generate_batch(
     report_type="congestion",
-    start_date="2025-01-01",
-    end_date="2025-01-15",
+    start_date="2025-11-20",
+    end_date="2025-11-29",
     output_dir="reports/"
 )
 ```

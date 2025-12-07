@@ -8,8 +8,24 @@ keywords: [air-quality, aqi, pm25, pollution, sensors, ngsi-ld]
 ---
 
 <!--
+============================================================================
+UIP - Urban Intelligence Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
+
 SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team
+============================================================================
+File: backend/routes/airQuality.md
+Module: Backend Routes - Air Quality Routes
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  Air Quality Routes documentation for RESTful API endpoints for querying
+  air quality observation entities with AQI data.
+============================================================================
 -->
 
 # Air Quality Routes
@@ -68,7 +84,7 @@ List all air quality observations.
       "no2": 28.5,
       "co": 0.8,
       "so2": 12.0,
-      "observedAt": "2025-01-15T10:30:00.000Z"
+      "observedAt": "2025-11-29T10:30:00.000Z"
     }
   ]
 }
@@ -109,7 +125,7 @@ Get current air quality for a specific location.
       "sensitive": "Limit outdoor exertion",
       "children": "Reduce prolonged outdoor activity"
     },
-    "observedAt": "2025-01-15T10:30:00.000Z"
+    "observedAt": "2025-11-29T10:30:00.000Z"
   }
 }
 ```

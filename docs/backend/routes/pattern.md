@@ -8,8 +8,24 @@ keywords: [pattern, congestion, traffic-flow, hotspot, analytics, ngsi-ld]
 ---
 
 <!--
+============================================================================
+UIP - Urban Intelligence Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
+
 SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team
+============================================================================
+File: backend/routes/pattern.md
+Module: Backend Routes - Pattern Routes
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  Pattern Routes documentation for RESTful API endpoints for querying
+  traffic congestion patterns and hotspots.
+============================================================================
 -->
 
 # Pattern Routes
@@ -62,7 +78,7 @@ List all traffic patterns.
       "vehicleCount": 150,
       "occupancy": 0.75,
       "congestionLevel": "high",
-      "observedAt": "2025-01-15T10:30:00.000Z"
+      "observedAt": "2025-11-29T10:30:00.000Z"
     }
   ]
 }
@@ -91,7 +107,7 @@ Get current congestion hotspots.
   ],
   "meta": {
     "totalHotspots": 5,
-    "timestamp": "2025-01-15T10:30:00.000Z"
+    "timestamp": "2025-11-29T10:30:00.000Z"
   }
 }
 ```

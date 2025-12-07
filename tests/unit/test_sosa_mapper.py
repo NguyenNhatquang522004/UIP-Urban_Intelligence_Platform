@@ -4,7 +4,7 @@
 
 UIP - Urban Intelligence Platform
 Copyright (c) 2025 UIP Team. All rights reserved.
-https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
 SPDX-License-Identifier: MIT
 
@@ -31,7 +31,7 @@ class TestSOSAMapper:
         data = {
             "sensor_id": "CAM001",
             "result": 25,
-            "timestamp": "2024-01-15T10:00:00Z",
+            "timestamp": "2025-11-29T10:00:00Z",
         }
 
         sosa_obs = {

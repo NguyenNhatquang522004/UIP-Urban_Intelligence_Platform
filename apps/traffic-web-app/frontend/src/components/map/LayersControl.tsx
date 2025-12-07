@@ -1,15 +1,18 @@
 /**
- * LayersControl Component - Layer Visibility Controls
+ * @file LayersControl.tsx
+ * @module apps/traffic-web-app/frontend/src/components/map/LayersControl
+ * @author Nguyễn Nhật Quang <nguyennhatquang522004@gmail.com>
+ * @created 2025-11-20
+ * @version 1.0.0
+ * @license MIT
+ * @description LayersControl component compatible with react-leaflet's LayersControl API.
+ * Provides toggle controls for map layers.
  *
  * UIP - Urban Intelligence Platform
  * Copyright (c) 2025 UIP Team. All rights reserved.
- * https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+ * https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
  *
  * SPDX-License-Identifier: MIT
- *
- * @description
- * LayersControl component compatible with react-leaflet's LayersControl API.
- * Provides toggle controls for map layers.
  */
 
 import React, { ReactNode, useState, createContext, useContext } from 'react';

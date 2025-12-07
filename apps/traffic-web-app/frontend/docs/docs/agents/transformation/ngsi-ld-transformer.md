@@ -1,13 +1,20 @@
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 NGSI-LD transformer agent documentation.
 
-Module: apps/traffic-web-app/frontend/docs/docs/agents/transformation/ngsi-ld-transformer.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/docs/agents/transformation/ngsi-ld-transformer.md
+Module: Transformation Agents Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Documentation for the NGSI-LD Transformer Agent component.
+============================================================================
 -->
 
 # NGSI-LD Transformer Agent
@@ -108,7 +115,7 @@ agent = NGSILDTransformerAgent()
 # Transform traffic flow data
 raw_data = {
     "camera_id": "CAM_001",
-    "timestamp": "2024-01-15T10:30:00Z",
+    "timestamp": "2025-11-29T10:30:00Z",
     "vehicle_count": 45,
     "avg_speed": 35.5,
     "location": {"lat": 10.7769, "lon": 106.7009}
@@ -125,7 +132,7 @@ print(json.dumps(entity, indent=2))
 **Output:**
 ```json
 {
-  "id": "urn:ngsi-ld:TrafficFlowObserved:CAM_001:20240115T103000Z",
+  "id": "urn:ngsi-ld:TrafficFlowObserved:CAM_001:20251125T103000Z",
   "type": "TrafficFlowObserved",
   "@context": [
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
@@ -140,7 +147,7 @@ print(json.dumps(entity, indent=2))
   },
   "dateObserved": {
     "type": "Property",
-    "value": "2024-01-15T10:30:00Z"
+    "value": "2025-11-29T10:30:00Z"
   },
   "intensity": {
     "type": "Property",
@@ -288,7 +295,7 @@ entity = agent.add_temporal_property(
     entity=entity,
     property_name="temperature",
     value=28.5,
-    observed_at="2024-01-15T10:30:00Z"
+    observed_at="2025-11-29T10:30:00Z"
 )
 ```
 
@@ -326,7 +333,7 @@ class ValidationResult:
 traffic_flow = agent.transform_to_ngsi_ld(
     data={
         "camera_id": "CAM_001",
-        "timestamp": "2024-01-15T10:30:00Z",
+        "timestamp": "2025-11-29T10:30:00Z",
         "vehicle_count": 45,
         "avg_speed": 35.5,
         "occupancy": 0.65,
@@ -429,7 +436,7 @@ air_quality = agent.transform_to_ngsi_ld(
     "type": "Property",
     "value": 28.5,
     "unitCode": "CEL",
-    "observedAt": "2024-01-15T10:30:00Z"
+    "observedAt": "2025-11-29T10:30:00Z"
 }
 ```
 
@@ -551,7 +558,7 @@ def test_traffic_flow_transformation():
     
     raw_data = {
         "camera_id": "CAM_TEST",
-        "timestamp": "2024-01-15T10:30:00Z",
+        "timestamp": "2025-11-29T10:30:00Z",
         "vehicle_count": 45,
         "avg_speed": 35.5
     }
@@ -594,7 +601,7 @@ if not validation.is_valid:
 
 ```python
 # Correct URN format
-"id": "urn:ngsi-ld:TrafficFlowObserved:CAM_001:20240115T103000Z"
+"id": "urn:ngsi-ld:TrafficFlowObserved:CAM_001:20251125T103000Z"
 
 # Include entity type, identifier, and timestamp
 ```

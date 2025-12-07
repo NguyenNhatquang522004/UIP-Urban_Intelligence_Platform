@@ -8,8 +8,24 @@ keywords: [error-handler, middleware, express, exception, structured-errors]
 ---
 
 <!--
+============================================================================
+UIP - Urban Intelligence Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
+
 SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team
+============================================================================
+File: backend/middlewares/errorHandler.md
+Module: Backend Middlewares - Error Handler
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  Error Handler Middleware documentation for global Express error handling
+  with structured error responses and logging.
+============================================================================
 -->
 
 # Error Handler Middleware
@@ -199,7 +215,7 @@ router.post('/cameras', async (req, res, next) => {
     "code": "NOT_FOUND",
     "details": null
   },
-  "timestamp": "2025-01-15T10:30:00.000Z",
+  "timestamp": "2025-11-29T10:30:00.000Z",
   "path": "/api/cameras/urn:ngsi-ld:Camera:001"
 }
 ```
@@ -213,7 +229,7 @@ router.post('/cameras', async (req, res, next) => {
     "code": "SERVICE_UNAVAILABLE",
     "stack": "Error: Database connection failed\n    at Neo4jService.connect..."
   },
-  "timestamp": "2025-01-15T10:30:00.000Z",
+  "timestamp": "2025-11-29T10:30:00.000Z",
   "path": "/api/correlation/graph"
 }
 ```

@@ -7,10 +7,25 @@ description: Complete overview of all 12 API route modules in the UIP Traffic Ba
 keywords: [api, routes, rest, endpoints, express, overview]
 ---
 
-<!--
+{/*
+============================================================================
+UIP - Urban Intelligence Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
+
 SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team
--->
+============================================================================
+File: apps/traffic-web-app/frontend/docs/docs/backend/routes/overview.md
+Module: Traffic Web App - API Routes Overview Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  API Routes overview documentation for UIP Traffic Backend.
+============================================================================
+*/}
 
 # API Routes Overview
 
@@ -113,7 +128,7 @@ graph TB
     "total": 150,
     "limit": 100,
     "offset": 0,
-    "timestamp": "2025-01-15T10:30:00.000Z"
+    "timestamp": "2025-11-29T10:30:00.000Z"
   }
 }
 ```
@@ -251,7 +266,7 @@ curl http://localhost:5000/api/health
 ```json
 {
   "status": "ok",
-  "timestamp": "2025-01-15T10:30:00.000Z",
+  "timestamp": "2025-11-29T10:30:00.000Z",
   "services": {
     "stellio": "connected",
     "neo4j": "connected",

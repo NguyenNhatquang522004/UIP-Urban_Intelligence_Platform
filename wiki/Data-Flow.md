@@ -1,13 +1,21 @@
-<!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+﻿<!--
+============================================================================
 UIP - Urban Intelligence Platform
-https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
-Module: wiki/Data-Flow.md
-Author: UIP Team
+SPDX-License-Identifier: MIT
+============================================================================
+File: wiki/Data-Flow.md
+Module: Data Flow Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 2.0.0
+License: MIT
+
+Description:
+  Complete data flow through the Multi-Agent LOD Pipeline.
+============================================================================
 -->
 # 🔀 Data Flow
 
@@ -123,7 +131,7 @@ class CameraObserverAgent:
 {
   "source_type": "camera",
   "source_id": "CAM-001",
-  "timestamp": "2024-01-15T10:30:00Z",
+  "timestamp": "2025-11-29T10:30:00Z",
   "location": {
     "type": "Point",
     "coordinates": [106.6297, 10.8231]
@@ -565,7 +573,7 @@ class DataQualityAgent:
 
 ---
 
-## 📚 Related Pages
+## 🔗 Related Pages
 
 - [[Multi-Agent-System]] - Agent documentation
 - [[Semantic-Web-Guide]] - Semantic technologies

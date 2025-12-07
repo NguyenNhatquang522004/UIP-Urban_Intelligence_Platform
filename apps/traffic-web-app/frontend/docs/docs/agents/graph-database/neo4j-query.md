@@ -3,15 +3,22 @@ sidebar_position: 2
 ---
 
 <!--
+============================================================================
 SPDX-License-Identifier: MIT
 Copyright (c) 2025 UIP Team. All rights reserved.
+============================================================================
 
 UIP - Urban Intelligence Platform
 Neo4j Query Agent Documentation.
 
-Module: apps/traffic-web-app/frontend/docs/docs/agents/graph-database/neo4j-query.md
-Author: UIP Team
+File: apps/traffic-web-app/frontend/docs/docs/agents/graph-database/neo4j-query.md
+Module: Graph Database Agents Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+Description: Documentation for the Neo4j Query Agent component.
+============================================================================
 -->
 
 # Neo4j Query Agent

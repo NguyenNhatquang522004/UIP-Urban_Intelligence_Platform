@@ -8,8 +8,24 @@ keywords: [logger, winston, logging, structured, file-rotation, debug]
 ---
 
 <!--
+============================================================================
+UIP - Urban Intelligence Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
+
 SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team
+============================================================================
+File: backend/utils/logger.md
+Module: Backend Utils - Logger
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  Logger documentation for Winston-based logging system with structured
+  JSON output and log rotation.
+============================================================================
 -->
 
 # Logger - Winston Logging System
@@ -188,7 +204,7 @@ error: ❌ Neo4j connection failed
   "level": "info",
   "message": "Camera fetched",
   "service": "uip-traffic-backend",
-  "timestamp": "2025-01-15T10:30:00.000Z",
+  "timestamp": "2025-11-29T10:30:00.000Z",
   "cameraId": "urn:ngsi-ld:Camera:001",
   "responseTime": 125
 }
@@ -201,7 +217,7 @@ error: ❌ Neo4j connection failed
   "level": "error",
   "message": "Database connection failed",
   "service": "uip-traffic-backend",
-  "timestamp": "2025-01-15T10:30:00.000Z",
+  "timestamp": "2025-11-29T10:30:00.000Z",
   "error": {
     "message": "Connection refused",
     "stack": "Error: Connection refused\n    at PostgresService..."

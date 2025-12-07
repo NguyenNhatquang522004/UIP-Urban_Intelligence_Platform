@@ -2,7 +2,7 @@
 # Copyright (c) 2025 UIP Team. All rights reserved.
 #
 # UIP - Urban Intelligence Platform
-# https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+# https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 #
 # Module: requirements/base.txt
 # Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
@@ -102,10 +102,9 @@ kafka-python>=2.0.2
 apscheduler>=3.10.0
 
 # ============================================================================
-# PDF Generation (for Incident Reports)
+# PDF Generation (for Incident Reports) - reportlab is BSD licensed (MIT-compatible)
 # ============================================================================
 reportlab>=4.0.0
-weasyprint>=60.0
 
 # ============================================================================
 # Email - smtp library is built-in, no external dependency needed

@@ -5,8 +5,23 @@ description: Predictive event-based congestion forecasting and traffic orchestra
 ---
 
 {/*
+============================================================================
+UIP - Urban Intelligence Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
+
 SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team
+============================================================================
+File: apps/traffic-web-app/frontend/docs/docs/backend/agents/TrafficMaestroAgent.md
+Module: Traffic Web App - TrafficMaestro Agent Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  TrafficMaestro Agent documentation for predictive traffic orchestration.
+============================================================================
 */}
 
 # TrafficMaestro Agent
@@ -252,7 +267,7 @@ const prediction = await maestro.predictEventImpact({
     eventName: 'Taylor Swift Concert',
     venueName: 'Phu Tho Stadium',
     venueLocation: { lat: 10.7628, lon: 106.6615 },
-    eventDate: '2024-12-31T20:00:00Z',
+    eventDate: '2025-12-05T20:00:00Z',
     expectedAttendees: 25000,
     eventType: 'concert',
     horizonHours: 6
@@ -262,7 +277,7 @@ console.log('Impact Severity:', prediction.impactPrediction.severity);
 // "severe"
 
 console.log('Peak Time:', prediction.impactPrediction.peakCongestionTime);
-// "2024-12-31T18:30:00Z"
+// "2025-12-05T18:30:00Z"
 
 console.log('Affected Roads:', prediction.affectedRoads.map(r => r.roadName));
 // ["Ly Thuong Kiet", "3/2 Street", "Nguyen Thi Minh Khai"]

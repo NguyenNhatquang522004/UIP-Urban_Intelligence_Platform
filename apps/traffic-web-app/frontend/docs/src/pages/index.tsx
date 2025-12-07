@@ -1,12 +1,17 @@
 /**
+ * @file index.tsx
+ * @module apps/traffic-web-app/frontend/docs/src/pages/index
+ * @author Nguyễn Nhật Quang <nguyennhatquang522004@gmail.com>
+ * @created 2025-11-20
+ * @version 1.0.0
+ * @license MIT
+ * @description Main homepage for Docusaurus documentation site
+ *
  * SPDX-License-Identifier: MIT
  * Copyright (c) 2025 UIP Team. All rights reserved.
  *
  * UIP - Urban Intelligence Platform
- * https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
- *
- * @module apps/traffic-web-app/frontend/docs/src/pages/index
- * @description Main homepage for Docusaurus documentation site
+ * https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
  */
 
 import type { ReactNode } from 'react';

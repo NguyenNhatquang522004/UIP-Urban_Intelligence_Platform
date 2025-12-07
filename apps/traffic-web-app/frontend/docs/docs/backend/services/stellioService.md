@@ -7,10 +7,25 @@ description: High-performance TypeScript client for Stellio Context Broker with 
 keywords: [stellio, ngsi-ld, context broker, entity, cache, axios, http pooling]
 ---
 
-<!--
+{/*
+============================================================================
+UIP - Urban Intelligence Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
+
 SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team
--->
+============================================================================
+File: apps/traffic-web-app/frontend/docs/docs/backend/services/stellioService.md
+Module: Traffic Web App - StellioService Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  StellioService documentation for NGSI-LD context broker client.
+============================================================================
+*/}
 
 # StellioService - NGSI-LD Client
 

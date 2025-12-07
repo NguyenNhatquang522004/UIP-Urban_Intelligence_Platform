@@ -7,10 +7,25 @@ description: RESTful API endpoints for querying historical time-series traffic d
 keywords: [historical, time-series, temporal, timescaledb, aggregation]
 ---
 
-<!--
+{/*
+============================================================================
+UIP - Urban Intelligence Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
+
 SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team
--->
+============================================================================
+File: apps/traffic-web-app/frontend/docs/docs/backend/routes/historical.md
+Module: Traffic Web App - Historical Routes Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  Historical routes documentation for time-series traffic data.
+============================================================================
+*/}
 
 # Historical Routes
 
@@ -53,13 +68,13 @@ Get historical traffic metrics.
   "success": true,
   "data": [
     {
-      "timestamp": "2025-01-14T08:00:00.000Z",
+      "timestamp": "2025-11-28T08:00:00.000Z",
       "averageSpeed": 28.5,
       "vehicleCount": 1250,
       "congestionLevel": "high"
     },
     {
-      "timestamp": "2025-01-14T09:00:00.000Z",
+      "timestamp": "2025-11-28T09:00:00.000Z",
       "averageSpeed": 32.1,
       "vehicleCount": 980,
       "congestionLevel": "moderate"

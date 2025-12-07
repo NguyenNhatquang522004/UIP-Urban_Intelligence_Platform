@@ -1,15 +1,18 @@
 /**
- * Tooltip Component - Hover Tooltips
+ * @file Tooltip.tsx
+ * @module apps/traffic-web-app/frontend/src/components/map/Tooltip
+ * @author Nguyễn Nhật Quang <nguyennhatquang522004@gmail.com>
+ * @created 2025-11-20
+ * @version 1.0.0
+ * @license MIT
+ * @description Tooltip component compatible with react-leaflet's Tooltip API.
+ * Displays hover tooltips for markers and other map elements.
  *
  * UIP - Urban Intelligence Platform
  * Copyright (c) 2025 UIP Team. All rights reserved.
- * https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+ * https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
  *
  * SPDX-License-Identifier: MIT
- *
- * @description
- * Tooltip component compatible with react-leaflet's Tooltip API.
- * Displays hover tooltips for markers and other map elements.
  */
 
 import React, { ReactNode } from 'react';

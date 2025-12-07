@@ -3,15 +3,24 @@ sidebar_position: 4
 ---
 
 <!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+============================================================================
 UIP - Urban Intelligence Platform
-Temporal Data Manager Agent Documentation.
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
-Module: apps/traffic-web-app/frontend/docs/docs/agents/context-management/temporal-data-manager.md
-Author: UIP Team
+SPDX-License-Identifier: MIT
+============================================================================
+File: agents/context-management/temporal-data-manager.md
+Module: Context Management - Temporal Data Manager Agent
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 1.0.0
+License: MIT
+
+Description:
+  Temporal Data Manager Agent documentation for handling NGSI-LD temporal
+  entity representations in Stellio.
+============================================================================
 -->
 
 # Temporal Data Manager Agent
@@ -48,7 +57,7 @@ await manager.append_temporal(
     entity_id="urn:ngsi-ld:TrafficCamera:CAM_001",
     attribute="vehicleCount",
     value=42,
-    observed_at="2025-01-15T10:30:00Z"
+    observed_at="2025-11-29T10:30:00Z"
 )
 ```
 
@@ -57,9 +66,9 @@ await manager.append_temporal(
 ```python
 # Append multiple values
 values = [
-    {"observed_at": "2025-01-15T10:30:00Z", "value": 42},
-    {"observed_at": "2025-01-15T10:31:00Z", "value": 45},
-    {"observed_at": "2025-01-15T10:32:00Z", "value": 48}
+    {"observed_at": "2025-11-29T10:30:00Z", "value": 42},
+    {"observed_at": "2025-11-29T10:31:00Z", "value": 45},
+    {"observed_at": "2025-11-29T10:32:00Z", "value": 48}
 ]
 
 await manager.batch_append(
@@ -77,8 +86,8 @@ evolution = await manager.get_temporal_evolution(
     entity_id="urn:ngsi-ld:TrafficCamera:CAM_001",
     attrs=["vehicleCount", "avgSpeed"],
     timerel="between",
-    timeAt="2025-01-15T00:00:00Z",
-    endTimeAt="2025-01-15T23:59:59Z"
+    timeAt="2025-11-29T00:00:00Z",
+    endTimeAt="2025-11-29T23:59:59Z"
 )
 ```
 
@@ -91,7 +100,7 @@ await manager.delete_temporal_range(
     attribute="vehicleCount",
     deleteAll=False,
     timerel="before",
-    timeAt="2025-01-01T00:00:00Z"
+    timeAt="2025-11-20T00:00:00Z"
 )
 ```
 

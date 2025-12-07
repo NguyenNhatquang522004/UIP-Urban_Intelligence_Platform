@@ -7,10 +7,25 @@ description: RESTful API endpoints for traffic analytics, statistics, summaries,
 keywords: [analytics, statistics, dashboard, metrics, aggregation]
 ---
 
-<!--
+{/*
+============================================================================
+UIP - Urban Intelligence Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
+
 SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team
--->
+============================================================================
+File: apps/traffic-web-app/frontend/docs/docs/backend/routes/analytics.md
+Module: Traffic Web App - Analytics Routes Documentation
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
+Version: 1.0.0
+License: MIT
+
+Description:
+  Analytics routes documentation for traffic analytics API endpoints.
+============================================================================
+*/}
 
 # Analytics Routes
 
@@ -53,7 +68,7 @@ Get overall traffic summary.
       "averageAqi": 85,
       "category": "Moderate"
     },
-    "timestamp": "2025-01-15T10:30:00.000Z"
+    "timestamp": "2025-11-29T10:30:00.000Z"
   }
 }
 ```
