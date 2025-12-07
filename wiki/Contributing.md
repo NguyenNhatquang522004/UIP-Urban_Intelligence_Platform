@@ -1,13 +1,21 @@
 <!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+============================================================================
 UIP - Urban Intelligence Platform
-https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
-Module: wiki/Contributing.md
-Author: UIP Team
+SPDX-License-Identifier: MIT
+============================================================================
+File: wiki/Contributing.md
+Module: Contributing Guide
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 2.0.0
+License: MIT
+
+Description:
+  Guidelines for contributing to the UIP project.
+============================================================================
 -->
 # 🤝 Contributing Guide
 
@@ -65,7 +73,7 @@ git clone https://github.com/<YOUR-USERNAME>/UIP-Urban_Intelligence_Platform.git
 cd UIP-Urban_Intelligence_Platform
 
 # Add upstream remote
-git remote add upstream https://github.com/NguyenNhatquang522004/UIP-Urban_Intelligence_Platform.git
+git remote add upstream https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform.git
 ```
 
 ### Development Setup
@@ -177,12 +185,11 @@ We follow [PEP 8](https://pep8.org/) with these tools:
 # Format code
 black src/ tests/
 
-# Sort imports
-isort src/ tests/
+# Lint code with Ruff (replaces flake8 + isort)
+ruff check src/ tests/
 
-# Lint code
-flake8 src/ tests/
-pylint src/
+# Auto-fix linting issues
+ruff check --fix src/ tests/
 
 # Type checking
 mypy src/
@@ -197,15 +204,11 @@ repos:
       - id: black
         language_version: python3.9
 
-  - repo: https://github.com/pycqa/isort
-    rev: 5.12.0
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.1.0
     hooks:
-      - id: isort
-
-  - repo: https://github.com/pycqa/flake8
-    rev: 6.1.0
-    hooks:
-      - id: flake8
+      - id: ruff
+        args: [--fix]
 ```
 
 ### TypeScript Style Guide

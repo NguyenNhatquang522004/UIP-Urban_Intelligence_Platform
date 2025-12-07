@@ -1,13 +1,21 @@
 <!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+============================================================================
 UIP - Urban Intelligence Platform
-NGSI-LD Guide
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
-Module: wiki/NGSI-LD-Guide.md
-Author: UIP Team
+SPDX-License-Identifier: MIT
+============================================================================
+File: wiki/NGSI-LD-Guide.md
+Module: NGSI-LD Guide
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 2.0.0
+License: MIT
+
+Description:
+  Complete guide to NGSI-LD (Next Generation Service Interface - Linked Data).
+============================================================================
 -->
 
 # 🔷 NGSI-LD Guide

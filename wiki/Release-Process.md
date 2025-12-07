@@ -1,13 +1,21 @@
 <!--
-SPDX-License-Identifier: MIT
-Copyright (c) 2025 UIP Team. All rights reserved.
-
+============================================================================
 UIP - Urban Intelligence Platform
-Release Process Guide
+Copyright (c) 2025 UIP Team. All rights reserved.
+https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform
 
-Module: wiki/Release-Process.md
-Author: UIP Team
+SPDX-License-Identifier: MIT
+============================================================================
+File: wiki/Release-Process.md
+Module: Release Process Guide
+Author: Nguyen Nhat Quang (Lead), Nguyen Viet Hoang, Nguyen Dinh Anh Tuan
+Created: 2025-11-20
 Version: 2.0.0
+License: MIT
+
+Description:
+  Complete guide to the release process for UIP.
+============================================================================
 -->
 
 # 🚀 Release Process
