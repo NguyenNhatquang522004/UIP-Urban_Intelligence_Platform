@@ -381,7 +381,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### Analytics (PR [#17](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/pull/17))
 - Traffic congestion detection and monitoring
 - Accident detection and classification agent
-- YOLOv8 computer vision analysis agent
+- YOLOX computer vision analysis agent
 
 ### Changed
 - Improved camera image processing pipeline
@@ -531,7 +531,7 @@ This project benefits from the following open source technologies:
 - **[Stellio](https://stellio.io/)** - NGSI-LD Context Broker
 - **[Apache Jena](https://jena.apache.org/)** - RDF/SPARQL framework
 - **[Neo4j](https://neo4j.com/)** - Graph database platform
-- **[YOLOv8](https://docs.ultralytics.com/)** - Computer vision models
+- **[YOLOX](https://github.com/Megvii-BaseDetection/YOLOX)** - Computer vision models (Apache-2.0)
 - **[React](https://react.dev/)** - Frontend UI framework
 - **[MapLibre GL JS](https://maplibre.org/)** - Interactive maps library
 

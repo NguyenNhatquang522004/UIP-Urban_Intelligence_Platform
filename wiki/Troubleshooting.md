@@ -178,14 +178,14 @@ python -c "import src; print(src.__version__)"
 **Solutions**:
 
 ```bash
-# 1. Download model
-python -c "from ultralytics import YOLO; YOLO('yolov8x.pt')"
+# 1. Download YOLOX model
+wget https://github.com/Megvii-BaseDetection/YOLOX/releases/download/0.1.1rc0/yolox_s.pth
 
 # 2. Check CUDA (for GPU)
 python -c "import torch; print(torch.cuda.is_available())"
 
-# 3. Force CPU if GPU issues
-export YOLO_DEVICE=cpu
+# 3. Verify YOLOX installation
+python -c "from yolox.exp import get_exp; print('YOLOX OK')"
 ```
 
 ---

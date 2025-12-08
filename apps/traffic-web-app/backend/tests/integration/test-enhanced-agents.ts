@@ -58,10 +58,10 @@
  * Tests all 3 agents with API key rotation functionality
  */
 
-import { GraphInvestigatorAgent } from './src/agents/GraphInvestigatorAgent';
-import { EcoTwinAgent } from './src/agents/EcoTwinAgent';
-import { TrafficMaestroAgent } from './src/agents/TrafficMaestroAgent';
-import { logger } from './src/utils/logger';
+import { GraphInvestigatorAgent } from '../../src/agents/GraphInvestigatorAgent';
+import { EcoTwinAgent } from '../../src/agents/EcoTwinAgent';
+import { TrafficMaestroAgent } from '../../src/agents/TrafficMaestroAgent';
+import { logger } from '../../src/utils/logger';
 import * as dotenv from 'dotenv';
 
 dotenv.config();

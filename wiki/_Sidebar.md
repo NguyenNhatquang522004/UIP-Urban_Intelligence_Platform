@@ -65,6 +65,7 @@ Description:
 ### ⚙️ DevOps
 * [[CI/CD Pipeline|CI-CD-Pipeline]]
 * [[Deployment Guide|Deployment-Guide]]
+* [[Docker Setup|Docker-Setup]]
 * [[Docker Services|Docker-Services]]
 * [[Monitoring Guide|Monitoring-Guide]]
 
@@ -72,12 +73,19 @@ Description:
 
 ### 🔧 Configuration
 * [[Configuration]]
+* [[Logging Guide|Logging-Guide]]
+
+---
+
+### 🚀 Performance
+* [[Performance Tuning|Performance-Tuning]]
 
 ---
 
 ### 🧪 Development
 * [[Testing Guide|Testing-Guide]]
 * [[Contributing]]
+* [[Changelog]]
 
 ---
 
