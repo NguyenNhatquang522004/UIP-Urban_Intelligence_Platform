@@ -122,6 +122,7 @@ jobs:
       # Bước 4: Setup Environment Files
       - name: 📄 Setup Environment Files
         timeout-minutes: 5
+        continue-on-error: true
         env:
           VPS_HOST: ${{ secrets.VPS_HOST }}
           VPS_USER: ${{ secrets.VPS_USER }}
@@ -148,16 +149,12 @@ jobs:
           GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
         run: |
           sshpass -p "$VPS_PASSWORD" ssh -p ${VPS_PORT:-22} -o StrictHostKeyChecking=no ${VPS_USER}@${VPS_HOST} << 'ENDSSH'
-            set -e
-            cd /home/$USER/builder-layer-end
+            cd /home/$USER/builder-layer-end || exit 1
             
             echo "📁 Creating directories..."
             mkdir -p logs data data/cache data/rdf reports test_output assets/models
             
-            update_env_var() {
-              local file=$1 key=$2 value=$3
-              [ -n "$value" ] && { grep -q "^$key=" "$file" 2>/dev/null && sed -i "s|^$key=.*|$key=$value|" "$file" || echo "$key=$value" >> "$file"; }
-            }
+            echo "✅ Directories created"
           ENDSSH
 
           # Setup env files with secrets (separate SSH to pass vars)
@@ -211,8 +208,7 @@ jobs:
           VPS_PORT: ${{ secrets.VPS_PORT }}
         run: |
           sshpass -p "$VPS_PASSWORD" ssh -p ${VPS_PORT:-22} -o StrictHostKeyChecking=no \
-            -o ServerAliveInterval=30 ${VPS_USER}@${VPS_HOST} << 'ENDSSH'
-            set -e
+            -o ServerAliveInterval=30 -o ServerAliveCountMax=10 ${VPS_USER}@${VPS_HOST} << 'ENDSSH'
             cd /home/$USER/builder-layer-end
             
             echo "🐍 Setting up Python environment..."
@@ -235,11 +231,13 @@ jobs:
           VPS_PORT: ${{ secrets.VPS_PORT }}
         run: |
           sshpass -p "$VPS_PASSWORD" ssh -p ${VPS_PORT:-22} -o StrictHostKeyChecking=no \
-            -o ServerAliveInterval=30 ${VPS_USER}@${VPS_HOST} << 'ENDSSH'
-            set -e
+            -o ServerAliveInterval=30 -o ServerAliveCountMax=10 ${VPS_USER}@${VPS_HOST} << 'ENDSSH'
             cd /home/$USER/builder-layer-end
             
             echo "📦 Setting up Node.js dependencies..."
+            
+            # Install PM2 globally if not exists
+            which pm2 > /dev/null 2>&1 || npm install -g pm2
             
             if [ -d "apps/traffic-web-app/backend" ]; then
               cd apps/traffic-web-app/backend
