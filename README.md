@@ -221,6 +221,76 @@ This project is developed and maintained by:
 - **Smart Data Models**: TM Forum/FIWARE standardized data models
 - **LOD Cloud**: Integration with GeoNames, DBpedia, Wikidata
 
+### 🔄 CI/CD Pipeline
+
+UIP uses **GitHub Actions** for automated testing, security scanning, and deployment.
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           CI/CD PIPELINE OVERVIEW                            │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │              CONTINUOUS INTEGRATION (CI) - On Push/PR               │   │
+│  │                                                                      │   │
+│  │   lint.yml ──► test.yml ──► integration-tests.yml ──► codeql.yml   │   │
+│  │   (Quality)    (Unit)       (Full Tests)              (Security)    │   │
+│  │                                                                      │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+│                                    │                                        │
+│                                    ▼                                        │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │              CONTINUOUS DEPLOYMENT (CD) - On Merge/Tag              │   │
+│  │                                                                      │   │
+│  │   deploy.yml ──────► Ubuntu VPS (Production)                        │   │
+│  │   deploy-docs.yml ──► GitHub Pages (Documentation)                  │   │
+│  │   release.yml ──────► GitHub Releases + Docker Hub + PyPI           │   │
+│  │                                                                      │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+| Workflow | Trigger | Purpose | Status |
+|----------|---------|---------|--------|
+| **test.yml** | Push, PR | Unit tests with coverage (Python 3.9-3.11) | [![Tests](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/actions/workflows/test.yml/badge.svg)](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/actions/workflows/test.yml) |
+| **lint.yml** | Push, PR | Code quality (Ruff, Black, mypy, Bandit) | [![Lint](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/actions/workflows/lint.yml/badge.svg)](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/actions/workflows/lint.yml) |
+| **integration-tests.yml** | Push, PR, Daily | Full integration tests with Docker | [![Integration](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/actions/workflows/integration-tests.yml/badge.svg)](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/actions/workflows/integration-tests.yml) |
+| **codeql.yml** | Push, PR, Weekly | Security vulnerability scanning (SAST) | [![CodeQL](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/actions/workflows/codeql.yml/badge.svg)](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/actions/workflows/codeql.yml) |
+| **dependency-review.yml** | PR | Dependency security audit | [![Dependency Review](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/actions/workflows/dependency-review.yml) |
+| **deploy.yml** | Push to main | Auto-deploy to Ubuntu VPS | [![Deploy](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/actions/workflows/deploy.yml/badge.svg)](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/actions/workflows/deploy.yml) |
+| **deploy-docs.yml** | Push to main (docs/) | Deploy Docusaurus to GitHub Pages | [![Docs](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/actions/workflows/deploy-docs.yml) |
+| **release.yml** | Tag v*.*.* | Create release + Docker images + PyPI | [![Release](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/actions/workflows/release.yml/badge.svg)](https://github.com/UIP-Urban-Intelligence-Platform/UIP-Urban_Intelligence_Platform/actions/workflows/release.yml) |
+| **auto-label.yml** | PR | Auto-label PRs based on files changed | - |
+| **stale.yml** | Daily | Mark stale issues/PRs (60/30 days) | - |
+
+<details>
+<summary><strong>📋 CI/CD Features</strong></summary>
+
+**Continuous Integration:**
+- ✅ Multi-version Python testing (3.9, 3.10, 3.11)
+- ✅ Code formatting check (Black)
+- ✅ Linting & import sorting (Ruff - MIT licensed, 10-100x faster than pylint)
+- ✅ Type checking (mypy)
+- ✅ Security scanning (Bandit, CodeQL)
+- ✅ Dependency vulnerability check
+- ✅ Test coverage reporting (Codecov)
+- ✅ Integration tests with Docker services
+
+**Continuous Deployment:**
+- ✅ Auto-deploy to Ubuntu VPS on push to `main`
+- ✅ Auto-deploy documentation to GitHub Pages
+- ✅ Semantic versioning releases (v*.*.*)
+- ✅ Docker image publishing to GitHub Container Registry
+- ✅ PyPI package publishing
+
+**Automation:**
+- ✅ Auto-labeling PRs based on changed files
+- ✅ Stale issue/PR management
+- ✅ Dependabot for dependency updates
+
+</details>
+
 ---
 
 ## 🚀 Quick Start
