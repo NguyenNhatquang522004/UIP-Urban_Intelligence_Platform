@@ -159,7 +159,7 @@ jobs:
               [ -n "$value" ] && { grep -q "^$key=" "$file" 2>/dev/null && sed -i "s|^$key=.*|$key=$value|" "$file" || echo "$key=$value" >> "$file"; }
             }
           ENDSSH
-          
+
           # Setup env files with secrets (separate SSH to pass vars)
           sshpass -p "$VPS_PASSWORD" ssh -p ${VPS_PORT:-22} -o StrictHostKeyChecking=no ${VPS_USER}@${VPS_HOST} "
             cd /home/\$USER/builder-layer-end
