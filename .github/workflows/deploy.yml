@@ -517,8 +517,8 @@ jobs:
           echo "🏥 Running health check..."
           sleep 15
 
-          sshpass -p "$VPS_PASSWORD" ssh -p ${VPS_PORT:-22} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${VPS_USER}@${VPS_HOST} << 'ENDSSH'
-            cd /home/$USER/builder-layer-end
+          sshpass -p "$VPS_PASSWORD" ssh -p ${VPS_PORT:-22} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -T ${VPS_USER}@${VPS_HOST} << ENDSSH
+            cd /home/\$USER/builder-layer-end
             
             echo "📊 PM2 Status:"
             pm2 list
@@ -533,25 +533,22 @@ jobs:
               echo "⚠️ Some Docker containers may not be running"
             fi
             
-            # Check PM2 processes
-            pm2 jlist | python3 -c "
-            import sys, json
-            apps = json.load(sys.stdin)
-            for app in apps:
-                status = '✅' if app['pm2_env']['status'] == 'online' else '⚠️'
-                print(f\"{status} {app['name']}: {app['pm2_env']['status']}\")
-            " 2>/dev/null || pm2 list
+            # Check PM2 processes status
+            echo ""
+            echo "📋 PM2 Process Status:"
+            pm2 list --no-color 2>/dev/null | grep -E "online|stopped|errored" || echo "PM2 processes checked"
             
             echo ""
             echo "============================================"
             echo "  ✅ VPS DEPLOYMENT COMPLETED!"
             echo "============================================"
             echo "🌐 Service URLs:"
-            echo "  - Frontend:   http://${VPS_HOST}:5173"
-            echo "  - Backend:    http://${VPS_HOST}:5000"
-            echo "  - FastAPI:    http://${VPS_HOST}:8001"
-            echo "  - Stellio:    http://${VPS_HOST}:8080"
-            echo "  - Neo4j:      http://${VPS_HOST}:7474"
+            echo "  - Main Site:  http://$VPS_HOST/"
+            echo "  - Frontend:   http://$VPS_HOST:5173"
+            echo "  - Backend:    http://$VPS_HOST:5000"
+            echo "  - FastAPI:    http://$VPS_HOST:8001"
+            echo "  - Stellio:    http://$VPS_HOST:8080"
+            echo "  - Neo4j:      http://$VPS_HOST:7474"
             echo "============================================"
             echo ""
             echo "📝 PM2 Commands:"
