@@ -15,7 +15,6 @@
 # ============================================================================
 include README.md
 include LICENSE
-include COPYING
 include NEWS
 include NOTICE
 include AUTHORS.md
