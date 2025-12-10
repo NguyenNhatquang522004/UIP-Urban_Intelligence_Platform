@@ -15,7 +15,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { useRef, useCallback, forwardRef, useImperativeHandle, ReactNode, useState } from 'react';
+import React, { useRef, useCallback, forwardRef, useImperativeHandle, ReactNode } from 'react';
 import Map, { MapRef, ViewStateChangeEvent, MapLayerMouseEvent } from 'react-map-gl/maplibre';
 import { MapProvider, useMapContext } from './MapContext';
 import type { LatLngExpression } from './types';

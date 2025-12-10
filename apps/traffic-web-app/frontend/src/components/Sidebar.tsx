@@ -115,8 +115,8 @@ const Sidebar: React.FC<SidebarProps> = ({ onCameraSelect, onZoomToCamera, onZoo
     agents: false,
     citizen: false,
   });
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedDistrict, setSelectedDistrict] = useState('all');
+  const [searchQuery, setSearchQuery] = useState<string>('');  // Explicitly typed with empty string default
+  const [selectedDistrict, setSelectedDistrict] = useState<string>('all');  // Explicitly typed
   const [showAutocomplete, setShowAutocomplete] = useState(false);
   const [districtsData, setDistrictsData] = useState<any[]>([]);
 
