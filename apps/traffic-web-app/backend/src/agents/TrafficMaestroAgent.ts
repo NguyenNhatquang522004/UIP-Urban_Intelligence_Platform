@@ -237,6 +237,10 @@ export class TrafficMaestroAgent {
     private mapboxKeyManager: APIKeyRotationManager | null = null;
     private config: MaestroConfig;
 
+    // Cache for Google Custom Search results (24 hours TTL)
+    private googleSearchCache: Map<string, { data: ExternalEvent[]; timestamp: number }> = new Map();
+    private readonly SEARCH_CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours
+
     constructor(configPath?: string) {
         // Load configuration from YAML file (domain-agnostic)
         const defaultConfigPath = path.join(__dirname, '../../config/agents/traffic-maestro.yaml');
@@ -279,8 +283,8 @@ export class TrafficMaestroAgent {
         const googleSearchApiKey = process.env.GOOGLE_SEARCH_API_KEY || '';
         if (googleSearchApiKey) {
             this.googleCustomSearchKeyManager = new APIKeyRotationManager(googleSearchApiKey, 'Google Custom Search', {
-                maxFailures: 3,
-                blacklistDurationMs: 5 * 60 * 1000,
+                maxFailures: 2,  // Stricter: blacklist after 2 failures
+                blacklistDurationMs: 10 * 60 * 1000,  // 10 minutes - Google has strict rate limits
                 rotationStrategy: 'round-robin'
             });
         }
@@ -570,6 +574,7 @@ export class TrafficMaestroAgent {
     /**
      * Search for events in Ho Chi Minh City using Google Custom Search API
      * Uses web search to find real events (concerts, festivals, exhibitions)
+     * With 24-hour caching to reduce API calls and avoid rate limits
      */
     private async searchHCMCEvents(): Promise<ExternalEvent[]> {
         if (!this.googleCustomSearchKeyManager) {
@@ -581,6 +586,14 @@ export class TrafficMaestroAgent {
         if (!searchEngineId) {
             logger.warn('Google Custom Search Engine ID not configured');
             return [];
+        }
+
+        // Check cache first
+        const cacheKey = 'hcmc_events_search';
+        const cached = this.googleSearchCache.get(cacheKey);
+        if (cached && Date.now() - cached.timestamp < this.SEARCH_CACHE_TTL_MS) {
+            logger.info(`Using cached Google Custom Search results (${cached.data.length} events, age: ${Math.round((Date.now() - cached.timestamp) / 60000)} minutes)`);
+            return cached.data;
         }
 
         try {
@@ -598,6 +611,13 @@ export class TrafficMaestroAgent {
                     const apiKey = this.googleCustomSearchKeyManager.getNextKey();
 
                     try {
+                        // Exponential backoff: wait before retry
+                        if (attempt > 0) {
+                            const backoffMs = Math.min(1000 * Math.pow(2, attempt), 30000); // Max 30s
+                            logger.info(`Waiting ${backoffMs}ms before retry ${attempt + 1}/${maxRetries}...`);
+                            await new Promise(resolve => setTimeout(resolve, backoffMs));
+                        }
+
                         const response = await this.googleCustomSearchClient.get('', {
                             params: {
                                 key: apiKey,
@@ -622,10 +642,22 @@ export class TrafficMaestroAgent {
                         this.googleCustomSearchKeyManager.reportSuccess(apiKey);
                         break; // Success, exit retry loop
 
-                    } catch (error) {
+                    } catch (error: any) {
                         lastError = error instanceof Error ? error : new Error('Unknown error');
+
+                        // Check if rate limited (429)
+                        if (error.response?.status === 429) {
+                            logger.warn(`Google Custom Search rate limited (429) - Key will be blacklisted`);
+                        }
+
                         this.googleCustomSearchKeyManager.reportFailure(apiKey, lastError);
-                        logger.warn(`Google Custom Search attempt ${attempt + 1}/${maxRetries} failed, trying next key...`);
+                        logger.warn(`Google Custom Search attempt ${attempt + 1}/${maxRetries} failed: ${lastError.message}`);
+
+                        // If all keys exhausted, stop trying
+                        if (this.googleCustomSearchKeyManager.getAvailableKeys() === 0) {
+                            logger.error('All Google Custom Search keys are blacklisted - stopping search');
+                            break;
+                        }
                     }
                 }
 
@@ -633,15 +665,34 @@ export class TrafficMaestroAgent {
                     logger.warn(`Failed to search events with query "${query}":`, lastError);
                 }
 
-                // Add delay between queries to avoid rate limiting
-                await new Promise(resolve => setTimeout(resolve, 1000));
+                // Add longer delay between queries to avoid rate limiting (3-5 seconds)
+                const delayMs = 3000 + Math.random() * 2000;
+                await new Promise(resolve => setTimeout(resolve, delayMs));
             }
 
             logger.info(`Found ${allEvents.length} events from Google Custom Search (Ho Chi Minh City)`);
+
+            // Cache results for 24 hours
+            if (allEvents.length > 0) {
+                this.googleSearchCache.set(cacheKey, {
+                    data: allEvents,
+                    timestamp: Date.now()
+                });
+                logger.info('Cached Google Custom Search results for 24 hours');
+            }
+
             return allEvents;
 
         } catch (error) {
             logger.error('Google Custom Search error:', error);
+
+            // Return cached data if available, even if expired
+            const cached = this.googleSearchCache.get(cacheKey);
+            if (cached) {
+                logger.warn('Returning stale cached data due to API error');
+                return cached.data;
+            }
+
             return [];
         }
     }

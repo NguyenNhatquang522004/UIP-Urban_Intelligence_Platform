@@ -301,7 +301,7 @@ const CameraDetailModal: React.FC<CameraDetailModalProps> = ({ camera, onClose, 
     const fetchTrafficFlow = async () => {
       try {
         const STELLIO_URL = import.meta.env.VITE_STELLIO_URL || 'http://localhost:8080';
-        const cameraId = camera.id.split(':').pop(); // Extract camera number from URN
+        // const cameraId = camera.id.split(':').pop(); // Extract camera number from URN
 
         const response = await fetch(
           `${STELLIO_URL}/ngsi-ld/v1/entities?type=ItemFlowObserved&q=refDevice==${encodeURIComponent(camera.id)}&limit=1&options=keyValues`,
