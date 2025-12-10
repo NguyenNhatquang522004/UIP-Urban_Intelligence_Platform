@@ -64,20 +64,20 @@ import React, { useState, useRef, useImperativeHandle, forwardRef, useEffect, us
 // MIT-compatible map components (react-map-gl + MapLibre GL JS)
 import {
   MapContainer,
-  Marker,
-  Popup,
-  Polyline,
+  // Marker,
+  // Popup,
+  // Polyline,
   LayersControl,
   ScaleControl,
   ZoomControl,
-  Tooltip,
+  // Tooltip,
   useMap,
   useMapEvents,
 } from './map';
 import type { LatLngExpression, MapInstance, MapStyleType } from './map';
 import { useTrafficStore } from '../store/trafficStore';
 import { Camera, Accident, Weather, AirQuality, TrafficPattern } from '../types';
-import { format, subHours, parseISO } from 'date-fns';
+import { /* format, */ subHours, parseISO } from 'date-fns';
 import AQIHeatmap from './AQIHeatmap';
 import WeatherOverlay from './WeatherOverlay';
 import AccidentMarkers from './AccidentMarkers';
@@ -127,20 +127,20 @@ interface IconConfig {
   shadowSize?: [number, number];
 }
 
-const createCameraIcon = (status: string = 'active'): IconConfig => {
-  // Note: Future versions may include type-specific icons (PTZ/Static/Dome)
-  const color = status === 'active' || status === 'online' ? 'blue' : 'red';
-  return {
-    iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${color}.png`,
-    shadowUrl: `https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png`,
-    iconSize: [35, 57],  // Tăng từ [25, 41] lên 40% để dễ nhìn hơn
-    iconAnchor: [17, 57],  // Điều chỉnh anchor point
-    popupAnchor: [1, -50],  // Điều chỉnh popup position
-    shadowSize: [57, 57],  // Tăng shadow size
-  };
-};
+// const createCameraIcon = (status: string = 'active'): IconConfig => {
+//   // Note: Future versions may include type-specific icons (PTZ/Static/Dome)
+//   const color = status === 'active' || status === 'online' ? 'blue' : 'red';
+//   return {
+//     iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${color}.png`,
+//     shadowUrl: `https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png`,
+//     iconSize: [35, 57],  // Tăng từ [25, 41] lên 40% để dễ nhìn hơn
+//     iconAnchor: [17, 57],  // Điều chỉnh anchor point
+//     popupAnchor: [1, -50],  // Điều chỉnh popup position
+//     shadowSize: [57, 57],  // Tăng shadow size
+//   };
+// };
 
-const accidentIconBySeverity = (severity: string): IconConfig => {
+/* const accidentIconBySeverity = (severity: string): IconConfig => {
   const colorMap: Record<string, string> = {
     'fatal': 'black',
     'severe': 'red',
@@ -156,9 +156,9 @@ const accidentIconBySeverity = (severity: string): IconConfig => {
     popupAnchor: [1, -50],
     shadowSize: [57, 57],
   };
-};
+}; */
 
-const weatherIcon: IconConfig = {
+/* const weatherIcon: IconConfig = {
   iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png`,
   shadowUrl: `https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png`,
   iconSize: [35, 57],
@@ -184,7 +184,7 @@ const airQualityIconByLevel = (level: string): IconConfig => {
     popupAnchor: [1, -50],
     shadowSize: [57, 57],
   };
-};
+}; */
 
 // Map Click Handler Component for capturing location when citizen form is open
 const MapClickHandler: React.FC<{
@@ -900,7 +900,7 @@ const TrafficMap = forwardRef<any, {}>((_props, ref) => {
     return null;
   };
 
-  const getCongestionColor = (level: string): string => {
+  /* const getCongestionColor = (level: string): string => {
     const levelNormalized = level.toLowerCase();
     switch (levelNormalized) {
       case 'free_flow':
@@ -919,7 +919,7 @@ const TrafficMap = forwardRef<any, {}>((_props, ref) => {
       default:
         return '#808080';
     }
-  };
+  }; */
 
   const getAQIColor = (level: string): string => {
     switch (level) {

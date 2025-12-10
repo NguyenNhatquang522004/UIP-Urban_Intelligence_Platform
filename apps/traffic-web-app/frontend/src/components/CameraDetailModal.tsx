@@ -301,7 +301,7 @@ const CameraDetailModal: React.FC<CameraDetailModalProps> = ({ camera, onClose, 
     const fetchTrafficFlow = async () => {
       try {
         const STELLIO_URL = import.meta.env.VITE_STELLIO_URL || 'http://localhost:8080';
-        const cameraId = camera.id.split(':').pop(); // Extract camera number from URN
+        // const cameraId = camera.id.split(':').pop(); // Extract camera number from URN
 
         const response = await fetch(
           `${STELLIO_URL}/ngsi-ld/v1/entities?type=ItemFlowObserved&q=refDevice==${encodeURIComponent(camera.id)}&limit=1&options=keyValues`,
@@ -697,15 +697,15 @@ const CameraDetailModal: React.FC<CameraDetailModalProps> = ({ camera, onClose, 
                         <div className="text-xs text-gray-500 mt-1">traffic density</div>
                       </div>
                       <div className={`p-4 rounded-lg border ${trafficFlow.congestionLevel === 'free' ? 'bg-green-50 border-green-200' :
-                          trafficFlow.congestionLevel === 'moderate' ? 'bg-yellow-50 border-yellow-200' :
-                            trafficFlow.congestionLevel === 'congested' ? 'bg-red-50 border-red-200' :
-                              'bg-gray-50 border-gray-200'
+                        trafficFlow.congestionLevel === 'moderate' ? 'bg-yellow-50 border-yellow-200' :
+                          trafficFlow.congestionLevel === 'congested' ? 'bg-red-50 border-red-200' :
+                            'bg-gray-50 border-gray-200'
                         }`}>
                         <div className="text-sm text-gray-600 mb-1">Congestion</div>
                         <div className={`text-2xl font-bold capitalize ${trafficFlow.congestionLevel === 'free' ? 'text-green-600' :
-                            trafficFlow.congestionLevel === 'moderate' ? 'text-yellow-600' :
-                              trafficFlow.congestionLevel === 'congested' ? 'text-red-600' :
-                                'text-gray-600'
+                          trafficFlow.congestionLevel === 'moderate' ? 'text-yellow-600' :
+                            trafficFlow.congestionLevel === 'congested' ? 'text-red-600' :
+                              'text-gray-600'
                           }`}>
                           {trafficFlow.congestionLevel}
                         </div>

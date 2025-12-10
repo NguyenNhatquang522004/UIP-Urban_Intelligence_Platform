@@ -221,7 +221,7 @@ const requestQueue = new RequestQueue();
 const createApiClient = (): AxiosInstance => {
   const client = axios.create({
     baseURL: `${API_BASE_URL}/api`,
-    timeout: 30000, // 30 seconds
+    timeout: 60000, // 60 seconds (increased for large datasets)
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
@@ -299,7 +299,7 @@ const createApiClient = (): AxiosInstance => {
 
       // Enhanced error message for common issues
       if (error.code === 'ECONNABORTED') {
-        throw new Error(`Request timeout after 30s: ${error.config?.url}`);
+        throw new Error(`Request timeout after 60s: ${error.config?.url}`);
       } else if (error.code === 'ERR_NETWORK') {
         throw new Error(`Network error - Backend may be offline. Check ${API_BASE_URL}/health`);
       } else if (!error.response) {
