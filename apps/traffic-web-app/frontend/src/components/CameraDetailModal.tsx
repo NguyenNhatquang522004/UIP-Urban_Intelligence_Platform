@@ -697,15 +697,15 @@ const CameraDetailModal: React.FC<CameraDetailModalProps> = ({ camera, onClose, 
                         <div className="text-xs text-gray-500 mt-1">traffic density</div>
                       </div>
                       <div className={`p-4 rounded-lg border ${trafficFlow.congestionLevel === 'free' ? 'bg-green-50 border-green-200' :
-                          trafficFlow.congestionLevel === 'moderate' ? 'bg-yellow-50 border-yellow-200' :
-                            trafficFlow.congestionLevel === 'congested' ? 'bg-red-50 border-red-200' :
-                              'bg-gray-50 border-gray-200'
+                        trafficFlow.congestionLevel === 'moderate' ? 'bg-yellow-50 border-yellow-200' :
+                          trafficFlow.congestionLevel === 'congested' ? 'bg-red-50 border-red-200' :
+                            'bg-gray-50 border-gray-200'
                         }`}>
                         <div className="text-sm text-gray-600 mb-1">Congestion</div>
                         <div className={`text-2xl font-bold capitalize ${trafficFlow.congestionLevel === 'free' ? 'text-green-600' :
-                            trafficFlow.congestionLevel === 'moderate' ? 'text-yellow-600' :
-                              trafficFlow.congestionLevel === 'congested' ? 'text-red-600' :
-                                'text-gray-600'
+                          trafficFlow.congestionLevel === 'moderate' ? 'text-yellow-600' :
+                            trafficFlow.congestionLevel === 'congested' ? 'text-red-600' :
+                              'text-gray-600'
                           }`}>
                           {trafficFlow.congestionLevel}
                         </div>
